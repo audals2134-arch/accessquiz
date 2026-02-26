@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>접근성 퀴즈</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .quiz-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress {
+            font-size: 1.1rem;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .question-section {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .question {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option-btn {
+            padding: 1rem;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: #667eea;
+            background: #f0f4ff;
+            transform: translateX(5px);
+        }
+
+        .option-btn:disabled {
+            cursor: default;
+        }
+
+        .option-btn.correct {
+            background: #4caf50;
+            border-color: #4caf50;
+            color: white;
+        }
+
+        .option-btn.incorrect {
+            background: #f44336;
+            border-color: #f44336;
+            color: white;
+        }
+
+        .next-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: background 0.3s ease;
+            display: none;
+        }
+
+        .next-btn:hover {
+            background: #5568d3;
+        }
+
+        .next-btn.show {
+            display: block;
+        }
+
+        .result-message {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0;
+            height: 1.5rem;
+        }
+
+        .result-message.correct {
+            color: #4caf50;
+        }
+
+        .result-message.incorrect {
+            color: #f44336;
+        }
+
+        .quiz-complete {
+            text-align: center;
+        }
+
+        .complete-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .score {
+            font-size: 3rem;
+            color: #667eea;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .restart-btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .restart-btn:hover {
+            background: #5568d3;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="header">
+            <h1 class="title">접근성 퀴즈</h1>
+            <p class="progress"><span id="currentQuestion">1</span>/5</p>
+        </div>
+
+        <div id="quizContent">
+            <div class="question-section">
+                <div class="question" id="question"></div>
+                <div class="result-message" id="resultMessage"></div>
+                <div class="options" id="optionsContainer"></div>
+                <button class="next-btn" id="nextBtn">다음 문제</button>
+            </div>
+        </div>
+
+        <div id="resultContent" style="display: none;">
+            <div class="quiz-complete">
+                <h2 class="complete-title">퀴즈 완료!</h2>
+                <div class="score"><span id="finalScore">0</span>/5</div>
+                <button class="restart-btn" onclick="location.reload()">다시 시작</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quizzes = [
+            {
+                question: "웹 접근성의 가장 기본적인 목표는?",
+                options: [
+                    "모든 사용자가 웹 콘텐츠를 이용할 수 있도록 하기",
+                    "웹 속도를 빠르게 하기",
+                    "웹사이트를 아름답게 만들기",
+                    "모바일 기기만 지원하기"
+                ],
+                correctIndex: 0
+            },
+            {
+                question: "화면 읽기 프로그램은 어떤 역할을 하는가?",
+                options: [
+                    "웹사이트의 배경색을 변경한다",
+                    "시각장애인을 위해 텍스트를 음성으로 변환한다",
+                    "인터넷 속도를 향상시킨다",
+                    "웹사이트의 레이아웃을 자동으로 정렬한다"
+                ],
+                correctIndex: 1
+            },
+            {
+                question: "HTML에서 이미지에 대한 접근성을 위해 필수적으로 작성해야 할 속성은?",
+                options: [
+                    "src 속성만으로 충분하다",
+                    "alt 속성으로 이미지 설명을 제공하기",
+                    "title 속성만 작성하기",
+                    "style 속성으로 스타일링하기"
+                ],
+                correctIndex: 1
+            },
+            {
+                question: "색상만으로 정보를 전달하는 것이 문제가 되는 이유는?",
+                options: [
+                    "웹사이트가 느려진다",
+                    "색맹이거나 시각장애인은 정보를 이해할 수 없다",
+                    "브라우저가 색상을 인식하지 못한다",
+                    "모니터가 비싸진다"
+                ],
+                correctIndex: 1
+            },
+            {
+                question: "웹 접근성 국제 표준을 정하는 조직은?",
+                options: [
+                    "W3C의 WAI (Web Accessibility Initiative)",
+                    "Google 회사",
+                    "Microsoft 회사",
+                    "Apple 회사"
+                ],
+                correctIndex: 0
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+        function loadQuestion() {
+            const quiz = quizzes[currentQuestion];
+            document.getElementById('question').textContent = quiz.question;
+            document.getElementById('currentQuestion').textContent = currentQuestion + 1;
+            document.getElementById('resultMessage').textContent = '';
+            document.getElementById('resultMessage').className = 'result-message';
+
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+
+            quiz.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.className = 'option-btn';
+                button.textContent = option;
+                button.onclick = () => selectOption(index);
+                optionsContainer.appendChild(button);
+            });
+
+            document.getElementById('nextBtn').classList.remove('show');
+            answered = false;
+        }
+
+        function selectOption(index) {
+            if (answered) return;
+
+            answered = true;
+            const quiz = quizzes[currentQuestion];
+            const buttons = document.querySelectorAll('.option-btn');
+            const resultMessage = document.getElementById('resultMessage');
+
+            buttons.forEach(btn => btn.disabled = true);
+
+            if (index === quiz.correctIndex) {
+                buttons[index].classList.add('correct');
+                resultMessage.textContent = '정답입니다! 🎉';
+                resultMessage.className = 'result-message correct';
+                score++;
+            } else {
+                buttons[index].classList.add('incorrect');
+                buttons[quiz.correctIndex].classList.add('correct');
+                resultMessage.textContent = '틀렸습니다. 정답은 다음과 같습니다.';
+                resultMessage.className = 'result-message incorrect';
+            }
+
+            document.getElementById('nextBtn').classList.add('show');
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizzes.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('quizContent').style.display = 'none';
+            document.getElementById('resultContent').style.display = 'block';
+            document.getElementById('finalScore').textContent = score;
+        }
+
+        document.getElementById('nextBtn').onclick = nextQuestion;
+
+        // 초기 퀴즈 로드
+        loadQuestion();
+    </script>
+</body>
+</html>
