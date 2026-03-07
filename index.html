@@ -2,328 +2,833 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>접근성 퀴즈</title>
+    <title>XAG 접근성 퀴즈</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+        :root {
+            --bg: #0f1117;
+            --surface: #1a1d27;
+            --surface-hover: #222633;
+            --border: #2a2e3d;
+            --text: #e2e4eb;
+            --text-dim: #8b8fa3;
+            --accent: #6c9cff;
+            --accent-glow: rgba(108, 156, 255, 0.15);
+            --correct: #4ade80;
+            --correct-glow: rgba(74, 222, 128, 0.12);
+            --incorrect: #f87171;
+            --incorrect-glow: rgba(248, 113, 113, 0.12);
+            --radius: 12px;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Noto Sans KR', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 1rem;
+            padding: 40px 20px;
         }
 
-        .quiz-container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        .app {
             width: 100%;
-            max-width: 600px;
-            padding: 2rem;
+            max-width: 680px;
         }
 
-        .header {
+        /* --- Start Screen --- */
+        .start-screen {
             text-align: center;
-            margin-bottom: 2rem;
+            padding-top: 60px;
         }
 
-        .title {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 0.5rem;
+        .start-screen h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
 
-        .progress {
-            font-size: 1.1rem;
-            color: #667eea;
+        .start-screen h1 span { color: var(--accent); }
+
+        .start-screen .subtitle {
+            color: var(--text-dim);
+            font-size: 15px;
+            margin-bottom: 48px;
+        }
+
+        .pool-select {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .pool-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .pool-btn:hover {
+            border-color: var(--accent);
+            background: var(--accent-glow);
+        }
+
+        .pool-btn .count {
+            color: var(--text-dim);
+            font-size: 13px;
+        }
+
+        /* --- Quiz Screen --- */
+        .quiz-screen { display: none; }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .top-bar .pool-label {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .top-bar .progress-text {
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .home-btn {
+            padding: 5px 14px;
+            font-size: 12px;
+            font-family: inherit;
+            font-weight: 500;
+            color: var(--text-dim);
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .home-btn:hover {
+            color: var(--text);
+            border-color: var(--accent);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: var(--surface);
+            border-radius: 2px;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+
+        .question-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            margin-bottom: 24px;
+        }
+
+        .question-number {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .question-text {
+            font-size: 18px;
             font-weight: 600;
-        }
-
-        .question-section {
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .question {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #333;
-            line-height: 1.6;
-            margin-bottom: 2rem;
+            line-height: 1.7;
+            word-break: keep-all;
         }
 
         .options {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 10px;
+            margin-bottom: 24px;
         }
 
         .option-btn {
-            padding: 1rem;
-            font-size: 1rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            background: white;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.6;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s;
             text-align: left;
-            font-weight: 500;
-            color: #333;
+            word-break: keep-all;
         }
 
         .option-btn:hover:not(:disabled) {
-            border-color: #667eea;
-            background: #f0f4ff;
-            transform: translateX(5px);
+            border-color: var(--accent);
+            background: var(--accent-glow);
         }
 
-        .option-btn:disabled {
-            cursor: default;
+        .option-btn:disabled { cursor: default; }
+
+        .option-label {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dim);
+            transition: all 0.2s;
         }
 
         .option-btn.correct {
-            background: #4caf50;
-            border-color: #4caf50;
-            color: white;
+            border-color: var(--correct);
+            background: var(--correct-glow);
+        }
+
+        .option-btn.correct .option-label {
+            background: var(--correct);
+            color: var(--bg);
         }
 
         .option-btn.incorrect {
-            background: #f44336;
-            border-color: #f44336;
-            color: white;
+            border-color: var(--incorrect);
+            background: var(--incorrect-glow);
+        }
+
+        .option-btn.incorrect .option-label {
+            background: var(--incorrect);
+            color: var(--bg);
+        }
+
+        .option-btn.dimmed {
+            opacity: 0.4;
+        }
+
+        .explanation {
+            display: none;
+            background: rgba(108, 156, 255, 0.08);
+            border: 1px solid rgba(108, 156, 255, 0.2);
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-dim);
+        }
+
+        .explanation.visible { display: block; }
+
+        .explanation .exp-title {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 6px;
+            font-size: 13px;
         }
 
         .next-btn {
             width: 100%;
-            padding: 1rem;
-            font-size: 1.1rem;
-            background: #667eea;
-            color: white;
+            padding: 14px;
+            background: var(--accent);
+            color: var(--bg);
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 700;
             cursor: pointer;
-            font-weight: 600;
-            margin-top: 2rem;
-            transition: background 0.3s ease;
+            transition: opacity 0.2s;
             display: none;
         }
 
-        .next-btn:hover {
-            background: #5568d3;
+        .next-btn:hover { opacity: 0.85; }
+        .next-btn.visible { display: block; }
+
+        /* --- Result Screen --- */
+        .result-screen {
+            display: none;
+            text-align: center;
+            padding-top: 60px;
         }
 
-        .next-btn.show {
-            display: block;
+        .result-screen h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .score-ring {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 32px;
+            position: relative;
+        }
+
+        .score-ring svg {
+            transform: rotate(-90deg);
+            width: 180px;
+            height: 180px;
+        }
+
+        .score-ring .bg-circle {
+            fill: none;
+            stroke: var(--surface);
+            stroke-width: 10;
+        }
+
+        .score-ring .fg-circle {
+            fill: none;
+            stroke: var(--accent);
+            stroke-width: 10;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1s ease;
+        }
+
+        .score-label {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .score-label small {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--text-dim);
         }
 
         .result-message {
-            font-size: 1.2rem;
+            font-size: 16px;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .result-actions button {
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 14px;
             font-weight: 600;
-            margin: 1.5rem 0;
-            height: 1.5rem;
-        }
-
-        .result-message.correct {
-            color: #4caf50;
-        }
-
-        .result-message.incorrect {
-            color: #f44336;
-        }
-
-        .quiz-complete {
-            text-align: center;
-        }
-
-        .complete-title {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .score {
-            font-size: 3rem;
-            color: #667eea;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-
-        .restart-btn {
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 8px;
             cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s ease;
+            transition: all 0.2s;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
         }
 
-        .restart-btn:hover {
-            background: #5568d3;
+        .result-actions button:hover {
+            border-color: var(--accent);
+            background: var(--accent-glow);
+        }
+
+        .result-actions button.primary {
+            background: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
+        }
+
+        .result-actions button.primary:hover { opacity: 0.85; }
+
+        .result-actions button.danger {
+            background: var(--incorrect);
+            color: var(--bg);
+            border-color: var(--incorrect);
+        }
+
+        .result-actions button.danger:hover { opacity: 0.85; }
+
+        /* --- Section Divider --- */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 28px 0 16px;
+        }
+
+        .section-divider span {
+            font-size: 13px;
+            color: var(--text-dim);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* --- Wrong Note Button --- */
+        .pool-btn .wrong-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--incorrect-glow);
+            color: var(--incorrect);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-left: 8px;
+        }
+
+        .pool-btn.wrong-note-btn {
+            border-color: rgba(248, 113, 113, 0.3);
+        }
+
+        .pool-btn.wrong-note-btn:hover {
+            border-color: var(--incorrect);
+            background: var(--incorrect-glow);
+        }
+
+        .clear-wrong-btn {
+            padding: 6px 14px;
+            font-size: 12px;
+            color: var(--text-dim);
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        .clear-wrong-btn:hover {
+            color: var(--incorrect);
+            border-color: var(--incorrect);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 24px 16px; }
+            .start-screen h1 { font-size: 24px; }
+            .question-card { padding: 24px 20px; }
+            .question-text { font-size: 16px; }
         }
     </style>
 </head>
 <body>
-    <div class="quiz-container">
-        <div class="header">
-            <h1 class="title">접근성 퀴즈</h1>
-            <p class="progress"><span id="currentQuestion">1</span>/5</p>
-        </div>
-
-        <div id="quizContent">
-            <div class="question-section">
-                <div class="question" id="question"></div>
-                <div class="result-message" id="resultMessage"></div>
-                <div class="options" id="optionsContainer"></div>
-                <button class="next-btn" id="nextBtn">다음 문제</button>
-            </div>
-        </div>
-
-        <div id="resultContent" style="display: none;">
-            <div class="quiz-complete">
-                <h2 class="complete-title">퀴즈 완료!</h2>
-                <div class="score"><span id="finalScore">0</span>/5</div>
-                <button class="restart-btn" onclick="location.reload()">다시 시작</button>
-            </div>
-        </div>
+<div class="app">
+    <!-- Start Screen -->
+    <div class="start-screen" id="startScreen">
+        <h1>XAG <span>접근성 퀴즈</span></h1>
+        <p class="subtitle">게임 접근성 가이드라인(XAG) 학습 퀴즈</p>
+        <div class="pool-select" id="poolSelect"></div>
     </div>
 
-    <script>
-        const quizzes = [
-            {
-                question: "웹 접근성의 가장 기본적인 목표는?",
-                options: [
-                    "모든 사용자가 웹 콘텐츠를 이용할 수 있도록 하기",
-                    "웹 속도를 빠르게 하기",
-                    "웹사이트를 아름답게 만들기",
-                    "모바일 기기만 지원하기"
-                ],
-                correctIndex: 0
-            },
-            {
-                question: "화면 읽기 프로그램은 어떤 역할을 하는가?",
-                options: [
-                    "웹사이트의 배경색을 변경한다",
-                    "시각장애인을 위해 텍스트를 음성으로 변환한다",
-                    "인터넷 속도를 향상시킨다",
-                    "웹사이트의 레이아웃을 자동으로 정렬한다"
-                ],
-                correctIndex: 1
-            },
-            {
-                question: "HTML에서 이미지에 대한 접근성을 위해 필수적으로 작성해야 할 속성은?",
-                options: [
-                    "src 속성만으로 충분하다",
-                    "alt 속성으로 이미지 설명을 제공하기",
-                    "title 속성만 작성하기",
-                    "style 속성으로 스타일링하기"
-                ],
-                correctIndex: 1
-            },
-            {
-                question: "색상만으로 정보를 전달하는 것이 문제가 되는 이유는?",
-                options: [
-                    "웹사이트가 느려진다",
-                    "색맹이거나 시각장애인은 정보를 이해할 수 없다",
-                    "브라우저가 색상을 인식하지 못한다",
-                    "모니터가 비싸진다"
-                ],
-                correctIndex: 1
-            },
-            {
-                question: "웹 접근성 국제 표준을 정하는 조직은?",
-                options: [
-                    "W3C의 WAI (Web Accessibility Initiative)",
-                    "Google 회사",
-                    "Microsoft 회사",
-                    "Apple 회사"
-                ],
-                correctIndex: 0
+    <!-- Quiz Screen -->
+    <div class="quiz-screen" id="quizScreen">
+        <div class="top-bar">
+            <span class="pool-label" id="poolLabel"></span>
+            <span class="progress-text" id="progressText"></span>
+            <button class="home-btn" onclick="goHome()">처음으로</button>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+        <div class="question-card">
+            <div class="question-number" id="questionNumber"></div>
+            <div class="question-text" id="questionText"></div>
+        </div>
+
+        <div class="options" id="optionsContainer"></div>
+
+        <div class="explanation" id="explanation">
+            <div class="exp-title">해설</div>
+            <div id="explanationText"></div>
+        </div>
+
+        <button class="next-btn" id="nextBtn">다음 문제</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div class="result-screen" id="resultScreen">
+        <h2>퀴즈 완료</h2>
+        <div class="score-ring">
+            <svg viewBox="0 0 180 180">
+                <circle class="bg-circle" cx="90" cy="90" r="78" />
+                <circle class="fg-circle" id="scoreCircle" cx="90" cy="90" r="78" stroke-dasharray="490" stroke-dashoffset="490" />
+            </svg>
+            <div class="score-label"><span id="scoreNum">0</span><small id="scoreTotal">/10</small></div>
+        </div>
+        <div class="result-message" id="resultMessage"></div>
+        <div class="result-actions">
+            <button onclick="goHome()">처음으로</button>
+            <button class="primary" id="retryBtn">같은 풀 다시 풀기</button>
+            <button class="danger" id="wrongNoteBtn" style="display:none">오답노트 풀기</button>
+        </div>
+    </div>
+</div>
+
+<script src="XAG_Quiz_RawData.js"></script>
+<script>
+let quizData = null;
+let currentQuestions = [];
+let currentIndex = 0;
+let score = 0;
+let answered = false;
+let currentPoolId = '';
+let isWrongNoteMode = false;
+let wrongThisSession = [];
+
+const LABELS = ['A', 'B', 'C', 'D'];
+const WRONG_STORAGE_KEY = 'xag_wrong_notes';
+
+function getWrongNotes() {
+    try { return JSON.parse(localStorage.getItem(WRONG_STORAGE_KEY)) || {}; } catch { return {}; }
+}
+
+function saveWrongNotes(notes) {
+    localStorage.setItem(WRONG_STORAGE_KEY, JSON.stringify(notes));
+}
+
+function addWrongNote(poolId, questionKey) {
+    const notes = getWrongNotes();
+    if (!notes[poolId]) notes[poolId] = [];
+    if (!notes[poolId].includes(questionKey)) notes[poolId].push(questionKey);
+    saveWrongNotes(notes);
+}
+
+function removeWrongNote(poolId, questionKey) {
+    const notes = getWrongNotes();
+    if (notes[poolId]) {
+        notes[poolId] = notes[poolId].filter(k => k !== questionKey);
+        if (notes[poolId].length === 0) delete notes[poolId];
+    }
+    saveWrongNotes(notes);
+}
+
+function clearWrongNotes(poolId) {
+    const notes = getWrongNotes();
+    if (poolId === 'all') {
+        saveWrongNotes({});
+    } else {
+        delete notes[poolId];
+        saveWrongNotes(notes);
+    }
+}
+
+function getWrongCount(poolId) {
+    const notes = getWrongNotes();
+    if (poolId === 'all') {
+        return Object.values(notes).reduce((sum, arr) => sum + arr.length, 0);
+    }
+    return (notes[poolId] || []).length;
+}
+
+function getWrongQuestions(poolId) {
+    const notes = getWrongNotes();
+    if (poolId === 'all') {
+        const allKeys = new Set(Object.values(notes).flat());
+        return quizData.questions.filter(q => allKeys.has(q.key));
+    }
+    const keys = notes[poolId] || [];
+    return quizData.questions.filter(q => keys.includes(q.key));
+}
+
+function goHome() {
+    document.getElementById('quizScreen').style.display = 'none';
+    document.getElementById('resultScreen').style.display = 'none';
+    document.getElementById('startScreen').style.display = '';
+    buildStartScreen();
+}
+
+// Load quiz data from global variable (XAG_Quiz_RawData.js)
+quizData = QUIZ_DATA;
+buildStartScreen();
+
+function buildStartScreen() {
+    const pools = {};
+    quizData.questions.forEach(q => {
+        if (!pools[q.pool_id]) pools[q.pool_id] = 0;
+        pools[q.pool_id]++;
+    });
+
+    const container = document.getElementById('poolSelect');
+    container.innerHTML = '';
+
+    // All questions button
+    const allBtn = document.createElement('button');
+    allBtn.className = 'pool-btn';
+    allBtn.innerHTML = `<span>전체 문제</span><span class="count">${quizData.questions.length}문항</span>`;
+    allBtn.onclick = () => startQuiz('all', false);
+    container.appendChild(allBtn);
+
+    // Per-pool buttons
+    for (const [poolId, count] of Object.entries(pools)) {
+        const btn = document.createElement('button');
+        btn.className = 'pool-btn';
+        btn.innerHTML = `<span>${poolId}</span><span class="count">${count}문항</span>`;
+        btn.onclick = () => startQuiz(poolId, false);
+        container.appendChild(btn);
+    }
+
+    // Wrong notes section
+    const totalWrong = getWrongCount('all');
+    if (totalWrong > 0) {
+        const divider = document.createElement('div');
+        divider.className = 'section-divider';
+        divider.innerHTML = '<span>오답노트</span>';
+        container.appendChild(divider);
+
+        // All wrong button
+        const allWrongBtn = document.createElement('button');
+        allWrongBtn.className = 'pool-btn wrong-note-btn';
+        allWrongBtn.innerHTML = `<span>전체 오답 <span class="wrong-badge">${totalWrong}문항</span></span><span class="count">다시 풀기</span>`;
+        allWrongBtn.onclick = () => startQuiz('all', true);
+        container.appendChild(allWrongBtn);
+
+        // Per-pool wrong buttons
+        for (const poolId of Object.keys(pools)) {
+            const wrongCount = getWrongCount(poolId);
+            if (wrongCount > 0) {
+                const wrapDiv = document.createElement('div');
+                wrapDiv.style.cssText = 'display:flex;gap:8px;align-items:stretch;';
+
+                const btn = document.createElement('button');
+                btn.className = 'pool-btn wrong-note-btn';
+                btn.style.flex = '1';
+                btn.innerHTML = `<span>${poolId} 오답 <span class="wrong-badge">${wrongCount}문항</span></span><span class="count">다시 풀기</span>`;
+                btn.onclick = () => startQuiz(poolId, true);
+
+                const clearBtn = document.createElement('button');
+                clearBtn.className = 'clear-wrong-btn';
+                clearBtn.textContent = '초기화';
+                clearBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    clearWrongNotes(poolId);
+                    buildStartScreen();
+                };
+
+                wrapDiv.appendChild(btn);
+                wrapDiv.appendChild(clearBtn);
+                container.appendChild(wrapDiv);
             }
-        ];
-
-        let currentQuestion = 0;
-        let score = 0;
-        let answered = false;
-
-        function loadQuestion() {
-            const quiz = quizzes[currentQuestion];
-            document.getElementById('question').textContent = quiz.question;
-            document.getElementById('currentQuestion').textContent = currentQuestion + 1;
-            document.getElementById('resultMessage').textContent = '';
-            document.getElementById('resultMessage').className = 'result-message';
-
-            const optionsContainer = document.getElementById('optionsContainer');
-            optionsContainer.innerHTML = '';
-
-            quiz.options.forEach((option, index) => {
-                const button = document.createElement('button');
-                button.className = 'option-btn';
-                button.textContent = option;
-                button.onclick = () => selectOption(index);
-                optionsContainer.appendChild(button);
-            });
-
-            document.getElementById('nextBtn').classList.remove('show');
-            answered = false;
         }
+    }
+}
 
-        function selectOption(index) {
-            if (answered) return;
+function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
 
-            answered = true;
-            const quiz = quizzes[currentQuestion];
-            const buttons = document.querySelectorAll('.option-btn');
-            const resultMessage = document.getElementById('resultMessage');
+function startQuiz(poolId, wrongNoteMode) {
+    currentPoolId = poolId;
+    isWrongNoteMode = wrongNoteMode;
+    wrongThisSession = [];
 
-            buttons.forEach(btn => btn.disabled = true);
+    let filtered;
+    if (wrongNoteMode) {
+        filtered = getWrongQuestions(poolId);
+    } else {
+        filtered = poolId === 'all'
+            ? quizData.questions
+            : quizData.questions.filter(q => q.pool_id === poolId);
+    }
 
-            if (index === quiz.correctIndex) {
-                buttons[index].classList.add('correct');
-                resultMessage.textContent = '정답입니다! 🎉';
-                resultMessage.className = 'result-message correct';
-                score++;
-            } else {
-                buttons[index].classList.add('incorrect');
-                buttons[quiz.correctIndex].classList.add('correct');
-                resultMessage.textContent = '틀렸습니다. 정답은 다음과 같습니다.';
-                resultMessage.className = 'result-message incorrect';
+    if (filtered.length === 0) {
+        alert('풀 문제가 없습니다.');
+        return;
+    }
+
+    currentQuestions = shuffle(filtered);
+    currentIndex = 0;
+    score = 0;
+
+    document.getElementById('startScreen').style.display = 'none';
+    document.getElementById('quizScreen').style.display = 'block';
+
+    const label = wrongNoteMode
+        ? (poolId === 'all' ? '전체 오답노트' : `${poolId} 오답노트`)
+        : (poolId === 'all' ? '전체 문제' : poolId);
+    document.getElementById('poolLabel').textContent = label;
+
+    loadQuestion();
+}
+
+function loadQuestion() {
+    answered = false;
+    const q = currentQuestions[currentIndex];
+    const total = currentQuestions.length;
+
+    document.getElementById('questionNumber').textContent = `Q${currentIndex + 1}`;
+    document.getElementById('questionText').textContent = q.question;
+    document.getElementById('progressText').textContent = `${currentIndex + 1} / ${total}`;
+    document.getElementById('progressFill').style.width = `${((currentIndex) / total) * 100}%`;
+
+    // Shuffle options while tracking correct answer
+    const correctText = q.options[q.answer_index - 1];
+    const shuffledOptions = shuffle(q.options);
+
+    const container = document.getElementById('optionsContainer');
+    container.innerHTML = '';
+
+    shuffledOptions.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `<span class="option-label">${LABELS[i]}</span><span>${opt}</span>`;
+        btn.onclick = () => selectOption(btn, opt, correctText, q);
+        container.appendChild(btn);
+    });
+
+    document.getElementById('explanation').classList.remove('visible');
+    document.getElementById('nextBtn').classList.remove('visible');
+}
+
+function selectOption(selectedBtn, selectedText, correctText, question) {
+    if (answered) return;
+    answered = true;
+
+    const buttons = document.querySelectorAll('.option-btn');
+    buttons.forEach(btn => btn.disabled = true);
+
+    const isCorrect = selectedText === correctText;
+
+    if (isCorrect) {
+        selectedBtn.classList.add('correct');
+        score++;
+        // Remove from wrong notes if previously wrong
+        removeWrongNote(question.pool_id, question.key);
+    } else {
+        selectedBtn.classList.add('incorrect');
+        // Highlight correct answer
+        buttons.forEach(btn => {
+            if (btn.querySelector('span:last-child').textContent === correctText) {
+                btn.classList.add('correct');
             }
+        });
+        // Add to wrong notes
+        addWrongNote(question.pool_id, question.key);
+        wrongThisSession.push(question.key);
+    }
 
-            document.getElementById('nextBtn').classList.add('show');
+    // Dim unrelated options
+    buttons.forEach(btn => {
+        if (!btn.classList.contains('correct') && !btn.classList.contains('incorrect')) {
+            btn.classList.add('dimmed');
         }
+    });
 
-        function nextQuestion() {
-            currentQuestion++;
-            if (currentQuestion < quizzes.length) {
-                loadQuestion();
-            } else {
-                showResult();
-            }
-        }
+    // Show explanation
+    if (question.explanation) {
+        document.getElementById('explanationText').textContent = question.explanation;
+        document.getElementById('explanation').classList.add('visible');
+    }
 
-        function showResult() {
-            document.getElementById('quizContent').style.display = 'none';
-            document.getElementById('resultContent').style.display = 'block';
-            document.getElementById('finalScore').textContent = score;
-        }
+    // Update button text for last question
+    const nextBtn = document.getElementById('nextBtn');
+    nextBtn.textContent = currentIndex < currentQuestions.length - 1 ? '다음 문제' : '결과 보기';
+    nextBtn.classList.add('visible');
+}
 
-        document.getElementById('nextBtn').onclick = nextQuestion;
-
-        // 초기 퀴즈 로드
+document.getElementById('nextBtn').onclick = function() {
+    currentIndex++;
+    if (currentIndex < currentQuestions.length) {
         loadQuestion();
-    </script>
+    } else {
+        showResult();
+    }
+};
+
+function showResult() {
+    document.getElementById('quizScreen').style.display = 'none';
+    document.getElementById('resultScreen').style.display = 'block';
+
+    const total = currentQuestions.length;
+    const pct = score / total;
+
+    document.getElementById('scoreNum').textContent = score;
+    document.getElementById('scoreTotal').textContent = `/${total}`;
+
+    // Animate ring
+    const circumference = 490;
+    const offset = circumference - (pct * circumference);
+    setTimeout(() => {
+        document.getElementById('scoreCircle').style.strokeDashoffset = offset;
+    }, 100);
+
+    // Result message
+    let msg;
+    if (pct === 1) msg = '만점! 접근성 전문가시네요!';
+    else if (pct >= 0.8) msg = '훌륭합니다! 접근성에 대한 깊은 이해를 보여주셨습니다.';
+    else if (pct >= 0.6) msg = '좋습니다! 조금 더 학습하면 전문가가 될 수 있어요.';
+    else if (pct >= 0.4) msg = '괜찮아요! XAG 가이드라인을 다시 한번 살펴보세요.';
+    else msg = 'XAG 가이드라인 학습이 더 필요합니다. 다시 도전해보세요!';
+
+    document.getElementById('resultMessage').textContent = msg;
+
+    // Retry button
+    document.getElementById('retryBtn').onclick = () => {
+        document.getElementById('resultScreen').style.display = 'none';
+        startQuiz(currentPoolId, false);
+    };
+
+    // Wrong note review button
+    const wrongBtn = document.getElementById('wrongNoteBtn');
+    const wrongCount = getWrongCount(currentPoolId);
+    if (wrongCount > 0) {
+        wrongBtn.style.display = '';
+        wrongBtn.textContent = `오답노트 풀기 (${wrongCount}문항)`;
+        wrongBtn.onclick = () => {
+            document.getElementById('resultScreen').style.display = 'none';
+            startQuiz(currentPoolId, true);
+        };
+    } else {
+        wrongBtn.style.display = 'none';
+    }
+}
+</script>
 </body>
 </html>

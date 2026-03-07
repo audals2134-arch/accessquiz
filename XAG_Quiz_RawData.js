@@ -1,4 +1,4 @@
-{
+const QUIZ_DATA = {
   "meta": {
     "version": "20260307005219.",
     "content_hash": "6122ab90",
@@ -1896,4 +1896,4 @@
       "explanation": "중간 비용(Silver) 수준은 씬(Scene)별 프리셋 수동 설정, 구역별 라이트 맵 연동 등으로, 데이터 관리 공수가 증가합니다."
     }
   ]
-}
+};

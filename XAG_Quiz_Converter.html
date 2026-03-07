@@ -337,18 +337,17 @@ function processFile(file) {
         const q = {
           key: String(r[0] || ''),
           pool_id: String(r[1] || ''),
-          question: String(r[2] || ''),
-          options: [String(r[3]||''), String(r[4]||''), String(r[5]||''), String(r[6]||'')],
-          answer_index: Number(r[7]) || 1,
-          answer_text: String(r[8] || ''),
-          explanation: String(r[9] || '')
+          question_type: String(r[2] || ''),
+          question: String(r[3] || ''),
+          options: [String(r[4]||''), String(r[5]||''), String(r[6]||''), String(r[7]||'')].filter(Boolean),
+          answer_index: Number(r[8]) || 1,
+          answer_text: String(r[9] || ''),
+          explanation: String(r[10] || '')
         };
         questions.push(q);
 
         if (!pools[q.pool_id]) pools[q.pool_id] = new Set();
-        if (q.question_type === 'multiple_choice') {
-          q.options.forEach(opt => { if (opt) pools[q.pool_id].add(opt); });
-        }
+        q.options.forEach(opt => { if (opt) pools[q.pool_id].add(opt); });
       }
 
       const optionPools = {};
@@ -370,7 +369,7 @@ function processFile(file) {
 
       // Count question types
       const typeCounts = {};
-      questions.forEach(q => { typeCounts[q.question_type] = (typeCounts[q.question_type]||0) + 1; });
+      questions.forEach(q => { typeCounts[q.question_type || 'unknown'] = (typeCounts[q.question_type || 'unknown']||0) + 1; });
 
       currentJSON = {
         meta: {
