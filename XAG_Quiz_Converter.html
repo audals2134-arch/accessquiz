@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XAG Quiz — Excel → JSON 변환기</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface-hover: #222633;
+    --border: #2a2e3d;
+    --text: #e2e4eb;
+    --text-dim: #8b8fa3;
+    --accent: #6c9cff;
+    --accent-glow: rgba(108, 156, 255, 0.15);
+    --success: #4ade80;
+    --success-glow: rgba(74, 222, 128, 0.12);
+    --warn: #fbbf24;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  header h1 span { color: var(--accent); }
+
+  header p {
+    color: var(--text-dim);
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  /* Drop Zone */
+  .drop-zone {
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 56px 32px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: var(--surface);
+    position: relative;
+  }
+
+  .drop-zone:hover, .drop-zone.drag-over {
+    border-color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  .drop-zone input { display: none; }
+
+  .drop-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+    display: block;
+    opacity: 0.7;
+  }
+
+  .drop-zone p {
+    font-size: 15px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  .drop-zone p strong { color: var(--accent); font-weight: 500; }
+
+  /* Status */
+  .status {
+    margin-top: 24px;
+    padding: 20px 24px;
+    border-radius: var(--radius);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: none;
+  }
+
+  .status.visible { display: block; }
+
+  .status.success {
+    border-color: rgba(74, 222, 128, 0.3);
+    background: var(--success-glow);
+  }
+
+  .status-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  .status-header .icon { font-size: 20px; }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .meta-card {
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+
+  .meta-card .label {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  .meta-card .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  /* Buttons */
+  .actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  button:hover {
+    background: var(--surface-hover);
+    border-color: var(--accent);
+  }
+
+  button.primary {
+    background: var(--accent);
+    color: #0f1117;
+    border-color: var(--accent);
+    font-weight: 700;
+  }
+
+  button.primary:hover { opacity: 0.9; }
+
+  /* Preview */
+  .preview {
+    margin-top: 32px;
+    display: none;
+  }
+
+  .preview.visible { display: block; }
+
+  .preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .preview-header h3 {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .tab-group {
+    display: flex;
+    gap: 4px;
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 3px;
+  }
+
+  .tab {
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-dim);
+    transition: all 0.2s;
+    border: none;
+    background: transparent;
+  }
+
+  .tab.active {
+    background: var(--accent);
+    color: #0f1117;
+  }
+
+  pre {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    overflow: auto;
+    max-height: 480px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-dim);
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    body { padding: 24px 16px; }
+    header h1 { font-size: 22px; }
+    .drop-zone { padding: 40px 20px; }
+    .meta-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>XAG Quiz <span>Excel → JSON</span></h1>
+    <p>엑셀 로우데이터를 웹/앱 배포용 JSON으로 변환합니다 · 객관식/OX/순서나열 지원 · Python 불필요</p>
+  </header>
+
+  <div class="drop-zone" id="dropZone">
+    <span class="drop-icon">📄</span>
+    <p><strong>클릭하여 .xlsx 파일 선택</strong> 또는 여기에 드래그 앤 드롭<br>
+    XAG Quiz RawData 엑셀 파일을 넣어주세요</p>
+    <input type="file" id="fileInput" accept=".xlsx,.xls">
+  </div>
+
+  <div class="status" id="status">
+    <div class="status-header">
+      <span class="icon" id="statusIcon">✅</span>
+      <span id="statusText">변환 완료</span>
+    </div>
+    <div class="meta-grid" id="metaGrid"></div>
+    <div class="actions" id="actions"></div>
+  </div>
+
+  <div class="preview" id="preview">
+    <div class="preview-header">
+      <h3>미리보기</h3>
+      <div class="tab-group">
+        <button class="tab active" onclick="showTab('meta')">meta</button>
+        <button class="tab" onclick="showTab('pools')">option_pools</button>
+        <button class="tab" onclick="showTab('questions')">questions</button>
+        <button class="tab" onclick="showTab('full')">전체 JSON</button>
+      </div>
+    </div>
+    <pre id="previewContent"></pre>
+  </div>
+</div>
+
+<script>
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+const statusEl = document.getElementById('status');
+const previewEl = document.getElementById('preview');
+
+let currentJSON = null;
+let currentTab = 'meta';
+
+// --- Drag & Drop ---
+dropZone.addEventListener('click', () => fileInput.click());
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('drag-over');
+  if (e.dataTransfer.files.length) processFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', e => { if (e.target.files.length) processFile(e.target.files[0]); });
+
+// --- Core conversion ---
+function processFile(file) {
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const wb = XLSX.read(e.target.result, { type: 'array' });
+
+      // Find quiz sheet (first sheet containing "Quiz" or first sheet)
+      let sheetName = wb.SheetNames.find(n => n.includes('Quiz')) || wb.SheetNames[0];
+      const ws = wb.Sheets[sheetName];
+      const rows = XLSX.utils.sheet_to_json(ws, { header: 1 });
+
+      if (rows.length < 2) throw new Error('데이터가 없습니다.');
+
+      const headers = rows[0];
+      const questions = [];
+      const pools = {};
+
+      for (let i = 1; i < rows.length; i++) {
+        const r = rows[i];
+        if (!r[0]) continue;
+
+        const q = {
+          key: String(r[0] || ''),
+          pool_id: String(r[1] || ''),
+          question: String(r[2] || ''),
+          options: [String(r[3]||''), String(r[4]||''), String(r[5]||''), String(r[6]||'')],
+          answer_index: Number(r[7]) || 1,
+          answer_text: String(r[8] || ''),
+          explanation: String(r[9] || '')
+        };
+        questions.push(q);
+
+        if (!pools[q.pool_id]) pools[q.pool_id] = new Set();
+        if (q.question_type === 'multiple_choice') {
+          q.options.forEach(opt => { if (opt) pools[q.pool_id].add(opt); });
+        }
+      }
+
+      const optionPools = {};
+      for (const [pid, opts] of Object.entries(pools)) {
+        optionPools[pid] = [...opts].sort();
+      }
+
+      // Content hash (simple)
+      const hashSrc = JSON.stringify(questions);
+      let hash = 0;
+      for (let i = 0; i < hashSrc.length; i++) {
+        hash = ((hash << 5) - hash) + hashSrc.charCodeAt(i);
+        hash |= 0;
+      }
+      const contentHash = Math.abs(hash).toString(16).slice(0, 8);
+
+      const now = new Date();
+      const version = now.toISOString().replace(/[-:T]/g, '').slice(0, 15);
+
+      // Count question types
+      const typeCounts = {};
+      questions.forEach(q => { typeCounts[q.question_type] = (typeCounts[q.question_type]||0) + 1; });
+
+      currentJSON = {
+        meta: {
+          version,
+          content_hash: contentHash,
+          total_questions: questions.length,
+          question_types: typeCounts,
+          pools: Object.fromEntries(Object.entries(optionPools).map(([k,v]) => [k, v.length])),
+          generated_at: now.toISOString(),
+          source_file: file.name
+        },
+        option_pools: optionPools,
+        questions
+      };
+
+      showSuccess(file.name, currentJSON);
+    } catch (err) {
+      showError(err.message);
+    }
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function showSuccess(filename, data) {
+  statusEl.className = 'status visible success';
+  document.getElementById('statusIcon').textContent = '✅';
+  document.getElementById('statusText').textContent = `${filename} → 변환 완료`;
+
+  const meta = data.meta;
+  const poolSummary = Object.entries(meta.pools).map(([k,v]) => `${k}: ${v}개 보기`).join(', ');
+
+  document.getElementById('metaGrid').innerHTML = `
+    <div class="meta-card"><div class="label">문항 수</div><div class="value">${meta.total_questions}</div></div>
+    <div class="meta-card"><div class="label">풀</div><div class="value">${Object.keys(meta.pools).length}개</div></div>
+    <div class="meta-card"><div class="label">버전</div><div class="value">${meta.version}</div></div>
+    <div class="meta-card"><div class="label">해시</div><div class="value">${meta.content_hash}</div></div>
+  `;
+
+  const jsonStr = JSON.stringify(data, null, 2);
+  const blob = new Blob([jsonStr], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const outName = filename.replace(/\.xlsx?$/i, '.json');
+
+  document.getElementById('actions').innerHTML = `
+    <a href="${url}" download="${outName}"><button class="primary">💾 ${outName} 다운로드</button></a>
+    <button onclick="copyJSON()">📋 클립보드 복사</button>
+  `;
+
+  previewEl.classList.add('visible');
+  showTab('meta');
+}
+
+function showError(msg) {
+  statusEl.className = 'status visible';
+  document.getElementById('statusIcon').textContent = '❌';
+  document.getElementById('statusText').textContent = `오류: ${msg}`;
+  document.getElementById('metaGrid').innerHTML = '';
+  document.getElementById('actions').innerHTML = '';
+  previewEl.classList.remove('visible');
+}
+
+function showTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.tab[onclick="showTab('${tab}')"]`).classList.add('active');
+
+  let content;
+  if (tab === 'meta') content = JSON.stringify(currentJSON.meta, null, 2);
+  else if (tab === 'pools') content = JSON.stringify(currentJSON.option_pools, null, 2);
+  else if (tab === 'questions') content = JSON.stringify(currentJSON.questions.slice(0, 5), null, 2) + `\n\n  ... 외 ${currentJSON.questions.length - 5}문항`;
+  else content = JSON.stringify(currentJSON, null, 2);
+
+  document.getElementById('previewContent').textContent = content;
+}
+
+function copyJSON() {
+  navigator.clipboard.writeText(JSON.stringify(currentJSON, null, 2)).then(() => {
+    const btn = document.querySelector('button[onclick="copyJSON()"]');
+    btn.textContent = '✅ 복사됨!';
+    setTimeout(() => { btn.innerHTML = '📋 클립보드 복사'; }, 1500);
+  });
+}
+</script>
+</body>
+</html>
