@@ -1,0 +1,1422 @@
+{
+  "meta": {
+    "version": "20260307004311.",
+    "content_hash": "7cf5e2a9",
+    "total_questions": 100,
+    "question_types": {
+      "undefined": 100
+    },
+    "pools": {
+      "XAG101": 0,
+      "XAG102": 0
+    },
+    "generated_at": "2026-03-07T00:43:11.130Z",
+    "source_file": "XAG_Quiz_RawData.xlsx"
+  },
+  "option_pools": {
+    "XAG101": [],
+    "XAG102": []
+  },
+  "questions": [
+    {
+      "key": "XAG101_Q001",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "텍스트 가독성에 어려움을 겪는 대상으로 XAG 101에서 언급하지 않는 것은?",
+        "저시력/고령 플레이어",
+        "난독증(Dyslexia) 플레이어",
+        "청각 장애 플레이어"
+      ],
+      "answer_index": 1,
+      "answer_text": "3",
+      "explanation": "청각 장애 플레이어"
+    },
+    {
+      "key": "XAG101_Q002",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "난독증(Dyslexia) 플레이어의 글자 인식 속도를 현저히 떨어뜨리는 요소가 아닌 것은?",
+        "좁은 자간(Tracking)",
+        "모든 글자가 대문자(ALL CAPS)로 쓰인 경우",
+        "왼쪽 정렬(Left-aligned) 텍스트"
+      ],
+      "answer_index": 1,
+      "answer_text": "3",
+      "explanation": "왼쪽 정렬(Left-aligned) 텍스트"
+    },
+    {
+      "key": "XAG101_Q003",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "'판독성(Legibility)'의 올바른 정의는?",
+        "개별 글자가 얼마나 명확히 구별되는가",
+        "문장이나 문단 전체를 얼마나 쉽고 빠르게 읽을 수 있는가",
+        "글자의 색상이 얼마나 선명한가"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "개별 글자가 얼마나 명확히 구별되는가"
+    },
+    {
+      "key": "XAG101_Q004",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "'가독성(Readability)'의 올바른 정의는?",
+        "글자의 크기가 충분히 큰가",
+        "문장이나 문단 전체를 얼마나 쉽고 빠르게 읽을 수 있는가",
+        "개별 글자가 얼마나 명확히 구별되는가"
+      ],
+      "answer_index": 1,
+      "answer_text": "2",
+      "explanation": "문장이나 문단 전체를 얼마나 쉽고 빠르게 읽을 수 있는가"
+    },
+    {
+      "key": "XAG101_Q005",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "디지털 화면에서 더 높은 가독성을 제공하는 서체 종류는?",
+        "산세리프(Sans-serif) 체",
+        "세리프(Serif) 체",
+        "필기체(Script) 폰트"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "산세리프(Sans-serif) 체"
+    },
+    {
+      "key": "XAG101_Q006",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "XAG 101에서 권장하는 행간(Leading)의 크기 기준은?",
+        "글자 크기의 1.5배",
+        "글자 크기의 1.0배",
+        "글자 크기의 2.0배"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "글자 크기의 1.5배"
+    },
+    {
+      "key": "XAG101_Q007",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "전체 대문자(ALL CAPS) 사용이 난독증/인지 장애 유저의 읽기 속도를 얼마나 저하시키는가?",
+        "30% 이상",
+        "10% 이상",
+        "50% 이상"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "30% 이상"
+    },
+    {
+      "key": "XAG101_Q008",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "ALL CAPS 대신 XAG 101에서 권장하는 대소문자 활용 방식은?",
+        "문장형 대소문자(Sentence case)",
+        "모든 단어 첫 글자 대문자(Title Case)",
+        "모든 글자 소문자(lowercase)"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "문장형 대소문자(Sentence case)"
+    },
+    {
+      "key": "XAG101_Q009",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "XAG 101에서 콘솔/TV 환경의 최소 폰트 크기 기준은?",
+        "18pt",
+        "12pt",
+        "24pt"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "18pt"
+    },
+    {
+      "key": "XAG101_Q010",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "XAG 101에서 모바일/PC 환경의 최소 폰트 크기 기준은?",
+        "12pt",
+        "18pt",
+        "8pt"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "12pt"
+    },
+    {
+      "key": "XAG101_Q011",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "XAG 101에서 텍스트 정렬의 기본 권장 방식은?",
+        "왼쪽 정렬",
+        "가운데 정렬",
+        "오른쪽 정렬"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "왼쪽 정렬"
+    },
+    {
+      "key": "XAG101_Q012",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "양끝 정렬(Justified)이 가독성을 해치는 이유는?",
+        "글자 사이 간격이 불규칙해지기 때문",
+        "글자 크기가 자동으로 작아지기 때문",
+        "텍스트 색상이 변경되기 때문"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "글자 사이 간격이 불규칙해지기 때문"
+    },
+    {
+      "key": "XAG101_Q013",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "XAG 101의 우선순위 결정에서 P0(최우선)으로 분류된 항목은?",
+        "텍스트 크기 조절 기능",
+        "텍스트 배경 박스 및 불투명도 조절",
+        "폰트 스타일 변경 기능"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "텍스트 크기 조절 기능"
+    },
+    {
+      "key": "XAG101_Q014",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "XAG 101의 우선순위에서 P1(중점)으로 분류된 항목은?",
+        "텍스트 배경 박스 및 불투명도 조절",
+        "텍스트 크기 조절 기능",
+        "대소문자 변환 기능"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "텍스트 배경 박스 및 불투명도 조절"
+    },
+    {
+      "key": "XAG101_Q015",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "장식적인 서체가 저시력/난독증 유저에게 문제를 일으키는 핵심 원인은?",
+        "글자 골격(Skeleton)에 정보 노이즈가 추가되어 인지 부하가 상승하기 때문",
+        "글자 색상이 변경되기 때문",
+        "글자 크기가 자동으로 줄어들기 때문"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "글자 골격(Skeleton)에 정보 노이즈가 추가되어 인지 부하가 상승하기 때문"
+    },
+    {
+      "key": "XAG101_Q016",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "'속공간(Counter)'이란 무엇인가?",
+        "글자 안의 빈 공간 (예: 'ㅇ', 'e', 'a' 내부의 구멍)",
+        "글자와 글자 사이의 간격",
+        "줄과 줄 사이의 간격"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "글자 안의 빈 공간 (예: 'ㅇ', 'e', 'a' 내부의 구멍)"
+    },
+    {
+      "key": "XAG101_Q017",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "장식적 서체에서 속공간이 메워져 보이는 현상을 무엇이라 하는가?",
+        "블러링(Blurring) 현상",
+        "앨리어싱(Aliasing) 현상",
+        "모핑(Morphing) 현상"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "블러링(Blurring) 현상"
+    },
+    {
+      "key": "XAG101_Q018",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "다음 중 XAG 101 세부 지침에서 '필수'로 분류된 항목이 아닌 것은?",
+        "폰트 스타일 변경 옵션",
+        "폰트 크기 조절",
+        "긴 설명문에서 ALL CAPS 사용 금지"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "폰트 스타일 변경 옵션"
+    },
+    {
+      "key": "XAG101_Q019",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "산세리프(Sans-serif) 서체의 특징으로 올바른 것은?",
+        "뼈대가 명확하고 불필요한 장식이 없어 뇌가 즉각적으로 글자를 판단할 수 있다",
+        "곡선과 장식이 풍부하여 시각적 매력이 높다",
+        "필기체와 유사하여 자연스러운 느낌을 준다"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "뼈대가 명확하고 불필요한 장식이 없어 뇌가 즉각적으로 글자를 판단할 수 있다"
+    },
+    {
+      "key": "XAG101_Q020",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "한 줄을 끝까지 읽은 후 다음 줄의 시작점으로 시선을 옮기는 동작을 무엇이라 하는가?",
+        "리턴 스윕(Return Sweep)",
+        "사케이드(Saccade)",
+        "피드백 루프(Feedback Loop)"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "리턴 스윕(Return Sweep)"
+    },
+    {
+      "key": "XAG101_Q021",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "리턴 스윕(Return Sweep) 과정에서 시력/인지 장애 유저에게 빈번히 발생하는 오류는?",
+        "원래 읽던 줄을 다시 읽거나 한 줄을 건너뛰는 오류",
+        "글자의 색상을 혼동하는 오류",
+        "텍스트의 크기를 잘못 인식하는 오류"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "원래 읽던 줄을 다시 읽거나 한 줄을 건너뛰는 오류"
+    },
+    {
+      "key": "XAG101_Q022",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "난독증 유저가 양끝 정렬 텍스트에서 겪는 핵심 문제는?",
+        "불규칙한 글자 간격으로 인해 단어 형태 대신 흰 공백 패턴에 시선을 빼앗김",
+        "글자 색상이 배경과 구분되지 않음",
+        "텍스트가 자동으로 축소됨"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "불규칙한 글자 간격으로 인해 단어 형태 대신 흰 공백 패턴에 시선을 빼앗김"
+    },
+    {
+      "key": "XAG101_Q023",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "'시각적 닻(Visual Anchor)' 개념에서, 왼쪽 정렬의 들쭉날쭉한 오른쪽 끝(Ragged Right)이 하는 역할은?",
+        "뇌가 현재 읽고 있는 줄의 위치를 기억하게 돕는 시각적 이정표",
+        "텍스트의 미적 완성도를 높이는 장식 요소",
+        "글자 크기를 자동으로 조절하는 기준선"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "뇌가 현재 읽고 있는 줄의 위치를 기억하게 돕는 시각적 이정표"
+    },
+    {
+      "key": "XAG101_Q024",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "양끝 정렬에서 모든 줄의 양쪽이 수직으로 매끈할 때 발생하는 문제는?",
+        "모든 줄이 똑같이 생겨 보여 다음 줄의 시작점을 찾을 때 시선이 길을 잃음",
+        "글자 크기가 자동으로 변경됨",
+        "폰트 스타일이 강제로 변환됨"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "모든 줄이 똑같이 생겨 보여 다음 줄의 시작점을 찾을 때 시선이 길을 잃음"
+    },
+    {
+      "key": "XAG101_Q025",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "'공백의 강(Rivers of White)' 현상이란 무엇인가?",
+        "양끝 정렬에서 단어 사이 간격이 벌어져 문단 내부에 하얀 구멍들이 세로로 이어져 보이는 현상",
+        "텍스트 배경이 투명해져 글자가 사라지는 현상",
+        "폰트 크기가 너무 작아 글자 사이에 빈 공간이 보이는 현상"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "양끝 정렬에서 단어 사이 간격이 벌어져 문단 내부에 하얀 구멍들이 세로로 이어져 보이는 현상"
+    },
+    {
+      "key": "XAG101_Q026",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "'공백의 강(Rivers of White)' 현상이 시각/인지 장애 유저에게 미치는 영향은?",
+        "가로로 흐르는 텍스트보다 세로로 흐르는 '하얀 강'에 시선을 빼앗겨 문맥을 놓침",
+        "텍스트의 색상을 인식하지 못함",
+        "글자 크기가 왜곡되어 보임"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "가로로 흐르는 텍스트보다 세로로 흐르는 '하얀 강'에 시선을 빼앗겨 문맥을 놓침"
+    },
+    {
+      "key": "XAG101_Q027",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "XAG 101 심화 지침에서 본문(Body) 텍스트에 양끝 정렬을 어떻게 취급하는가?",
+        "디자인 컨셉상 필요하더라도 본문에는 절대 사용 금지",
+        "디자이너 판단에 따라 자유롭게 사용 가능",
+        "제목에만 사용 금지, 본문은 허용"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "디자인 컨셉상 필요하더라도 본문에는 절대 사용 금지"
+    },
+    {
+      "key": "XAG101_Q028",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "XAG 101 심화 지침에서 양끝 정렬 금지의 근거로 참조하는 외부 표준은?",
+        "WCAG 가이드라인",
+        "ISO 9241 표준",
+        "W3C HTML 표준"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "WCAG 가이드라인"
+    },
+    {
+      "key": "XAG101_Q029",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "디자이너가 '양끝 정렬이 더 예쁘다'고 주장할 때, 접근성 관점에서 올바른 반론은?",
+        "오른쪽 끝을 들쭉날쭉하게 열어두는 것이 유저의 시선이 다음 줄로 안전하게 착륙할 수 있는 시각적 활주로를 만드는 일이다",
+        "양끝 정렬은 기술적으로 구현이 불가능하다",
+        "양끝 정렬은 개발 비용이 더 많이 든다"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "오른쪽 끝을 들쭉날쭉하게 열어두는 것이 유저의 시선이 다음 줄로 안전하게 착륙할 수 있는 시각적 활주로를 만드는 일이다"
+    },
+    {
+      "key": "XAG101_Q030",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "왼쪽 정렬 원칙의 핵심 실무 근거를 올바르게 설명한 것은?",
+        "일관된 시작점과 불규칙한 끝점을 통한 시선 추적 보조",
+        "텍스트 렌더링 성능 최적화",
+        "다국어 지원을 위한 국제 표준 준수"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "일관된 시작점과 불규칙한 끝점을 통한 시선 추적 보조"
+    },
+    {
+      "key": "XAG101_Q031",
+      "pool_id": "XAG101",
+      "question": "multiple_choice",
+      "options": [
+        "XAG 101 심화 텍스트 정렬 지침에서 적절한 행간 유지의 기준은?",
+        "줄 사이 간격을 최소 1.5배 이상 확보",
+        "줄 사이 간격을 최소 1.0배 확보",
+        "줄 사이 간격을 최소 2.5배 이상 확보"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "줄 사이 간격을 최소 1.5배 이상 확보"
+    },
+    {
+      "key": "XAG102_Q001",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "색약/색맹 플레이어가 정보를 식별할 수 있게 하는 핵심 요소는?",
+        "명도(Luminance)의 차이",
+        "색상(Hue)의 다양성",
+        "채도(Saturation)의 강도"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "명도(Luminance)의 차이"
+    },
+    {
+      "key": "XAG102_Q002",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'휘도 대비(Luminance Contrast)'의 올바른 설명은?",
+        "색상의 종류(Hue)와 관계없이 두 영역 사이의 밝기 차이",
+        "색상의 채도 차이",
+        "텍스트의 크기 차이"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "색상의 종류(Hue)와 관계없이 두 영역 사이의 밝기 차이"
+    },
+    {
+      "key": "XAG102_Q003",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "접근성 표준에서 색을 완전히 뺀 '흑백 모드'에서도 요구하는 것은?",
+        "정보가 구분되어야 함",
+        "색상이 복원되어야 함",
+        "텍스트가 확대되어야 함"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "정보가 구분되어야 함"
+    },
+    {
+      "key": "XAG102_Q004",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "WCAG 2.1 / XAG 102에서 일반 본문 텍스트와 배경 사이의 최소 권장 대비율은?",
+        "4.5:1",
+        "3:1",
+        "7:1"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "4.5:1"
+    },
+    {
+      "key": "XAG102_Q005",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "큰 글자(18pt 이상)나 UI 요소(아이콘, 입력창 테두리)의 최소 권장 대비율은?",
+        "3:1",
+        "4.5:1",
+        "7:1"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "3:1"
+    },
+    {
+      "key": "XAG102_Q006",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'고대비 모드(High Contrast Mode)'의 올바른 설명은?",
+        "배경과 정보의 밝기를 극단적으로 반전시켜 시각적 노이즈를 제거하고 경계를 극대화하는 시스템 모드",
+        "모든 색상을 제거하고 흑백으로만 표시하는 모드",
+        "텍스트 크기를 2배로 확대하는 모드"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "배경과 정보의 밝기를 극단적으로 반전시켜 시각적 노이즈를 제거하고 경계를 극대화하는 시스템 모드"
+    },
+    {
+      "key": "XAG102_Q007",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'대비율(Contrast Ratio)'의 수치 범위는?",
+        "1:1 ~ 21:1",
+        "0:1 ~ 10:1",
+        "1:1 ~ 100:1"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "1:1 ~ 21:1"
+    },
+    {
+      "key": "XAG102_Q008",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'적응형 대비(Adaptive Contrast)'란 무엇인가?",
+        "배경색에 따라 글자색을 자동으로 흑/백 전환하는 기술",
+        "유저가 수동으로 대비를 조절하는 슬라이더",
+        "모니터 밝기를 자동으로 조절하는 하드웨어 기능"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "배경색에 따라 글자색을 자동으로 흑/백 전환하는 기술"
+    },
+    {
+      "key": "XAG102_Q009",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "XAG 102의 의사결정 가이드에서 강조하는 핵심 원칙은?",
+        "중요한 정보(대사, 체력 바, 목표 마커)는 어떤 화려한 효과 속에서도 대비를 잃지 않아야 한다",
+        "디자인의 아름다움이 접근성보다 항상 우선한다",
+        "모든 UI 요소는 반드시 21:1 대비율을 유지해야 한다"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "중요한 정보(대사, 체력 바, 목표 마커)는 어떤 화려한 효과 속에서도 대비를 잃지 않아야 한다"
+    },
+    {
+      "key": "XAG102_Q010",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "게임에서 텍스트 배경 대비 확보가 어려운 대표적 상황은?",
+        "눈 덮인 설원(흰색)에서 흰색 자막이 출력될 때",
+        "검은 배경에 흰색 텍스트가 표시될 때",
+        "단색 UI 위에 텍스트가 표시될 때"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "눈 덮인 설원(흰색)에서 흰색 자막이 출력될 때"
+    },
+    {
+      "key": "XAG102_Q011",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "배경의 시각적 노이즈가 과도할 때 유저에게 발생하는 현상은?",
+        "글자를 읽기 위해 뇌가 소모하는 에너지가 커져 인지적 피로 발생",
+        "글자의 색상이 자동으로 변경됨",
+        "텍스트 크기가 자동으로 축소됨"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "글자를 읽기 위해 뇌가 소모하는 에너지가 커져 인지적 피로 발생"
+    },
+    {
+      "key": "XAG102_Q012",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'형상-배경 분리(Figure-Ground Segregation)'란 무엇인가?",
+        "우리 뇌가 대상을 인식할 때 '주인공(형상)'과 '배경'을 분리하려는 인지 과정",
+        "화면을 전경과 후경 레이어로 나누는 렌더링 기술",
+        "텍스트와 이미지를 별도 파일로 저장하는 방식"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "우리 뇌가 대상을 인식할 때 '주인공(형상)'과 '배경'을 분리하려는 인지 과정"
+    },
+    {
+      "key": "XAG102_Q013",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'오클루전(Occlusion)의 딜레마'란 무엇인가?",
+        "가독성을 위해 배경을 가리면(박스 처리) 게임의 몰입감(배경 가시성)이 저하되는 딜레마",
+        "텍스트를 확대하면 다른 UI가 가려지는 문제",
+        "고대비 모드에서 색상 정보가 손실되는 문제"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "가독성을 위해 배경을 가리면(박스 처리) 게임의 몰입감(배경 가시성)이 저하되는 딜레마"
+    },
+    {
+      "key": "XAG102_Q014",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "불투명도 슬라이더의 역할로 올바른 것은?",
+        "배경 박스의 투명도를 0%~100%까지 조절하여 유저가 직접 최적의 가독성 대비율을 선택",
+        "텍스트 크기를 조절하는 컨트롤",
+        "게임 화면의 밝기를 조절하는 설정"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "배경 박스의 투명도를 0%~100%까지 조절하여 유저가 직접 최적의 가독성 대비율을 선택"
+    },
+    {
+      "key": "XAG102_Q015",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'텍스트 외곽선(Outline)' 기법의 역할은?",
+        "배경색에 관계없이 글자의 형태를 보존하는 최소 보조 수단으로 이중 대비를 확보",
+        "텍스트에 장식적 효과를 추가하는 디자인 기법",
+        "텍스트의 크기를 시각적으로 크게 보이게 하는 착시 효과"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "배경색에 관계없이 글자의 형태를 보존하는 최소 보조 수단으로 이중 대비를 확보"
+    },
+    {
+      "key": "XAG102_Q016",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'적응형 대비(Adaptive Contrast)'가 텍스트 배경 문제에서 보장하는 것은?",
+        "환경 변화에 따른 최소한의 가독성(4.5:1)을 상시 보장",
+        "텍스트 크기의 자동 확대",
+        "배경 이미지의 자동 제거"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "환경 변화에 따른 최소한의 가독성(4.5:1)을 상시 보장"
+    },
+    {
+      "key": "XAG102_Q017",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'배경 마스킹(Masking)' 기법의 특징은?",
+        "텍스트 영역에만 살짝 어두운 그라데이션(Vignette)을 적용하여 심미성을 보존하며 분리감 강화",
+        "전체 화면을 어둡게 만드는 필터",
+        "텍스트를 완전히 가리는 검정 박스"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "텍스트 영역에만 살짝 어두운 그라데이션(Vignette)을 적용하여 심미성을 보존하며 분리감 강화"
+    },
+    {
+      "key": "XAG102_Q018",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "팀원이 '배경을 가리는 게 싫다'고 할 때, XAG 102 관점의 올바른 답변은?",
+        "슬라이드바 형태의 옵션을 제공하면 가독성이 절실한 유저와 몰입감이 중요한 유저의 니즈를 동시에 충족 가능",
+        "배경을 무조건 가려야 접근성이 확보된다",
+        "배경을 가리지 않아도 텍스트 크기만 키우면 된다"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "슬라이드바 형태의 옵션을 제공하면 가독성이 절실한 유저와 몰입감이 중요한 유저의 니즈를 동시에 충족 가능"
+    },
+    {
+      "key": "XAG102_Q019",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'공간 주파수(Spatial Frequency)'가 높다는 것은 무엇을 의미하는가?",
+        "글자가 작고 획이 가늘다는 것",
+        "글자가 크고 획이 굵다는 것",
+        "글자 사이의 간격이 넓다는 것"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "글자가 작고 획이 가늘다는 것"
+    },
+    {
+      "key": "XAG102_Q020",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "4.5:1 대비율 기준의 근거가 되는 시력 기준은?",
+        "20/40 시력(저시력자의 일반적 기준)",
+        "20/20 시력(정상 시력)",
+        "20/100 시력(법적 시각장애 기준)"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "20/40 시력(저시력자의 일반적 기준)"
+    },
+    {
+      "key": "XAG102_Q021",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "큰 텍스트(18pt 이상)에 3:1 대비율이 허용되는 이유는?",
+        "획이 굵어 공간 주파수가 낮으므로 적은 대비로도 동일한 판독성 확보 가능",
+        "큰 텍스트는 장식적 용도로만 사용되기 때문",
+        "큰 텍스트는 저시력 유저가 읽지 않기 때문"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "획이 굵어 공간 주파수가 낮으므로 적은 대비로도 동일한 판독성 확보 가능"
+    },
+    {
+      "key": "XAG102_Q022",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "대비율 기준에서 '로고 및 장식용 텍스트'의 취급은?",
+        "정보 전달이 목적이 아닌 브랜드 아이덴티티 요소이므로 대비율 기준에서 제외",
+        "4.5:1 기준을 동일하게 적용",
+        "7:1 이상의 더 높은 기준을 적용"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "정보 전달이 목적이 아닌 브랜드 아이덴티티 요소이므로 대비율 기준에서 제외"
+    },
+    {
+      "key": "XAG102_Q023",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "21:1 대비율은 무엇을 나타내는가?",
+        "순수 흑백(#000 vs #FFF)의 대비율로, 무조건 이 수치를 맞출 필요는 없음",
+        "모든 텍스트에 반드시 적용해야 하는 최소 기준",
+        "고대비 모드에서만 사용되는 특수 수치"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "순수 흑백(#000 vs #FFF)의 대비율로, 무조건 이 수치를 맞출 필요는 없음"
+    },
+    {
+      "key": "XAG102_Q024",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'루미넌스(Luminance)'의 정의로 올바른 것은?",
+        "인간의 눈이 느끼는 빛의 상대적인 밝기로, 대비율 계산의 핵심 수치",
+        "모니터가 출력하는 절대적인 광량",
+        "색상의 채도를 나타내는 수치"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "인간의 눈이 느끼는 빛의 상대적인 밝기로, 대비율 계산의 핵심 수치"
+    },
+    {
+      "key": "XAG102_Q025",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "비텍스트 요소의 대비가 부족할 때 '조작 미숙 유저'에게 발생하는 문제는?",
+        "버튼 테두리가 배경과 구분이 안 되어 해당 요소가 클릭 가능한 것인지 인지하지 못함",
+        "텍스트가 너무 크게 표시됨",
+        "오디오가 자동으로 꺼짐"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "버튼 테두리가 배경과 구분이 안 되어 해당 요소가 클릭 가능한 것인지 인지하지 못함"
+    },
+    {
+      "key": "XAG102_Q026",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "WCAG 2.1(1.4.11) 및 XAG 102에서 기능적 그래픽 요소의 최소 대비율 기준은?",
+        "3:1",
+        "4.5:1",
+        "7:1"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "3:1"
+    },
+    {
+      "key": "XAG102_Q027",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'상태의 가시성(States Visibility)'에서 시각적으로 명확히 구분되어야 하는 것은?",
+        "선택됨(Selected), 포커스됨(Focused), 비활성화됨(Disabled) 등의 상태 변화",
+        "요소의 크기 변화만",
+        "요소의 색상만"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "선택됨(Selected), 포커스됨(Focused), 비활성화됨(Disabled) 등의 상태 변화"
+    },
+    {
+      "key": "XAG102_Q028",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "3:1 대비율 준수 대상인 '기능적 그래픽'의 예시가 아닌 것은?",
+        "게임의 분위기를 위한 배경 그림",
+        "아이콘",
+        "버튼 테두리"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "게임의 분위기를 위한 배경 그림"
+    },
+    {
+      "key": "XAG102_Q029",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "진행 바(Progress Bar)에서 대비가 필요한 부분은?",
+        "게이지의 '채워진 부분'과 '비어있는 부분' 사이",
+        "진행 바의 제목 텍스트만",
+        "진행 바 외곽 테두리만"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "게이지의 '채워진 부분'과 '비어있는 부분' 사이"
+    },
+    {
+      "key": "XAG102_Q030",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'인접 영역 대비(Adjacent Contrast)'란 무엇인가?",
+        "그래픽 요소와 그 바로 옆에 맞닿아 있는 배경 사이의 명도 차이",
+        "서로 다른 화면 간의 밝기 차이",
+        "텍스트와 텍스트 사이의 색상 차이"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "그래픽 요소와 그 바로 옆에 맞닿아 있는 배경 사이의 명도 차이"
+    },
+    {
+      "key": "XAG102_Q031",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "포커스 표시(Focus Indicator)에 대한 XAG 102의 권장 방식은?",
+        "현재 선택된 항목 주변에 두꺼운 외곽선이나 고대비 강조색 사용",
+        "선택된 항목을 깜빡이게 하는 애니메이션",
+        "선택된 항목의 크기를 2배로 확대"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "현재 선택된 항목 주변에 두꺼운 외곽선이나 고대비 강조색 사용"
+    },
+    {
+      "key": "XAG102_Q032",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "접근성에서 말하는 '대비'는 무엇의 차이를 수치화한 것인가?",
+        "두 대상 사이의 밝기(명도) 차이",
+        "두 대상 사이의 색상(Hue) 차이",
+        "두 대상 사이의 채도(Saturation) 차이"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "두 대상 사이의 밝기(명도) 차이"
+    },
+    {
+      "key": "XAG102_Q033",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "대비율 1:1은 어떤 상태를 의미하는가?",
+        "앞뒤가 완전히 같은 색으로 인지 불가능한 상태 (제로 대비)",
+        "최소한의 가독성이 확보된 상태",
+        "최대 대비 상태"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "앞뒤가 완전히 같은 색으로 인지 불가능한 상태 (제로 대비)"
+    },
+    {
+      "key": "XAG102_Q034",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "대비율 21:1은 어떤 상태를 의미하는가?",
+        "완전한 흰색(#FFFFFF)과 완전한 검정(#000000)의 차이로, 가장 명확한 최대 대비",
+        "접근성 기준의 최소 마지노선",
+        "UI 요소에만 적용되는 특수 기준"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "완전한 흰색(#FFFFFF)과 완전한 검정(#000000)의 차이로, 가장 명확한 최대 대비"
+    },
+    {
+      "key": "XAG102_Q035",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "다음 중 '낮은 대비'에 해당하여 접근성에 탈락하는 조합은?",
+        "흰색 글자 / 밝은 하늘색 배경 (색은 예쁘지만 밝기가 비슷해 글자가 배경에 묻힘)",
+        "흰색 글자 / 검정 배경",
+        "검정 글자 / 밝은 노란색 배경"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "흰색 글자 / 밝은 하늘색 배경 (색은 예쁘지만 밝기가 비슷해 글자가 배경에 묻힘)"
+    },
+    {
+      "key": "XAG102_Q036",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "빨간색 글자 / 검정색 배경 조합이 접근성 기준을 미달하는 이유는?",
+        "색 차이는 커 보이지만 빨간색의 명도가 낮아 대비율 기준을 미달",
+        "빨간색이 색맹 유저에게 보이지 않기 때문",
+        "검정 배경은 접근성 표준에서 금지되어 있기 때문"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "색 차이는 커 보이지만 빨간색의 명도가 낮아 대비율 기준을 미달"
+    },
+    {
+      "key": "XAG102_Q037",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "회색 글자 / 진한 회색 배경 조합의 문제점은?",
+        "세련되어 보일 수 있으나 저시력 유저에게는 아무것도 안 보임",
+        "색상 대비가 너무 강해 눈이 피로함",
+        "글자 크기가 자동으로 축소됨"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "세련되어 보일 수 있으나 저시력 유저에게는 아무것도 안 보임"
+    },
+    {
+      "key": "XAG102_Q038",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "4.5:1 대비율을 시각적으로 표현하면 어떤 느낌인가?",
+        "약간 답답할 수 있지만 집중하면 누구나 읽을 수 있는 최소한의 마지노선",
+        "완벽하게 선명하여 어떤 상황에서도 문제없는 수준",
+        "거의 구분이 안 되어 읽기 매우 어려운 수준"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "약간 답답할 수 있지만 집중하면 누구나 읽을 수 있는 최소한의 마지노선"
+    },
+    {
+      "key": "XAG102_Q039",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "3:1 대비율을 시각적으로 표현하면 어떤 느낌인가?",
+        "형태가 확실히 구분되어 무엇인지 식별 가능한 정도",
+        "완벽하게 선명한 상태",
+        "거의 보이지 않는 수준"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "형태가 확실히 구분되어 무엇인지 식별 가능한 정도"
+    },
+    {
+      "key": "XAG102_Q040",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'흑백 테스트(Grayscale Test)'에서 대비가 충분한 경우의 결과는?",
+        "색깔을 다 뺐는데도 글자가 선명하게 보임",
+        "색깔을 빼면 글자와 배경이 같은 회색 덩어리로 보임",
+        "색깔을 빼면 텍스트가 사라짐"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "색깔을 다 뺐는데도 글자가 선명하게 보임"
+    },
+    {
+      "key": "XAG102_Q041",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "21:1에 가까운 극단적 대비가 오히려 문제가 될 수 있는 유저 그룹은?",
+        "난독증이나 광과민성 유저 (눈부심 스트레스 발생)",
+        "색약/색맹 유저",
+        "고령 유저"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "난독증이나 광과민성 유저 (눈부심 스트레스 발생)"
+    },
+    {
+      "key": "XAG102_Q042",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "대비율이 높을수록 가독성은 어떻게 되는가?",
+        "좋아진다 (단, 극단적으로 높으면 눈부심 문제가 발생할 수 있음)",
+        "나빠진다",
+        "변화 없다"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "좋아진다 (단, 극단적으로 높으면 눈부심 문제가 발생할 수 있음)"
+    },
+    {
+      "key": "XAG102_Q043",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "색깔은 다르지만 명도 차이가 커서 가독성이 매우 좋은 조합의 예시는?",
+        "밝은 노란색 글자 / 진한 파란색 배경",
+        "빨간색 글자 / 검정색 배경",
+        "흰색 글자 / 밝은 하늘색 배경"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "밝은 노란색 글자 / 진한 파란색 배경"
+    },
+    {
+      "key": "XAG102_Q044",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "고대비 모드(HCM)가 단순히 대비를 높이는 것과 다른 핵심 차이점은?",
+        "정보의 의미(Semantic)에 따라 색상을 강제로 재할당하는 기능을 포함한다",
+        "화면 밝기만 최대로 올리는 기능이다",
+        "모든 색상을 흑백으로만 변환한다"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "정보의 의미(Semantic)에 따라 색상을 강제로 재할당하는 기능을 포함한다"
+    },
+    {
+      "key": "XAG102_Q045",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "일반적인 4.5:1 대비 확보만으로 부족한 유저 그룹은?",
+        "심한 저시력 유저 (배경의 복잡한 텍스처와 UI를 구분하기 힘듦)",
+        "정상 시력의 일반 유저",
+        "컨트롤러를 사용하는 유저"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "심한 저시력 유저 (배경의 복잡한 텍스처와 UI를 구분하기 힘듦)"
+    },
+    {
+      "key": "XAG102_Q046",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "광과민성/인지 장애 유저에게 정보 습득을 방해하는 요소는?",
+        "화면의 화려한 특수 효과나 복잡한 색상 조합이 유발하는 인지적 스트레스",
+        "텍스트 크기가 너무 큰 경우",
+        "배경이 단색인 경우"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "화면의 화려한 특수 효과나 복잡한 색상 조합이 유발하는 인지적 스트레스"
+    },
+    {
+      "key": "XAG102_Q047",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'배경 억제(Background Suppression)' 기법이란?",
+        "게임의 3D 배경이나 텍스처를 단색으로 지워서 오직 정보(UI/캐릭터)만 화면에 떠 있게 만드는 기법",
+        "배경 음악의 볼륨을 낮추는 기능",
+        "배경 이미지의 해상도를 낮추는 최적화 기법"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "게임의 3D 배경이나 텍스처를 단색으로 지워서 오직 정보(UI/캐릭터)만 화면에 떠 있게 만드는 기법"
+    },
+    {
+      "key": "XAG102_Q048",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'시맨틱 테마(Semantic Themes)'에서 색상을 할당하는 기준은?",
+        "색상의 '의미(Semantics)'에 따라 할당 (예: '위험/적군'을 뜻하는 시맨틱 컬러 1번)",
+        "디자이너의 심미적 판단에 따라 할당",
+        "플랫폼별 기본 색상 팔레트에 따라 할당"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "색상의 '의미(Semantics)'에 따라 할당 (예: '위험/적군'을 뜻하는 시맨틱 컬러 1번)"
+    },
+    {
+      "key": "XAG102_Q049",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "시맨틱 컬러링 방식으로 설계했을 때 고대비 모드에서 가능해지는 것은?",
+        "특정 의미(예: 위험/적군)에 해당하는 모든 요소를 유저가 선택한 가독성 높은 색으로 한꺼번에 교체",
+        "모든 색상을 자동으로 흑백 변환",
+        "텍스트만 고대비로 변환하고 나머지는 유지"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "특정 의미(예: 위험/적군)에 해당하는 모든 요소를 유저가 선택한 가독성 높은 색으로 한꺼번에 교체"
+    },
+    {
+      "key": "XAG102_Q050",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "고대비 모드에서 'OS 설정 연동'이란?",
+        "Windows나 콘솔 OS의 '고대비 설정'을 감지하여 게임 UI에 자동 적용하는 것",
+        "게임 내 설정을 OS에 강제 적용하는 것",
+        "OS의 해상도 설정에 맞춰 텍스트 크기를 변경하는 것"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "Windows나 콘솔 OS의 '고대비 설정'을 감지하여 게임 UI에 자동 적용하는 것"
+    },
+    {
+      "key": "XAG102_Q051",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'색상 오버라이드(Override)' 기법의 정의는?",
+        "기존의 디자인된 색상을 무시하고 접근성 설정값으로 덮어씌우는 기술",
+        "모든 색상을 동일한 색으로 통일하는 기술",
+        "색상의 채도만 높이는 필터 기술"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "기존의 디자인된 색상을 무시하고 접근성 설정값으로 덮어씌우는 기술"
+    },
+    {
+      "key": "XAG102_Q052",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "고대비 모드의 '팔레트 프리셋'으로 제공하는 검증된 색상 조합의 예시는?",
+        "흑백(Monochrome), 청황(Blue/Yellow) 등",
+        "빨강/초록 조합만 제공",
+        "게임의 기본 테마 색상만 제공"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "흑백(Monochrome), 청황(Blue/Yellow) 등"
+    },
+    {
+      "key": "XAG102_Q053",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "고대비 모드가 '항상 검은색과 흰색만 사용한다'는 인식이 틀린 이유는?",
+        "유저 취향에 따라 검정/노랑, 보라/백색 등 다양한 색상 조합이 가능하기 때문",
+        "기술적으로 흑백만 구현 가능하기 때문",
+        "접근성 표준이 흑백만 허용하기 때문"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "유저 취향에 따라 검정/노랑, 보라/백색 등 다양한 색상 조합이 가능하기 때문"
+    },
+    {
+      "key": "XAG102_Q054",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "고대비 모드 활성화 시 '비필수 요소 제거'에 해당하는 것은?",
+        "파티클, 안개, 복잡한 그림자 등 가독성 방해 요소를 비활성화",
+        "모든 UI 요소를 제거",
+        "배경 음악과 효과음을 제거"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "파티클, 안개, 복잡한 그림자 등 가독성 방해 요소를 비활성화"
+    },
+    {
+      "key": "XAG102_Q055",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "비필수 요소 제거의 실무적 근거는?",
+        "인지 부하 감소를 통해 오직 핵심 게임플레이 정보에만 집중 유도",
+        "렌더링 성능 향상을 위한 최적화",
+        "저장 용량 절약"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "인지 부하 감소를 통해 오직 핵심 게임플레이 정보에만 집중 유도"
+    },
+    {
+      "key": "XAG102_Q056",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "시맨틱 테마 설계에서 올바른 색상 정의 방식은?",
+        "'이 색은 위험/적군을 뜻하는 시맨틱 컬러 1번이다'",
+        "'이 색은 예쁜 빨간색이다'",
+        "'이 색은 디자이너가 좋아하는 색이다'"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "'이 색은 위험/적군을 뜻하는 시맨틱 컬러 1번이다'"
+    },
+    {
+      "key": "XAG102_Q057",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'색상 오버라이드'의 실무적 목적은?",
+        "배경 노이즈로부터 정보를 완전히 시각적으로 고립시키는 것",
+        "게임의 예술적 표현을 강화하는 것",
+        "브랜드 아이덴티티를 통일하는 것"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "배경 노이즈로부터 정보를 완전히 시각적으로 고립시키는 것"
+    },
+    {
+      "key": "XAG102_Q058",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'고대비 모드(High Contrast Mode)'란 무엇인가?",
+        "게임의 화려한 그래픽(노이즈)을 걷어내고, 배경과 정보의 밝기를 극단적으로 반전시켜 정보의 경계를 극대화하는 시스템 모드",
+        "화면의 모든 색상을 반전시키는 색반전 필터",
+        "텍스트만 굵게 표시하는 폰트 설정"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "게임의 화려한 그래픽(노이즈)을 걷어내고, 배경과 정보의 밝기를 극단적으로 반전시켜 정보의 경계를 극대화하는 시스템 모드"
+    },
+    {
+      "key": "XAG102_Q059",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'시맨틱 테마(Semantic Themes)'란 무엇인가?",
+        "색상을 심미적 기준이 아닌 '의미(Semantics)'에 따라 할당하여, 고대비 모드 전환 시 의미 단위로 색상을 일괄 교체할 수 있게 하는 설계 방식",
+        "게임의 스토리 테마에 맞춰 색상을 결정하는 디자인 방식",
+        "시즌별로 UI 색상을 바꾸는 라이브 서비스 기능"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "색상을 심미적 기준이 아닌 '의미(Semantics)'에 따라 할당하여, 고대비 모드 전환 시 의미 단위로 색상을 일괄 교체할 수 있게 하는 설계 방식"
+    },
+    {
+      "key": "XAG102_Q060",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "동적 배경 대비 관리에서 개발 비용 대비 가독성 확보 효율이 가장 높은 기술은?",
+        "텍스트 외곽선(Outline) 및 드롭 쉐도우(Drop Shadow)",
+        "실시간 적응형 컬러 (배경 밝기 샘플링 후 폰트 색상 실시간 반전)",
+        "AI 기반 UI 색상 최적화"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "텍스트 외곽선(Outline) 및 드롭 쉐도우(Drop Shadow)"
+    },
+    {
+      "key": "XAG102_Q061",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "'이중 레이어 보존(Dual-Layer Preservation)' 원칙에서 '무적의 공식'으로 제시하는 조합은?",
+        "흰색 글자 + 검정 외곽선 (물리적으로 어떤 배경에서도 최소 대비 확보)",
+        "검정 글자 + 흰색 배경 박스",
+        "실시간 배경 샘플링 + 자동 색상 반전"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "흰색 글자 + 검정 외곽선 (물리적으로 어떤 배경에서도 최소 대비 확보)"
+    },
+    {
+      "key": "XAG102_Q062",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "동적 대비 구현 Tier 1(기본)에 해당하는 기법은?",
+        "텍스트 외곽선 & 드롭 쉐도우 — 글자 자체에 고정된 명도 대비 부여",
+        "반투명 배경 박스(Backdrop)",
+        "동적 비네팅(Vignette)"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "텍스트 외곽선 & 드롭 쉐도우 — 글자 자체에 고정된 명도 대비 부여"
+    },
+    {
+      "key": "XAG102_Q063",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "동적 대비 구현 Tier 2(표준)에 해당하는 기법은?",
+        "반투명 배경 박스(Backdrop) — 텍스트 뒤에 어두운 판(Plate)을 깔아 배경 노이즈 차단",
+        "텍스트 외곽선 & 드롭 쉐도우",
+        "실시간 적응형 컬러"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "반투명 배경 박스(Backdrop) — 텍스트 뒤에 어두운 판(Plate)을 깔아 배경 노이즈 차단"
+    },
+    {
+      "key": "XAG102_Q064",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "동적 대비 구현 Tier 3(심화)에 해당하는 기법은?",
+        "동적 비네팅(Vignette) — 카메라 각도에 따라 자막 영역을 살짝 어둡게 처리",
+        "텍스트 외곽선 & 드롭 쉐도우",
+        "반투명 배경 박스(Backdrop)"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "동적 비네팅(Vignette) — 카메라 각도에 따라 자막 영역을 살짝 어둡게 처리"
+    },
+    {
+      "key": "XAG102_Q065",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "동적 대비 구현 Tier 4(최상)에 해당하지만 '기술적 과시'로 평가되는 기법은?",
+        "실시간 적응형 컬러 — 배경 밝기를 샘플링하여 폰트 색상을 실시간 반전",
+        "텍스트 외곽선 & 드롭 쉐도우",
+        "반투명 배경 박스(Backdrop)"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "실시간 적응형 컬러 — 배경 밝기를 샘플링하여 폰트 색상을 실시간 반전"
+    },
+    {
+      "key": "XAG102_Q066",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "실시간 색상 변환 시스템(Tier 4)의 실무적 한계는?",
+        "구현이 복잡하고 연산 비용이 높으며, 예측 불가능한 배경색에서 실패할 확률이 있음",
+        "모든 플랫폼에서 지원되지 않음",
+        "색약/색맹 유저에게만 작동함"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "구현이 복잡하고 연산 비용이 높으며, 예측 불가능한 배경색에서 실패할 확률이 있음"
+    },
+    {
+      "key": "XAG102_Q067",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "접근성 구현에서 '완벽한 기술'보다 중요한 것은 무엇인가?",
+        "확실한 정보 전달 — 기술의 화려함이 아닌 결과의 확실성",
+        "최신 기술 도입 — 최첨단 기술이 항상 최선의 접근성 보장",
+        "개발 속도 — 빠르게 출시하는 것이 우선"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "확실한 정보 전달 — 기술의 화려함이 아닌 결과의 확실성"
+    },
+    {
+      "key": "XAG102_Q068",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "높은 비용(Gold) 수준의 동적 대비 기술에 해당하는 것은?",
+        "실시간 쉐이더 샘플링, AI 기반 UI 색상 최적화",
+        "텍스트 외곽선 및 드롭 쉐도우",
+        "반투명 배경 박스"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "실시간 쉐이더 샘플링, AI 기반 UI 색상 최적화"
+    },
+    {
+      "key": "XAG102_Q069",
+      "pool_id": "XAG102",
+      "question": "multiple_choice",
+      "options": [
+        "중간 비용(Silver) 수준의 동적 대비 기술에 해당하는 것은?",
+        "씬(Scene)별 프리셋 수동 설정, 구역별 라이트 맵 연동",
+        "텍스트 외곽선 및 드롭 쉐도우",
+        "실시간 쉐이더 샘플링"
+      ],
+      "answer_index": 1,
+      "answer_text": "1",
+      "explanation": "씬(Scene)별 프리셋 수동 설정, 구역별 라이트 맵 연동"
+    }
+  ]
+}
