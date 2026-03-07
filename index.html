@@ -40,24 +40,133 @@
             max-width: 680px;
         }
 
-        /* --- Start Screen --- */
-        .start-screen {
+        /* --- Title Screen --- */
+        .title-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 80px);
             text-align: center;
-            padding-top: 60px;
         }
 
-        .start-screen h1 {
-            font-size: 32px;
+        .title-icon {
+            width: 88px;
+            height: 88px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, var(--accent), #a78bfa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            box-shadow: 0 8px 32px rgba(108, 156, 255, 0.25);
+        }
+
+        .title-icon svg {
+            width: 44px;
+            height: 44px;
+            fill: white;
+        }
+
+        .title-screen h1 {
+            font-size: 36px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
         }
 
-        .start-screen h1 span { color: var(--accent); }
+        .title-screen h1 span {
+            background: linear-gradient(135deg, var(--accent), #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title-screen .title-sub {
+            font-size: 15px;
+            color: var(--text-dim);
+            font-weight: 300;
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+
+        .title-stats {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .title-stat {
+            text-align: center;
+        }
+
+        .title-stat .stat-num {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .title-stat .stat-label {
+            font-size: 12px;
+            color: var(--text-dim);
+            margin-top: 2px;
+        }
+
+        .title-start-btn {
+            padding: 16px 64px;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--bg);
+            background: linear-gradient(135deg, var(--accent), #a78bfa);
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(108, 156, 255, 0.3);
+        }
+
+        .title-start-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(108, 156, 255, 0.4);
+        }
+
+        .title-version {
+            margin-top: 48px;
+            font-size: 11px;
+            color: var(--border);
+        }
+
+        /* --- Start Screen (Pool Select) --- */
+        .start-screen {
+            display: none;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .start-screen h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
 
         .start-screen .subtitle {
             color: var(--text-dim);
-            font-size: 15px;
-            margin-bottom: 48px;
+            font-size: 14px;
+            margin-bottom: 36px;
+        }
+
+        .start-screen .back-link {
+            display: inline-block;
+            margin-bottom: 28px;
+            font-size: 13px;
+            color: var(--text-dim);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .start-screen .back-link:hover {
+            color: var(--accent);
         }
 
         .pool-select {
@@ -449,7 +558,11 @@
 
         @media (max-width: 600px) {
             body { padding: 24px 16px; }
-            .start-screen h1 { font-size: 24px; }
+            .title-screen h1 { font-size: 28px; }
+            .title-icon { width: 72px; height: 72px; border-radius: 20px; }
+            .title-icon svg { width: 36px; height: 36px; }
+            .title-stats { gap: 16px; }
+            .title-stat .stat-num { font-size: 22px; }
             .question-card { padding: 24px 20px; }
             .question-text { font-size: 16px; }
         }
@@ -457,10 +570,23 @@
 </head>
 <body>
 <div class="app">
-    <!-- Start Screen -->
+    <!-- Title Screen -->
+    <div class="title-screen" id="titleScreen">
+        <div class="title-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </div>
+        <h1><span>XAG</span> 접근성 퀴즈</h1>
+        <p class="title-sub">Xbox Accessibility Guidelines 학습 퀴즈</p>
+        <div class="title-stats" id="titleStats"></div>
+        <button class="title-start-btn" onclick="showPoolSelect()">시작하기</button>
+        <div class="title-version" id="titleVersion"></div>
+    </div>
+
+    <!-- Pool Select Screen -->
     <div class="start-screen" id="startScreen">
-        <h1>XAG <span>접근성 퀴즈</span></h1>
-        <p class="subtitle">게임 접근성 가이드라인(XAG) 학습 퀴즈</p>
+        <span class="back-link" onclick="showTitle()">&larr; 타이틀로 돌아가기</span>
+        <h2>섹션 선택</h2>
+        <p class="subtitle">풀고 싶은 섹션을 선택하세요</p>
         <div class="pool-select" id="poolSelect"></div>
     </div>
 
@@ -573,16 +699,52 @@ function getWrongQuestions(poolId) {
     return quizData.questions.filter(q => keys.includes(q.key));
 }
 
-function goHome() {
+function hideAllScreens() {
+    document.getElementById('titleScreen').style.display = 'none';
+    document.getElementById('startScreen').style.display = 'none';
     document.getElementById('quizScreen').style.display = 'none';
     document.getElementById('resultScreen').style.display = 'none';
-    document.getElementById('startScreen').style.display = '';
+}
+
+function showTitle() {
+    hideAllScreens();
+    document.getElementById('titleScreen').style.display = '';
+    buildTitleStats();
+}
+
+function showPoolSelect() {
+    hideAllScreens();
+    document.getElementById('startScreen').style.display = 'block';
     buildStartScreen();
+}
+
+function goHome() {
+    showPoolSelect();
+}
+
+function buildTitleStats() {
+    const pools = {};
+    quizData.questions.forEach(q => {
+        if (!pools[q.pool_id]) pools[q.pool_id] = 0;
+        pools[q.pool_id]++;
+    });
+
+    const statsEl = document.getElementById('titleStats');
+    statsEl.innerHTML = `
+        <div class="title-stat"><div class="stat-num">${quizData.questions.length}</div><div class="stat-label">전체 문항</div></div>
+        <div class="title-stat"><div class="stat-num">${Object.keys(pools).length}</div><div class="stat-label">섹션</div></div>
+        <div class="title-stat"><div class="stat-num">${getWrongCount('all')}</div><div class="stat-label">오답노트</div></div>
+    `;
+
+    const versionEl = document.getElementById('titleVersion');
+    if (quizData.meta && quizData.meta.version) {
+        versionEl.textContent = `v${quizData.meta.version}`;
+    }
 }
 
 // Load quiz data from global variable (XAG_Quiz_RawData.js)
 quizData = QUIZ_DATA;
-buildStartScreen();
+buildTitleStats();
 
 function buildStartScreen() {
     const pools = {};
@@ -687,7 +849,7 @@ function startQuiz(poolId, wrongNoteMode) {
     currentIndex = 0;
     score = 0;
 
-    document.getElementById('startScreen').style.display = 'none';
+    hideAllScreens();
     document.getElementById('quizScreen').style.display = 'block';
 
     const label = wrongNoteMode
@@ -783,7 +945,7 @@ document.getElementById('nextBtn').onclick = function() {
 };
 
 function showResult() {
-    document.getElementById('quizScreen').style.display = 'none';
+    hideAllScreens();
     document.getElementById('resultScreen').style.display = 'block';
 
     const total = currentQuestions.length;
