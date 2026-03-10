@@ -556,6 +556,83 @@
             border-color: var(--incorrect);
         }
 
+        /* --- Mode Select Screen --- */
+        .mode-screen {
+            display: none;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .mode-screen h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .mode-screen .subtitle {
+            color: var(--text-dim);
+            font-size: 14px;
+            margin-bottom: 36px;
+        }
+
+        .mode-screen .back-link {
+            display: inline-block;
+            margin-bottom: 28px;
+            font-size: 13px;
+            color: var(--text-dim);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .mode-screen .back-link:hover {
+            color: var(--accent);
+        }
+
+        .mode-select {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .mode-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 22px 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            color: var(--text);
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        .mode-btn:hover {
+            border-color: var(--accent);
+            background: var(--accent-glow);
+        }
+
+        .mode-btn-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .mode-btn-desc {
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .mode-btn.random-btn {
+            border-color: rgba(108, 156, 255, 0.3);
+        }
+
+        .mode-btn.random-btn .mode-btn-title {
+            color: var(--accent);
+        }
+
         @media (max-width: 600px) {
             body { padding: 24px 16px; }
             .title-screen h1 { font-size: 28px; }
@@ -588,6 +665,23 @@
         <h2>섹션 선택</h2>
         <p class="subtitle">풀고 싶은 섹션을 선택하세요</p>
         <div class="pool-select" id="poolSelect"></div>
+    </div>
+
+    <!-- Mode Select Screen -->
+    <div class="mode-screen" id="modeScreen">
+        <span class="back-link" onclick="showPoolSelect()">&larr; 섹션 선택으로 돌아가기</span>
+        <h2 id="modePoolTitle"></h2>
+        <p class="subtitle" id="modeSubtitle"></p>
+        <div class="mode-select">
+            <button class="mode-btn random-btn" id="randomModeBtn" onclick="startModeQuiz('random')">
+                <div class="mode-btn-title">랜덤 10문제</div>
+                <div class="mode-btn-desc">무작위로 10문제를 선택해서 풀기</div>
+            </button>
+            <button class="mode-btn" onclick="startModeQuiz('all')">
+                <div class="mode-btn-title">전체 풀기</div>
+                <div class="mode-btn-desc" id="allModeBtnDesc"></div>
+            </button>
+        </div>
     </div>
 
     <!-- Quiz Screen -->
@@ -627,7 +721,7 @@
         <div class="result-message" id="resultMessage"></div>
         <div class="result-actions">
             <button onclick="goHome()">섹션 선택</button>
-            <button class="primary" id="retryBtn">같은 풀 다시 풀기</button>
+            <button class="primary" id="retryBtn">다시 풀기</button>
             <button class="danger" id="wrongNoteBtn" style="display:none">오답노트 풀기</button>
         </div>
     </div>
@@ -643,6 +737,7 @@ let answered = false;
 let currentPoolId = '';
 let isWrongNoteMode = false;
 let wrongThisSession = [];
+let selectedModePoolId = '';
 
 const LABELS = ['A', 'B', 'C', 'D'];
 const WRONG_STORAGE_KEY = 'xag_wrong_notes';
@@ -702,6 +797,7 @@ function getWrongQuestions(poolId) {
 function hideAllScreens() {
     document.getElementById('titleScreen').style.display = 'none';
     document.getElementById('startScreen').style.display = 'none';
+    document.getElementById('modeScreen').style.display = 'none';
     document.getElementById('quizScreen').style.display = 'none';
     document.getElementById('resultScreen').style.display = 'none';
 }
@@ -720,6 +816,35 @@ function showPoolSelect() {
 
 function goHome() {
     showPoolSelect();
+}
+
+function showModeSelect(poolId) {
+    selectedModePoolId = poolId;
+    const filtered = poolId === 'all'
+        ? quizData.questions
+        : quizData.questions.filter(q => q.pool_id === poolId);
+    const total = filtered.length;
+
+    hideAllScreens();
+    document.getElementById('modeScreen').style.display = 'block';
+    document.getElementById('modePoolTitle').textContent = poolId === 'all' ? '전체 문제' : poolId;
+    document.getElementById('modeSubtitle').textContent = `총 ${total}문항`;
+    document.getElementById('allModeBtnDesc').textContent = `${total}문항 전체 풀기`;
+
+    const randomBtn = document.getElementById('randomModeBtn');
+    if (total <= 10) {
+        randomBtn.style.display = 'none';
+    } else {
+        randomBtn.style.display = '';
+    }
+}
+
+function startModeQuiz(mode) {
+    if (mode === 'random') {
+        startQuiz(selectedModePoolId, false, 10);
+    } else {
+        startQuiz(selectedModePoolId, false, null);
+    }
 }
 
 function buildTitleStats() {
@@ -760,7 +885,7 @@ function buildStartScreen() {
     const allBtn = document.createElement('button');
     allBtn.className = 'pool-btn';
     allBtn.innerHTML = `<span>전체 문제</span><span class="count">${quizData.questions.length}문항</span>`;
-    allBtn.onclick = () => startQuiz('all', false);
+    allBtn.onclick = () => showModeSelect('all');
     container.appendChild(allBtn);
 
     // Per-pool buttons
@@ -768,7 +893,7 @@ function buildStartScreen() {
         const btn = document.createElement('button');
         btn.className = 'pool-btn';
         btn.innerHTML = `<span>${poolId}</span><span class="count">${count}문항</span>`;
-        btn.onclick = () => startQuiz(poolId, false);
+        btn.onclick = () => showModeSelect(poolId);
         container.appendChild(btn);
     }
 
@@ -826,7 +951,7 @@ function shuffle(arr) {
     return a;
 }
 
-function startQuiz(poolId, wrongNoteMode) {
+function startQuiz(poolId, wrongNoteMode, randomCount) {
     currentPoolId = poolId;
     isWrongNoteMode = wrongNoteMode;
     wrongThisSession = [];
@@ -845,16 +970,24 @@ function startQuiz(poolId, wrongNoteMode) {
         return;
     }
 
-    currentQuestions = shuffle(filtered);
+    const shuffled = shuffle(filtered);
+    currentQuestions = (randomCount && randomCount < shuffled.length)
+        ? shuffled.slice(0, randomCount)
+        : shuffled;
     currentIndex = 0;
     score = 0;
 
     hideAllScreens();
     document.getElementById('quizScreen').style.display = 'block';
 
-    const label = wrongNoteMode
-        ? (poolId === 'all' ? '전체 오답노트' : `${poolId} 오답노트`)
-        : (poolId === 'all' ? '전체 문제' : poolId);
+    let label;
+    if (wrongNoteMode) {
+        label = poolId === 'all' ? '전체 오답노트' : `${poolId} 오답노트`;
+    } else if (randomCount && randomCount < filtered.length) {
+        label = poolId === 'all' ? `전체 · 랜덤 ${randomCount}문제` : `${poolId} · 랜덤 ${randomCount}문제`;
+    } else {
+        label = poolId === 'all' ? '전체 문제' : poolId;
+    }
     document.getElementById('poolLabel').textContent = label;
 
     loadQuestion();
@@ -973,8 +1106,11 @@ function showResult() {
 
     // Retry button
     document.getElementById('retryBtn').onclick = () => {
-        document.getElementById('resultScreen').style.display = 'none';
-        startQuiz(currentPoolId, false);
+        if (isWrongNoteMode) {
+            startQuiz(currentPoolId, true, null);
+        } else {
+            showModeSelect(currentPoolId);
+        }
     };
 
     // Wrong note review button
