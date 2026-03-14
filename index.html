@@ -1109,7 +1109,7 @@
     <div class="ranking-screen" id="rankingScreen">
         <span class="back-link" onclick="showTitle()">&larr; 타이틀로 돌아가기</span>
         <h2>랭킹</h2>
-        <p class="subtitle">전체풀기 모드 최고 점수 랭킹</p>
+        <p class="subtitle">전체풀기 모드 최고 점수 (Fever 보너스 포함)</p>
         <div class="ranking-tabs" id="rankingTabs"></div>
         <div class="ranking-list" id="rankingList"></div>
     </div>
@@ -1200,7 +1200,7 @@ function googleLogout() {
 }
 
 // --- Firestore: Save Score ---
-async function saveScoreToFirestore(poolId, mode, scoreVal, total) {
+async function saveScoreToFirestore(poolId, mode, scoreVal, total, feverTotalScore) {
     if (!currentUser) return;
     const pct = Math.round((scoreVal / total) * 100);
     try {
@@ -1213,6 +1213,7 @@ async function saveScoreToFirestore(poolId, mode, scoreVal, total) {
             score: scoreVal,
             total: total,
             percentage: pct,
+            totalScore: feverTotalScore || scoreVal * 10,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
     } catch (err) {
@@ -1235,17 +1236,18 @@ async function loadRanking(poolId) {
         }
         const snapshot = await query.get();
 
-        // Aggregate best score per user (전체풀기만)
+        // Aggregate best score per user (전체풀기만, totalScore 기준)
         const bestByUser = {};
         snapshot.forEach(doc => {
             const d = doc.data();
             if (d.mode && d.mode !== 'all') return; // 랜덤10 제외
-            if (!bestByUser[d.uid] || d.percentage > bestByUser[d.uid].percentage) {
-                bestByUser[d.uid] = d;
+            const ts = d.totalScore || d.score * 10; // 이전 데이터 호환
+            if (!bestByUser[d.uid] || ts > (bestByUser[d.uid].totalScore || bestByUser[d.uid].score * 10)) {
+                bestByUser[d.uid] = { ...d, totalScore: ts };
             }
         });
 
-        const ranked = Object.values(bestByUser).sort((a, b) => b.percentage - a.percentage || (a.timestamp?.seconds || 0) - (b.timestamp?.seconds || 0));
+        const ranked = Object.values(bestByUser).sort((a, b) => b.totalScore - a.totalScore || (a.timestamp?.seconds || 0) - (b.timestamp?.seconds || 0));
 
         if (ranked.length === 0) {
             listEl.innerHTML = '<div class="ranking-empty">아직 기록이 없습니다.<br>퀴즈를 풀고 첫 번째 랭커가 되어보세요!</div>';
@@ -1262,9 +1264,9 @@ async function loadRanking(poolId) {
                 <img class="rank-avatar" src="${r.photoURL || ''}" alt="" onerror="this.style.display='none'">
                 <div class="rank-info">
                     <div class="rank-name">${r.nickname || '익명'}</div>
-                    <div class="rank-detail">${r.score}/${r.total}문항</div>
+                    <div class="rank-detail">${r.score}/${r.total}문항 (${r.percentage}%)</div>
                 </div>
-                <div class="rank-score">${r.percentage}<small>%</small></div>
+                <div class="rank-score">${r.totalScore}<small>점</small></div>
             `;
             listEl.appendChild(item);
         });
@@ -1822,7 +1824,7 @@ function showResult() {
 
     // Save score to Firestore (전체풀기만 랭킹에 반영)
     if (!isWrongNoteMode && currentQuizMode !== 'random') {
-        saveScoreToFirestore(currentPoolId, currentQuizMode, score, total);
+        saveScoreToFirestore(currentPoolId, currentQuizMode, score, total, totalScore);
     }
 
     // Retry button
