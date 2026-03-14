@@ -1097,7 +1097,7 @@ async function loadRanking(poolId) {
         });
     } catch (err) {
         console.error('Ranking load error:', err);
-        listEl.innerHTML = '<div class="ranking-empty">랭킹을 불러올 수 없습니다.</div>';
+        listEl.innerHTML = `<div class="ranking-empty">랭킹을 불러올 수 없습니다.<br><small style="color:var(--incorrect)">${err.code || ''}: ${err.message || err}</small></div>`;
     }
 }
 
