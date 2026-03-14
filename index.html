@@ -494,6 +494,85 @@
         .next-btn:hover { opacity: 0.85; }
         .next-btn.visible { display: block; }
 
+        /* --- OX Quiz --- */
+        .ox-btn {
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .ox-label {
+            width: 40px !important;
+            height: 40px !important;
+            font-size: 20px !important;
+            font-weight: 900 !important;
+        }
+
+        /* --- Short Answer --- */
+        .short-answer-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
+        .short-answer-input {
+            flex: 1;
+            padding: 14px 18px;
+            background: rgba(26, 29, 39, 0.7);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .short-answer-input:focus {
+            border-color: var(--accent);
+        }
+
+        .short-answer-input.correct {
+            border-color: var(--correct);
+            background: var(--correct-glow);
+        }
+
+        .short-answer-input.incorrect {
+            border-color: var(--incorrect);
+            background: var(--incorrect-glow);
+        }
+
+        .short-answer-input:disabled {
+            opacity: 0.8;
+        }
+
+        .short-answer-submit {
+            padding: 14px 24px;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+
+        .short-answer-submit:hover { opacity: 0.85; }
+        .short-answer-submit:disabled { opacity: 0.5; cursor: default; }
+
+        .short-answer-correct {
+            margin-top: 10px;
+            padding: 10px 16px;
+            background: var(--correct-glow);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            border-radius: 8px;
+            color: var(--correct);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
         /* --- Fever System --- */
         .fever-bar {
             display: flex;
@@ -1842,12 +1921,32 @@ function loadQuestion() {
     document.getElementById('progressText').textContent = `${currentIndex + 1} / ${total}`;
     document.getElementById('progressFill').style.width = `${((currentIndex) / total) * 100}%`;
 
-    // Shuffle options while tracking correct answer
-    const correctText = q.options[q.answer_index - 1];
-    const shuffledOptions = shuffle(q.options);
-
     const container = document.getElementById('optionsContainer');
     container.innerHTML = '';
+
+    const type = q.question_type || 'multiple_choice';
+
+    if (type === 'ox') {
+        loadOXQuestion(container, q);
+    } else if (type === 'short_answer') {
+        loadShortAnswerQuestion(container, q);
+    } else {
+        loadMultipleChoiceQuestion(container, q);
+    }
+
+    document.getElementById('explanation').classList.remove('visible');
+    document.getElementById('nextBtn').classList.remove('visible');
+
+    // Slide-in animation
+    const card = document.querySelector('.question-card');
+    card.classList.remove('slide-in');
+    void card.offsetWidth;
+    card.classList.add('slide-in');
+}
+
+function loadMultipleChoiceQuestion(container, q) {
+    const correctText = q.options[q.answer_index - 1];
+    const shuffledOptions = shuffle(q.options);
 
     shuffledOptions.forEach((opt, i) => {
         const btn = document.createElement('button');
@@ -1856,15 +1955,109 @@ function loadQuestion() {
         btn.onclick = () => selectOption(btn, opt, correctText, q);
         container.appendChild(btn);
     });
+}
 
-    document.getElementById('explanation').classList.remove('visible');
-    document.getElementById('nextBtn').classList.remove('visible');
+function loadOXQuestion(container, q) {
+    const correctAnswer = q.answer ? 'O' : 'X';
+    ['O', 'X'].forEach(choice => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn ox-btn';
+        btn.innerHTML = `<span class="option-label ox-label">${choice}</span><span>${choice === 'O' ? '맞다' : '틀리다'}</span>`;
+        btn.onclick = () => selectOption(btn, choice, correctAnswer, q);
+        container.appendChild(btn);
+    });
+}
 
-    // Slide-in animation
-    const card = document.querySelector('.question-card');
-    card.classList.remove('slide-in');
-    void card.offsetWidth; // force reflow
-    card.classList.add('slide-in');
+function loadShortAnswerQuestion(container, q) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'short-answer-wrapper';
+    wrapper.innerHTML = `
+        <input type="text" class="short-answer-input" id="shortAnswerInput" placeholder="정답을 입력하세요" autocomplete="off">
+        <button class="short-answer-submit" id="shortAnswerSubmit">제출</button>
+    `;
+    container.appendChild(wrapper);
+
+    const input = wrapper.querySelector('#shortAnswerInput');
+    const submitBtn = wrapper.querySelector('#shortAnswerSubmit');
+
+    const handleSubmit = () => {
+        if (answered) return;
+        const userAnswer = input.value.trim();
+        if (!userAnswer) return;
+        checkShortAnswer(userAnswer, q, input, submitBtn);
+    };
+
+    submitBtn.onclick = handleSubmit;
+    input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') handleSubmit();
+    });
+    setTimeout(() => input.focus(), 100);
+}
+
+function checkShortAnswer(userAnswer, question, input, submitBtn) {
+    if (answered) return;
+    answered = true;
+
+    const accepted = question.accepted_answers || [question.answer_text];
+    const normalize = s => s.toLowerCase().replace(/\s+/g, '').trim();
+    const isCorrect = accepted.some(a => normalize(a) === normalize(userAnswer));
+
+    input.disabled = true;
+    submitBtn.disabled = true;
+
+    if (isCorrect) {
+        input.classList.add('correct');
+    } else {
+        input.classList.add('incorrect');
+        // 정답 표시
+        const correctEl = document.createElement('div');
+        correctEl.className = 'short-answer-correct';
+        correctEl.textContent = `정답: ${question.answer_text}`;
+        input.parentElement.appendChild(correctEl);
+    }
+
+    // 공통 채점 처리
+    handleAnswerResult(isCorrect, question);
+
+    if (question.explanation) {
+        document.getElementById('explanationText').textContent = question.explanation;
+        document.getElementById('explanation').classList.add('visible');
+    }
+
+    const nextBtn = document.getElementById('nextBtn');
+    nextBtn.textContent = currentIndex < currentQuestions.length - 1 ? '다음 문제' : '결과 보기';
+    nextBtn.classList.add('visible');
+}
+
+// 공통 채점 처리 (Fever, 점수, 오답노트)
+function handleAnswerResult(isCorrect, question) {
+    showFlash(isCorrect);
+
+    if (isCorrect) {
+        score++;
+        streak++;
+
+        const prevLevel = feverLevel;
+        if (streak >= 6) feverLevel = 2;
+        else if (streak >= 3) feverLevel = 1;
+        else feverLevel = 0;
+
+        const multiplier = feverLevel === 2 ? 3 : feverLevel === 1 ? 2 : 1;
+        totalScore += 10 * multiplier;
+
+        showScorePopup(10 * multiplier, feverLevel);
+        if (feverLevel > prevLevel) showFeverPopup(feverLevel);
+
+        updateFeverUI();
+        removeWrongNote(question.pool_id, question.key);
+    } else {
+        streak = 0;
+        feverLevel = 0;
+        updateFeverUI();
+
+        addWrongNote(question.pool_id, question.key);
+        wrongThisSession.push(question.key);
+    }
 }
 
 function selectOption(selectedBtn, selectedText, correctText, question) {
@@ -1876,51 +2069,19 @@ function selectOption(selectedBtn, selectedText, correctText, question) {
 
     const isCorrect = selectedText === correctText;
 
-    // Screen flash
-    showFlash(isCorrect);
-
     if (isCorrect) {
         selectedBtn.classList.add('correct');
-        score++;
-        streak++;
-
-        // Fever 레벨 계산
-        const prevLevel = feverLevel;
-        if (streak >= 6) feverLevel = 2;       // Super Fever x3
-        else if (streak >= 3) feverLevel = 1;  // Fever x2
-        else feverLevel = 0;
-
-        // 점수 배율 적용
-        const multiplier = feverLevel === 2 ? 3 : feverLevel === 1 ? 2 : 1;
-        totalScore += 10 * multiplier;
-
-        // 점수 팝업
-        showScorePopup(10 * multiplier, feverLevel);
-
-        // Fever 레벨 변경 시 팝업
-        if (feverLevel > prevLevel) {
-            showFeverPopup(feverLevel);
-        }
-
-        updateFeverUI();
-        removeWrongNote(question.pool_id, question.key);
     } else {
         selectedBtn.classList.add('incorrect');
-        streak = 0;
-        feverLevel = 0;
-        totalScore += 0;
-        updateFeverUI();
-
         // Highlight correct answer
         buttons.forEach(btn => {
             if (btn.querySelector('span:last-child').textContent === correctText) {
                 btn.classList.add('correct');
             }
         });
-        // Add to wrong notes
-        addWrongNote(question.pool_id, question.key);
-        wrongThisSession.push(question.key);
     }
+
+    handleAnswerResult(isCorrect, question);
 
     // Dim unrelated options
     buttons.forEach(btn => {
