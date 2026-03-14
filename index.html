@@ -996,6 +996,11 @@ const db = firebase.firestore();
 let currentUser = null;
 
 // --- Auth ---
+// 모바일 리다이렉트 로그인 결과 처리
+auth.getRedirectResult().catch(err => {
+    console.error('Redirect login error:', err);
+});
+
 auth.onAuthStateChanged(user => {
     currentUser = user;
     updateAuthUI();
