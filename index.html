@@ -1865,6 +1865,70 @@ function shuffle(arr) {
     return a;
 }
 
+function weightedRandomSelect(questions, count) {
+    const wrongKeys = new Set(Object.values(getWrongNotes()).flat());
+
+    // 1) 타입별 그룹 분류
+    const byType = {};
+    questions.forEach(q => {
+        const t = q.question_type || 'multiple_choice';
+        if (!byType[t]) byType[t] = [];
+        byType[t].push(q);
+    });
+
+    const types = Object.keys(byType);
+    const result = [];
+
+    // 2) 타입별 균등 배분 (몫 + 나머지)
+    const perType = Math.floor(count / types.length);
+    let remainder = count % types.length;
+    const quotas = {};
+    shuffle(types).forEach(t => {
+        quotas[t] = perType + (remainder > 0 ? 1 : 0);
+        if (remainder > 0) remainder--;
+    });
+
+    // 3) 각 타입 내에서 오답 가중치 적용하여 선택
+    for (const t of types) {
+        const pool = byType[t];
+        const needed = Math.min(quotas[t], pool.length);
+        const picked = weightedPick(pool, needed, wrongKeys);
+        result.push(...picked);
+    }
+
+    // 부족분 보충 (특정 타입 문제가 quota보다 적을 때)
+    if (result.length < count) {
+        const pickedKeys = new Set(result.map(q => q.key));
+        const remaining = questions.filter(q => !pickedKeys.has(q.key));
+        const extra = weightedPick(remaining, count - result.length, wrongKeys);
+        result.push(...extra);
+    }
+
+    return shuffle(result);
+}
+
+function weightedPick(pool, count, wrongKeys) {
+    const WRONG_WEIGHT = 3;
+    const items = pool.map(q => ({
+        q,
+        weight: wrongKeys.has(q.key) ? WRONG_WEIGHT : 1
+    }));
+
+    const picked = [];
+    for (let i = 0; i < count && items.length > 0; i++) {
+        const totalWeight = items.reduce((s, it) => s + it.weight, 0);
+        let r = Math.random() * totalWeight;
+        let idx = 0;
+        for (let j = 0; j < items.length; j++) {
+            r -= items[j].weight;
+            if (r <= 0) { idx = j; break; }
+        }
+        picked.push(items[idx].q);
+        items.splice(idx, 1);
+    }
+    return picked;
+}
+
 function startQuiz(poolId, wrongNoteMode, randomCount) {
     currentPoolId = poolId;
     isWrongNoteMode = wrongNoteMode;
@@ -1884,10 +1948,13 @@ function startQuiz(poolId, wrongNoteMode, randomCount) {
         return;
     }
 
-    const shuffled = shuffle(filtered);
-    currentQuestions = (randomCount && randomCount < shuffled.length)
-        ? shuffled.slice(0, randomCount)
-        : shuffled;
+    let selected;
+    if (randomCount && randomCount < filtered.length) {
+        selected = weightedRandomSelect(filtered, randomCount);
+    } else {
+        selected = shuffle(filtered);
+    }
+    currentQuestions = selected;
     currentIndex = 0;
     score = 0;
     totalScore = 0;
