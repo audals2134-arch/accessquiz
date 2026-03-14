@@ -1024,10 +1024,16 @@ function updateAuthUI() {
 
 function googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider).catch(err => {
-        console.error('Login error:', err);
-        alert('로그인에 실패했습니다. 다시 시도해주세요.');
-    });
+    // 모바일에서는 redirect, PC에서는 popup 사용
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+        auth.signInWithRedirect(provider);
+    } else {
+        auth.signInWithPopup(provider).catch(err => {
+            console.error('Login error:', err);
+            alert('로그인에 실패했습니다. 다시 시도해주세요.');
+        });
+    }
 }
 
 function googleLogout() {
