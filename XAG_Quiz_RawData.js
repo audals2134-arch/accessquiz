@@ -2172,12 +2172,10 @@ const QUIZ_DATA = {
       "key": "XAG101_SA008",
       "pool_id": "XAG101",
       "question_type": "short_answer",
-      "question": "XAG 101에서 텍스트 정렬의 기본 권장 방식은?",
+      "question": "XAG 101에서 텍스트 정렬의 기본 권장 방식은? (OO 정렬)",
       "accepted_answers": [
-        "왼쪽 정렬",
-        "왼쪽정렬",
-        "Left-aligned",
-        "좌측 정렬"
+        "왼쪽",
+        "좌측"
       ],
       "answer_text": "왼쪽 정렬",
       "explanation": "XAG 101에서는 왼쪽 정렬을 기본으로 합니다. 양끝 정렬은 가독성을 해칩니다."
@@ -2201,11 +2199,11 @@ const QUIZ_DATA = {
       "question_type": "short_answer",
       "question": "큰 글자(18pt 이상)나 UI 요소(아이콘, 입력창 테두리)의 최소 권장 대비율은?",
       "accepted_answers": [
-        "0.12569444444444444",
-        "0.12569444444444444",
+        "3:1",
+        "3 : 1",
         "3대1"
       ],
-      "answer_text": "0.12569444444444444",
+      "answer_text": "3:1",
       "explanation": "큰 글자(18pt 이상)나 UI 요소의 최소 권장 대비율은 3:1입니다."
     },
     {
