@@ -999,6 +999,13 @@ let currentUser = null;
 auth.onAuthStateChanged(user => {
     currentUser = user;
     updateAuthUI();
+    if (user) {
+        loadAndMergeWrongNotes();
+    } else {
+        // 로그아웃 시 로컬 데이터로 복원
+        wrongNotesCache = loadWrongNotesFromLocal();
+        buildTitleStats();
+    }
 });
 
 function updateAuthUI() {
@@ -1139,12 +1146,26 @@ let selectedModePoolId = '';
 const LABELS = ['A', 'B', 'C', 'D'];
 const WRONG_STORAGE_KEY = 'xag_wrong_notes';
 
-function getWrongNotes() {
+// --- Wrong Notes with Firestore Sync ---
+let wrongNotesCache = {};
+let wrongNotesSyncing = false;
+
+function loadWrongNotesFromLocal() {
     try { return JSON.parse(localStorage.getItem(WRONG_STORAGE_KEY)) || {}; } catch { return {}; }
 }
 
-function saveWrongNotes(notes) {
+function saveWrongNotesToLocal(notes) {
     localStorage.setItem(WRONG_STORAGE_KEY, JSON.stringify(notes));
+}
+
+function getWrongNotes() {
+    return wrongNotesCache;
+}
+
+function saveWrongNotes(notes) {
+    wrongNotesCache = notes;
+    saveWrongNotesToLocal(notes);
+    syncWrongNotesToFirestore(notes);
 }
 
 function addWrongNote(poolId, questionKey) {
@@ -1189,6 +1210,48 @@ function getWrongQuestions(poolId) {
     }
     const keys = notes[poolId] || [];
     return quizData.questions.filter(q => keys.includes(q.key));
+}
+
+// Firestore 동기화: 저장
+async function syncWrongNotesToFirestore(notes) {
+    if (!currentUser || wrongNotesSyncing) return;
+    try {
+        await db.collection('wrongNotes').doc(currentUser.uid).set(notes);
+    } catch (err) {
+        console.error('Wrong notes sync error:', err);
+    }
+}
+
+// Firestore 동기화: 로그인 시 로드 & 병합
+async function loadAndMergeWrongNotes() {
+    if (!currentUser) return;
+    wrongNotesSyncing = true;
+    try {
+        const doc = await db.collection('wrongNotes').doc(currentUser.uid).get();
+        const serverNotes = doc.exists ? doc.data() : {};
+        const localNotes = loadWrongNotesFromLocal();
+
+        // 병합: 양쪽의 키를 합침 (union)
+        const merged = {};
+        const allPools = new Set([...Object.keys(serverNotes), ...Object.keys(localNotes)]);
+        allPools.forEach(poolId => {
+            const serverKeys = serverNotes[poolId] || [];
+            const localKeys = localNotes[poolId] || [];
+            const union = [...new Set([...serverKeys, ...localKeys])];
+            if (union.length > 0) merged[poolId] = union;
+        });
+
+        wrongNotesCache = merged;
+        saveWrongNotesToLocal(merged);
+        wrongNotesSyncing = false;
+        await db.collection('wrongNotes').doc(currentUser.uid).set(merged);
+
+        // UI 갱신
+        buildTitleStats();
+    } catch (err) {
+        console.error('Wrong notes load error:', err);
+        wrongNotesSyncing = false;
+    }
 }
 
 function hideAllScreens() {
@@ -1268,6 +1331,7 @@ function buildTitleStats() {
 
 // Load quiz data from global variable (XAG_Quiz_RawData.js)
 quizData = QUIZ_DATA;
+wrongNotesCache = loadWrongNotesFromLocal();
 buildTitleStats();
 
 function buildStartScreen() {
