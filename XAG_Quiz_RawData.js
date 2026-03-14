@@ -1,18 +1,18 @@
 const QUIZ_DATA = {
   "meta": {
-    "version": "20260307005219.",
-    "content_hash": "6122ab90",
-    "total_questions": 110,
+    "version": "20260314130337.",
+    "content_hash": "347044e0",
+    "total_questions": 133,
     "question_types": {
       "multiple_choice": 100,
-      "ox": 5,
-      "short_answer": 5
+      "ox": 20,
+      "short_answer": 13
     },
     "pools": {
       "XAG101": 117,
       "XAG102": 258
     },
-    "generated_at": "2026-03-07T00:52:19.278Z",
+    "generated_at": "2026-03-14T13:03:37.282Z",
     "source_file": "XAG_Quiz_RawData.xlsx"
   },
   "option_pools": {
@@ -1925,6 +1925,69 @@ const QUIZ_DATA = {
       "explanation": "디자인 컨셉상 필요하더라도 본문에는 양끝 정렬을 절대 사용 금지합니다. WCAG 가이드라인에 근거합니다."
     },
     {
+      "key": "XAG101_OX004",
+      "pool_id": "XAG101",
+      "question_type": "ox",
+      "question": "XAG 101에서 텍스트 정렬의 기본 권장 방식은 가운데 정렬이다.",
+      "answer": false,
+      "answer_text": "X",
+      "explanation": "XAG 101에서 텍스트 정렬의 기본 권장 방식은 왼쪽 정렬입니다. 가운데 정렬이 아닙니다."
+    },
+    {
+      "key": "XAG101_OX005",
+      "pool_id": "XAG101",
+      "question_type": "ox",
+      "question": "XAG 101에서 콘솔/TV 환경의 최소 폰트 크기 기준은 12pt이다.",
+      "answer": false,
+      "answer_text": "X",
+      "explanation": "콘솔/TV 환경에서는 최소 18pt가 기준입니다. 12pt는 모바일/PC 환경의 기준입니다."
+    },
+    {
+      "key": "XAG101_OX006",
+      "pool_id": "XAG101",
+      "question_type": "ox",
+      "question": "'판독성(Legibility)'은 개별 글자가 얼마나 명확히 구별되는가를 의미한다.",
+      "answer": true,
+      "answer_text": "O",
+      "explanation": "판독성(Legibility)은 개별 글자가 얼마나 명확히 구별되는가를 의미합니다. 문장/문단 전체의 읽기 편의성은 가독성(Readability)입니다."
+    },
+    {
+      "key": "XAG101_OX007",
+      "pool_id": "XAG101",
+      "question_type": "ox",
+      "question": "XAG 101에서 권장하는 행간(Leading)은 글자 크기의 2.0배이다.",
+      "answer": false,
+      "answer_text": "X",
+      "explanation": "XAG 101에서 권장하는 행간은 글자 크기의 1.5배입니다. 2.0배가 아닙니다."
+    },
+    {
+      "key": "XAG101_OX008",
+      "pool_id": "XAG101",
+      "question_type": "ox",
+      "question": "ALL CAPS 대신 XAG 101에서 권장하는 대소문자 활용 방식은 문장형 대소문자(Sentence case)이다.",
+      "answer": true,
+      "answer_text": "O",
+      "explanation": "전체 대문자(ALL CAPS)는 단어의 고유한 외형을 파괴하므로, 문장형 대소문자(Sentence case) 사용이 권장됩니다."
+    },
+    {
+      "key": "XAG101_OX009",
+      "pool_id": "XAG101",
+      "question_type": "ox",
+      "question": "XAG 101의 우선순위 결정에서 P0(최우선)으로 분류된 항목은 폰트 스타일 변경 기능이다.",
+      "answer": false,
+      "answer_text": "X",
+      "explanation": "P0(최우선)은 텍스트 크기 조절 기능입니다. 폰트 스타일 변경 기능은 '권장' 사항입니다."
+    },
+    {
+      "key": "XAG101_OX010",
+      "pool_id": "XAG101",
+      "question_type": "ox",
+      "question": "양끝 정렬에서 단어 사이 간격이 벌어져 세로로 하얀 구멍들이 이어져 보이는 현상을 '공백의 강(Rivers of White)'이라 한다.",
+      "answer": true,
+      "answer_text": "O",
+      "explanation": "양끝 정렬을 위해 단어 사이 간격을 강제로 벌리면 문단 내부에 하얀 구멍들이 세로로 이어지는 '공백의 강(Rivers of White)' 현상이 발생합니다."
+    },
+    {
       "key": "XAG102_OX001",
       "pool_id": "XAG102",
       "question_type": "ox",
@@ -1943,11 +2006,87 @@ const QUIZ_DATA = {
       "explanation": "로고 및 장식용 텍스트는 정보 전달이 목적이 아닌 브랜드 아이덴티티 요소이므로 대비율 기준에서 예외로 둡니다."
     },
     {
+      "key": "XAG102_OX003",
+      "pool_id": "XAG102",
+      "question_type": "ox",
+      "question": "접근성에서 말하는 '대비'는 두 대상 사이의 색상(Hue) 차이를 수치화한 것이다.",
+      "answer": false,
+      "answer_text": "X",
+      "explanation": "접근성에서의 대비는 색상(Hue)의 차이가 아니라, 두 대상 사이의 밝기(명도) 차이를 수치화한 것입니다."
+    },
+    {
+      "key": "XAG102_OX004",
+      "pool_id": "XAG102",
+      "question_type": "ox",
+      "question": "대비율 1:1은 앞뒤가 완전히 같은 색으로 인지 불가능한 상태(제로 대비)를 의미한다.",
+      "answer": true,
+      "answer_text": "O",
+      "explanation": "1:1(제로 대비)은 앞뒤가 완전히 같은 색인 상태로, 예를 들어 검정 배경에 검정 글자처럼 인지가 불가능합니다."
+    },
+    {
+      "key": "XAG102_OX005",
+      "pool_id": "XAG102",
+      "question_type": "ox",
+      "question": "21:1 대비율은 모든 텍스트에 반드시 적용해야 하는 최소 기준이다.",
+      "answer": false,
+      "answer_text": "X",
+      "explanation": "21:1은 순수 흑백(#000 vs #FFF)의 대비율이며 무조건 이 수치를 맞출 필요는 없습니다. 너무 높으면 오히려 눈이 부실 수 있습니다."
+    },
+    {
+      "key": "XAG102_OX006",
+      "pool_id": "XAG102",
+      "question_type": "ox",
+      "question": "빨간색 글자와 검정색 배경 조합은 색 차이가 커 보이지만 빨간색의 명도가 낮아 4.5:1 대비율 기준을 미달한다.",
+      "answer": true,
+      "answer_text": "O",
+      "explanation": "빨간색 글자와 검정색 배경은 색 차이는 커 보이지만, 빨간색의 명도 자체가 낮아 약 4:1 수준으로 4.5:1 기준을 미달합니다."
+    },
+    {
+      "key": "XAG102_OX007",
+      "pool_id": "XAG102",
+      "question_type": "ox",
+      "question": "고대비 모드는 항상 검은색과 흰색만 사용해야 한다.",
+      "answer": false,
+      "answer_text": "X",
+      "explanation": "고대비 모드는 항상 흑백만 사용하는 것이 아닙니다. 유저 취향에 따라 검정/노랑, 보라/백색 등 다양한 조합이 가능합니다."
+    },
+    {
+      "key": "XAG102_OX008",
+      "pool_id": "XAG102",
+      "question_type": "ox",
+      "question": "색약/색맹 플레이어가 정보를 식별할 수 있게 하는 핵심 요소는 명도(Luminance)의 차이이다.",
+      "answer": true,
+      "answer_text": "O",
+      "explanation": "색약/색맹 플레이어는 특정 색상을 구분하지 못하더라도 명도(Luminance)의 차이가 확실하면 정보를 식별할 수 있습니다."
+    },
+    {
+      "key": "XAG102_OX009",
+      "pool_id": "XAG102",
+      "question_type": "ox",
+      "question": "21:1에 가까운 극단적 대비는 어떤 유저에게도 문제가 되지 않는다.",
+      "answer": false,
+      "answer_text": "X",
+      "explanation": "21:1에 가까운 극단적 대비는 난독증이나 광과민성 유저에게 눈부심 스트레스를 줄 수 있습니다."
+    },
+    {
+      "key": "XAG102_OX010",
+      "pool_id": "XAG102",
+      "question_type": "ox",
+      "question": "'흰색 글자 + 검정 외곽선' 조합은 어떤 배경에서도 최소 대비를 확보하는 무적의 공식이다.",
+      "answer": true,
+      "answer_text": "O",
+      "explanation": "'흰색 글자 + 검정 외곽선' 조합은 실시간 색상 변환처럼 실패할 확률 없이, 물리적으로 어떤 배경에서도 최소 대비를 확보합니다."
+    },
+    {
       "key": "XAG101_SA001",
       "pool_id": "XAG101",
       "question_type": "short_answer",
       "question": "XAG 101에서 콘솔/TV 환경의 최소 폰트 크기 기준은?",
-      "accepted_answers": ["18pt", "18PT", "18"],
+      "accepted_answers": [
+        "18pt",
+        "18PT",
+        "18"
+      ],
       "answer_text": "18pt",
       "explanation": "콘솔/TV 환경에서는 최소 18pt, 모바일/PC에서는 최소 12pt를 기준으로 합니다."
     },
@@ -1956,7 +2095,11 @@ const QUIZ_DATA = {
       "pool_id": "XAG101",
       "question_type": "short_answer",
       "question": "XAG 101에서 모바일/PC 환경의 최소 폰트 크기 기준은?",
-      "accepted_answers": ["12pt", "12PT", "12"],
+      "accepted_answers": [
+        "12pt",
+        "12PT",
+        "12"
+      ],
       "answer_text": "12pt",
       "explanation": "모바일/PC에서는 최소 12pt, 콘솔/TV에서는 최소 18pt가 기준입니다."
     },
@@ -1965,27 +2108,144 @@ const QUIZ_DATA = {
       "pool_id": "XAG101",
       "question_type": "short_answer",
       "question": "XAG 101에서 권장하는 행간(Leading)은 글자 크기의 몇 배인가?",
-      "accepted_answers": ["1.5배", "1.5", "글자 크기의 1.5배"],
+      "accepted_answers": [
+        "1.5배",
+        "1.5",
+        "글자 크기의 1.5배"
+      ],
       "answer_text": "1.5배",
       "explanation": "행간(Leading)은 줄 사이의 간격으로, 글자 크기의 1.5배가 권장됩니다."
+    },
+    {
+      "key": "XAG101_SA004",
+      "pool_id": "XAG101",
+      "question_type": "short_answer",
+      "question": "전체 대문자(ALL CAPS) 사용이 난독증 유저의 읽기 속도를 얼마나 저하시키는가?",
+      "accepted_answers": [
+        "0.3",
+        "30% 이상",
+        "30퍼센트"
+      ],
+      "answer_text": "30% 이상",
+      "explanation": "전체 대문자(ALL CAPS)는 단어의 고유한 외형을 파괴하여 읽기 속도를 30% 이상 저하시킵니다."
+    },
+    {
+      "key": "XAG101_SA005",
+      "pool_id": "XAG101",
+      "question_type": "short_answer",
+      "question": "한 줄을 끝까지 읽은 후 다음 줄의 시작점으로 시선을 옮기는 동작을 무엇이라 하는가?",
+      "accepted_answers": [
+        "리턴 스윕",
+        "Return Sweep",
+        "리턴스윕"
+      ],
+      "answer_text": "리턴 스윕(Return Sweep)",
+      "explanation": "한 줄을 끝까지 읽고 다음 줄의 시작점으로 시선을 옮기는 동작을 '리턴 스윕(Return Sweep)'이라고 합니다."
+    },
+    {
+      "key": "XAG101_SA006",
+      "pool_id": "XAG101",
+      "question_type": "short_answer",
+      "question": "글자 안의 빈 공간(예: 'ㅇ', 'e', 'a' 내부의 구멍)을 무엇이라 하는가?",
+      "accepted_answers": [
+        "속공간",
+        "Counter",
+        "카운터"
+      ],
+      "answer_text": "속공간(Counter)",
+      "explanation": "속공간(Counter)은 글자 안의 빈 공간을 의미합니다. 장식적 서체에서는 이 공간이 좁거나 왜곡되어 문제가 됩니다."
+    },
+    {
+      "key": "XAG101_SA007",
+      "pool_id": "XAG101",
+      "question_type": "short_answer",
+      "question": "장식적 서체에서 속공간이 메워져 보이는 현상을 무엇이라 하는가?",
+      "accepted_answers": [
+        "블러링",
+        "Blurring",
+        "블러링 현상"
+      ],
+      "answer_text": "블러링(Blurring) 현상",
+      "explanation": "곡선이 많은 장식적 서체는 속공간이 쉽게 메워져 보이는 블러링(Blurring) 현상이 발생합니다."
+    },
+    {
+      "key": "XAG101_SA008",
+      "pool_id": "XAG101",
+      "question_type": "short_answer",
+      "question": "XAG 101에서 텍스트 정렬의 기본 권장 방식은?",
+      "accepted_answers": [
+        "왼쪽 정렬",
+        "왼쪽정렬",
+        "Left-aligned",
+        "좌측 정렬"
+      ],
+      "answer_text": "왼쪽 정렬",
+      "explanation": "XAG 101에서는 왼쪽 정렬을 기본으로 합니다. 양끝 정렬은 가독성을 해칩니다."
     },
     {
       "key": "XAG102_SA001",
       "pool_id": "XAG102",
       "question_type": "short_answer",
-      "question": "일반 본문 텍스트와 배경 사이의 최소 권장 대비율은?",
-      "accepted_answers": ["4.5:1", "4.5 : 1", "4.5대1"],
+      "question": "WCAG 2.1 / XAG 102에서 일반 본문 텍스트와 배경 사이의 최소 권장 대비율은?",
+      "accepted_answers": [
+        "4.5:1",
+        "4.5 : 1",
+        "4.5대1"
+      ],
       "answer_text": "4.5:1",
-      "explanation": "WCAG 2.1 / XAG 102에서 일반 본문 텍스트와 배경 사이의 최소 권장 대비율은 4.5:1입니다."
+      "explanation": "일반 본문 텍스트와 배경 사이의 최소 권장 대비율은 4.5:1입니다."
     },
     {
       "key": "XAG102_SA002",
       "pool_id": "XAG102",
       "question_type": "short_answer",
       "question": "큰 글자(18pt 이상)나 UI 요소(아이콘, 입력창 테두리)의 최소 권장 대비율은?",
-      "accepted_answers": ["3:1", "3 : 1", "3대1"],
-      "answer_text": "3:1",
+      "accepted_answers": [
+        "0.12569444444444444",
+        "0.12569444444444444",
+        "3대1"
+      ],
+      "answer_text": "0.12569444444444444",
       "explanation": "큰 글자(18pt 이상)나 UI 요소의 최소 권장 대비율은 3:1입니다."
+    },
+    {
+      "key": "XAG102_SA003",
+      "pool_id": "XAG102",
+      "question_type": "short_answer",
+      "question": "대비율(Contrast Ratio)의 수치 범위는?",
+      "accepted_answers": [
+        "1:1 ~ 21:1",
+        "1:1~21:1",
+        "1:1 에서 21:1"
+      ],
+      "answer_text": "1:1 ~ 21:1",
+      "explanation": "대비율은 1:1(차이 없음)부터 21:1(순수 흑백)까지의 범위를 가집니다."
+    },
+    {
+      "key": "XAG102_SA004",
+      "pool_id": "XAG102",
+      "question_type": "short_answer",
+      "question": "4.5:1 대비율 기준의 근거가 되는 시력 기준은?",
+      "accepted_answers": [
+        "20/40",
+        "20/40 시력",
+        "20/40시력"
+      ],
+      "answer_text": "20/40 시력",
+      "explanation": "4.5:1은 20/40 시력을 가진 유저(저시력자의 일반적 기준)가 일반적인 크기의 본문을 읽을 때 필요한 최소 명도 차이입니다."
+    },
+    {
+      "key": "XAG102_SA005",
+      "pool_id": "XAG102",
+      "question_type": "short_answer",
+      "question": "배경색에 따라 글자색을 자동으로 흑/백 전환하는 기술을 무엇이라 하는가?",
+      "accepted_answers": [
+        "적응형 대비",
+        "Adaptive Contrast",
+        "적응형대비"
+      ],
+      "answer_text": "적응형 대비(Adaptive Contrast)",
+      "explanation": "적응형 대비(Adaptive Contrast)는 배경색에 따라 글자색을 자동으로 흑/백 전환하는 기술입니다."
     }
   ]
 };
