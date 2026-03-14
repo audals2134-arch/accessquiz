@@ -20,6 +20,10 @@
             --correct-glow: rgba(74, 222, 128, 0.12);
             --incorrect: #f87171;
             --incorrect-glow: rgba(248, 113, 113, 0.12);
+            --fever: #f59e0b;
+            --fever-glow: rgba(245, 158, 11, 0.2);
+            --super-fever: #f43f5e;
+            --super-fever-glow: rgba(244, 63, 94, 0.25);
             --radius: 12px;
         }
 
@@ -391,6 +395,154 @@
 
         .next-btn:hover { opacity: 0.85; }
         .next-btn.visible { display: block; }
+
+        /* --- Fever System --- */
+        .fever-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            padding: 8px 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+
+        .fever-bar.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fever-bar.fever {
+            border-color: var(--fever);
+            background: var(--fever-glow);
+        }
+
+        .fever-bar.super-fever {
+            border-color: var(--super-fever);
+            background: var(--super-fever-glow);
+        }
+
+        .fever-label {
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .fever-bar.fever .fever-label {
+            color: var(--fever);
+        }
+
+        .fever-bar.super-fever .fever-label {
+            color: var(--super-fever);
+        }
+
+        .fever-gauge {
+            flex: 1;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .fever-gauge-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.4s ease;
+        }
+
+        .fever-bar.fever .fever-gauge-fill {
+            background: var(--fever);
+        }
+
+        .fever-bar.super-fever .fever-gauge-fill {
+            background: var(--super-fever);
+        }
+
+        .fever-multiplier {
+            font-weight: 700;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .fever-bar.fever .fever-multiplier {
+            color: var(--fever);
+        }
+
+        .fever-bar.super-fever .fever-multiplier {
+            color: var(--super-fever);
+        }
+
+        .fever-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.5);
+            font-size: 32px;
+            font-weight: 900;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 100;
+            text-shadow: 0 0 20px currentColor;
+            transition: none;
+        }
+
+        .fever-popup.show {
+            animation: feverPopup 1s ease forwards;
+        }
+
+        @keyframes feverPopup {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            20% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+            40% { transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -70%) scale(1); }
+        }
+
+        .fever-popup.fever { color: var(--fever); }
+        .fever-popup.super-fever { color: var(--super-fever); }
+
+        .score-popup {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            font-size: 16px;
+            font-weight: 700;
+            opacity: 0;
+            pointer-events: none;
+            animation: scoreFloat 0.8s ease forwards;
+        }
+
+        .score-popup.normal { color: var(--correct); }
+        .score-popup.fever { color: var(--fever); }
+        .score-popup.super-fever { color: var(--super-fever); }
+
+        @keyframes scoreFloat {
+            0% { opacity: 0; transform: translateY(0); }
+            30% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(-30px); }
+        }
+
+        .quiz-screen.fever-mode {
+            border-top: 2px solid var(--fever);
+        }
+
+        .quiz-screen.super-fever-mode {
+            border-top: 2px solid var(--super-fever);
+        }
+
+        .fever-score {
+            font-size: 15px;
+            color: var(--fever);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .fever-score .bonus {
+            color: var(--super-fever);
+        }
 
         /* --- Result Screen --- */
         .result-screen {
@@ -932,7 +1084,13 @@
         </div>
         <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
-        <div class="question-card">
+        <div class="fever-bar" id="feverBar">
+            <span class="fever-label" id="feverLabel">FEVER</span>
+            <div class="fever-gauge"><div class="fever-gauge-fill" id="feverGaugeFill" style="width:0%"></div></div>
+            <span class="fever-multiplier" id="feverMultiplier">x2</span>
+        </div>
+
+        <div class="question-card" style="position:relative">
             <div class="question-number" id="questionNumber"></div>
             <div class="question-text" id="questionText"></div>
         </div>
@@ -966,6 +1124,7 @@
             </svg>
             <div class="score-label"><span id="scoreNum">0</span><small id="scoreTotal">/10</small></div>
         </div>
+        <div class="fever-score" id="feverScore" style="display:none"></div>
         <div class="result-message" id="resultMessage"></div>
         <div class="result-actions">
             <button onclick="goHome()">섹션 선택</button>
@@ -1142,6 +1301,9 @@ let quizData = null;
 let currentQuestions = [];
 let currentIndex = 0;
 let score = 0;
+let totalScore = 0;
+let streak = 0;
+let feverLevel = 0; // 0: none, 1: fever(x2), 2: super fever(x3)
 let answered = false;
 let currentPoolId = '';
 let currentQuizMode = 'all';
@@ -1251,6 +1413,58 @@ async function loadAndMergeWrongNotes() {
         console.error('Wrong notes load error:', err);
         wrongNotesSyncing = false;
     }
+}
+
+function updateFeverUI() {
+    const bar = document.getElementById('feverBar');
+    const label = document.getElementById('feverLabel');
+    const fill = document.getElementById('feverGaugeFill');
+    const mult = document.getElementById('feverMultiplier');
+    const quizScreen = document.getElementById('quizScreen');
+
+    // Remove previous classes
+    bar.classList.remove('fever', 'super-fever', 'active');
+    quizScreen.classList.remove('fever-mode', 'super-fever-mode');
+
+    if (feverLevel === 0) {
+        // 게이지만 표시 (3연속까지의 진행도)
+        if (streak > 0) {
+            bar.classList.add('active', 'fever');
+            label.textContent = 'FEVER';
+            mult.textContent = `${streak}/3`;
+            fill.style.width = `${(streak / 3) * 100}%`;
+        }
+    } else if (feverLevel === 1) {
+        bar.classList.add('active', 'fever');
+        quizScreen.classList.add('fever-mode');
+        label.textContent = 'FEVER';
+        mult.textContent = 'x2';
+        fill.style.width = `${((streak - 3) / 3) * 100}%`;
+    } else if (feverLevel === 2) {
+        bar.classList.add('active', 'super-fever');
+        quizScreen.classList.add('super-fever-mode');
+        label.textContent = 'SUPER FEVER';
+        mult.textContent = 'x3';
+        fill.style.width = '100%';
+    }
+}
+
+function showFeverPopup(level) {
+    const popup = document.createElement('div');
+    popup.className = `fever-popup ${level === 2 ? 'super-fever' : 'fever'}`;
+    popup.textContent = level === 2 ? 'SUPER FEVER! x3' : 'FEVER! x2';
+    document.body.appendChild(popup);
+    requestAnimationFrame(() => popup.classList.add('show'));
+    setTimeout(() => popup.remove(), 1000);
+}
+
+function showScorePopup(points, level) {
+    const card = document.querySelector('.question-card');
+    const popup = document.createElement('div');
+    popup.className = `score-popup ${level === 2 ? 'super-fever' : level === 1 ? 'fever' : 'normal'}`;
+    popup.textContent = `+${points}`;
+    card.appendChild(popup);
+    setTimeout(() => popup.remove(), 800);
 }
 
 function hideAllScreens() {
@@ -1438,9 +1652,13 @@ function startQuiz(poolId, wrongNoteMode, randomCount) {
         : shuffled;
     currentIndex = 0;
     score = 0;
+    totalScore = 0;
+    streak = 0;
+    feverLevel = 0;
 
     hideAllScreens();
     document.getElementById('quizScreen').style.display = 'block';
+    updateFeverUI();
 
     let label;
     if (wrongNoteMode) {
@@ -1496,10 +1714,35 @@ function selectOption(selectedBtn, selectedText, correctText, question) {
     if (isCorrect) {
         selectedBtn.classList.add('correct');
         score++;
-        // Remove from wrong notes if previously wrong
+        streak++;
+
+        // Fever 레벨 계산
+        const prevLevel = feverLevel;
+        if (streak >= 6) feverLevel = 2;       // Super Fever x3
+        else if (streak >= 3) feverLevel = 1;  // Fever x2
+        else feverLevel = 0;
+
+        // 점수 배율 적용
+        const multiplier = feverLevel === 2 ? 3 : feverLevel === 1 ? 2 : 1;
+        totalScore += 10 * multiplier;
+
+        // 점수 팝업
+        showScorePopup(10 * multiplier, feverLevel);
+
+        // Fever 레벨 변경 시 팝업
+        if (feverLevel > prevLevel) {
+            showFeverPopup(feverLevel);
+        }
+
+        updateFeverUI();
         removeWrongNote(question.pool_id, question.key);
     } else {
         selectedBtn.classList.add('incorrect');
+        streak = 0;
+        feverLevel = 0;
+        totalScore += 0;
+        updateFeverUI();
+
         // Highlight correct answer
         buttons.forEach(btn => {
             if (btn.querySelector('span:last-child').textContent === correctText) {
@@ -1548,6 +1791,17 @@ function showResult() {
 
     document.getElementById('scoreNum').textContent = score;
     document.getElementById('scoreTotal').textContent = `/${total}`;
+
+    // Fever 보너스 점수 표시
+    const baseScore = score * 10;
+    const bonusScore = totalScore - baseScore;
+    const feverScoreEl = document.getElementById('feverScore');
+    if (bonusScore > 0) {
+        feverScoreEl.style.display = 'block';
+        feverScoreEl.innerHTML = `총점 ${totalScore}점 (기본 ${baseScore} + <span class="bonus">Fever 보너스 ${bonusScore}</span>)`;
+    } else {
+        feverScoreEl.style.display = 'none';
+    }
 
     // Animate ring
     const circumference = 490;
