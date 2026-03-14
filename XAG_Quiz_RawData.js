@@ -2122,9 +2122,10 @@ const QUIZ_DATA = {
       "question_type": "short_answer",
       "question": "전체 대문자(ALL CAPS) 사용이 난독증 유저의 읽기 속도를 얼마나 저하시키는가?",
       "accepted_answers": [
-        "0.3",
+        "30%",
         "30% 이상",
-        "30퍼센트"
+        "30퍼센트",
+        "30"
       ],
       "answer_text": "30% 이상",
       "explanation": "전체 대문자(ALL CAPS)는 단어의 고유한 외형을 파괴하여 읽기 속도를 30% 이상 저하시킵니다."
