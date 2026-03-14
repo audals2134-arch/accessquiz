@@ -997,8 +997,13 @@ let currentUser = null;
 
 // --- Auth ---
 // 모바일 리다이렉트 로그인 결과 처리
-auth.getRedirectResult().catch(err => {
+auth.getRedirectResult().then(result => {
+    if (result && result.user) {
+        console.log('Redirect login success:', result.user.displayName);
+    }
+}).catch(err => {
     console.error('Redirect login error:', err);
+    alert('로그인 오류: ' + err.code + ' - ' + err.message);
 });
 
 auth.onAuthStateChanged(user => {
