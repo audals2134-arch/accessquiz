@@ -1054,12 +1054,14 @@ async function loadRanking(poolId) {
     listEl.innerHTML = '<div class="ranking-empty">불러오는 중...</div>';
 
     try {
-        // Get best score per user for this pool
-        let query = db.collection('scores').orderBy('percentage', 'desc').orderBy('timestamp', 'asc');
+        // Fetch scores and sort client-side (no composite index needed)
+        let query;
         if (poolId !== 'all') {
-            query = db.collection('scores').where('pool_id', '==', poolId).orderBy('percentage', 'desc').orderBy('timestamp', 'asc');
+            query = db.collection('scores').where('pool_id', '==', poolId).limit(200);
+        } else {
+            query = db.collection('scores').limit(200);
         }
-        const snapshot = await query.limit(100).get();
+        const snapshot = await query.get();
 
         // Aggregate best score per user
         const bestByUser = {};
