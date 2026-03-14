@@ -2,9 +2,11 @@ const QUIZ_DATA = {
   "meta": {
     "version": "20260307005219.",
     "content_hash": "6122ab90",
-    "total_questions": 100,
+    "total_questions": 110,
     "question_types": {
-      "multiple_choice": 100
+      "multiple_choice": 100,
+      "ox": 5,
+      "short_answer": 5
     },
     "pools": {
       "XAG101": 117,
@@ -1894,6 +1896,96 @@ const QUIZ_DATA = {
       "answer_index": 1,
       "answer_text": "씬(Scene)별 프리셋 수동 설정, 구역별 라이트 맵 연동",
       "explanation": "중간 비용(Silver) 수준은 씬(Scene)별 프리셋 수동 설정, 구역별 라이트 맵 연동 등으로, 데이터 관리 공수가 증가합니다."
+    },
+    {
+      "key": "XAG101_OX001",
+      "pool_id": "XAG101",
+      "question_type": "ox",
+      "question": "디지털 화면에서 산세리프(Sans-serif) 체가 세리프(Serif) 체보다 더 높은 가독성을 제공한다.",
+      "answer": true,
+      "answer_text": "O",
+      "explanation": "장식적인 세리프(Serif) 체보다 단순한 산세리프(Sans-serif) 체가 디지털 화면에서 훨씬 높은 가독성을 제공합니다."
+    },
+    {
+      "key": "XAG101_OX002",
+      "pool_id": "XAG101",
+      "question_type": "ox",
+      "question": "전체 대문자(ALL CAPS) 사용은 난독증 유저의 읽기 속도를 50% 이상 저하시킨다.",
+      "answer": false,
+      "answer_text": "X",
+      "explanation": "전체 대문자(ALL CAPS)는 읽기 속도를 30% 이상 저하시킵니다. 50%가 아닌 30%가 정답입니다."
+    },
+    {
+      "key": "XAG101_OX003",
+      "pool_id": "XAG101",
+      "question_type": "ox",
+      "question": "XAG 101에서 본문(Body) 텍스트에 양끝 정렬(Justified)은 디자인 컨셉상 필요한 경우 허용된다.",
+      "answer": false,
+      "answer_text": "X",
+      "explanation": "디자인 컨셉상 필요하더라도 본문에는 양끝 정렬을 절대 사용 금지합니다. WCAG 가이드라인에 근거합니다."
+    },
+    {
+      "key": "XAG102_OX001",
+      "pool_id": "XAG102",
+      "question_type": "ox",
+      "question": "WCAG 2.1 / XAG 102에서 일반 본문 텍스트와 배경 사이의 최소 권장 대비율은 4.5:1이다.",
+      "answer": true,
+      "answer_text": "O",
+      "explanation": "일반적인 본문 텍스트와 배경 사이의 최소 권장 대비율은 4.5:1입니다."
+    },
+    {
+      "key": "XAG102_OX002",
+      "pool_id": "XAG102",
+      "question_type": "ox",
+      "question": "로고 및 장식용 텍스트도 일반 텍스트와 동일한 대비율 기준(4.5:1)을 적용해야 한다.",
+      "answer": false,
+      "answer_text": "X",
+      "explanation": "로고 및 장식용 텍스트는 정보 전달이 목적이 아닌 브랜드 아이덴티티 요소이므로 대비율 기준에서 예외로 둡니다."
+    },
+    {
+      "key": "XAG101_SA001",
+      "pool_id": "XAG101",
+      "question_type": "short_answer",
+      "question": "XAG 101에서 콘솔/TV 환경의 최소 폰트 크기 기준은?",
+      "accepted_answers": ["18pt", "18PT", "18"],
+      "answer_text": "18pt",
+      "explanation": "콘솔/TV 환경에서는 최소 18pt, 모바일/PC에서는 최소 12pt를 기준으로 합니다."
+    },
+    {
+      "key": "XAG101_SA002",
+      "pool_id": "XAG101",
+      "question_type": "short_answer",
+      "question": "XAG 101에서 모바일/PC 환경의 최소 폰트 크기 기준은?",
+      "accepted_answers": ["12pt", "12PT", "12"],
+      "answer_text": "12pt",
+      "explanation": "모바일/PC에서는 최소 12pt, 콘솔/TV에서는 최소 18pt가 기준입니다."
+    },
+    {
+      "key": "XAG101_SA003",
+      "pool_id": "XAG101",
+      "question_type": "short_answer",
+      "question": "XAG 101에서 권장하는 행간(Leading)은 글자 크기의 몇 배인가?",
+      "accepted_answers": ["1.5배", "1.5", "글자 크기의 1.5배"],
+      "answer_text": "1.5배",
+      "explanation": "행간(Leading)은 줄 사이의 간격으로, 글자 크기의 1.5배가 권장됩니다."
+    },
+    {
+      "key": "XAG102_SA001",
+      "pool_id": "XAG102",
+      "question_type": "short_answer",
+      "question": "일반 본문 텍스트와 배경 사이의 최소 권장 대비율은?",
+      "accepted_answers": ["4.5:1", "4.5 : 1", "4.5대1"],
+      "answer_text": "4.5:1",
+      "explanation": "WCAG 2.1 / XAG 102에서 일반 본문 텍스트와 배경 사이의 최소 권장 대비율은 4.5:1입니다."
+    },
+    {
+      "key": "XAG102_SA002",
+      "pool_id": "XAG102",
+      "question_type": "short_answer",
+      "question": "큰 글자(18pt 이상)나 UI 요소(아이콘, 입력창 테두리)의 최소 권장 대비율은?",
+      "accepted_answers": ["3:1", "3 : 1", "3대1"],
+      "answer_text": "3:1",
+      "explanation": "큰 글자(18pt 이상)나 UI 요소의 최소 권장 대비율은 3:1입니다."
     }
   ]
 };
