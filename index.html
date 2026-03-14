@@ -951,7 +951,7 @@
     <div class="ranking-screen" id="rankingScreen">
         <span class="back-link" onclick="showTitle()">&larr; 타이틀로 돌아가기</span>
         <h2>랭킹</h2>
-        <p class="subtitle">섹션별 최고 점수 랭킹</p>
+        <p class="subtitle">전체풀기 모드 최고 점수 랭킹</p>
         <div class="ranking-tabs" id="rankingTabs"></div>
         <div class="ranking-list" id="rankingList"></div>
     </div>
@@ -1063,10 +1063,11 @@ async function loadRanking(poolId) {
         }
         const snapshot = await query.get();
 
-        // Aggregate best score per user
+        // Aggregate best score per user (전체풀기만)
         const bestByUser = {};
         snapshot.forEach(doc => {
             const d = doc.data();
+            if (d.mode && d.mode !== 'all') return; // 랜덤10 제외
             if (!bestByUser[d.uid] || d.percentage > bestByUser[d.uid].percentage) {
                 bestByUser[d.uid] = d;
             }
@@ -1502,8 +1503,8 @@ function showResult() {
 
     document.getElementById('resultMessage').textContent = msg;
 
-    // Save score to Firestore
-    if (!isWrongNoteMode) {
+    // Save score to Firestore (전체풀기만 랭킹에 반영)
+    if (!isWrongNoteMode && currentQuizMode !== 'random') {
         saveScoreToFirestore(currentPoolId, currentQuizMode, score, total);
     }
 
