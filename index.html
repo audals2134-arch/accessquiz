@@ -1228,31 +1228,24 @@ async function syncWrongNotesToFirestore(notes) {
     }
 }
 
-// Firestore 동기화: 로그인 시 로드 & 병합
+// Firestore 동기화: 로그인 시 서버 데이터 로드
 async function loadAndMergeWrongNotes() {
     if (!currentUser) return;
     wrongNotesSyncing = true;
     try {
         const doc = await db.collection('wrongNotes').doc(currentUser.uid).get();
-        const serverNotes = doc.exists ? doc.data() : {};
-        const localNotes = loadWrongNotesFromLocal();
-
-        // 병합: 양쪽의 키를 합침 (union)
-        const merged = {};
-        const allPools = new Set([...Object.keys(serverNotes), ...Object.keys(localNotes)]);
-        allPools.forEach(poolId => {
-            const serverKeys = serverNotes[poolId] || [];
-            const localKeys = localNotes[poolId] || [];
-            const union = [...new Set([...serverKeys, ...localKeys])];
-            if (union.length > 0) merged[poolId] = union;
-        });
-
-        wrongNotesCache = merged;
-        saveWrongNotesToLocal(merged);
+        if (doc.exists) {
+            // 서버 데이터가 있으면 서버 우선
+            const serverNotes = doc.data();
+            wrongNotesCache = serverNotes;
+            saveWrongNotesToLocal(serverNotes);
+        } else {
+            // 첫 로그인: 로컬 데이터를 서버에 업로드
+            const localNotes = loadWrongNotesFromLocal();
+            wrongNotesCache = localNotes;
+            await db.collection('wrongNotes').doc(currentUser.uid).set(localNotes);
+        }
         wrongNotesSyncing = false;
-        await db.collection('wrongNotes').doc(currentUser.uid).set(merged);
-
-        // UI 갱신
         buildTitleStats();
     } catch (err) {
         console.error('Wrong notes load error:', err);
