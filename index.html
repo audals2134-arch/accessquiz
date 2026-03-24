@@ -1284,8 +1284,16 @@
             font-size: 14px;
         }
 
-        .ranking-btn {
-            padding: 12px 28px;
+        .title-sub-btns {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .ranking-btn, .guide-btn {
+            flex: 1;
+            padding: 12px 16px;
+            white-space: nowrap;
             border-radius: 10px;
             font-family: inherit;
             font-size: 14px;
@@ -1297,9 +1305,140 @@
             color: var(--text);
         }
 
-        .ranking-btn:hover {
+        .ranking-btn:hover, .guide-btn:hover {
             border-color: var(--accent);
             background: var(--accent-glow);
+        }
+
+        /* --- Guide Modal --- */
+        .guide-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 0.25s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .guide-modal {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            max-width: 520px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 28px 24px;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        [data-theme="light"] .guide-overlay {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        [data-theme="light"] .guide-modal {
+            background: #ffffff;
+        }
+
+        .guide-modal h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .guide-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-dim);
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .guide-close:hover {
+            border-color: var(--incorrect);
+            color: var(--incorrect);
+        }
+
+        .guide-section {
+            margin-bottom: 18px;
+        }
+
+        .guide-section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .guide-section-title .guide-icon {
+            font-size: 16px;
+        }
+
+        .guide-item {
+            font-size: 13px;
+            color: var(--text-dim);
+            line-height: 1.7;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .guide-item::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--text-dim);
+        }
+
+        .guide-item strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .guide-highlight {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 12px;
+            padding: 1px 8px;
+            border-radius: 4px;
+        }
+
+        .guide-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 16px 0;
         }
 
         /* --- Typing Animation --- */
@@ -1396,6 +1535,10 @@
 
         .title-start-btn {
             animation: titleFadeIn 0.8s ease 0.6s both, btnPulse 3s ease-in-out 1.4s infinite;
+        }
+
+        .title-sub-btns {
+            animation: titleFadeIn 0.8s ease 0.7s both;
         }
 
         @keyframes titleFadeIn {
@@ -1942,8 +2085,64 @@
             </div>
         </div>
         <button class="title-start-btn" onclick="showPoolSelect()">시작하기</button>
-        <button class="ranking-btn" onclick="showRanking()" style="margin-top:12px">랭킹 보기</button>
+        <div class="title-sub-btns">
+            <button class="ranking-btn" onclick="showRanking()">랭킹 보기</button>
+            <button class="guide-btn" onclick="showGuide()">게임 가이드</button>
+        </div>
         <div class="title-version" id="titleVersion"></div>
+    </div>
+
+    <!-- Guide Modal -->
+    <div class="guide-overlay" id="guideOverlay" style="display:none" onclick="if(event.target===this)closeGuide()">
+        <div class="guide-modal">
+            <button class="guide-close" onclick="closeGuide()">&times;</button>
+            <h3>게임 가이드</h3>
+
+            <div class="guide-section">
+                <div class="guide-section-title"><span class="guide-icon">&#127918;</span> 게임 모드</div>
+                <div class="guide-item"><strong>랜덤 10문제</strong> — MC/OX/주관식 균등 배분, 랭킹 미반영</div>
+                <div class="guide-item"><strong>전체 풀기</strong> — 선택 섹션 전체 문제, 랭킹 반영</div>
+                <div class="guide-item"><strong>타임어택</strong> — 문제당 10초 제한, <span class="guide-highlight">배점 x2</span> + 타임 보너스</div>
+                <div class="guide-item"><strong>오답노트</strong> — 틀린 문제만 모아 재도전</div>
+            </div>
+
+            <div class="guide-divider"></div>
+
+            <div class="guide-section">
+                <div class="guide-section-title"><span class="guide-icon">&#128293;</span> Fever 시스템</div>
+                <div class="guide-item"><strong>3연속 정답</strong> → FEVER 발동 <span class="guide-highlight">x2 배율</span></div>
+                <div class="guide-item"><strong>6연속 정답</strong> → SUPER FEVER <span class="guide-highlight">x3 배율</span></div>
+                <div class="guide-item">오답 시 연속 카운트 및 Fever <strong>즉시 리셋</strong></div>
+            </div>
+
+            <div class="guide-divider"></div>
+
+            <div class="guide-section">
+                <div class="guide-section-title"><span class="guide-icon">&#9202;</span> 타임어택 점수 계산</div>
+                <div class="guide-item">기본 점수 <strong>20점</strong> (일반 모드의 2배)</div>
+                <div class="guide-item">Fever 배율 적용 → 최대 <strong>60점/문제</strong></div>
+                <div class="guide-item">타임 보너스: 남은 초 × 2점 추가</div>
+                <div class="guide-item">예시: 7초 남기고 정답 + FEVER = <strong>40 + 14 = 54점</strong></div>
+            </div>
+
+            <div class="guide-divider"></div>
+
+            <div class="guide-section">
+                <div class="guide-section-title"><span class="guide-icon">&#128221;</span> 문제 유형</div>
+                <div class="guide-item"><strong>4지선다</strong> — 4개 보기 중 정답 선택</div>
+                <div class="guide-item"><strong>OX퀴즈</strong> — 맞다/틀리다 선택</div>
+                <div class="guide-item"><strong>주관식</strong> — 정답 직접 입력 (대소문자/공백 무시)</div>
+            </div>
+
+            <div class="guide-divider"></div>
+
+            <div class="guide-section">
+                <div class="guide-section-title"><span class="guide-icon">&#127942;</span> 랭킹</div>
+                <div class="guide-item"><strong>전체 풀기</strong>와 <strong>타임어택 전체</strong> 모드만 반영</div>
+                <div class="guide-item">총점(Fever + 타임 보너스 포함) 기준 순위 산정</div>
+                <div class="guide-item">로그인 시 자동 기록, 유저별 최고 점수만 표시</div>
+            </div>
+        </div>
     </div>
 
     <!-- Pool Select Screen -->
@@ -3304,6 +3503,19 @@ function launchConfetti(count) {
             setTimeout(() => piece.remove(), 4000);
         }, Math.random() * 1000);
     }
+}
+
+// --- Guide Modal ---
+function showGuide() {
+    const overlay = document.getElementById('guideOverlay');
+    overlay.style.display = 'flex';
+    overlay.style.animation = 'none';
+    void overlay.offsetWidth;
+    overlay.style.animation = '';
+}
+
+function closeGuide() {
+    document.getElementById('guideOverlay').style.display = 'none';
 }
 
 // --- Theme Toggle ---
