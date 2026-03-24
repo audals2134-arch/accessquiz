@@ -25,13 +25,34 @@
             --super-fever: #f43f5e;
             --super-fever-glow: rgba(244, 63, 94, 0.25);
             --radius: 12px;
+            --body-bg: linear-gradient(135deg, #0a0d14 0%, #0f1524 30%, #121230 60%, #0f1117 100%);
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f5f7;
+            --surface: #ffffff;
+            --surface-hover: #f0f0f5;
+            --border: #d8dae5;
+            --text: #1a1d27;
+            --text-dim: #6b7089;
+            --accent: #4a7adf;
+            --accent-glow: rgba(74, 122, 223, 0.12);
+            --correct: #22a55b;
+            --correct-glow: rgba(34, 165, 91, 0.1);
+            --incorrect: #e04545;
+            --incorrect-glow: rgba(224, 69, 69, 0.1);
+            --fever: #d97706;
+            --fever-glow: rgba(217, 119, 6, 0.12);
+            --super-fever: #dc2c4a;
+            --super-fever-glow: rgba(220, 44, 74, 0.15);
+            --body-bg: linear-gradient(135deg, #e8ecf4 0%, #f0f2f8 30%, #eee8f5 60%, #f5f5f7 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            background: var(--bg);
+            background: var(--body-bg);
             color: var(--text);
             min-height: 100vh;
             display: flex;
@@ -447,6 +468,40 @@
         .quiz-flash.incorrect-flash {
             background: radial-gradient(ellipse at center, rgba(248, 113, 113, 0.15) 0%, transparent 70%);
             animation: flashIn 0.5s ease forwards;
+        }
+
+        /* Red vignette on wrong answer */
+        .quiz-vignette {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 49;
+            opacity: 0;
+            box-shadow: inset 0 0 120px 40px rgba(248, 60, 60, 0.4);
+            animation: vignetteFlash 0.8s ease forwards;
+        }
+
+        @keyframes vignetteFlash {
+            0% { opacity: 0; }
+            15% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Fever particle burst */
+        .fever-burst-piece {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 90;
+            animation: burstOut 1s ease-out forwards;
+        }
+
+        @keyframes burstOut {
+            0% { opacity: 1; transform: translate(0, 0) scale(1); }
+            100% { opacity: 0; transform: translate(var(--bx), var(--by)) scale(0); }
         }
 
         @keyframes flashIn {
@@ -1247,6 +1302,417 @@
             background: var(--accent-glow);
         }
 
+        /* --- Typing Animation --- */
+        .typing-text {
+            overflow: hidden;
+            border-right: 2px solid var(--accent);
+            white-space: nowrap;
+            animation: typing 1.5s steps(30, end) forwards, blinkCaret 0.6s step-end infinite;
+            width: 0;
+            display: inline-block;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blinkCaret {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--accent); }
+        }
+
+        /* --- Ripple Effect --- */
+        .option-btn, .pool-btn, .mode-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(108, 156, 255, 0.3);
+            transform: scale(0);
+            animation: rippleAnim 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes rippleAnim {
+            to { transform: scale(4); opacity: 0; }
+        }
+
+        /* --- Screen Shake --- */
+        @keyframes screenShake {
+            0%, 100% { transform: translateX(0); }
+            10% { transform: translateX(-8px) rotate(-0.5deg); }
+            20% { transform: translateX(8px) rotate(0.5deg); }
+            30% { transform: translateX(-6px); }
+            40% { transform: translateX(6px); }
+            50% { transform: translateX(-4px); }
+            60% { transform: translateX(4px); }
+            70% { transform: translateX(-2px); }
+            80% { transform: translateX(2px); }
+        }
+
+        .shake-screen {
+            animation: screenShake 0.5s ease;
+        }
+
+        /* --- Enhanced Correct Animation --- */
+        @keyframes correctBounce {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.05); }
+            30% { transform: scale(0.97); }
+            45% { transform: scale(1.02); }
+            60% { transform: scale(1); }
+        }
+
+        .option-btn.correct {
+            animation: correctBounce 0.6s ease !important;
+            box-shadow: 0 0 20px var(--correct-glow), 0 0 40px rgba(74, 222, 128, 0.1);
+        }
+
+        /* --- Glow on Hover --- */
+        .option-btn:hover:not(:disabled) {
+            box-shadow: 0 0 20px rgba(108, 156, 255, 0.15), 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- Title Screen Animations --- */
+        .title-screen h1 {
+            animation: titleFadeIn 0.8s ease;
+        }
+
+        .title-screen .title-sub {
+            animation: titleFadeIn 0.8s ease 0.2s both;
+        }
+
+        .title-stats {
+            animation: titleFadeIn 0.8s ease 0.4s both;
+        }
+
+        .auth-area {
+            animation: titleFadeIn 0.8s ease 0.5s both;
+        }
+
+        .title-start-btn {
+            animation: titleFadeIn 0.8s ease 0.6s both, btnPulse 3s ease-in-out 1.4s infinite;
+        }
+
+        @keyframes titleFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes btnPulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(108, 156, 255, 0.3); }
+            50% { box-shadow: 0 4px 30px rgba(108, 156, 255, 0.5), 0 0 60px rgba(108, 156, 255, 0.15); }
+        }
+
+        /* --- Progress Bar Glow --- */
+        .progress-fill {
+            box-shadow: 0 0 8px rgba(108, 156, 255, 0.4), 0 0 16px rgba(108, 156, 255, 0.2);
+        }
+
+        /* --- Score Ring Glow --- */
+        .score-ring .fg-circle {
+            filter: drop-shadow(0 0 6px rgba(108, 156, 255, 0.4));
+        }
+
+        /* --- Streak Counter Badge --- */
+        .streak-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--fever), #ff6b35);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            pointer-events: none;
+            opacity: 0;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .streak-badge.visible {
+            opacity: 1;
+            top: -16px;
+        }
+
+        /* --- Enhanced Fever Pulse --- */
+        .fever-bar.active {
+            box-shadow: 0 0 12px rgba(245, 158, 11, 0.15);
+        }
+
+        .fever-bar.super-fever {
+            box-shadow: 0 0 16px rgba(244, 63, 94, 0.2);
+            animation: superFeverGlow 1s ease-in-out infinite;
+        }
+
+        @keyframes superFeverGlow {
+            0%, 100% { box-shadow: 0 0 16px rgba(244, 63, 94, 0.2); }
+            50% { box-shadow: 0 0 24px rgba(244, 63, 94, 0.35), 0 0 48px rgba(244, 63, 94, 0.1); }
+        }
+
+        /* --- Question number chip style --- */
+        .question-number {
+            display: inline-block;
+            background: rgba(108, 156, 255, 0.12);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+
+        /* --- Next button enhanced --- */
+        .next-btn {
+            background: linear-gradient(135deg, var(--accent), #a78bfa);
+            box-shadow: 0 4px 16px rgba(108, 156, 255, 0.3);
+            transition: all 0.3s;
+        }
+
+        .next-btn:hover {
+            opacity: 1 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(108, 156, 255, 0.4);
+        }
+
+        /* --- Explanation slide in --- */
+        .explanation.visible {
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Pool button stagger animation --- */
+        .pool-select .pool-btn,
+        .mode-select .mode-btn {
+            animation: listItemIn 0.4s ease both;
+        }
+
+        @keyframes listItemIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* --- Combo Counter --- */
+        .combo-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.3);
+            font-size: 48px;
+            font-weight: 900;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 110;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .combo-popup .combo-num {
+            font-size: 64px;
+            display: block;
+        }
+
+        .combo-popup .combo-label {
+            font-size: 24px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .combo-popup.show {
+            animation: comboIn 1.2s ease forwards;
+        }
+
+        @keyframes comboIn {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.3) rotate(-10deg); }
+            15% { opacity: 1; transform: translate(-50%, -50%) scale(1.3) rotate(3deg); }
+            30% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+            70% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -70%) scale(0.8); }
+        }
+
+        .combo-popup.combo-3 { color: #22d3ee; text-shadow: 0 0 30px rgba(34, 211, 238, 0.5); }
+        .combo-popup.combo-5 { color: var(--fever); text-shadow: 0 0 30px rgba(245, 158, 11, 0.5); }
+        .combo-popup.combo-7 { color: var(--super-fever); text-shadow: 0 0 40px rgba(244, 63, 94, 0.6); }
+        .combo-popup.combo-10 { color: #e879f9; text-shadow: 0 0 50px rgba(232, 121, 249, 0.6); font-size: 56px; }
+
+        /* --- Result Grade Badge --- */
+        .grade-badge {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            font-weight: 900;
+            animation: gradeIn 1s cubic-bezier(0.17, 0.67, 0.35, 1.3) 0.3s both;
+            position: relative;
+        }
+
+        .grade-badge::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, currentColor 0%, transparent 70%);
+            opacity: 0;
+            animation: gradeBurst 1s ease 0.3s both;
+        }
+
+        .grade-badge::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 3px solid currentColor;
+            opacity: 0;
+            animation: gradeRing 1.5s ease 0.6s both;
+        }
+
+        @keyframes gradeIn {
+            0% { opacity: 0; transform: scale(0) rotate(-180deg); }
+            40% { opacity: 1; transform: scale(1.4) rotate(10deg); }
+            60% { transform: scale(0.9) rotate(-5deg); }
+            80% { transform: scale(1.1) rotate(2deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        @keyframes gradeBurst {
+            0% { opacity: 0; transform: scale(0.5); }
+            30% { opacity: 0.4; transform: scale(1.5); }
+            100% { opacity: 0; transform: scale(2.5); }
+        }
+
+        @keyframes gradeRing {
+            0% { opacity: 0; transform: scale(0.8); }
+            40% { opacity: 0.5; }
+            100% { opacity: 0.3; transform: scale(1); }
+        }
+
+        .grade-s { color: #fbbf24; background: rgba(251, 191, 36, 0.15); text-shadow: 0 0 30px rgba(251, 191, 36, 0.6); animation: gradeIn 1s cubic-bezier(0.17, 0.67, 0.35, 1.3) 0.3s both, gradeShineS 2s ease-in-out 1.5s infinite; }
+        .grade-a { color: #a78bfa; background: rgba(167, 139, 250, 0.15); text-shadow: 0 0 25px rgba(167, 139, 250, 0.5); }
+        .grade-b { color: #22d3ee; background: rgba(34, 211, 238, 0.12); text-shadow: 0 0 20px rgba(34, 211, 238, 0.4); }
+        .grade-c { color: #4ade80; background: rgba(74, 222, 128, 0.1); }
+        .grade-d { color: var(--text-dim); background: rgba(139, 143, 163, 0.1); }
+
+        @keyframes gradeShineS {
+            0%, 100% { text-shadow: 0 0 30px rgba(251, 191, 36, 0.6); box-shadow: 0 0 20px rgba(251, 191, 36, 0.15); }
+            50% { text-shadow: 0 0 50px rgba(251, 191, 36, 0.9), 0 0 80px rgba(251, 191, 36, 0.3); box-shadow: 0 0 40px rgba(251, 191, 36, 0.25); }
+        }
+
+        .grade-subtitle {
+            font-size: 14px;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+            animation: titleFadeIn 0.6s ease 0.6s both;
+        }
+
+        /* --- Theme Toggle --- */
+        .theme-toggle {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 200;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            transform: rotate(30deg);
+        }
+
+        /* Light mode particle adjustments */
+        [data-theme="light"] .option-btn {
+            background: rgba(255, 255, 255, 0.7);
+            border-color: rgba(0, 0, 0, 0.08);
+        }
+
+        [data-theme="light"] .pool-btn,
+        [data-theme="light"] .mode-btn {
+            background: rgba(255, 255, 255, 0.7);
+            border-color: rgba(0, 0, 0, 0.08);
+        }
+
+        [data-theme="light"] .question-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.06);
+        }
+
+        [data-theme="light"] .short-answer-input {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: var(--border);
+        }
+
+        [data-theme="light"] .fever-bar {
+            background: var(--surface);
+            border-color: var(--border);
+        }
+
+        [data-theme="light"] .fever-bar.fever {
+            border-color: var(--fever);
+            background: rgba(217, 119, 6, 0.08);
+        }
+
+        [data-theme="light"] .fever-bar.fever .fever-label,
+        [data-theme="light"] .fever-bar.fever .fever-multiplier {
+            color: #b45309;
+        }
+
+        [data-theme="light"] .fever-bar.fever .fever-gauge-fill {
+            background: #d97706;
+        }
+
+        [data-theme="light"] .fever-bar.super-fever {
+            border-color: var(--super-fever);
+            background: rgba(220, 44, 74, 0.08);
+        }
+
+        [data-theme="light"] .fever-bar.super-fever .fever-label,
+        [data-theme="light"] .fever-bar.super-fever .fever-multiplier {
+            color: #be123c;
+        }
+
+        [data-theme="light"] .fever-bar.super-fever .fever-gauge-fill {
+            background: #dc2c4a;
+        }
+
+        [data-theme="light"] .fever-gauge {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="light"] .ripple {
+            background: rgba(74, 122, 223, 0.2);
+        }
+
+        [data-theme="light"] .google-login-btn,
+        [data-theme="light"] .user-info {
+            background: var(--surface);
+        }
+
+        [data-theme="light"] .ranking-item {
+            background: var(--surface);
+        }
+
         @media (max-width: 600px) {
             body { padding: 24px 16px; }
             .title-screen h1 { font-size: 28px; }
@@ -1256,11 +1722,15 @@
             .title-stat .stat-num { font-size: 22px; }
             .question-card { padding: 24px 20px; }
             .question-text { font-size: 16px; }
+            .combo-popup .combo-num { font-size: 48px; }
+            .combo-popup .combo-label { font-size: 18px; }
+            .grade-badge { width: 100px; height: 100px; font-size: 44px; }
         }
     </style>
 </head>
 <body>
 <canvas id="bgCanvas"></canvas>
+<button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="다크/라이트 모드 전환">🌙</button>
 <div class="app">
     <!-- Title Screen -->
     <div class="title-screen" id="titleScreen">
@@ -1352,6 +1822,8 @@
 
     <!-- Result Screen -->
     <div class="result-screen" id="resultScreen">
+        <div class="grade-badge" id="gradeBadge"></div>
+        <div class="grade-subtitle" id="gradeSubtitle"></div>
         <h2>퀴즈 완료</h2>
         <div class="score-ring">
             <svg viewBox="0 0 180 180">
@@ -1694,6 +2166,34 @@ function showFeverPopup(level) {
     document.body.appendChild(popup);
     requestAnimationFrame(() => popup.classList.add('show'));
     setTimeout(() => popup.remove(), 1000);
+
+    // Fever particle burst from center
+    launchFeverBurst(level);
+}
+
+function launchFeverBurst(level) {
+    const cx = window.innerWidth / 2;
+    const cy = window.innerHeight / 2;
+    const color = level === 2 ? '244, 63, 94' : '245, 158, 11';
+    const count = level === 2 ? 30 : 20;
+
+    for (let i = 0; i < count; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'fever-burst-piece';
+        piece.style.left = cx + 'px';
+        piece.style.top = cy + 'px';
+        piece.style.background = `rgba(${color}, ${0.6 + Math.random() * 0.4})`;
+        piece.style.width = (4 + Math.random() * 6) + 'px';
+        piece.style.height = piece.style.width;
+
+        const angle = (Math.PI * 2 / count) * i + (Math.random() - 0.5) * 0.5;
+        const dist = 100 + Math.random() * 200;
+        piece.style.setProperty('--bx', Math.cos(angle) * dist + 'px');
+        piece.style.setProperty('--by', Math.sin(angle) * dist + 'px');
+
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 1000);
+    }
 }
 
 function showScorePopup(points, level) {
@@ -1794,11 +2294,13 @@ function buildStartScreen() {
 
     const container = document.getElementById('poolSelect');
     container.innerHTML = '';
+    let btnIndex = 0;
 
     // All questions button
     const allBtn = document.createElement('button');
     allBtn.className = 'pool-btn';
     allBtn.innerHTML = `<span>전체 문제</span><span class="count">${quizData.questions.length}문항</span>`;
+    allBtn.style.animationDelay = `${btnIndex++ * 0.06}s`;
     allBtn.onclick = () => showModeSelect('all');
     container.appendChild(allBtn);
 
@@ -1807,6 +2309,7 @@ function buildStartScreen() {
         const btn = document.createElement('button');
         btn.className = 'pool-btn';
         btn.innerHTML = `<span>${poolId}</span><span class="count">${count}문항</span>`;
+        btn.style.animationDelay = `${btnIndex++ * 0.06}s`;
         btn.onclick = () => showModeSelect(poolId);
         container.appendChild(btn);
     }
@@ -2115,6 +2618,11 @@ function handleAnswerResult(isCorrect, question) {
         showScorePopup(10 * multiplier, feverLevel);
         if (feverLevel > prevLevel) showFeverPopup(feverLevel);
 
+        // Combo counter at milestones
+        if ([3, 5, 7, 10, 15, 20].includes(streak)) {
+            showComboPopup(streak);
+        }
+
         updateFeverUI();
         removeWrongNote(question.pool_id, question.key);
     } else {
@@ -2125,6 +2633,21 @@ function handleAnswerResult(isCorrect, question) {
         addWrongNote(question.pool_id, question.key);
         wrongThisSession.push(question.key);
     }
+}
+
+// Combo popup
+function showComboPopup(comboCount) {
+    const popup = document.createElement('div');
+    let comboClass = 'combo-3';
+    if (comboCount >= 10) comboClass = 'combo-10';
+    else if (comboCount >= 7) comboClass = 'combo-7';
+    else if (comboCount >= 5) comboClass = 'combo-5';
+
+    popup.className = `combo-popup ${comboClass}`;
+    popup.innerHTML = `<span class="combo-num">${comboCount}</span><span class="combo-label">COMBO!</span>`;
+    document.body.appendChild(popup);
+    requestAnimationFrame(() => popup.classList.add('show'));
+    setTimeout(() => popup.remove(), 1200);
 }
 
 function selectOption(selectedBtn, selectedText, correctText, question) {
@@ -2192,8 +2715,28 @@ function showResult() {
     // Confetti for high scores
     if (pct >= 0.8) launchConfetti(pct === 1 ? 80 : 40);
 
-    document.getElementById('scoreNum').textContent = score;
+    // Grade badge
+    let grade, gradeClass, gradeTitle;
+    if (pct === 1) { grade = 'S'; gradeClass = 'grade-s'; gradeTitle = 'Perfect!'; }
+    else if (pct >= 0.9) { grade = 'A'; gradeClass = 'grade-a'; gradeTitle = 'Excellent!'; }
+    else if (pct >= 0.7) { grade = 'B'; gradeClass = 'grade-b'; gradeTitle = 'Great!'; }
+    else if (pct >= 0.5) { grade = 'C'; gradeClass = 'grade-c'; gradeTitle = 'Good'; }
+    else { grade = 'D'; gradeClass = 'grade-d'; gradeTitle = 'Keep Going'; }
+
+    const gradeBadge = document.getElementById('gradeBadge');
+    gradeBadge.className = `grade-badge ${gradeClass}`;
+    gradeBadge.textContent = grade;
+    // Re-trigger animation
+    gradeBadge.style.animation = 'none';
+    void gradeBadge.offsetWidth;
+    gradeBadge.style.animation = '';
+
+    document.getElementById('gradeSubtitle').textContent = gradeTitle;
+
+    // Score count-up animation
+    const scoreNumEl = document.getElementById('scoreNum');
     document.getElementById('scoreTotal').textContent = `/${total}`;
+    animateCountUp(scoreNumEl, 0, score, 800);
 
     // Fever 보너스 점수 표시
     const baseScore = score * 10;
@@ -2201,7 +2744,11 @@ function showResult() {
     const feverScoreEl = document.getElementById('feverScore');
     if (bonusScore > 0) {
         feverScoreEl.style.display = 'block';
-        feverScoreEl.innerHTML = `총점 ${totalScore}점 (기본 ${baseScore} + <span class="bonus">Fever 보너스 ${bonusScore}</span>)`;
+        feverScoreEl.innerHTML = `총점 <span id="totalScoreCount">0</span>점 (기본 ${baseScore} + <span class="bonus">Fever 보너스 ${bonusScore}</span>)`;
+        setTimeout(() => {
+            const tsEl = document.getElementById('totalScoreCount');
+            if (tsEl) animateCountUp(tsEl, 0, totalScore, 1000);
+        }, 600);
     } else {
         feverScoreEl.style.display = 'none';
     }
@@ -2252,15 +2799,80 @@ function showResult() {
     }
 }
 
+// --- Count Up Animation ---
+function animateCountUp(el, from, to, duration) {
+    const start = performance.now();
+    function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(from + (to - from) * eased);
+        if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+}
+
 // --- Visual Effects ---
 
-// Screen flash on correct/incorrect
+// Screen flash on correct/incorrect + screen shake on wrong
 function showFlash(isCorrect) {
     const flash = document.createElement('div');
     flash.className = `quiz-flash ${isCorrect ? 'correct-flash' : 'incorrect-flash'}`;
     document.body.appendChild(flash);
     setTimeout(() => flash.remove(), 500);
+
+    if (!isCorrect) {
+        const app = document.querySelector('.app');
+        app.classList.remove('shake-screen');
+        void app.offsetWidth;
+        app.classList.add('shake-screen');
+        setTimeout(() => app.classList.remove('shake-screen'), 500);
+
+        // Red vignette
+        const vig = document.createElement('div');
+        vig.className = 'quiz-vignette';
+        document.body.appendChild(vig);
+        setTimeout(() => vig.remove(), 800);
+    }
+
+    if (isCorrect) {
+        launchMiniConfetti();
+    }
 }
+
+// Mini confetti burst on each correct answer
+function launchMiniConfetti() {
+    const colors = ['#6c9cff', '#a78bfa', '#4ade80', '#22d3ee'];
+    for (let i = 0; i < 12; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = (40 + Math.random() * 20) + 'vw';
+        piece.style.top = (30 + Math.random() * 20) + 'vh';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.width = (Math.random() * 6 + 4) + 'px';
+        piece.style.height = (Math.random() * 6 + 4) + 'px';
+        piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+        piece.style.animationDuration = (Math.random() * 1.5 + 1) + 's';
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 2500);
+    }
+}
+
+// Ripple effect on interactive buttons
+document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.option-btn, .pool-btn, .mode-btn');
+    if (!btn) return;
+    const rect = btn.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+    btn.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+});
 
 // Confetti effect
 function launchConfetti(count) {
@@ -2282,12 +2894,32 @@ function launchConfetti(count) {
     }
 }
 
+// --- Theme Toggle ---
+function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', next === 'dark' ? '' : 'light');
+    if (next === 'dark') html.removeAttribute('data-theme');
+    document.getElementById('themeToggle').textContent = next === 'light' ? '☀️' : '🌙';
+    localStorage.setItem('xag_theme', next);
+}
+
+// Restore saved theme
+(function() {
+    const saved = localStorage.getItem('xag_theme');
+    if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.getElementById('themeToggle').textContent = '☀️';
+    }
+})();
+
 // Background particle system
 (function initParticles() {
     const canvas = document.getElementById('bgCanvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
-    const PARTICLE_COUNT = 40;
+    const PARTICLE_COUNT = 50;
 
     function resize() {
         canvas.width = window.innerWidth;
@@ -2315,16 +2947,32 @@ function launchConfetti(count) {
             canvas.width / 2, canvas.height / 3, 0,
             canvas.width / 2, canvas.height / 3, canvas.width * 0.8
         );
-        grad.addColorStop(0, 'rgba(108, 156, 255, 0.03)');
-        grad.addColorStop(0.5, 'rgba(167, 139, 250, 0.02)');
-        grad.addColorStop(1, 'transparent');
+        if (isLight) {
+            grad.addColorStop(0, 'rgba(74, 122, 223, 0.04)');
+            grad.addColorStop(0.5, 'rgba(139, 92, 246, 0.03)');
+            grad.addColorStop(1, 'transparent');
+        } else {
+            grad.addColorStop(0, 'rgba(108, 156, 255, 0.06)');
+            grad.addColorStop(0.3, 'rgba(167, 139, 250, 0.04)');
+            grad.addColorStop(0.6, 'rgba(99, 102, 241, 0.02)');
+            grad.addColorStop(1, 'transparent');
+        }
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+        // Determine particle color based on fever state and theme
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        let pColor = isLight ? '74, 122, 223' : '108, 156, 255';
+        let speedMult = 1;
+        if (typeof feverLevel !== 'undefined') {
+            if (feverLevel === 2) { pColor = '244, 63, 94'; speedMult = 2; }
+            else if (feverLevel === 1) { pColor = '245, 158, 11'; speedMult = 1.5; }
+        }
+
         // Draw particles
         particles.forEach(p => {
-            p.x += p.dx;
-            p.y += p.dy;
+            p.x += p.dx * speedMult;
+            p.y += p.dy * speedMult;
 
             if (p.x < 0) p.x = canvas.width;
             if (p.x > canvas.width) p.x = 0;
@@ -2333,7 +2981,7 @@ function launchConfetti(count) {
 
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(108, 156, 255, ${p.alpha})`;
+            ctx.fillStyle = `rgba(${pColor}, ${p.alpha})`;
             ctx.fill();
         });
 
@@ -2347,7 +2995,7 @@ function launchConfetti(count) {
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(108, 156, 255, ${0.06 * (1 - dist / 150)})`;
+                    ctx.strokeStyle = `rgba(${pColor}, ${0.06 * (1 - dist / 150)})`;
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
