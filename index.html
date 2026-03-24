@@ -2137,6 +2137,16 @@
             <div class="guide-divider"></div>
 
             <div class="guide-section">
+                <div class="guide-section-title"><span class="guide-icon">&#128214;</span> 오답노트</div>
+                <div class="guide-item">틀린 문제 <strong>자동 저장</strong>, 정답 맞추면 <strong>자동 제거</strong></div>
+                <div class="guide-item">로그인 시 <strong>서버에 동기화</strong> — 다른 기기에서도 유지</div>
+                <div class="guide-item">비로그인 시 해당 기기에만 저장 (로그인하면 서버 데이터 우선)</div>
+                <div class="guide-item">섹션별 또는 전체 <strong>초기화 가능</strong></div>
+            </div>
+
+            <div class="guide-divider"></div>
+
+            <div class="guide-section">
                 <div class="guide-section-title"><span class="guide-icon">&#127942;</span> 랭킹</div>
                 <div class="guide-item"><strong>전체 풀기</strong>와 <strong>타임어택 전체</strong> 모드만 반영</div>
                 <div class="guide-item">총점(Fever + 타임 보너스 포함) 기준 순위 산정</div>
@@ -3512,6 +3522,7 @@ function showGuide() {
     overlay.style.animation = 'none';
     void overlay.offsetWidth;
     overlay.style.animation = '';
+    overlay.querySelector('.guide-modal').scrollTop = 0;
 }
 
 function closeGuide() {
