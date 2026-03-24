@@ -1615,6 +1615,196 @@
             animation: titleFadeIn 0.6s ease 0.6s both;
         }
 
+        /* --- Timer Bar --- */
+        .timer-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 3px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .timer-bar.active {
+            display: block;
+        }
+
+        .timer-bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            width: 100%;
+            transition: width linear, background 0.3s;
+            background: var(--accent);
+        }
+
+        .timer-bar-fill.warning {
+            background: var(--fever);
+        }
+
+        .timer-bar-fill.danger {
+            background: var(--incorrect);
+            animation: timerPulse 0.4s ease-in-out infinite;
+        }
+
+        @keyframes timerPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .timer-bar-fill.stopped-correct {
+            background: var(--correct) !important;
+            animation: timerCorrectFlash 0.5s ease;
+            transition: none !important;
+        }
+
+        .timer-bar-fill.stopped-wrong {
+            background: var(--incorrect) !important;
+            animation: none !important;
+            transition: none !important;
+        }
+
+        @keyframes timerCorrectFlash {
+            0% { filter: brightness(1); }
+            30% { filter: brightness(1.8); }
+            100% { filter: brightness(1); }
+        }
+
+        /* Time bonus popup */
+        .time-bonus-popup {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            font-weight: 700;
+            color: #22d3ee;
+            opacity: 0;
+            pointer-events: none;
+            animation: timeBonusFloat 2s ease forwards;
+            white-space: nowrap;
+            text-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
+        }
+
+        @keyframes timeBonusFloat {
+            0% { opacity: 0; transform: translateX(-50%) translateY(0) scale(0.8); }
+            15% { opacity: 1; transform: translateX(-50%) translateY(-10px) scale(1.1); }
+            30% { transform: translateX(-50%) translateY(-15px) scale(1); }
+            70% { opacity: 1; transform: translateX(-50%) translateY(-20px); }
+            100% { opacity: 0; transform: translateX(-50%) translateY(-35px); }
+        }
+
+        .timer-text {
+            display: none;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dim);
+            white-space: nowrap;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .timer-text.active {
+            display: inline-flex;
+        }
+
+        .timer-icon {
+            font-size: 18px;
+            display: inline-block;
+        }
+
+        .timer-text.warning { color: var(--fever); }
+        .timer-text.warning .timer-icon { animation: timerShakeMild 0.3s ease-in-out infinite; }
+
+        .timer-text.danger { color: var(--incorrect); }
+        .timer-text.danger .timer-icon { animation: timerShakeHard 0.15s ease-in-out infinite; }
+
+        @keyframes timerShakeMild {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            20% { transform: rotate(18deg) scale(1.15); }
+            50% { transform: rotate(-18deg) scale(1.15); }
+            80% { transform: rotate(12deg) scale(1.1); }
+        }
+
+        @keyframes timerShakeHard {
+            0%, 100% { transform: rotate(0deg) scale(1.1); }
+            15% { transform: rotate(25deg) scale(1.3); }
+            35% { transform: rotate(-25deg) scale(1.3); }
+            55% { transform: rotate(20deg) scale(1.25); }
+            75% { transform: rotate(-20deg) scale(1.25); }
+        }
+
+        /* Time attack mode button */
+        .mode-btn.timeattack-btn {
+            border-color: rgba(244, 63, 94, 0.3);
+        }
+
+        .mode-btn.timeattack-btn .mode-btn-title {
+            color: var(--super-fever);
+        }
+
+        .mode-btn.timeattack-btn .mode-btn-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            background: var(--super-fever-glow);
+            color: var(--super-fever);
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 6px;
+        }
+
+        [data-theme="light"] .timer-bar {
+            background: rgba(0,0,0,0.08);
+        }
+
+        /* --- Live Score Bar --- */
+        .live-score-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: var(--text-dim);
+            margin-bottom: 12px;
+            padding: 6px 14px;
+            background: rgba(26, 29, 39, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        [data-theme="light"] .live-score-bar {
+            background: rgba(255, 255, 255, 0.6);
+            border-color: rgba(0, 0, 0, 0.06);
+        }
+
+        .live-score-bar .live-score {
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .live-score-bar .live-score span {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .live-score-bar .live-accuracy span {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .live-score-bar .live-score.score-up {
+            animation: scoreFlash 0.4s ease;
+        }
+
+        @keyframes scoreFlash {
+            0% { transform: scale(1); }
+            40% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
         /* --- Theme Toggle --- */
         .theme-toggle {
             position: fixed;
@@ -1778,6 +1968,15 @@
                 <div class="mode-btn-title">전체 풀기</div>
                 <div class="mode-btn-desc" id="allModeBtnDesc"></div>
             </button>
+            <div class="section-divider"><span>타임어택</span></div>
+            <button class="mode-btn timeattack-btn" id="timeAttackRandomBtn" onclick="startModeQuiz('timeattack-random')">
+                <div class="mode-btn-title">타임어택 랜덤 10문제 <span class="mode-btn-badge">x2 배점</span></div>
+                <div class="mode-btn-desc">문제당 10초 제한! 배점 2배</div>
+            </button>
+            <button class="mode-btn timeattack-btn" onclick="startModeQuiz('timeattack-all')">
+                <div class="mode-btn-title">타임어택 전체 풀기 <span class="mode-btn-badge">x2 배점</span></div>
+                <div class="mode-btn-desc" id="timeAttackAllDesc"></div>
+            </button>
         </div>
     </div>
 
@@ -1785,10 +1984,17 @@
     <div class="quiz-screen" id="quizScreen">
         <div class="top-bar">
             <span class="pool-label" id="poolLabel"></span>
+            <span class="timer-text" id="timerText"><span class="timer-icon">&#9202;</span><span id="timerNum">10s</span></span>
             <span class="progress-text" id="progressText"></span>
             <button class="home-btn" onclick="goHome()">섹션 선택</button>
         </div>
+        <div class="timer-bar" id="timerBar"><div class="timer-bar-fill" id="timerBarFill"></div></div>
         <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+        <div class="live-score-bar" id="liveScoreBar">
+            <div class="live-score" id="liveScore"><span>0</span>점</div>
+            <div class="live-accuracy" id="liveAccuracy">정답 <span>0/0</span></div>
+        </div>
 
         <div class="fever-bar" id="feverBar">
             <span class="fever-label" id="feverLabel">FEVER</span>
@@ -1815,7 +2021,7 @@
     <div class="ranking-screen" id="rankingScreen">
         <span class="back-link" onclick="showTitle()">&larr; 타이틀로 돌아가기</span>
         <h2>랭킹</h2>
-        <p class="subtitle">전체풀기 모드 최고 점수 (Fever 보너스 포함)</p>
+        <p class="subtitle">전체풀기 · 타임어택 최고 점수 (Fever 보너스 포함)</p>
         <div class="ranking-tabs" id="rankingTabs"></div>
         <div class="ranking-list" id="rankingList"></div>
     </div>
@@ -1948,7 +2154,7 @@ async function loadRanking(poolId) {
         const bestByUser = {};
         snapshot.forEach(doc => {
             const d = doc.data();
-            if (d.mode && d.mode !== 'all') return; // 랜덤10 제외
+            if (d.mode && d.mode !== 'all' && d.mode !== 'timeattack-all') return; // 전체풀기+타임어택만
             const ts = d.totalScore || d.score * 10; // 이전 데이터 호환
             if (!bestByUser[d.uid] || ts > (bestByUser[d.uid].totalScore || bestByUser[d.uid].score * 10)) {
                 bestByUser[d.uid] = { ...d, totalScore: ts };
@@ -2018,6 +2224,11 @@ let answered = false;
 let currentPoolId = '';
 let currentQuizMode = 'all';
 let isWrongNoteMode = false;
+let isTimeAttack = false;
+let timerInterval = null;
+let timeLeft = 0;
+const TIME_LIMIT = 10;
+const TIME_ATTACK_MULTIPLIER = 2;
 let wrongThisSession = [];
 let selectedModePoolId = '';
 
@@ -2196,6 +2407,20 @@ function launchFeverBurst(level) {
     }
 }
 
+function updateLiveScore() {
+    const el = document.getElementById('liveScore');
+    el.innerHTML = `<span>${totalScore}</span>점`;
+    // Flash animation
+    el.classList.remove('score-up');
+    void el.offsetWidth;
+    el.classList.add('score-up');
+
+    const acc = document.getElementById('liveAccuracy');
+    const total = Math.min(currentIndex + 1, currentQuestions.length);
+    const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+    acc.innerHTML = `정답 <span>${score}/${total}</span> (${pct}%)`;
+}
+
 function showScorePopup(points, level) {
     const card = document.querySelector('.question-card');
     const popup = document.createElement('div');
@@ -2203,6 +2428,15 @@ function showScorePopup(points, level) {
     popup.textContent = `+${points}`;
     card.appendChild(popup);
     setTimeout(() => popup.remove(), 800);
+}
+
+function showTimeBonusPopup(bonus) {
+    const card = document.querySelector('.question-card');
+    const popup = document.createElement('div');
+    popup.className = 'time-bonus-popup';
+    popup.textContent = `TIME BONUS +${bonus}`;
+    card.appendChild(popup);
+    setTimeout(() => popup.remove(), 2000);
 }
 
 function hideAllScreens() {
@@ -2227,6 +2461,8 @@ function showPoolSelect() {
 }
 
 function goHome() {
+    clearTimer();
+    isTimeAttack = false;
     showPoolSelect();
 }
 
@@ -2242,18 +2478,23 @@ function showModeSelect(poolId) {
     document.getElementById('modePoolTitle').textContent = poolId === 'all' ? '전체 문제' : poolId;
     document.getElementById('modeSubtitle').textContent = `총 ${total}문항`;
     document.getElementById('allModeBtnDesc').textContent = `${total}문항 전체 풀기`;
+    document.getElementById('timeAttackAllDesc').textContent = `${total}문항 전체 · 문제당 10초`;
 
     const randomBtn = document.getElementById('randomModeBtn');
+    const taRandomBtn = document.getElementById('timeAttackRandomBtn');
     if (total <= 10) {
         randomBtn.style.display = 'none';
+        taRandomBtn.style.display = 'none';
     } else {
         randomBtn.style.display = '';
+        taRandomBtn.style.display = '';
     }
 }
 
 function startModeQuiz(mode) {
     currentQuizMode = mode;
-    if (mode === 'random') {
+    isTimeAttack = mode.startsWith('timeattack');
+    if (mode === 'random' || mode === 'timeattack-random') {
         startQuiz(selectedModePoolId, false, 10);
     } else {
         startQuiz(selectedModePoolId, false, null);
@@ -2468,15 +2709,35 @@ function startQuiz(poolId, wrongNoteMode, randomCount) {
     document.getElementById('quizScreen').style.display = 'block';
     updateFeverUI();
 
+    // Timer UI setup
+    const timerBar = document.getElementById('timerBar');
+    const timerText = document.getElementById('timerText');
+    if (isTimeAttack) {
+        timerBar.classList.add('active');
+        timerText.classList.add('active');
+    } else {
+        timerBar.classList.remove('active');
+        timerText.classList.remove('active');
+    }
+    clearTimer();
+
     let label;
     if (wrongNoteMode) {
         label = poolId === 'all' ? '전체 오답노트' : `${poolId} 오답노트`;
+    } else if (isTimeAttack && randomCount && randomCount < filtered.length) {
+        label = poolId === 'all' ? `전체 · 타임어택 랜덤 ${randomCount}문제` : `${poolId} · 타임어택 랜덤 ${randomCount}문제`;
+    } else if (isTimeAttack) {
+        label = poolId === 'all' ? '전체 · 타임어택' : `${poolId} · 타임어택`;
     } else if (randomCount && randomCount < filtered.length) {
         label = poolId === 'all' ? `전체 · 랜덤 ${randomCount}문제` : `${poolId} · 랜덤 ${randomCount}문제`;
     } else {
         label = poolId === 'all' ? '전체 문제' : poolId;
     }
     document.getElementById('poolLabel').textContent = label;
+
+    // Reset live score display
+    document.getElementById('liveScore').innerHTML = '<span>0</span>점';
+    document.getElementById('liveAccuracy').innerHTML = '정답 <span>0/0</span>';
 
     loadQuestion();
 }
@@ -2512,6 +2773,134 @@ function loadQuestion() {
     card.classList.remove('slide-in');
     void card.offsetWidth;
     card.classList.add('slide-in');
+
+    // Start timer if time attack mode
+    if (isTimeAttack) startTimer();
+}
+
+function clearTimer() {
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+}
+
+function freezeTimerBar(isCorrect) {
+    const fill = document.getElementById('timerBarFill');
+    const text = document.getElementById('timerText');
+    // Freeze at current width by reading computed width
+    const currentWidth = fill.getBoundingClientRect().width;
+    const parentWidth = fill.parentElement.getBoundingClientRect().width;
+    const pct = parentWidth > 0 ? (currentWidth / parentWidth) * 100 : 0;
+    fill.style.transition = 'none';
+    fill.style.width = pct + '%';
+    fill.className = `timer-bar-fill ${isCorrect ? 'stopped-correct' : 'stopped-wrong'}`;
+
+    const num = document.getElementById('timerNum');
+    const icon = text.querySelector('.timer-icon');
+    if (icon) icon.style.animation = 'none';
+
+    if (isCorrect) {
+        const sec = Math.ceil(timeLeft / 1000);
+        num.textContent = `${sec}s`;
+        text.className = 'timer-text active';
+        text.style.color = 'var(--correct)';
+    } else {
+        num.textContent = '0s';
+        text.className = 'timer-text active';
+        text.style.color = 'var(--incorrect)';
+    }
+}
+
+function startTimer() {
+    clearTimer();
+    timeLeft = TIME_LIMIT * 1000;
+    const fill = document.getElementById('timerBarFill');
+    const text = document.getElementById('timerText');
+    const num = document.getElementById('timerNum');
+
+    fill.style.transition = 'none';
+    fill.style.width = '100%';
+    fill.className = 'timer-bar-fill';
+    text.className = 'timer-text active';
+    text.style.color = '';
+    num.textContent = `${TIME_LIMIT}s`;
+    const icon = text.querySelector('.timer-icon');
+    if (icon) icon.style.animation = '';
+
+    void fill.offsetWidth;
+    fill.style.transition = `width ${TIME_LIMIT}s linear`;
+    fill.style.width = '0%';
+
+    timerInterval = setInterval(() => {
+        timeLeft -= 100;
+        const sec = Math.ceil(timeLeft / 1000);
+        num.textContent = `${sec}s`;
+
+        // Color changes
+        if (sec <= 3) {
+            fill.className = 'timer-bar-fill danger';
+            text.className = 'timer-text active danger';
+        } else if (sec <= 5) {
+            fill.className = 'timer-bar-fill warning';
+            text.className = 'timer-text active warning';
+        }
+
+        if (timeLeft <= 0) {
+            clearTimer();
+            if (!answered) handleTimeOut();
+        }
+    }, 100);
+}
+
+function handleTimeOut() {
+    answered = true;
+    const q = currentQuestions[currentIndex];
+
+    // Disable all interactive elements
+    document.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
+    const saInput = document.getElementById('shortAnswerInput');
+    const saBtn = document.getElementById('shortAnswerSubmit');
+    if (saInput) saInput.disabled = true;
+    if (saBtn) saBtn.disabled = true;
+
+    // Show correct answer
+    const type = q.question_type || 'multiple_choice';
+    if (type === 'ox') {
+        const correctAnswer = q.answer ? 'O' : 'X';
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            const label = btn.querySelector('.option-label').textContent;
+            if (label === correctAnswer) btn.classList.add('correct');
+            else btn.classList.add('dimmed');
+        });
+    } else if (type === 'short_answer') {
+        if (saInput) saInput.classList.add('incorrect');
+        const correctEl = document.createElement('div');
+        correctEl.className = 'short-answer-correct';
+        correctEl.textContent = `시간 초과! 정답: ${q.answer_text}`;
+        if (saInput && saInput.parentElement) saInput.parentElement.appendChild(correctEl);
+    } else {
+        const correctText = q.options[q.answer_index - 1];
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            if (btn.querySelector('span:last-child').textContent === correctText) {
+                btn.classList.add('correct');
+            } else {
+                btn.classList.add('dimmed');
+            }
+        });
+    }
+
+    // Treat as wrong answer
+    handleAnswerResult(false, q);
+
+    if (q.explanation) {
+        document.getElementById('explanationText').textContent = q.explanation;
+        document.getElementById('explanation').classList.add('visible');
+    }
+
+    const nextBtn = document.getElementById('nextBtn');
+    nextBtn.textContent = currentIndex < currentQuestions.length - 1 ? '다음 문제' : '결과 보기';
+    nextBtn.classList.add('visible');
 }
 
 function loadMultipleChoiceQuestion(container, q) {
@@ -2601,6 +2990,12 @@ function checkShortAnswer(userAnswer, question, input, submitBtn) {
 
 // 공통 채점 처리 (Fever, 점수, 오답노트)
 function handleAnswerResult(isCorrect, question) {
+    // Stop timer on answer & freeze bar
+    if (isTimeAttack) {
+        clearTimer();
+        freezeTimerBar(isCorrect);
+    }
+
     showFlash(isCorrect);
 
     if (isCorrect) {
@@ -2612,10 +3007,21 @@ function handleAnswerResult(isCorrect, question) {
         else if (streak >= 3) feverLevel = 1;
         else feverLevel = 0;
 
+        const basePoints = isTimeAttack ? 10 * TIME_ATTACK_MULTIPLIER : 10;
         const multiplier = feverLevel === 2 ? 3 : feverLevel === 1 ? 2 : 1;
-        totalScore += 10 * multiplier;
+        let earnedPoints = basePoints * multiplier;
 
-        showScorePopup(10 * multiplier, feverLevel);
+        // Time bonus: remaining seconds × 2
+        let timeBonus = 0;
+        if (isTimeAttack && timeLeft > 0) {
+            timeBonus = Math.ceil(timeLeft / 1000) * 2;
+            earnedPoints += timeBonus;
+        }
+
+        totalScore += earnedPoints;
+
+        showScorePopup(earnedPoints, feverLevel);
+        if (timeBonus > 0) showTimeBonusPopup(timeBonus);
         if (feverLevel > prevLevel) showFeverPopup(feverLevel);
 
         // Combo counter at milestones
@@ -2624,11 +3030,13 @@ function handleAnswerResult(isCorrect, question) {
         }
 
         updateFeverUI();
+        updateLiveScore();
         removeWrongNote(question.pool_id, question.key);
     } else {
         streak = 0;
         feverLevel = 0;
         updateFeverUI();
+        updateLiveScore();
 
         addWrongNote(question.pool_id, question.key);
         wrongThisSession.push(question.key);
@@ -2739,12 +3147,16 @@ function showResult() {
     animateCountUp(scoreNumEl, 0, score, 800);
 
     // Fever 보너스 점수 표시
-    const baseScore = score * 10;
+    const basePoints = isTimeAttack ? 20 : 10;
+    const baseScore = score * basePoints;
     const bonusScore = totalScore - baseScore;
     const feverScoreEl = document.getElementById('feverScore');
-    if (bonusScore > 0) {
+    const taLabel = isTimeAttack ? ' (타임어택 x2)' : '';
+    if (bonusScore > 0 || isTimeAttack) {
         feverScoreEl.style.display = 'block';
-        feverScoreEl.innerHTML = `총점 <span id="totalScoreCount">0</span>점 (기본 ${baseScore} + <span class="bonus">Fever 보너스 ${bonusScore}</span>)`;
+        let detail = `기본 ${baseScore}${taLabel}`;
+        if (bonusScore > 0) detail += ` + <span class="bonus">Fever 보너스 ${bonusScore}</span>`;
+        feverScoreEl.innerHTML = `총점 <span id="totalScoreCount">0</span>점 (${detail})`;
         setTimeout(() => {
             const tsEl = document.getElementById('totalScoreCount');
             if (tsEl) animateCountUp(tsEl, 0, totalScore, 1000);
@@ -2770,8 +3182,8 @@ function showResult() {
 
     document.getElementById('resultMessage').textContent = msg;
 
-    // Save score to Firestore (전체풀기만 랭킹에 반영)
-    if (!isWrongNoteMode && currentQuizMode !== 'random') {
+    // Save score to Firestore (전체풀기 + 타임어택 랭킹 반영, 랜덤10 제외)
+    if (!isWrongNoteMode && currentQuizMode !== 'random' && currentQuizMode !== 'timeattack-random') {
         saveScoreToFirestore(currentPoolId, currentQuizMode, score, total, totalScore);
     }
 
