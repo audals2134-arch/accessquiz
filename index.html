@@ -1338,10 +1338,97 @@
             max-width: 520px;
             width: 100%;
             max-height: 80vh;
-            overflow-y: auto;
+            overflow: hidden;
             padding: 28px 24px;
             position: relative;
             animation: modalIn 0.3s ease;
+        }
+
+        .guide-pages-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .guide-pages-track {
+            display: flex;
+            transition: transform 0.35s ease;
+        }
+
+        .guide-page {
+            min-width: 100%;
+            overflow-y: auto;
+            max-height: calc(80vh - 140px);
+            padding-right: 4px;
+        }
+
+        .guide-page-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .guide-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .guide-nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text);
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .guide-nav-btn:hover:not(:disabled) {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-glow);
+        }
+
+        .guide-nav-btn:disabled {
+            opacity: 0.3;
+            cursor: default;
+        }
+
+        .guide-page-indicator {
+            font-size: 14px;
+            color: var(--text-dim);
+            font-weight: 600;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .guide-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .guide-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+            transition: all 0.3s;
+        }
+
+        .guide-dot.active {
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent-glow);
         }
 
         @keyframes modalIn {
@@ -2098,59 +2185,75 @@
             <button class="guide-close" onclick="closeGuide()">&times;</button>
             <h3>게임 가이드</h3>
 
-            <div class="guide-section">
-                <div class="guide-section-title"><span class="guide-icon">&#127918;</span> 게임 모드</div>
-                <div class="guide-item"><strong>랜덤 10문제</strong> — MC/OX/주관식 균등 배분, 랭킹 미반영</div>
-                <div class="guide-item"><strong>전체 풀기</strong> — 선택 섹션 전체 문제, 랭킹 반영</div>
-                <div class="guide-item"><strong>타임어택</strong> — 문제당 10초 제한, <span class="guide-highlight">배점 x2</span> + 타임 보너스</div>
-                <div class="guide-item"><strong>오답노트</strong> — 틀린 문제만 모아 재도전</div>
+            <div class="guide-pages-wrapper">
+                <div class="guide-pages-track" id="guidePagesTrack">
+                    <!-- Page 1: 게임 모드 -->
+                    <div class="guide-page">
+                        <div class="guide-page-title">게임 모드</div>
+                        <div class="guide-section">
+                            <div class="guide-section-title"><span class="guide-icon">&#127918;</span> 모드 종류</div>
+                            <div class="guide-item"><strong>랜덤 10문제</strong> — MC/OX/주관식 균등 배분, 랭킹 미반영</div>
+                            <div class="guide-item"><strong>전체 풀기</strong> — 선택 섹션 전체 문제, 랭킹 반영</div>
+                            <div class="guide-item"><strong>타임어택</strong> — 문제당 10초 제한, <span class="guide-highlight">배점 x2</span> + 타임 보너스</div>
+                            <div class="guide-item"><strong>오답노트</strong> — 틀린 문제만 모아 재도전</div>
+                        </div>
+                        <div class="guide-divider"></div>
+                        <div class="guide-section">
+                            <div class="guide-section-title"><span class="guide-icon">&#128221;</span> 문제 유형</div>
+                            <div class="guide-item"><strong>4지선다</strong> — 4개 보기 중 정답 선택</div>
+                            <div class="guide-item"><strong>OX퀴즈</strong> — 맞다/틀리다 선택</div>
+                            <div class="guide-item"><strong>주관식</strong> — 정답 직접 입력 (대소문자/공백 무시)</div>
+                        </div>
+                    </div>
+
+                    <!-- Page 2: 점수 & Fever -->
+                    <div class="guide-page">
+                        <div class="guide-page-title">점수 & Fever</div>
+                        <div class="guide-section">
+                            <div class="guide-section-title"><span class="guide-icon">&#128293;</span> Fever 시스템</div>
+                            <div class="guide-item"><strong>3연속 정답</strong> → FEVER 발동 <span class="guide-highlight">x2 배율</span></div>
+                            <div class="guide-item"><strong>6연속 정답</strong> → SUPER FEVER <span class="guide-highlight">x3 배율</span></div>
+                            <div class="guide-item">오답 시 연속 카운트 및 Fever <strong>즉시 리셋</strong></div>
+                        </div>
+                        <div class="guide-divider"></div>
+                        <div class="guide-section">
+                            <div class="guide-section-title"><span class="guide-icon">&#9202;</span> 타임어택 점수 계산</div>
+                            <div class="guide-item">기본 점수 <strong>20점</strong> (일반 모드의 2배)</div>
+                            <div class="guide-item">Fever 배율 적용 → 최대 <strong>60점/문제</strong></div>
+                            <div class="guide-item">타임 보너스: 남은 초 × 2점 추가</div>
+                            <div class="guide-item">예시: 7초 남기고 정답 + FEVER = <strong>40 + 14 = 54점</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Page 3: 오답노트 & 랭킹 -->
+                    <div class="guide-page">
+                        <div class="guide-page-title">오답노트 & 랭킹</div>
+                        <div class="guide-section">
+                            <div class="guide-section-title"><span class="guide-icon">&#128214;</span> 오답노트</div>
+                            <div class="guide-item">틀린 문제 <strong>자동 저장</strong>, 정답 맞추면 <strong>자동 제거</strong></div>
+                            <div class="guide-item">로그인 시 <strong>서버에 동기화</strong> — 다른 기기에서도 유지</div>
+                            <div class="guide-item">비로그인 시 해당 기기에만 저장 (로그인하면 서버 데이터 우선)</div>
+                            <div class="guide-item">섹션별 또는 전체 <strong>초기화 가능</strong></div>
+                        </div>
+                        <div class="guide-divider"></div>
+                        <div class="guide-section">
+                            <div class="guide-section-title"><span class="guide-icon">&#127942;</span> 랭킹</div>
+                            <div class="guide-item"><strong>전체 풀기</strong>와 <strong>타임어택 전체</strong> 모드만 반영</div>
+                            <div class="guide-item">총점(Fever + 타임 보너스 포함) 기준 순위 산정</div>
+                            <div class="guide-item">로그인 시 자동 기록, 유저별 최고 점수만 표시</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="guide-divider"></div>
-
-            <div class="guide-section">
-                <div class="guide-section-title"><span class="guide-icon">&#128293;</span> Fever 시스템</div>
-                <div class="guide-item"><strong>3연속 정답</strong> → FEVER 발동 <span class="guide-highlight">x2 배율</span></div>
-                <div class="guide-item"><strong>6연속 정답</strong> → SUPER FEVER <span class="guide-highlight">x3 배율</span></div>
-                <div class="guide-item">오답 시 연속 카운트 및 Fever <strong>즉시 리셋</strong></div>
-            </div>
-
-            <div class="guide-divider"></div>
-
-            <div class="guide-section">
-                <div class="guide-section-title"><span class="guide-icon">&#9202;</span> 타임어택 점수 계산</div>
-                <div class="guide-item">기본 점수 <strong>20점</strong> (일반 모드의 2배)</div>
-                <div class="guide-item">Fever 배율 적용 → 최대 <strong>60점/문제</strong></div>
-                <div class="guide-item">타임 보너스: 남은 초 × 2점 추가</div>
-                <div class="guide-item">예시: 7초 남기고 정답 + FEVER = <strong>40 + 14 = 54점</strong></div>
-            </div>
-
-            <div class="guide-divider"></div>
-
-            <div class="guide-section">
-                <div class="guide-section-title"><span class="guide-icon">&#128221;</span> 문제 유형</div>
-                <div class="guide-item"><strong>4지선다</strong> — 4개 보기 중 정답 선택</div>
-                <div class="guide-item"><strong>OX퀴즈</strong> — 맞다/틀리다 선택</div>
-                <div class="guide-item"><strong>주관식</strong> — 정답 직접 입력 (대소문자/공백 무시)</div>
-            </div>
-
-            <div class="guide-divider"></div>
-
-            <div class="guide-section">
-                <div class="guide-section-title"><span class="guide-icon">&#128214;</span> 오답노트</div>
-                <div class="guide-item">틀린 문제 <strong>자동 저장</strong>, 정답 맞추면 <strong>자동 제거</strong></div>
-                <div class="guide-item">로그인 시 <strong>서버에 동기화</strong> — 다른 기기에서도 유지</div>
-                <div class="guide-item">비로그인 시 해당 기기에만 저장 (로그인하면 서버 데이터 우선)</div>
-                <div class="guide-item">섹션별 또는 전체 <strong>초기화 가능</strong></div>
-            </div>
-
-            <div class="guide-divider"></div>
-
-            <div class="guide-section">
-                <div class="guide-section-title"><span class="guide-icon">&#127942;</span> 랭킹</div>
-                <div class="guide-item"><strong>전체 풀기</strong>와 <strong>타임어택 전체</strong> 모드만 반영</div>
-                <div class="guide-item">총점(Fever + 타임 보너스 포함) 기준 순위 산정</div>
-                <div class="guide-item">로그인 시 자동 기록, 유저별 최고 점수만 표시</div>
+            <div class="guide-nav">
+                <button class="guide-nav-btn" id="guidePrev" onclick="guidePageNav(-1)">&#8592;</button>
+                <div class="guide-dots" id="guideDots">
+                    <div class="guide-dot active"></div>
+                    <div class="guide-dot"></div>
+                    <div class="guide-dot"></div>
+                </div>
+                <button class="guide-nav-btn" id="guideNext" onclick="guidePageNav(1)">&#8594;</button>
             </div>
         </div>
     </div>
@@ -3516,17 +3619,40 @@ function launchConfetti(count) {
 }
 
 // --- Guide Modal ---
+let guideCurrentPage = 0;
+const guideTotalPages = 3;
+
 function showGuide() {
     const overlay = document.getElementById('guideOverlay');
     overlay.style.display = 'flex';
     overlay.style.animation = 'none';
     void overlay.offsetWidth;
     overlay.style.animation = '';
-    overlay.querySelector('.guide-modal').scrollTop = 0;
+    guideCurrentPage = 0;
+    updateGuidePage();
 }
 
 function closeGuide() {
     document.getElementById('guideOverlay').style.display = 'none';
+}
+
+function guidePageNav(dir) {
+    guideCurrentPage = Math.max(0, Math.min(guideTotalPages - 1, guideCurrentPage + dir));
+    updateGuidePage();
+}
+
+function updateGuidePage() {
+    const track = document.getElementById('guidePagesTrack');
+    track.style.transform = `translateX(-${guideCurrentPage * 100}%)`;
+    // Reset scroll on each page
+    const pages = track.querySelectorAll('.guide-page');
+    pages.forEach(p => p.scrollTop = 0);
+    // Update dots
+    const dots = document.querySelectorAll('#guideDots .guide-dot');
+    dots.forEach((d, i) => d.classList.toggle('active', i === guideCurrentPage));
+    // Update buttons
+    document.getElementById('guidePrev').disabled = guideCurrentPage === 0;
+    document.getElementById('guideNext').disabled = guideCurrentPage === guideTotalPages - 1;
 }
 
 // --- Theme Toggle ---
