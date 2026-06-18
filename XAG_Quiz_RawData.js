@@ -1,7 +1,7 @@
 const QUIZ_DATA = {
   "meta": {
-    "version": "20260618030339.",
-    "content_hash": "14701843",
+    "version": "20260618055008.",
+    "content_hash": "489cc71e",
     "total_questions": 873,
     "question_types": {
       "multiple_choice": 550,
@@ -33,7 +33,7 @@ const QUIZ_DATA = {
       "XAG122": 116,
       "XAG123": 115
     },
-    "generated_at": "2026-06-18T03:03:39.650Z",
+    "generated_at": "2026-06-18T05:50:08.651Z",
     "source_file": "XAG_Quiz_RawData_v26.xlsx"
   },
   "option_pools": {
@@ -4462,7 +4462,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "장식적인 세리프(Serif) 체보다 단순한 산세리프(Sans-serif) 체가 디지털 화면에서 훨씬 높은 가독성을 제공합니다."
+      "explanation": "장식적인 세리프(Serif) 체보다 단순한 산세리프(Sans-serif) 체가 디지털 화면에서 훨씬 높은 가독성을 제공합니다.",
+      "answer": true
     },
     {
       "key": "XAG101_OX002",
@@ -4472,7 +4473,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "전체 대문자(ALL CAPS)는 읽기 속도를 30% 이상 저하시킵니다. 50%가 아닌 30%가 정답입니다."
+      "explanation": "전체 대문자(ALL CAPS)는 읽기 속도를 30% 이상 저하시킵니다. 50%가 아닌 30%가 정답입니다.",
+      "answer": false
     },
     {
       "key": "XAG101_OX003",
@@ -4482,7 +4484,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "디자인 컨셉상 필요하더라도 본문에는 양끝 정렬을 절대 사용 금지합니다. WCAG 가이드라인에 근거합니다."
+      "explanation": "디자인 컨셉상 필요하더라도 본문에는 양끝 정렬을 절대 사용 금지합니다. WCAG 가이드라인에 근거합니다.",
+      "answer": false
     },
     {
       "key": "XAG101_OX004",
@@ -4492,7 +4495,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 101에서 텍스트 정렬의 기본 권장 방식은 왼쪽 정렬입니다. 가운데 정렬이 아닙니다."
+      "explanation": "XAG 101에서 텍스트 정렬의 기본 권장 방식은 왼쪽 정렬입니다. 가운데 정렬이 아닙니다.",
+      "answer": false
     },
     {
       "key": "XAG101_OX005",
@@ -4502,7 +4506,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "콘솔/TV 환경에서는 최소 18pt가 기준입니다. 12pt는 모바일/PC 환경의 기준입니다."
+      "explanation": "콘솔/TV 환경에서는 최소 18pt가 기준입니다. 12pt는 모바일/PC 환경의 기준입니다.",
+      "answer": false
     },
     {
       "key": "XAG101_OX006",
@@ -4512,7 +4517,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "판독성(Legibility)은 개별 글자가 얼마나 명확히 구별되는가를 의미합니다. 문장/문단 전체의 읽기 편의성은 가독성(Readability)입니다."
+      "explanation": "판독성(Legibility)은 개별 글자가 얼마나 명확히 구별되는가를 의미합니다. 문장/문단 전체의 읽기 편의성은 가독성(Readability)입니다.",
+      "answer": true
     },
     {
       "key": "XAG101_OX007",
@@ -4522,7 +4528,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 101에서 권장하는 행간은 글자 크기의 1.5배입니다. 2.0배가 아닙니다."
+      "explanation": "XAG 101에서 권장하는 행간은 글자 크기의 1.5배입니다. 2.0배가 아닙니다.",
+      "answer": false
     },
     {
       "key": "XAG101_OX008",
@@ -4532,7 +4539,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "전체 대문자(ALL CAPS)는 단어의 고유한 외형을 파괴하므로, 문장형 대소문자(Sentence case) 사용이 권장됩니다."
+      "explanation": "전체 대문자(ALL CAPS)는 단어의 고유한 외형을 파괴하므로, 문장형 대소문자(Sentence case) 사용이 권장됩니다.",
+      "answer": true
     },
     {
       "key": "XAG101_OX009",
@@ -4542,7 +4550,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "P0(최우선)은 텍스트 크기 조절 기능입니다. 폰트 스타일 변경 기능은 '권장' 사항입니다."
+      "explanation": "P0(최우선)은 텍스트 크기 조절 기능입니다. 폰트 스타일 변경 기능은 '권장' 사항입니다.",
+      "answer": false
     },
     {
       "key": "XAG101_OX010",
@@ -4552,7 +4561,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "양끝 정렬을 위해 단어 사이 간격을 강제로 벌리면 문단 내부에 하얀 구멍들이 세로로 이어지는 '공백의 강(Rivers of White)' 현상이 발생합니다."
+      "explanation": "양끝 정렬을 위해 단어 사이 간격을 강제로 벌리면 문단 내부에 하얀 구멍들이 세로로 이어지는 '공백의 강(Rivers of White)' 현상이 발생합니다.",
+      "answer": true
     },
     {
       "key": "XAG102_OX001",
@@ -4562,7 +4572,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "일반적인 본문 텍스트와 배경 사이의 최소 권장 대비율은 4.5:1입니다."
+      "explanation": "일반적인 본문 텍스트와 배경 사이의 최소 권장 대비율은 4.5:1입니다.",
+      "answer": true
     },
     {
       "key": "XAG102_OX002",
@@ -4572,7 +4583,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "로고 및 장식용 텍스트는 정보 전달이 목적이 아닌 브랜드 아이덴티티 요소이므로 대비율 기준에서 예외로 둡니다."
+      "explanation": "로고 및 장식용 텍스트는 정보 전달이 목적이 아닌 브랜드 아이덴티티 요소이므로 대비율 기준에서 예외로 둡니다.",
+      "answer": false
     },
     {
       "key": "XAG102_OX003",
@@ -4582,7 +4594,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "접근성에서의 대비는 색상(Hue)의 차이가 아니라, 두 대상 사이의 밝기(명도) 차이를 수치화한 것입니다."
+      "explanation": "접근성에서의 대비는 색상(Hue)의 차이가 아니라, 두 대상 사이의 밝기(명도) 차이를 수치화한 것입니다.",
+      "answer": false
     },
     {
       "key": "XAG102_OX004",
@@ -4592,7 +4605,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "1:1(제로 대비)은 앞뒤가 완전히 같은 색인 상태로, 예를 들어 검정 배경에 검정 글자처럼 인지가 불가능합니다."
+      "explanation": "1:1(제로 대비)은 앞뒤가 완전히 같은 색인 상태로, 예를 들어 검정 배경에 검정 글자처럼 인지가 불가능합니다.",
+      "answer": true
     },
     {
       "key": "XAG102_OX005",
@@ -4602,7 +4616,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "21:1은 순수 흑백(#000 vs #FFF)의 대비율이며 무조건 이 수치를 맞출 필요는 없습니다. 너무 높으면 오히려 눈이 부실 수 있습니다."
+      "explanation": "21:1은 순수 흑백(#000 vs #FFF)의 대비율이며 무조건 이 수치를 맞출 필요는 없습니다. 너무 높으면 오히려 눈이 부실 수 있습니다.",
+      "answer": false
     },
     {
       "key": "XAG102_OX006",
@@ -4612,7 +4627,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "빨간색 글자와 검정색 배경은 색 차이는 커 보이지만, 빨간색의 명도 자체가 낮아 약 4:1 수준으로 4.5:1 기준을 미달합니다."
+      "explanation": "빨간색 글자와 검정색 배경은 색 차이는 커 보이지만, 빨간색의 명도 자체가 낮아 약 4:1 수준으로 4.5:1 기준을 미달합니다.",
+      "answer": true
     },
     {
       "key": "XAG102_OX007",
@@ -4622,7 +4638,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "고대비 모드는 항상 흑백만 사용하는 것이 아닙니다. 유저 취향에 따라 검정/노랑, 보라/백색 등 다양한 조합이 가능합니다."
+      "explanation": "고대비 모드는 항상 흑백만 사용하는 것이 아닙니다. 유저 취향에 따라 검정/노랑, 보라/백색 등 다양한 조합이 가능합니다.",
+      "answer": false
     },
     {
       "key": "XAG102_OX008",
@@ -4632,7 +4649,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "색약/색맹 플레이어는 특정 색상을 구분하지 못하더라도 명도(Luminance)의 차이가 확실하면 정보를 식별할 수 있습니다."
+      "explanation": "색약/색맹 플레이어는 특정 색상을 구분하지 못하더라도 명도(Luminance)의 차이가 확실하면 정보를 식별할 수 있습니다.",
+      "answer": true
     },
     {
       "key": "XAG102_OX009",
@@ -4642,7 +4660,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "21:1에 가까운 극단적 대비는 난독증이나 광과민성 유저에게 눈부심 스트레스를 줄 수 있습니다."
+      "explanation": "21:1에 가까운 극단적 대비는 난독증이나 광과민성 유저에게 눈부심 스트레스를 줄 수 있습니다.",
+      "answer": false
     },
     {
       "key": "XAG102_OX010",
@@ -4652,7 +4671,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "'흰색 글자 + 검정 외곽선' 조합은 실시간 색상 변환처럼 실패할 확률 없이, 물리적으로 어떤 배경에서도 최소 대비를 확보합니다."
+      "explanation": "'흰색 글자 + 검정 외곽선' 조합은 실시간 색상 변환처럼 실패할 확률 없이, 물리적으로 어떤 배경에서도 최소 대비를 확보합니다.",
+      "answer": true
     },
     {
       "key": "XAG101_SA001",
@@ -4667,7 +4687,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "18pt",
-      "explanation": "콘솔/TV 환경에서는 최소 18pt, 모바일/PC에서는 최소 12pt를 기준으로 합니다."
+      "explanation": "콘솔/TV 환경에서는 최소 18pt, 모바일/PC에서는 최소 12pt를 기준으로 합니다.",
+      "accepted_answers": [
+        "18pt"
+      ]
     },
     {
       "key": "XAG101_SA002",
@@ -4682,7 +4705,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "12pt",
-      "explanation": "모바일/PC에서는 최소 12pt, 콘솔/TV에서는 최소 18pt가 기준입니다."
+      "explanation": "모바일/PC에서는 최소 12pt, 콘솔/TV에서는 최소 18pt가 기준입니다.",
+      "accepted_answers": [
+        "12pt"
+      ]
     },
     {
       "key": "XAG101_SA003",
@@ -4697,7 +4723,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "1.5배",
-      "explanation": "행간(Leading)은 줄 사이의 간격으로, 글자 크기의 1.5배가 권장됩니다."
+      "explanation": "행간(Leading)은 줄 사이의 간격으로, 글자 크기의 1.5배가 권장됩니다.",
+      "accepted_answers": [
+        "1.5배"
+      ]
     },
     {
       "key": "XAG101_SA004",
@@ -4712,7 +4741,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "30% 이상",
-      "explanation": "전체 대문자(ALL CAPS)는 단어의 고유한 외형을 파괴하여 읽기 속도를 30% 이상 저하시킵니다."
+      "explanation": "전체 대문자(ALL CAPS)는 단어의 고유한 외형을 파괴하여 읽기 속도를 30% 이상 저하시킵니다.",
+      "accepted_answers": [
+        "30% 이상"
+      ]
     },
     {
       "key": "XAG101_SA005",
@@ -4727,7 +4759,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "리턴 스윕(Return Sweep)",
-      "explanation": "한 줄을 끝까지 읽고 다음 줄의 시작점으로 시선을 옮기는 동작을 '리턴 스윕(Return Sweep)'이라고 합니다."
+      "explanation": "한 줄을 끝까지 읽고 다음 줄의 시작점으로 시선을 옮기는 동작을 '리턴 스윕(Return Sweep)'이라고 합니다.",
+      "accepted_answers": [
+        "리턴 스윕(Return Sweep)"
+      ]
     },
     {
       "key": "XAG101_SA006",
@@ -4742,7 +4777,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "속공간(Counter)",
-      "explanation": "속공간(Counter)은 글자 안의 빈 공간을 의미합니다. 장식적 서체에서는 이 공간이 좁거나 왜곡되어 문제가 됩니다."
+      "explanation": "속공간(Counter)은 글자 안의 빈 공간을 의미합니다. 장식적 서체에서는 이 공간이 좁거나 왜곡되어 문제가 됩니다.",
+      "accepted_answers": [
+        "속공간(Counter)"
+      ]
     },
     {
       "key": "XAG101_SA007",
@@ -4757,7 +4795,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "블러링(Blurring) 현상",
-      "explanation": "곡선이 많은 장식적 서체는 속공간이 쉽게 메워져 보이는 블러링(Blurring) 현상이 발생합니다."
+      "explanation": "곡선이 많은 장식적 서체는 속공간이 쉽게 메워져 보이는 블러링(Blurring) 현상이 발생합니다.",
+      "accepted_answers": [
+        "블러링(Blurring) 현상"
+      ]
     },
     {
       "key": "XAG101_SA008",
@@ -4772,7 +4813,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "왼쪽 정렬",
-      "explanation": "XAG 101에서는 왼쪽 정렬을 기본으로 합니다. 양끝 정렬은 가독성을 해칩니다."
+      "explanation": "XAG 101에서는 왼쪽 정렬을 기본으로 합니다. 양끝 정렬은 가독성을 해칩니다.",
+      "accepted_answers": [
+        "왼쪽 정렬"
+      ]
     },
     {
       "key": "XAG102_SA001",
@@ -4787,7 +4831,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "4.5:1",
-      "explanation": "일반 본문 텍스트와 배경 사이의 최소 권장 대비율은 4.5:1입니다."
+      "explanation": "일반 본문 텍스트와 배경 사이의 최소 권장 대비율은 4.5:1입니다.",
+      "accepted_answers": [
+        "4.5:1"
+      ]
     },
     {
       "key": "XAG102_SA002",
@@ -4802,7 +4849,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "3:1",
-      "explanation": "큰 글자(18pt 이상)나 UI 요소의 최소 권장 대비율은 3:1입니다."
+      "explanation": "큰 글자(18pt 이상)나 UI 요소의 최소 권장 대비율은 3:1입니다.",
+      "accepted_answers": [
+        "3:1"
+      ]
     },
     {
       "key": "XAG102_SA003",
@@ -4817,7 +4867,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "1:1 ~ 21:1",
-      "explanation": "대비율은 1:1(차이 없음)부터 21:1(순수 흑백)까지의 범위를 가집니다."
+      "explanation": "대비율은 1:1(차이 없음)부터 21:1(순수 흑백)까지의 범위를 가집니다.",
+      "accepted_answers": [
+        "1:1 ~ 21:1"
+      ]
     },
     {
       "key": "XAG102_SA004",
@@ -4832,7 +4885,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "20/40 시력",
-      "explanation": "4.5:1은 20/40 시력을 가진 유저(저시력자의 일반적 기준)가 일반적인 크기의 본문을 읽을 때 필요한 최소 명도 차이입니다."
+      "explanation": "4.5:1은 20/40 시력을 가진 유저(저시력자의 일반적 기준)가 일반적인 크기의 본문을 읽을 때 필요한 최소 명도 차이입니다.",
+      "accepted_answers": [
+        "20/40 시력"
+      ]
     },
     {
       "key": "XAG102_SA005",
@@ -4847,7 +4903,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "적응형 대비(Adaptive Contrast)",
-      "explanation": "적응형 대비(Adaptive Contrast)는 배경색에 따라 글자색을 자동으로 흑/백 전환하는 기술입니다."
+      "explanation": "적응형 대비(Adaptive Contrast)는 배경색에 따라 글자색을 자동으로 흑/백 전환하는 기술입니다.",
+      "accepted_answers": [
+        "적응형 대비(Adaptive Contrast)"
+      ]
     },
     {
       "key": "XAG103_Q001",
@@ -5172,7 +5231,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "촉각(Haptic)은 단독 채널로 절대 사용 불가합니다. Xbox Adaptive Controller처럼 햅틱 미지원 기기가 있고, 통증·감각 처리 장애로 진동을 끄는 유저도 있으므로, 반드시 시각·청각 등 다른 채널과 병행해야 합니다."
+      "explanation": "촉각(Haptic)은 단독 채널로 절대 사용 불가합니다. Xbox Adaptive Controller처럼 햅틱 미지원 기기가 있고, 통증·감각 처리 장애로 진동을 끄는 유저도 있으므로, 반드시 시각·청각 등 다른 채널과 병행해야 합니다.",
+      "answer": false
     },
     {
       "key": "XAG103_OX002",
@@ -5182,7 +5242,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 103은 색상이 게임 정보 전달의 유일한 수단으로 사용되어서는 안 된다고 명시합니다. 색상은 반드시 형태·패턴·아이콘·텍스트 레이블과 병행하여 사용해야 합니다."
+      "explanation": "XAG 103은 색상이 게임 정보 전달의 유일한 수단으로 사용되어서는 안 된다고 명시합니다. 색상은 반드시 형태·패턴·아이콘·텍스트 레이블과 병행하여 사용해야 합니다.",
+      "answer": true
     },
     {
       "key": "XAG103_OX003",
@@ -5192,7 +5253,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "회색 처리(Graying out)만으로 비활성 상태를 표현하는 것은 XAG 103을 충족하지 않습니다. Sea of Thieves는 자물쇠 아이콘을 추가하여 이 문제를 해결했습니다."
+      "explanation": "회색 처리(Graying out)만으로 비활성 상태를 표현하는 것은 XAG 103을 충족하지 않습니다. Sea of Thieves는 자물쇠 아이콘을 추가하여 이 문제를 해결했습니다.",
+      "answer": false
     },
     {
       "key": "XAG103_OX004",
@@ -5202,7 +5264,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "공간 오디오는 소리의 방향과 거리 정보를 담아, 화면을 보지 않아도 이벤트의 위치를 파악할 수 있게 합니다. Killer Instinct에서는 공간 오디오만으로 시각 장애 플레이어가 게임을 플레이할 수 있습니다."
+      "explanation": "공간 오디오는 소리의 방향과 거리 정보를 담아, 화면을 보지 않아도 이벤트의 위치를 파악할 수 있게 합니다. Killer Instinct에서는 공간 오디오만으로 시각 장애 플레이어가 게임을 플레이할 수 있습니다.",
+      "answer": true
     },
     {
       "key": "XAG104_Q001",
@@ -5662,7 +5725,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "자막(Subtitle)은 대사·음성만 텍스트로 표현하고, 캡션(Caption)은 대사 외 배경음·효과음·음악 분위기 등 모든 오디오를 포함합니다."
+      "explanation": "자막(Subtitle)은 대사·음성만 텍스트로 표현하고, 캡션(Caption)은 대사 외 배경음·효과음·음악 분위기 등 모든 오디오를 포함합니다.",
+      "answer": false
     },
     {
       "key": "XAG104_OX002",
@@ -5672,7 +5736,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 104는 플레이어가 게임을 시작하기 전에 자막을 설정하거나, 자막이 기본 활성화 상태여야 한다고 명시합니다. Gears 5가 이를 모범적으로 구현한 사례입니다."
+      "explanation": "XAG 104는 플레이어가 게임을 시작하기 전에 자막을 설정하거나, 자막이 기본 활성화 상태여야 한다고 명시합니다. Gears 5가 이를 모범적으로 구현한 사례입니다.",
+      "answer": true
     },
     {
       "key": "XAG104_OX003",
@@ -5682,7 +5747,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 104는 배경 불투명도를 0~100% 범위로 조절 가능하도록 명시합니다. 고대비가 필요한 유저와 몰입감을 중시하는 유저 모두를 지원하기 위해서입니다."
+      "explanation": "XAG 104는 배경 불투명도를 0~100% 범위로 조절 가능하도록 명시합니다. 고대비가 필요한 유저와 몰입감을 중시하는 유저 모두를 지원하기 위해서입니다.",
+      "answer": true
     },
     {
       "key": "XAG104_OX004",
@@ -5692,7 +5758,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "ASL과 BSL은 서로 완전히 다른 독립 언어입니다. 수어는 구어와 별개로 나라마다 고유한 언어 체계를 가지며, 같은 영어권이라도 통용되지 않습니다."
+      "explanation": "ASL과 BSL은 서로 완전히 다른 독립 언어입니다. 수어는 구어와 별개로 나라마다 고유한 언어 체계를 가지며, 같은 영어권이라도 통용되지 않습니다.",
+      "answer": false
     },
     {
       "key": "XAG104_OX005",
@@ -5702,7 +5769,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 104는 자막이 중요한 UI와 게임플레이 요소를 가리지 않도록 배치해야 하며, 일반적으로 화면 하단 배치가 이를 달성하는 방법이라고 명시합니다."
+      "explanation": "XAG 104는 자막이 중요한 UI와 게임플레이 요소를 가리지 않도록 배치해야 하며, 일반적으로 화면 하단 배치가 이를 달성하는 방법이라고 명시합니다.",
+      "answer": true
     },
     {
       "key": "XAG104_OX006",
@@ -5712,7 +5780,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "발화자가 미식별 내레이터이고 다른 발화자가 없는 경우, XAG 104는 '내레이터:' 표시를 생략할 수 있다고 명시합니다."
+      "explanation": "발화자가 미식별 내레이터이고 다른 발화자가 없는 경우, XAG 104는 '내레이터:' 표시를 생략할 수 있다고 명시합니다.",
+      "answer": false
     },
     {
       "key": "XAG105_Q001",
@@ -6037,7 +6106,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 105는 음악·보이스오버·효과음·환경음·내레이션·보이스챗 각각을 독립적으로 조절 가능하도록 요구합니다."
+      "explanation": "XAG 105는 음악·보이스오버·효과음·환경음·내레이션·보이스챗 각각을 독립적으로 조절 가능하도록 요구합니다.",
+      "answer": true
     },
     {
       "key": "XAG105_OX002",
@@ -6047,7 +6117,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "3초 미만의 짧은 오디오 이벤트는 오디오 일시정지 요구사항의 예외입니다."
+      "explanation": "3초 미만의 짧은 오디오 이벤트는 오디오 일시정지 요구사항의 예외입니다.",
+      "answer": false
     },
     {
       "key": "XAG105_OX003",
@@ -6057,7 +6128,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "실시간 멀티플레이어 세션은 오디오 일시정지 요구사항의 예외입니다. 다른 플레이어들이 실시간으로 진행 중이므로 한 플레이어가 세션을 일시정지할 수 없습니다."
+      "explanation": "실시간 멀티플레이어 세션은 오디오 일시정지 요구사항의 예외입니다. 다른 플레이어들이 실시간으로 진행 중이므로 한 플레이어가 세션을 일시정지할 수 없습니다.",
+      "answer": false
     },
     {
       "key": "XAG105_OX004",
@@ -6067,7 +6139,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "편측 청력 손실 플레이어는 스테레오 오디오에서 한쪽 채널 정보를 놓칩니다. 모노 변환으로 모든 오디오를 양쪽 채널에 동일하게 출력하여 이 문제를 해결합니다."
+      "explanation": "편측 청력 손실 플레이어는 스테레오 오디오에서 한쪽 채널 정보를 놓칩니다. 모노 변환으로 모든 오디오를 양쪽 채널에 동일하게 출력하여 이 문제를 해결합니다.",
+      "answer": true
     },
     {
       "key": "XAG105_OX005",
@@ -6077,7 +6150,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 105는 공간 오디오를 '활성화할 수 있는 옵션 제공'을 요구합니다. 기본 활성화가 아닌 선택 가능한 옵션으로 제공하면 됩니다."
+      "explanation": "XAG 105는 공간 오디오를 '활성화할 수 있는 옵션 제공'을 요구합니다. 기본 활성화가 아닌 선택 가능한 옵션으로 제공하면 됩니다.",
+      "answer": false
     },
     {
       "key": "XAG105_OX006",
@@ -6087,7 +6161,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "독립 볼륨 조절은 청각 장애인만을 위한 기능이 아닙니다. 소음 환경에서 플레이하거나 타인을 방해하지 않으려는 모든 플레이어에게 유용합니다."
+      "explanation": "독립 볼륨 조절은 청각 장애인만을 위한 기능이 아닙니다. 소음 환경에서 플레이하거나 타인을 방해하지 않으려는 모든 플레이어에게 유용합니다.",
+      "answer": true
     },
     {
       "key": "XAG103_SA002",
@@ -6102,7 +6177,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Deuteranopia (제2색맹)",
-      "explanation": "Deuteranopia는 가장 흔한 색각 이상 유형으로, 녹색 감지 세포(M-cone)의 결함으로 발생합니다."
+      "explanation": "Deuteranopia는 가장 흔한 색각 이상 유형으로, 녹색 감지 세포(M-cone)의 결함으로 발생합니다.",
+      "accepted_answers": [
+        "Deuteranopia (제2색맹)"
+      ]
     },
     {
       "key": "XAG103_SA003",
@@ -6117,7 +6195,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "형태(Shape) / 패턴(Pattern) / 아이콘(Iconography) / 텍스트 레이블 중 택1",
-      "explanation": "색상은 단독으로 정보를 전달할 수 없으며, 형태·패턴·아이콘·텍스트 레이블과 반드시 병행해야 합니다."
+      "explanation": "색상은 단독으로 정보를 전달할 수 없으며, 형태·패턴·아이콘·텍스트 레이블과 반드시 병행해야 합니다.",
+      "accepted_answers": [
+        "형태(Shape) / 패턴(Pattern) / 아이콘(Iconography) / 텍스트 레이블 중 택1"
+      ]
     },
     {
       "key": "XAG103_SA004",
@@ -6132,7 +6213,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "백내장(Cataracts)",
-      "explanation": "백내장은 전세계 실명 원인의 약 51%를 차지하며 색각 이상보다 훨씬 흔합니다."
+      "explanation": "백내장은 전세계 실명 원인의 약 51%를 차지하며 색각 이상보다 훨씬 흔합니다.",
+      "accepted_answers": [
+        "백내장(Cataracts)"
+      ]
     },
     {
       "key": "XAG103_SA005",
@@ -6147,7 +6231,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "공간 오디오(Spatial Audio)",
-      "explanation": "Killer Instinct에서 공간 오디오만으로 시각 장애 플레이어가 게임을 플레이할 수 있게 된 사례가 있습니다."
+      "explanation": "Killer Instinct에서 공간 오디오만으로 시각 장애 플레이어가 게임을 플레이할 수 있게 된 사례가 있습니다.",
+      "accepted_answers": [
+        "공간 오디오(Spatial Audio)"
+      ]
     },
     {
       "key": "XAG103_SA006",
@@ -6162,7 +6249,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "대체 텍스트(alt text)가 있는 이미지",
-      "explanation": "유니코드 문자는 스크린 리더가 표준 설명으로 읽어 게임 맥락과 다른 낭독을 유발합니다."
+      "explanation": "유니코드 문자는 스크린 리더가 표준 설명으로 읽어 게임 맥락과 다른 낭독을 유발합니다.",
+      "accepted_answers": [
+        "대체 텍스트(alt text)가 있는 이미지"
+      ]
     },
     {
       "key": "XAG103_SA007",
@@ -6177,7 +6267,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "색상 비의존 설계",
-      "explanation": "핵심 정보를 형태·패턴·아이콘·텍스트로 전달하여 색상 자체에 의존하지 않는 설계가 가장 근본적인 해결책입니다."
+      "explanation": "핵심 정보를 형태·패턴·아이콘·텍스트로 전달하여 색상 자체에 의존하지 않는 설계가 가장 근본적인 해결책입니다.",
+      "accepted_answers": [
+        "색상 비의존 설계"
+      ]
     },
     {
       "key": "XAG103_SA008",
@@ -6192,7 +6285,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "색각 이상 프리셋(Color Blind Preset)",
-      "explanation": "색각 이상 유형별 UI 색상 프리셋 제공은 색상 비의존 설계, 자유 색상 선택에 이은 3순위 대응 전략입니다."
+      "explanation": "색각 이상 유형별 UI 색상 프리셋 제공은 색상 비의존 설계, 자유 색상 선택에 이은 3순위 대응 전략입니다.",
+      "accepted_answers": [
+        "색각 이상 프리셋(Color Blind Preset)"
+      ]
     },
     {
       "key": "XAG103_SA009",
@@ -6207,7 +6303,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Xbox Adaptive Controller",
-      "explanation": "Xbox Adaptive Controller는 장애 플레이어를 위한 전용 기기로 햅틱 진동을 지원하지 않습니다."
+      "explanation": "Xbox Adaptive Controller는 장애 플레이어를 위한 전용 기기로 햅틱 진동을 지원하지 않습니다.",
+      "accepted_answers": [
+        "Xbox Adaptive Controller"
+      ]
     },
     {
       "key": "XAG104_SA001",
@@ -6222,7 +6321,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "캡션(Caption)",
-      "explanation": "자막은 대사만, 캡션은 모든 오디오를 포함하며 완전한 청각 접근성을 위해 캡션이 필요합니다."
+      "explanation": "자막은 대사만, 캡션은 모든 오디오를 포함하며 완전한 청각 접근성을 위해 캡션이 필요합니다.",
+      "accepted_answers": [
+        "캡션(Caption)"
+      ]
     },
     {
       "key": "XAG104_SA002",
@@ -6237,7 +6339,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "40자",
-      "explanation": "대화 속도가 빠를 때 40자 이내가 빠른 읽기에 최적입니다."
+      "explanation": "대화 속도가 빠를 때 40자 이내가 빠른 읽기에 최적입니다.",
+      "accepted_answers": [
+        "40자"
+      ]
     },
     {
       "key": "XAG104_SA003",
@@ -6252,7 +6357,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "2줄 (예외적으로 3줄)",
-      "explanation": "2줄 초과 시 화면을 과도하게 가리고 읽기 부담이 커집니다."
+      "explanation": "2줄 초과 시 화면을 과도하게 가리고 읽기 부담이 커집니다.",
+      "accepted_answers": [
+        "2줄 (예외적으로 3줄)"
+      ]
     },
     {
       "key": "XAG104_SA004",
@@ -6267,7 +6375,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "혼합 대소문자(Mixed Case)",
-      "explanation": "ALL CAPS는 단어의 시각적 형태를 파괴하여 읽기 속도를 저하시킵니다."
+      "explanation": "ALL CAPS는 단어의 시각적 형태를 파괴하여 읽기 속도를 저하시킵니다.",
+      "accepted_answers": [
+        "혼합 대소문자(Mixed Case)"
+      ]
     },
     {
       "key": "XAG104_SA005",
@@ -6282,7 +6393,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "0~100%",
-      "explanation": "고대비 필요 유저와 몰입감 중시 유저를 동시에 지원하기 위해 0~100% 조절이 필요합니다."
+      "explanation": "고대비 필요 유저와 몰입감 중시 유저를 동시에 지원하기 위해 0~100% 조절이 필요합니다.",
+      "accepted_answers": [
+        "0~100%"
+      ]
     },
     {
       "key": "XAG104_SA006",
@@ -6297,7 +6411,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "200%",
-      "explanation": "XAG 101과 동일하게, 자막도 최소 200%까지 확대 가능해야 합니다."
+      "explanation": "XAG 101과 동일하게, 자막도 최소 200%까지 확대 가능해야 합니다.",
+      "accepted_answers": [
+        "200%"
+      ]
     },
     {
       "key": "XAG104_SA008",
@@ -6312,7 +6429,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "화면 하단 수어 통역사 오버레이",
-      "explanation": "통역사가 화면 하단에 오버레이로 등장하여 대화를 실시간 수어로 번역합니다."
+      "explanation": "통역사가 화면 하단에 오버레이로 등장하여 대화를 실시간 수어로 번역합니다.",
+      "accepted_answers": [
+        "화면 하단 수어 통역사 오버레이"
+      ]
     },
     {
       "key": "XAG104_SA010",
@@ -6327,7 +6447,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "불필요 (생략 가능)",
-      "explanation": "다른 발화자가 없는 단독 내레이터의 경우, XAG 104는 내레이터 표시를 생략할 수 있다고 명시합니다."
+      "explanation": "다른 발화자가 없는 단독 내레이터의 경우, XAG 104는 내레이터 표시를 생략할 수 있다고 명시합니다.",
+      "accepted_answers": [
+        "불필요 (생략 가능)"
+      ]
     },
     {
       "key": "XAG105_SA003",
@@ -6342,7 +6465,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "스테레오→모노 변환 옵션",
-      "explanation": "모노 변환 시 모든 오디오가 좌우 채널 동일하게 출력됩니다."
+      "explanation": "모노 변환 시 모든 오디오가 좌우 채널 동일하게 출력됩니다.",
+      "accepted_answers": [
+        "스테레오→모노 변환 옵션"
+      ]
     },
     {
       "key": "XAG105_SA004",
@@ -6357,7 +6483,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "A 버튼",
-      "explanation": "FMV 재생 중 A 버튼으로 즉시 일시정지, 다시 A를 누르면 재생 재개됩니다."
+      "explanation": "FMV 재생 중 A 버튼으로 즉시 일시정지, 다시 A를 누르면 재생 재개됩니다.",
+      "accepted_answers": [
+        "A 버튼"
+      ]
     },
     {
       "key": "XAG105_SA005",
@@ -6372,7 +6501,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "게임 오디오 자동 감소 또는 음소거 옵션 제공",
-      "explanation": "게임 오디오와 스크린 리더 음성이 경쟁하면 청각 마스킹으로 어느 쪽도 명확히 들리지 않습니다."
+      "explanation": "게임 오디오와 스크린 리더 음성이 경쟁하면 청각 마스킹으로 어느 쪽도 명확히 들리지 않습니다.",
+      "accepted_answers": [
+        "게임 오디오 자동 감소 또는 음소거 옵션 제공"
+      ]
     },
     {
       "key": "XAG105_SA006",
@@ -6387,7 +6519,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "7가지 (모노·스테레오·쿼드·서라운드·5.1·7.1·Pro Logic)",
-      "explanation": "Diablo III는 XAG 105의 스테레오→모노 변환 요구사항을 충족하는 대표 사례입니다."
+      "explanation": "Diablo III는 XAG 105의 스테레오→모노 변환 요구사항을 충족하는 대표 사례입니다.",
+      "accepted_answers": [
+        "7가지 (모노·스테레오·쿼드·서라운드·5.1·7.1·Pro Logic)"
+      ]
     },
     {
       "key": "XAG105_SA007",
@@ -6402,7 +6537,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "핵심 효과음(Active SFX)",
-      "explanation": "새 소리·바람 소리 같은 분위기용 '환경음(Ambient SFX)'과 구분하여 별도 채널로 관리합니다."
+      "explanation": "새 소리·바람 소리 같은 분위기용 '환경음(Ambient SFX)'과 구분하여 별도 채널로 관리합니다.",
+      "accepted_answers": [
+        "핵심 효과음(Active SFX)"
+      ]
     },
     {
       "key": "XAG105_SA008",
@@ -6417,7 +6555,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "근거리 보이스챗 방향성(Directional) 설정",
-      "explanation": "다른 플레이어 음성이 어느 방향에서 오는지 공간적으로 인식할 수 있게 합니다."
+      "explanation": "다른 플레이어 음성이 어느 방향에서 오는지 공간적으로 인식할 수 있게 합니다.",
+      "accepted_answers": [
+        "근거리 보이스챗 방향성(Directional) 설정"
+      ]
     },
     {
       "key": "XAG106_Q001",
@@ -6742,7 +6883,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "순수 장식용·시각 포맷용 비텍스트 요소는 낭독에서 제외합니다. 이미 텍스트 레이블로 동등한 정보가 전달되거나 정보를 담고 있지 않기 때문입니다."
+      "explanation": "순수 장식용·시각 포맷용 비텍스트 요소는 낭독에서 제외합니다. 이미 텍스트 레이블로 동등한 정보가 전달되거나 정보를 담고 있지 않기 때문입니다.",
+      "answer": true
     },
     {
       "key": "XAG106_OX002",
@@ -6752,7 +6894,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 106은 포커스가 새 항목으로 이동한 후, 즉 새 항목이 포커스를 받는 시점에 낭독이 시작되어야 한다고 명시합니다."
+      "explanation": "XAG 106은 포커스가 새 항목으로 이동한 후, 즉 새 항목이 포커스를 받는 시점에 낭독이 시작되어야 한다고 명시합니다.",
+      "answer": false
     },
     {
       "key": "XAG106_OX003",
@@ -6762,7 +6905,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 106은 루프 on/off 옵션을 개발자에게 권장합니다. 모든 플레이어가 루프를 선호하지는 않으므로 선택 가능하게 하는 것이 더 좋습니다."
+      "explanation": "XAG 106은 루프 on/off 옵션을 개발자에게 권장합니다. 모든 플레이어가 루프를 선호하지는 않으므로 선택 가능하게 하는 것이 더 좋습니다.",
+      "answer": false
     },
     {
       "key": "XAG106_OX004",
@@ -6772,7 +6916,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 106은 열거 정보를 낭독 문자열의 끝에 배치하도록 명시합니다. 핵심 정보(이름·값)를 앞에 배치하는 Front-loading 원칙에 따른 것입니다."
+      "explanation": "XAG 106은 열거 정보를 낭독 문자열의 끝에 배치하도록 명시합니다. 핵심 정보(이름·값)를 앞에 배치하는 Front-loading 원칙에 따른 것입니다.",
+      "answer": true
     },
     {
       "key": "XAG106_OX005",
@@ -6782,7 +6927,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 106은 내레이션 과잉을 방지하기 위해, 같은 화면 내에서 변하지 않는 조작법·설명은 첫 진입 시 1회만 낭독하고 반복을 금지합니다."
+      "explanation": "XAG 106은 내레이션 과잉을 방지하기 위해, 같은 화면 내에서 변하지 않는 조작법·설명은 첫 진입 시 1회만 낭독하고 반복을 금지합니다.",
+      "answer": false
     },
     {
       "key": "XAG106_OX006",
@@ -6792,7 +6938,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "포커스 루프는 단방향 선형 메뉴에만 적용됩니다. 다방향 타일 메뉴는 '첫 항목'이 명확히 정의되지 않으므로 루프가 불필요합니다."
+      "explanation": "포커스 루프는 단방향 선형 메뉴에만 적용됩니다. 다방향 타일 메뉴는 '첫 항목'이 명확히 정의되지 않으므로 루프가 불필요합니다.",
+      "answer": true
     },
     {
       "key": "XAG106_SA001",
@@ -6807,7 +6954,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "대체 텍스트(Alternative Text / Alt Text)",
-      "explanation": "XAG 106의 낭독 순서: 이름 → 역할 → 값 → 순번 → 조작법"
+      "explanation": "XAG 106의 낭독 순서: 이름 → 역할 → 값 → 순번 → 조작법",
+      "accepted_answers": [
+        "대체 텍스트(Alternative Text / Alt Text)"
+      ]
     },
     {
       "key": "XAG106_SA002",
@@ -6822,7 +6972,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "1회",
-      "explanation": "순번(Enumeration/Index)은 현재 항목이 전체 목록 중 몇 번째인지 알려주는 정보로, 낭독 문자열의 끝에 배치합니다."
+      "explanation": "순번(Enumeration/Index)은 현재 항목이 전체 목록 중 몇 번째인지 알려주는 정보로, 낭독 문자열의 끝에 배치합니다.",
+      "accepted_answers": [
+        "1회"
+      ]
     },
     {
       "key": "XAG106_SA003",
@@ -6837,7 +6990,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Front-loading",
-      "explanation": "Front-loading은 낭독 중간에 플레이어가 이동해도 핵심 정보(이름·값)는 이미 들은 상태가 되도록 하는 원칙입니다."
+      "explanation": "Front-loading은 낭독 중간에 플레이어가 이동해도 핵심 정보(이름·값)는 이미 들은 상태가 되도록 하는 원칙입니다.",
+      "accepted_answers": [
+        "Front-loading"
+      ]
     },
     {
       "key": "XAG106_SA004",
@@ -6852,7 +7008,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "컨텍스트 변경(Context Change)",
-      "explanation": "컨텍스트 변경 발생 시 즉시 낭독해야 시각 장애 플레이어가 현재 화면 상태를 파악할 수 있습니다."
+      "explanation": "컨텍스트 변경 발생 시 즉시 낭독해야 시각 장애 플레이어가 현재 화면 상태를 파악할 수 있습니다.",
+      "accepted_answers": [
+        "컨텍스트 변경(Context Change)"
+      ]
     },
     {
       "key": "XAG106_SA005",
@@ -6867,7 +7026,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "펼침/접힘(expanded/collapsed)",
-      "explanation": "드롭다운은 현재 펼쳐져 있는지(expanded) 접혀 있는지(collapsed) 상태를 값과 함께 낭독해야 합니다."
+      "explanation": "드롭다운은 현재 펼쳐져 있는지(expanded) 접혀 있는지(collapsed) 상태를 값과 함께 낭독해야 합니다.",
+      "accepted_answers": [
+        "펼침/접힘(expanded/collapsed)"
+      ]
     },
     {
       "key": "XAG106_SA006",
@@ -6882,7 +7044,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "포커스 루프(Focus Loop)",
-      "explanation": "포커스 루프는 선형 메뉴에서 끝과 시작이 연결되도록 하여 플레이어가 자연스럽게 탐색할 수 있게 합니다."
+      "explanation": "포커스 루프는 선형 메뉴에서 끝과 시작이 연결되도록 하여 플레이어가 자연스럽게 탐색할 수 있게 합니다.",
+      "accepted_answers": [
+        "포커스 루프(Focus Loop)"
+      ]
     },
     {
       "key": "XAG106_SA007",
@@ -6897,7 +7062,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "선형 메뉴(Linear Menu)",
-      "explanation": "순번 정보는 플레이어가 메뉴 구조 안에서 현재 자신의 위치를 파악하여 방향감을 유지하게 합니다."
+      "explanation": "순번 정보는 플레이어가 메뉴 구조 안에서 현재 자신의 위치를 파악하여 방향감을 유지하게 합니다.",
+      "accepted_answers": [
+        "선형 메뉴(Linear Menu)"
+      ]
     },
     {
       "key": "XAG106_SA008",
@@ -6912,7 +7080,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "행동 확인(Confirmation of Action)",
-      "explanation": "행동 확인 낭독이 없으면 플레이어는 조작이 반영됐는지 알 수 없어 불확실성이 생깁니다."
+      "explanation": "행동 확인 낭독이 없으면 플레이어는 조작이 반영됐는지 알 수 없어 불확실성이 생깁니다.",
+      "accepted_answers": [
+        "행동 확인(Confirmation of Action)"
+      ]
     },
     {
       "key": "XAG107_Q001",
@@ -7237,7 +7408,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "버튼 리매핑은 필요조건이지만 충분조건이 아닙니다. 속도(빠른 입력)·복잡도(콤보)·지속시간(장시간 유지) 장벽은 리매핑으로 해결되지 않으며, 토글·오토홀드·게임 속도 조절 등 추가 옵션이 필요합니다."
+      "explanation": "버튼 리매핑은 필요조건이지만 충분조건이 아닙니다. 속도(빠른 입력)·복잡도(콤보)·지속시간(장시간 유지) 장벽은 리매핑으로 해결되지 않으며, 토글·오토홀드·게임 속도 조절 등 추가 옵션이 필요합니다.",
+      "answer": false
     },
     {
       "key": "XAG107_OX002",
@@ -7247,7 +7419,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "피아노 건반 시뮬레이션이나 사격 게임처럼 다운 이벤트 활성화가 경험의 본질인 경우는 예외입니다. 단, 이런 예외적 경우를 제외하면 업 이벤트 활성화가 원칙입니다."
+      "explanation": "피아노 건반 시뮬레이션이나 사격 게임처럼 다운 이벤트 활성화가 경험의 본질인 경우는 예외입니다. 단, 이런 예외적 경우를 제외하면 업 이벤트 활성화가 원칙입니다.",
+      "answer": false
     },
     {
       "key": "XAG107_OX003",
@@ -7257,7 +7430,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 107은 아날로그 스틱·조이스틱·트리거·레이싱 휠·마우스 감도를 각각 개별적으로 조절 가능하도록 요구합니다. 통합 슬라이더로는 불충분합니다."
+      "explanation": "XAG 107은 아날로그 스틱·조이스틱·트리거·레이싱 휠·마우스 감도를 각각 개별적으로 조절 가능하도록 요구합니다. 통합 슬라이더로는 불충분합니다.",
+      "answer": false
     },
     {
       "key": "XAG107_OX004",
@@ -7267,7 +7441,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 107은 모바일폰 터치 타겟 최소 크기를 15×15mm, 태블릿은 24×24mm로 명시합니다."
+      "explanation": "XAG 107은 모바일폰 터치 타겟 최소 크기를 15×15mm, 태블릿은 24×24mm로 명시합니다.",
+      "answer": true
     },
     {
       "key": "XAG107_OX005",
@@ -7277,7 +7452,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "리매핑된 컨트롤은 게임 내 힌트·튜토리얼·컨트롤러 맵 등 모든 곳에 올바르게 반영되어야 합니다. 그렇지 않으면 플레이어가 혼란을 겪습니다."
+      "explanation": "리매핑된 컨트롤은 게임 내 힌트·튜토리얼·컨트롤러 맵 등 모든 곳에 올바르게 반영되어야 합니다. 그렇지 않으면 플레이어가 혼란을 겪습니다.",
+      "answer": true
     },
     {
       "key": "XAG107_OX006",
@@ -7287,7 +7463,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 107은 키보드 지원 게임에서 키보드만으로 게임의 모든 과정(시작·설정·플레이·종료)이 가능해야 한다고 명시합니다."
+      "explanation": "XAG 107은 키보드 지원 게임에서 키보드만으로 게임의 모든 과정(시작·설정·플레이·종료)이 가능해야 한다고 명시합니다.",
+      "answer": true
     },
     {
       "key": "XAG107_SA001",
@@ -7302,7 +7479,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "토글(Toggle) / 오토홀드(Auto-hold)",
-      "explanation": "Minecraft 자동 점프(Auto-jump), The Long Dark '누르고 있기→누르기' 전환이 대표 사례입니다."
+      "explanation": "Minecraft 자동 점프(Auto-jump), The Long Dark '누르고 있기→누르기' 전환이 대표 사례입니다.",
+      "accepted_answers": [
+        "토글(Toggle) / 오토홀드(Auto-hold)"
+      ]
     },
     {
       "key": "XAG107_SA002",
@@ -7317,7 +7497,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "±50%",
-      "explanation": "XAG 107은 기본값 대비 최소 ±50% 범위에서 감도 조절이 가능해야 한다고 명시합니다."
+      "explanation": "XAG 107은 기본값 대비 최소 ±50% 범위에서 감도 조절이 가능해야 한다고 명시합니다.",
+      "accepted_answers": [
+        "±50%"
+      ]
     },
     {
       "key": "XAG107_SA003",
@@ -7332,7 +7515,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "액션 단위 리매핑(Action Remapping)",
-      "explanation": "X+X+RT+A 콤보를 X 하나에 재할당하는 것처럼, 복잡도 장벽을 해결하는 핵심 기능입니다."
+      "explanation": "X+X+RT+A 콤보를 X 하나에 재할당하는 것처럼, 복잡도 장벽을 해결하는 핵심 기능입니다.",
+      "accepted_answers": [
+        "액션 단위 리매핑(Action Remapping)"
+      ]
     },
     {
       "key": "XAG107_SA004",
@@ -7347,7 +7533,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "15mm × 15mm",
-      "explanation": "모바일폰은 15×15mm, 태블릿은 24×24mm가 최소 권장 크기입니다."
+      "explanation": "모바일폰은 15×15mm, 태블릿은 24×24mm가 최소 권장 크기입니다.",
+      "accepted_answers": [
+        "15mm × 15mm"
+      ]
     },
     {
       "key": "XAG107_SA005",
@@ -7362,7 +7551,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "스위치 접근(Switch Access)",
-      "explanation": "iOS/Android가 기본 지원하며, 게임이 이와 호환되면 머리·팔·다리 스위치 사용자도 게임을 이용할 수 있습니다."
+      "explanation": "iOS/Android가 기본 지원하며, 게임이 이와 호환되면 머리·팔·다리 스위치 사용자도 게임을 이용할 수 있습니다.",
+      "accepted_answers": [
+        "스위치 접근(Switch Access)"
+      ]
     },
     {
       "key": "XAG107_SA006",
@@ -7377,7 +7569,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "업 이벤트 활성화(Up Event Activation)",
-      "explanation": "손 떨림·정밀도 저하 플레이어가 실수를 취소할 수 있는 핵심 접근성 설계 원칙입니다."
+      "explanation": "손 떨림·정밀도 저하 플레이어가 실수를 취소할 수 있는 핵심 접근성 설계 원칙입니다.",
+      "accepted_answers": [
+        "업 이벤트 활성화(Up Event Activation)"
+      ]
     },
     {
       "key": "XAG107_SA007",
@@ -7392,7 +7587,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Accessible Interactions",
-      "explanation": "모든 '누르고 있기(Hold)' 동작을 '누르기(Press)'로 전환하여 장시간 버튼 유지 장벽을 해결합니다."
+      "explanation": "모든 '누르고 있기(Hold)' 동작을 '누르기(Press)'로 전환하여 장시간 버튼 유지 장벽을 해결합니다.",
+      "accepted_answers": [
+        "Accessible Interactions"
+      ]
     },
     {
       "key": "XAG107_SA008",
@@ -7407,7 +7605,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "싱글 스틱 모드(Single Stick Mode)",
-      "explanation": "한 손만 사용 가능하거나 Xbox Adaptive Controller 사용자처럼 두 번째 스틱을 조작하기 어려운 플레이어를 위한 옵션입니다."
+      "explanation": "한 손만 사용 가능하거나 Xbox Adaptive Controller 사용자처럼 두 번째 스틱을 조작하기 어려운 플레이어를 위한 옵션입니다.",
+      "accepted_answers": [
+        "싱글 스틱 모드(Single Stick Mode)"
+      ]
     },
     {
       "key": "XAG108_Q001",
@@ -7732,7 +7933,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 108은 난이도를 '게임이 정하는 것이 아니라 플레이어의 능력과 게임 장벽 사이의 균형에서 발생하는 주관적 경험'으로 정의합니다."
+      "explanation": "XAG 108은 난이도를 '게임이 정하는 것이 아니라 플레이어의 능력과 게임 장벽 사이의 균형에서 발생하는 주관적 경험'으로 정의합니다.",
+      "answer": false
     },
     {
       "key": "XAG108_OX002",
@@ -7742,7 +7944,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "Creative Mode는 무한 자원·자유 비행·업적 획득 불가 등 게임플레이 자체가 달라 난이도 프리셋으로 인정되지 않습니다. Survival Mode의 Peaceful·Easy·Normal·Hard 4단계가 프리셋에 해당합니다."
+      "explanation": "Creative Mode는 무한 자원·자유 비행·업적 획득 불가 등 게임플레이 자체가 달라 난이도 프리셋으로 인정되지 않습니다. Survival Mode의 Peaceful·Easy·Normal·Hard 4단계가 프리셋에 해당합니다.",
+      "answer": false
     },
     {
       "key": "XAG108_OX003",
@@ -7752,7 +7955,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 108은 난이도 변경 시 게임 진행 상황이 손실되어서는 안 된다고 명시합니다. 언제든 진행 상황 손실 없이 난이도를 변경할 수 있어야 합니다."
+      "explanation": "XAG 108은 난이도 변경 시 게임 진행 상황이 손실되어서는 안 된다고 명시합니다. 언제든 진행 상황 손실 없이 난이도를 변경할 수 있어야 합니다.",
+      "answer": false
     },
     {
       "key": "XAG108_OX004",
@@ -7762,7 +7966,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 108은 인게임 플레이뿐만 아니라 인트로·컷신·스크립트 시네마틱 등 시네마틱도 언제든 일시정지 가능해야 한다고 명시합니다. 저장/로딩 화면만 예외입니다."
+      "explanation": "XAG 108은 인게임 플레이뿐만 아니라 인트로·컷신·스크립트 시네마틱 등 시네마틱도 언제든 일시정지 가능해야 한다고 명시합니다. 저장/로딩 화면만 예외입니다.",
+      "answer": true
     },
     {
       "key": "XAG108_OX005",
@@ -7772,7 +7977,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 108은 난이도 이름·설명이 플레이어를 비하하거나 부끄럽게 만들어서는 안 된다고 명시합니다. 'Wimp Mode'는 낮은 난이도 선택자를 비하하는 표현으로 금지됩니다."
+      "explanation": "XAG 108은 난이도 이름·설명이 플레이어를 비하하거나 부끄럽게 만들어서는 안 된다고 명시합니다. 'Wimp Mode'는 낮은 난이도 선택자를 비하하는 표현으로 금지됩니다.",
+      "answer": true
     },
     {
       "key": "XAG108_OX006",
@@ -7782,7 +7988,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "실시간 온라인 멀티플레이어 세션은 다른 플레이어들이 함께 진행 중이므로 일시정지 요구사항의 예외입니다. 싱글플레이어·로컬 멀티·로컬 분할화면 게임에만 적용됩니다."
+      "explanation": "실시간 온라인 멀티플레이어 세션은 다른 플레이어들이 함께 진행 중이므로 일시정지 요구사항의 예외입니다. 싱글플레이어·로컬 멀티·로컬 분할화면 게임에만 적용됩니다.",
+      "answer": false
     },
     {
       "key": "XAG108_SA001",
@@ -7795,9 +8002,12 @@ const QUIZ_DATA = {
         "4",
         "4+"
       ],
-      "answer_index": 1,
+      "answer_index": 2,
       "answer_text": "4개 이상",
-      "explanation": "Easy/Normal/Hard 3단계보다 세분화된 4개 이상의 프리셋을 권장합니다."
+      "explanation": "Easy/Normal/Hard 3단계보다 세분화된 4개 이상의 프리셋을 권장합니다.",
+      "accepted_answers": [
+        "4개 이상"
+      ]
     },
     {
       "key": "XAG108_SA002",
@@ -7812,7 +8022,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "극저난이도 모드(Ultra-low Mode)",
-      "explanation": "Grounded의 Creative Mode가 대표 사례로, '제로 스트레스 탐색·제작' 경험을 제공합니다."
+      "explanation": "Grounded의 Creative Mode가 대표 사례로, '제로 스트레스 탐색·제작' 경험을 제공합니다.",
+      "accepted_answers": [
+        "극저난이도 모드(Ultra-low Mode)"
+      ]
     },
     {
       "key": "XAG108_SA003",
@@ -7827,7 +8040,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "개별 메커니즘 난이도 조절",
-      "explanation": "Forza H4의 드라이빙·브레이킹 어시스트, Way of the Passive Fist의 4개 슬라이더가 대표 사례입니다."
+      "explanation": "Forza H4의 드라이빙·브레이킹 어시스트, Way of the Passive Fist의 4개 슬라이더가 대표 사례입니다.",
+      "accepted_answers": [
+        "개별 메커니즘 난이도 조절"
+      ]
     },
     {
       "key": "XAG108_SA004",
@@ -7842,7 +8058,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "비하 금지 원칙",
-      "explanation": "난이도 이름·설명이 플레이어를 비하하거나 부끄럽게 만들어서는 안 됩니다."
+      "explanation": "난이도 이름·설명이 플레이어를 비하하거나 부끄럽게 만들어서는 안 됩니다.",
+      "accepted_answers": [
+        "비하 금지 원칙"
+      ]
     },
     {
       "key": "XAG108_SA005",
@@ -7857,7 +8076,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "1~20분",
-      "explanation": "1분 단위로 최대 20분까지 자동 저장 간격을 설정할 수 있습니다."
+      "explanation": "1분 단위로 최대 20분까지 자동 저장 간격을 설정할 수 있습니다.",
+      "accepted_answers": [
+        "1~20분"
+      ]
     },
     {
       "key": "XAG108_SA006",
@@ -7872,7 +8094,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "게임 진행 상황 보존",
-      "explanation": "언제든 난이도를 변경할 수 있어야 하며, 변경 시 게임 진행 상황이 손실되어서는 안 됩니다."
+      "explanation": "언제든 난이도를 변경할 수 있어야 하며, 변경 시 게임 진행 상황이 손실되어서는 안 됩니다.",
+      "accepted_answers": [
+        "게임 진행 상황 보존"
+      ]
     },
     {
       "key": "XAG108_OX007",
@@ -7882,7 +8107,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "저장/로딩 화면은 XAG 108 일시정지 요구사항의 예외입니다. 싱글·로컬 멀티 게임에서 그 외 모든 상황(인게임 플레이·시네마틱)은 일시정지 가능해야 합니다."
+      "explanation": "저장/로딩 화면은 XAG 108 일시정지 요구사항의 예외입니다. 싱글·로컬 멀티 게임에서 그 외 모든 상황(인게임 플레이·시네마틱)은 일시정지 가능해야 합니다.",
+      "answer": true
     },
     {
       "key": "XAG108_SA008",
@@ -7897,7 +8123,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "4개",
-      "explanation": "Easy·Normal·Hard·One Life 4단계로 XAG 108의 '4개 이상' 요구사항을 충족합니다."
+      "explanation": "Easy·Normal·Hard·One Life 4단계로 XAG 108의 '4개 이상' 요구사항을 충족합니다.",
+      "accepted_answers": [
+        "4개"
+      ]
     },
     {
       "key": "XAG109_Q001",
@@ -8222,7 +8451,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 109는 정적 화면을 튜토리얼로 인정하지 않습니다. 플레이어가 직접 조작을 수행하는 인터랙티브 튜토리얼 또는 시연 영상이 필요합니다."
+      "explanation": "XAG 109는 정적 화면을 튜토리얼로 인정하지 않습니다. 플레이어가 직접 조작을 수행하는 인터랙티브 튜토리얼 또는 시연 영상이 필요합니다.",
+      "answer": false
     },
     {
       "key": "XAG109_OX002",
@@ -8232,7 +8462,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "웨이포인트는 활성화 여부를 플레이어가 선택할 수 있는 옵션으로 제공해야 합니다. 탐험을 즐기는 플레이어는 끄고 방향 안내가 필요한 플레이어는 켤 수 있어야 합니다."
+      "explanation": "웨이포인트는 활성화 여부를 플레이어가 선택할 수 있는 옵션으로 제공해야 합니다. 탐험을 즐기는 플레이어는 끄고 방향 안내가 필요한 플레이어는 켤 수 있어야 합니다.",
+      "answer": false
     },
     {
       "key": "XAG109_OX003",
@@ -8242,7 +8473,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 109는 완료된 목표·퀘스트의 로그 목록을 포함하여 제공하도록 명시합니다. The Witcher 3의 완료 퀘스트 탭이 대표 사례입니다."
+      "explanation": "XAG 109는 완료된 목표·퀘스트의 로그 목록을 포함하여 제공하도록 명시합니다. The Witcher 3의 완료 퀘스트 탭이 대표 사례입니다.",
+      "answer": true
     },
     {
       "key": "XAG109_OX004",
@@ -8252,7 +8484,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 109는 튜토리얼이 게임 어느 시점에서든 플레이어가 원할 때 재접근하고 재플레이할 수 있어야 한다고 명시합니다."
+      "explanation": "XAG 109는 튜토리얼이 게임 어느 시점에서든 플레이어가 원할 때 재접근하고 재플레이할 수 있어야 한다고 명시합니다.",
+      "answer": false
     },
     {
       "key": "XAG109_OX005",
@@ -8262,7 +8495,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 109는 저장 파일에 스크린샷·타임스탬프·현재 진행 상황 요약을 포함하도록 이상적 구현으로 권장합니다. Fallout 4가 대표 사례입니다."
+      "explanation": "XAG 109는 저장 파일에 스크린샷·타임스탬프·현재 진행 상황 요약을 포함하도록 이상적 구현으로 권장합니다. Fallout 4가 대표 사례입니다.",
+      "answer": true
     },
     {
       "key": "XAG109_OX006",
@@ -8272,7 +8506,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 109는 '15/20 수집'처럼 구체적인 수치로 진행 상황을 표시하도록 요구합니다. 막연한 텍스트 표현은 불충분합니다."
+      "explanation": "XAG 109는 '15/20 수집'처럼 구체적인 수치로 진행 상황을 표시하도록 요구합니다. 막연한 텍스트 표현은 불충분합니다.",
+      "answer": false
     },
     {
       "key": "XAG109_SA001",
@@ -8287,7 +8522,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "기억이 아닌 접근",
-      "explanation": "퀘스트 로그·HUD 목표 표시처럼 플레이어의 외부 기억 장치 역할을 하는 시스템이 이 원칙의 구현입니다."
+      "explanation": "퀘스트 로그·HUD 목표 표시처럼 플레이어의 외부 기억 장치 역할을 하는 시스템이 이 원칙의 구현입니다.",
+      "accepted_answers": [
+        "기억이 아닌 접근"
+      ]
     },
     {
       "key": "XAG109_SA002",
@@ -8302,7 +8540,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "처방적 다음 단계(Prescriptive Next Steps)",
-      "explanation": "인지 장애 플레이어가 게임 진행에 막혔을 때 구체적인 다음 행동을 안내하는 핵심 원칙입니다."
+      "explanation": "인지 장애 플레이어가 게임 진행에 막혔을 때 구체적인 다음 행동을 안내하는 핵심 원칙입니다.",
+      "accepted_answers": [
+        "처방적 다음 단계(Prescriptive Next Steps)"
+      ]
     },
     {
       "key": "XAG109_SA003",
@@ -8317,7 +8558,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "퀘스트 로그(Quest Log)",
-      "explanation": "The Witcher 3의 퀘스트 메뉴처럼 주 퀘스트·서브 퀘스트·완료 퀘스트를 카테고리별로 분리하는 것이 권장됩니다."
+      "explanation": "The Witcher 3의 퀘스트 메뉴처럼 주 퀘스트·서브 퀘스트·완료 퀘스트를 카테고리별로 분리하는 것이 권장됩니다.",
+      "accepted_answers": [
+        "퀘스트 로그(Quest Log)"
+      ]
     },
     {
       "key": "XAG109_SA004",
@@ -8332,7 +8576,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "발광 경로(Glowing Trail)",
-      "explanation": "바닥에 표시되는 발광 경로로 밝기 조절(끄기 포함)이 가능하여 XAG 109 웨이포인트 요구사항을 충족합니다."
+      "explanation": "바닥에 표시되는 발광 경로로 밝기 조절(끄기 포함)이 가능하여 XAG 109 웨이포인트 요구사항을 충족합니다.",
+      "accepted_answers": [
+        "발광 경로(Glowing Trail)"
+      ]
     },
     {
       "key": "XAG109_SA005",
@@ -8347,7 +8594,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "불인정(인정 안 됨)",
-      "explanation": "XAG 109는 플레이어가 직접 조작을 수행하는 인터랙티브 튜토리얼 또는 시연 영상만 튜토리얼로 인정합니다."
+      "explanation": "XAG 109는 플레이어가 직접 조작을 수행하는 인터랙티브 튜토리얼 또는 시연 영상만 튜토리얼로 인정합니다.",
+      "accepted_answers": [
+        "불인정(인정 안 됨)"
+      ]
     },
     {
       "key": "XAG109_SA006",
@@ -8362,7 +8612,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "스토리 요약(지금까지의 이야기)",
-      "explanation": "복귀 플레이어가 스토리 맥락을 빠르게 파악할 수 있도록 매 실행 시 자동으로 최신 스토리 요약을 표시합니다."
+      "explanation": "복귀 플레이어가 스토리 맥락을 빠르게 파악할 수 있도록 매 실행 시 자동으로 최신 스토리 요약을 표시합니다.",
+      "accepted_answers": [
+        "스토리 요약(지금까지의 이야기)"
+      ]
     },
     {
       "key": "XAG109_SA007",
@@ -8377,7 +8630,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "스크린샷, 타임스탬프, 진행 상황 요약",
-      "explanation": "Fallout 4가 이를 모범적으로 구현한 사례로 XAG 109 공식 문서에 인용됩니다."
+      "explanation": "Fallout 4가 이를 모범적으로 구현한 사례로 XAG 109 공식 문서에 인용됩니다.",
+      "accepted_answers": [
+        "스크린샷, 타임스탬프, 진행 상황 요약"
+      ]
     },
     {
       "key": "XAG109_SA008",
@@ -8392,7 +8648,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Y 버튼",
-      "explanation": "Y버튼을 누르면 이동해야 할 아이템과 이동 위치를 시각적으로 즉시 표시합니다."
+      "explanation": "Y버튼을 누르면 이동해야 할 아이템과 이동 위치를 시각적으로 즉시 표시합니다.",
+      "accepted_answers": [
+        "Y 버튼"
+      ]
     },
     {
       "key": "XAG110_Q001",
@@ -8717,7 +8976,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 110은 햅틱으로 전달하는 모든 정보는 반드시 시각 또는 청각으로도 동시에 제공해야 한다고 명시합니다. Xbox Adaptive Controller 등 햅틱 미지원 기기 사용자와 비활성화 사용자를 위해서입니다."
+      "explanation": "XAG 110은 햅틱으로 전달하는 모든 정보는 반드시 시각 또는 청각으로도 동시에 제공해야 한다고 명시합니다. Xbox Adaptive Controller 등 햅틱 미지원 기기 사용자와 비활성화 사용자를 위해서입니다.",
+      "answer": false
     },
     {
       "key": "XAG110_OX002",
@@ -8727,7 +8987,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 110은 Xbox Adaptive Controller가 햅틱 진동을 지원하지 않음을 명시합니다. 이것이 햅틱 단독 사용을 금지하는 핵심 이유 중 하나입니다."
+      "explanation": "XAG 110은 Xbox Adaptive Controller가 햅틱 진동을 지원하지 않음을 명시합니다. 이것이 햅틱 단독 사용을 금지하는 핵심 이유 중 하나입니다.",
+      "answer": false
     },
     {
       "key": "XAG110_OX003",
@@ -8737,7 +8998,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "강도를 0으로 설정하면 사실상 비활성화 효과를 얻을 수 있습니다. Sea of Thieves처럼 0~100 슬라이더에서 0으로 설정하면 진동이 발생하지 않습니다. 다만 명시적 off 옵션이 더 명확합니다."
+      "explanation": "강도를 0으로 설정하면 사실상 비활성화 효과를 얻을 수 있습니다. Sea of Thieves처럼 0~100 슬라이더에서 0으로 설정하면 진동이 발생하지 않습니다. 다만 명시적 off 옵션이 더 명확합니다.",
+      "answer": true
     },
     {
       "key": "XAG110_OX004",
@@ -8747,7 +9009,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "감각 처리 장애는 신경계가 감각 자극을 다르게 처리하는 조건으로, 촉각 과민(Hypersensitivity) 반응이 있는 경우 동일한 진동을 훨씬 강하고 불쾌하게 인식합니다."
+      "explanation": "감각 처리 장애는 신경계가 감각 자극을 다르게 처리하는 조건으로, 촉각 과민(Hypersensitivity) 반응이 있는 경우 동일한 진동을 훨씬 강하고 불쾌하게 인식합니다.",
+      "answer": true
     },
     {
       "key": "XAG110_OX005",
@@ -8757,7 +9020,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 110은 중요한 시각·오디오 정보에 햅틱을 선택적 보조 채널로 추가하는 것을 권장합니다. 이는 XAG 103의 다중 감각 채널 설계 원칙과 연계됩니다."
+      "explanation": "XAG 110은 중요한 시각·오디오 정보에 햅틱을 선택적 보조 채널로 추가하는 것을 권장합니다. 이는 XAG 103의 다중 감각 채널 설계 원칙과 연계됩니다.",
+      "answer": true
     },
     {
       "key": "XAG110_OX006",
@@ -8767,7 +9031,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 110 공식 문서는 'XAG 103 참조'를 명시합니다. XAG 110은 XAG 103의 '촉각 단독 채널 금지' 원칙을 햅틱 피드백 설정 측면에서 구체화한 연계 가이드라인입니다."
+      "explanation": "XAG 110 공식 문서는 'XAG 103 참조'를 명시합니다. XAG 110은 XAG 103의 '촉각 단독 채널 금지' 원칙을 햅틱 피드백 설정 측면에서 구체화한 연계 가이드라인입니다.",
+      "answer": false
     },
     {
       "key": "XAG110_SA001",
@@ -8782,7 +9047,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "비활성화(Turn Off) + 강도 조절 슬라이더",
-      "explanation": "완전 비활성화 옵션과 최소~최대 스펙트럼의 강도 조절 슬라이더 두 가지를 모두 제공해야 합니다."
+      "explanation": "완전 비활성화 옵션과 최소~최대 스펙트럼의 강도 조절 슬라이더 두 가지를 모두 제공해야 합니다.",
+      "accepted_answers": [
+        "비활성화(Turn Off) + 강도 조절 슬라이더"
+      ]
     },
     {
       "key": "XAG110_SA002",
@@ -8797,7 +9065,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "0~100",
-      "explanation": "Sea of Thieves는 접근성 설정에서 컨트롤러 진동 강도를 0~100 범위로 조절할 수 있으며 기본값은 49입니다."
+      "explanation": "Sea of Thieves는 접근성 설정에서 컨트롤러 진동 강도를 0~100 범위로 조절할 수 있으며 기본값은 49입니다.",
+      "accepted_answers": [
+        "0~100"
+      ]
     },
     {
       "key": "XAG110_SA003",
@@ -8812,7 +9083,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "시각(Visual), 청각(Audio)",
-      "explanation": "햅틱 미지원 기기(Xbox Adaptive Controller 등) 사용자와 비활성화 사용자도 시각·청각 채널로 동일한 정보를 받을 수 있어야 합니다."
+      "explanation": "햅틱 미지원 기기(Xbox Adaptive Controller 등) 사용자와 비활성화 사용자도 시각·청각 채널로 동일한 정보를 받을 수 있어야 합니다.",
+      "accepted_answers": [
+        "시각(Visual), 청각(Audio)"
+      ]
     },
     {
       "key": "XAG110_SA004",
@@ -8827,7 +9101,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "XAG 103",
-      "explanation": "XAG 110 공식 문서는 XAG 103(다중 감각 채널)을 명시적으로 참조합니다. 촉각의 단독 채널 사용 금지 원칙이 연계됩니다."
+      "explanation": "XAG 110 공식 문서는 XAG 103(다중 감각 채널)을 명시적으로 참조합니다. 촉각의 단독 채널 사용 금지 원칙이 연계됩니다.",
+      "accepted_answers": [
+        "XAG 103"
+      ]
     },
     {
       "key": "XAG110_SA005",
@@ -8842,7 +9119,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "감각 처리 장애(Sensory Processing Disorder)",
-      "explanation": "SPD는 신경계가 감각 자극을 다르게 처리하는 조건으로, 촉각 과민(Tactile Hypersensitivity) 반응이 있는 경우 강한 진동이 극도로 불쾌하게 느껴집니다."
+      "explanation": "SPD는 신경계가 감각 자극을 다르게 처리하는 조건으로, 촉각 과민(Tactile Hypersensitivity) 반응이 있는 경우 강한 진동이 극도로 불쾌하게 느껴집니다.",
+      "accepted_answers": [
+        "감각 처리 장애(Sensory Processing Disorder)"
+      ]
     },
     {
       "key": "XAG110_SA006",
@@ -8857,7 +9137,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Xbox Adaptive Controller",
-      "explanation": "Xbox Adaptive Controller(XAC)는 장애 플레이어를 위한 전용 컨트롤러로 햅틱 진동 모터가 없습니다."
+      "explanation": "Xbox Adaptive Controller(XAC)는 장애 플레이어를 위한 전용 컨트롤러로 햅틱 진동 모터가 없습니다.",
+      "accepted_answers": [
+        "Xbox Adaptive Controller"
+      ]
     },
     {
       "key": "XAG110_SA007",
@@ -8872,7 +9155,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "진동(햅틱) + 방향 표시기(시각) + 피격음(청각)",
-      "explanation": "Grounded는 XAG 103·110 모두의 모범 사례로, 피격 시 세 채널을 동시 제공하여 햅틱 비활성화 시에도 모든 정보를 파악할 수 있게 합니다."
+      "explanation": "Grounded는 XAG 103·110 모두의 모범 사례로, 피격 시 세 채널을 동시 제공하여 햅틱 비활성화 시에도 모든 정보를 파악할 수 있게 합니다.",
+      "accepted_answers": [
+        "진동(햅틱) + 방향 표시기(시각) + 피격음(청각)"
+      ]
     },
     {
       "key": "XAG110_SA008",
@@ -8887,7 +9173,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "감각 처리 장애·만성 통증 플레이어가 매우 낮은 강도를 세밀하게 찾을 수 있어야 하기 때문",
-      "explanation": "3단계로는 감각 과민·통증 환자가 자신에게 적합한 세밀한 강도를 찾기 어렵습니다. Sea of Thieves의 0~100 슬라이더가 모범 사례입니다."
+      "explanation": "3단계로는 감각 과민·통증 환자가 자신에게 적합한 세밀한 강도를 찾기 어렵습니다. Sea of Thieves의 0~100 슬라이더가 모범 사례입니다.",
+      "accepted_answers": [
+        "감각 처리 장애·만성 통증 플레이어가 매우 낮은 강도를 세밀하게 찾을 수 있어야 하기 때문"
+      ]
     },
     {
       "key": "XAG111_Q001",
@@ -9212,7 +9501,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "AD(XAG 111)와 자막/캡션(XAG 104)은 서로 다른 대상을 위한 다른 기능입니다. AD는 시각 장애 플레이어를 위해 화면을 음성으로, 자막은 청각 장애 플레이어를 위해 소리를 텍스트로 전달합니다. 완전한 접근성을 위해 두 가지 모두 필요합니다."
+      "explanation": "AD(XAG 111)와 자막/캡션(XAG 104)은 서로 다른 대상을 위한 다른 기능입니다. AD는 시각 장애 플레이어를 위해 화면을 음성으로, 자막은 청각 장애 플레이어를 위해 소리를 텍스트로 전달합니다. 완전한 접근성을 위해 두 가지 모두 필요합니다.",
+      "answer": false
     },
     {
       "key": "XAG111_OX002",
@@ -9222,7 +9512,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "확장 오디오 설명은 대화 공백이 부족할 때 영상 자체를 일시정지하고 AD를 재생한 뒤 재개하는 방식으로, WCAG 2.1 성공 기준 1.2.7(Level AAA)에 해당합니다."
+      "explanation": "확장 오디오 설명은 대화 공백이 부족할 때 영상 자체를 일시정지하고 AD를 재생한 뒤 재개하는 방식으로, WCAG 2.1 성공 기준 1.2.7(Level AAA)에 해당합니다.",
+      "answer": true
     },
     {
       "key": "XAG111_OX003",
@@ -9232,7 +9523,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 111은 AD 트랙을 플레이어가 설정에서 켜고 끌 수 있어야 하며 기본값 off를 허용합니다. AD가 필요하지 않은 플레이어에게 불편함을 주지 않기 위해서입니다."
+      "explanation": "XAG 111은 AD 트랙을 플레이어가 설정에서 켜고 끌 수 있어야 하며 기본값 off를 허용합니다. AD가 필요하지 않은 플레이어에게 불편함을 주지 않기 위해서입니다.",
+      "answer": false
     },
     {
       "key": "XAG111_OX004",
@@ -9242,7 +9534,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 111은 전체 스크립트 게시를 AD 미제공 시의 '최소한의 접근성 대안'으로 제시하지만, AD의 완전한 대체재가 아님을 명시합니다."
+      "explanation": "XAG 111은 전체 스크립트 게시를 AD 미제공 시의 '최소한의 접근성 대안'으로 제시하지만, AD의 완전한 대체재가 아님을 명시합니다.",
+      "answer": false
     },
     {
       "key": "XAG111_OX005",
@@ -9252,7 +9545,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 111은 게임이 지원하는 모든 언어에 AD 트랙을 별도로 제작하도록 권장합니다. 영어 AD만 제공하면 다른 언어권 시각 장애 플레이어에게 접근성이 제공되지 않습니다."
+      "explanation": "XAG 111은 게임이 지원하는 모든 언어에 AD 트랙을 별도로 제작하도록 권장합니다. 영어 AD만 제공하면 다른 언어권 시각 장애 플레이어에게 접근성이 제공되지 않습니다.",
+      "answer": true
     },
     {
       "key": "XAG111_OX006",
@@ -9262,7 +9556,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 111은 AD가 대화·효과음만으로는 알 수 없는 필수 시각 정보를 다뤄야 하며, 이미 대사에서 충분히 설명된 내용은 중복 설명할 필요가 없다고 명시합니다."
+      "explanation": "XAG 111은 AD가 대화·효과음만으로는 알 수 없는 필수 시각 정보를 다뤄야 하며, 이미 대사에서 충분히 설명된 내용은 중복 설명할 필요가 없다고 명시합니다.",
+      "answer": false
     },
     {
       "key": "XAG111_SA001",
@@ -9277,7 +9572,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "확장 오디오 설명(Extended Audio Description)",
-      "explanation": "확장 오디오 설명은 WCAG 2.1 성공 기준 1.2.7(Level AAA)에 해당하며 빠른 전개 장면에 사용합니다."
+      "explanation": "확장 오디오 설명은 WCAG 2.1 성공 기준 1.2.7(Level AAA)에 해당하며 빠른 전개 장면에 사용합니다.",
+      "accepted_answers": [
+        "확장 오디오 설명(Extended Audio Description)"
+      ]
     },
     {
       "key": "XAG111_SA002",
@@ -9292,7 +9590,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "전체 스크립트(Full Transcript) 웹 게시",
-      "explanation": "전체 스크립트에는 대사뿐 아니라 표정·행동·중요 시각 정보·비언어 사운드까지 포함해야 합니다."
+      "explanation": "전체 스크립트에는 대사뿐 아니라 표정·행동·중요 시각 정보·비언어 사운드까지 포함해야 합니다.",
+      "accepted_answers": [
+        "전체 스크립트(Full Transcript) 웹 게시"
+      ]
     },
     {
       "key": "XAG111_SA003",
@@ -9307,7 +9608,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "FMV(풀모션 비디오), 스크립트된 시네마틱",
-      "explanation": "실시간 게임플레이는 포함되지 않으며, 사전 제작된 FMV와 스크립트 시네마틱이 대상입니다."
+      "explanation": "실시간 게임플레이는 포함되지 않으며, 사전 제작된 FMV와 스크립트 시네마틱이 대상입니다.",
+      "accepted_answers": [
+        "FMV(풀모션 비디오), 스크립트된 시네마틱"
+      ]
     },
     {
       "key": "XAG111_SA004",
@@ -9322,7 +9626,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "현재 시제",
-      "explanation": "'폭발이 일어났다' 대신 '폭발이 일어난다'처럼 현재 시제로 작성하여 영상과 동기화합니다."
+      "explanation": "'폭발이 일어났다' 대신 '폭발이 일어난다'처럼 현재 시제로 작성하여 영상과 동기화합니다.",
+      "accepted_answers": [
+        "현재 시제"
+      ]
     },
     {
       "key": "XAG111_SA005",
@@ -9337,7 +9644,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "89.6%",
-      "explanation": "시각 장애 게이머 106명 대상 연구에서 89.6%가 게임 AD에 강한 관심을 표명했습니다."
+      "explanation": "시각 장애 게이머 106명 대상 연구에서 89.6%가 게임 AD에 강한 관심을 표명했습니다.",
+      "accepted_answers": [
+        "89.6%"
+      ]
     },
     {
       "key": "XAG111_SA006",
@@ -9350,9 +9660,12 @@ const QUIZ_DATA = {
         "라스트 오브 어스 파트 1",
         "TLOU Part I"
       ],
-      "answer_index": 1,
+      "answer_index": 2,
       "answer_text": "The Last of Us Part I",
-      "explanation": "2022년 리메이크에서 모든 현지화 언어 컷신에 AD 트랙을 포함하여 업계 모범 사례가 되었습니다."
+      "explanation": "2022년 리메이크에서 모든 현지화 언어 컷신에 AD 트랙을 포함하여 업계 모범 사례가 되었습니다.",
+      "accepted_answers": [
+        "The Last of Us Part I"
+      ]
     },
     {
       "key": "XAG111_SA007",
@@ -9367,7 +9680,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "AD와 대사의 혼동 방지",
-      "explanation": "동일한 목소리를 사용하면 플레이어가 AD 설명인지 캐릭터 대사인지 혼동하여 이해를 방해합니다."
+      "explanation": "동일한 목소리를 사용하면 플레이어가 AD 설명인지 캐릭터 대사인지 혼동하여 이해를 방해합니다.",
+      "accepted_answers": [
+        "AD와 대사의 혼동 방지"
+      ]
     },
     {
       "key": "XAG111_SA008",
@@ -9382,7 +9698,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "CVAA (2010)",
-      "explanation": "CVAA(21st Century Communications and Video Accessibility Act) Title II는 TV 방송 AD를 게임 내에서도 유지해야 함의 법적 근거입니다."
+      "explanation": "CVAA(21st Century Communications and Video Accessibility Act) Title II는 TV 방송 AD를 게임 내에서도 유지해야 함의 법적 근거입니다.",
+      "accepted_answers": [
+        "CVAA (2010)"
+      ]
     },
     {
       "key": "XAG112_Q001",
@@ -9707,7 +10026,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 112는 선형(상하/좌우) 메뉴에서 루프를 권장하지만, 상하좌우 모든 방향 이동이 가능한 다방향 타일 메뉴에서는 루프가 불필요하다고 명시합니다."
+      "explanation": "XAG 112는 선형(상하/좌우) 메뉴에서 루프를 권장하지만, 상하좌우 모든 방향 이동이 가능한 다방향 타일 메뉴에서는 루프가 불필요하다고 명시합니다.",
+      "answer": false
     },
     {
       "key": "XAG112_OX002",
@@ -9717,7 +10037,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "키보드 트랩은 WCAG 2.1.2에서 명시적으로 금지하며, XAG 112도 키보드 트랩 발생 금지를 명시합니다."
+      "explanation": "키보드 트랩은 WCAG 2.1.2에서 명시적으로 금지하며, XAG 112도 키보드 트랩 발생 금지를 명시합니다.",
+      "answer": true
     },
     {
       "key": "XAG112_OX003",
@@ -9727,7 +10048,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 112는 수평+수직 동시 스크롤이 발생하지 않도록 단방향 스크롤만으로 전체 내용을 볼 수 있어야 한다고 명시합니다. 수평 스크롤 추가는 위반입니다."
+      "explanation": "XAG 112는 수평+수직 동시 스크롤이 발생하지 않도록 단방향 스크롤만으로 전체 내용을 볼 수 있어야 한다고 명시합니다. 수평 스크롤 추가는 위반입니다.",
+      "answer": false
     },
     {
       "key": "XAG112_OX004",
@@ -9737,7 +10059,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "다이얼로그가 닫힌 후 포커스가 예상치 못한 위치로 이동하면 스크린 리더 사용자가 맥락을 잃습니다. 트리거 요소로 복귀하는 것이 올바른 처리 방식입니다."
+      "explanation": "다이얼로그가 닫힌 후 포커스가 예상치 못한 위치로 이동하면 스크린 리더 사용자가 맥락을 잃습니다. 트리거 요소로 복귀하는 것이 올바른 처리 방식입니다.",
+      "answer": true
     },
     {
       "key": "XAG112_OX005",
@@ -9747,7 +10070,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 112는 비선형 타일 메뉴에서도 D-pad 방향이 시각적으로 인접한 타일과 일치하도록 포커스 이동을 구현해야 한다고 명시합니다."
+      "explanation": "XAG 112는 비선형 타일 메뉴에서도 D-pad 방향이 시각적으로 인접한 타일과 일치하도록 포커스 이동을 구현해야 한다고 명시합니다.",
+      "answer": false
     },
     {
       "key": "XAG112_OX006",
@@ -9757,7 +10081,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 112는 모든 서브메뉴에서 메인 메뉴 복귀 링크를 영구적으로 제공하도록 명시합니다."
+      "explanation": "XAG 112는 모든 서브메뉴에서 메인 메뉴 복귀 링크를 영구적으로 제공하도록 명시합니다.",
+      "answer": true
     },
     {
       "key": "XAG112_SA001",
@@ -9772,7 +10097,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "키보드 트랩(Keyboard Trap)",
-      "explanation": "WCAG 2.1.2에서 명시적으로 금지하는 접근성 위반으로, 발생 시 게임 자체를 종료해야 하는 극단적 상황을 초래합니다."
+      "explanation": "WCAG 2.1.2에서 명시적으로 금지하는 접근성 위반으로, 발생 시 게임 자체를 종료해야 하는 극단적 상황을 초래합니다.",
+      "accepted_answers": [
+        "키보드 트랩(Keyboard Trap)"
+      ]
     },
     {
       "key": "XAG112_SA002",
@@ -9787,7 +10115,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "리플로우(Reflow)",
-      "explanation": "WCAG 1.4.10(Reflow, Level AA)에서 요구하는 기능으로, 수평+수직 동시 스크롤을 방지합니다."
+      "explanation": "WCAG 1.4.10(Reflow, Level AA)에서 요구하는 기능으로, 수평+수직 동시 스크롤을 방지합니다.",
+      "accepted_answers": [
+        "리플로우(Reflow)"
+      ]
     },
     {
       "key": "XAG112_SA003",
@@ -9802,7 +10133,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "플랫폼 설정 감지(Platform Setting Detection)",
-      "explanation": "Xbox의 'Let Games Read to Me' 등 접근성 설정을 게임 시작 시 감지하여 자동 반영합니다."
+      "explanation": "Xbox의 'Let Games Read to Me' 등 접근성 설정을 게임 시작 시 감지하여 자동 반영합니다.",
+      "accepted_answers": [
+        "플랫폼 설정 감지(Platform Setting Detection)"
+      ]
     },
     {
       "key": "XAG112_SA004",
@@ -9817,7 +10151,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "최초 실행 시 첫 화면으로 접근성 설정 메뉴 표시",
-      "explanation": "Minecraft Dungeons는 XAG 112 공식 문서에서 첫 실행 접근성 경로 보장의 모범 사례로 인용됩니다."
+      "explanation": "Minecraft Dungeons는 XAG 112 공식 문서에서 첫 실행 접근성 경로 보장의 모범 사례로 인용됩니다.",
+      "accepted_answers": [
+        "최초 실행 시 첫 화면으로 접근성 설정 메뉴 표시"
+      ]
     },
     {
       "key": "XAG112_SA005",
@@ -9832,7 +10169,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Tab키, 방향키(화살표키)",
-      "explanation": "Grounded는 Tab키·방향키·스페이스바만으로 Quit까지 마우스 없이 접근 가능합니다."
+      "explanation": "Grounded는 Tab키·방향키·스페이스바만으로 Quit까지 마우스 없이 접근 가능합니다.",
+      "accepted_answers": [
+        "Tab키, 방향키(화살표키)"
+      ]
     },
     {
       "key": "XAG112_SA006",
@@ -9847,7 +10187,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "화면 좌하단",
-      "explanation": "반복 UI 컴포넌트를 항상 같은 위치에 배치하면 플레이어가 위치를 예측할 수 있어 탐색 효율이 높아집니다."
+      "explanation": "반복 UI 컴포넌트를 항상 같은 위치에 배치하면 플레이어가 위치를 예측할 수 있어 탐색 효율이 높아집니다.",
+      "accepted_answers": [
+        "화면 좌하단"
+      ]
     },
     {
       "key": "XAG112_SA007",
@@ -9862,7 +10205,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "미션 텍스트 목록",
-      "explanation": "맵 스크롤 외에 미션 텍스트 목록을 선택하면 해당 맵 위치로 포커스가 자동 이동합니다."
+      "explanation": "맵 스크롤 외에 미션 텍스트 목록을 선택하면 해당 맵 위치로 포커스가 자동 이동합니다.",
+      "accepted_answers": [
+        "미션 텍스트 목록"
+      ]
     },
     {
       "key": "XAG112_SA008",
@@ -9877,7 +10223,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "UI 의미/동작 흐름과 일치",
-      "explanation": "포커스 순서는 ①UI 의미/동작 흐름과 일치, 불가능하면 ②시각적 디자인 흐름과 일치해야 합니다."
+      "explanation": "포커스 순서는 ①UI 의미/동작 흐름과 일치, 불가능하면 ②시각적 디자인 흐름과 일치해야 합니다.",
+      "accepted_answers": [
+        "UI 의미/동작 흐름과 일치"
+      ]
     },
     {
       "key": "XAG113_Q001",
@@ -10202,7 +10551,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "색상 단독 사용은 색각이상 플레이어를 배제합니다. XAG 113은 색상 외에 테두리·크기·형태 변화 등 비색상 방법을 반드시 함께 사용하도록 요구합니다."
+      "explanation": "색상 단독 사용은 색각이상 플레이어를 배제합니다. XAG 113은 색상 외에 테두리·크기·형태 변화 등 비색상 방법을 반드시 함께 사용하도록 요구합니다.",
+      "answer": false
     },
     {
       "key": "XAG113_OX002",
@@ -10212,7 +10562,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "WCAG 2.4.7(Focus Visible)은 포커스 표시기가 시간 제한 없이 유지되어야 한다고 명시합니다. 일정 시간 후 자동 소멸하는 포커스 표시기는 위반입니다."
+      "explanation": "WCAG 2.4.7(Focus Visible)은 포커스 표시기가 시간 제한 없이 유지되어야 한다고 명시합니다. 일정 시간 후 자동 소멸하는 포커스 표시기는 위반입니다.",
+      "answer": true
     },
     {
       "key": "XAG113_OX003",
@@ -10222,7 +10573,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "포커스 트랩은 다이얼로그가 열린 동안 포커스를 다이얼로그 내로 제한하는 의도적이고 올바른 설계입니다. 반면 키보드 트랩(WCAG 2.1.2 위반)은 포커스가 특정 요소에서 빠져나올 수 없는 접근성 위반입니다."
+      "explanation": "포커스 트랩은 다이얼로그가 열린 동안 포커스를 다이얼로그 내로 제한하는 의도적이고 올바른 설계입니다. 반면 키보드 트랩(WCAG 2.1.2 위반)은 포커스가 특정 요소에서 빠져나올 수 없는 접근성 위반입니다.",
+      "answer": true
     },
     {
       "key": "XAG113_OX004",
@@ -10232,7 +10584,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "WCAG 2.4.13(Focus Appearance)은 포커스/미포커스 상태 간 대비율 3:1 이상을 요구합니다. 4.5:1은 일반 텍스트의 대비율 기준(WCAG 1.4.3)입니다."
+      "explanation": "WCAG 2.4.13(Focus Appearance)은 포커스/미포커스 상태 간 대비율 3:1 이상을 요구합니다. 4.5:1은 일반 텍스트의 대비율 기준(WCAG 1.4.3)입니다.",
+      "answer": false
     },
     {
       "key": "XAG113_OX005",
@@ -10242,7 +10595,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "커스텀 컴포넌트는 기본 포커스 스타일을 상속받지 않아 포커스 표시가 누락되기 쉽습니다. 포커스 수신 시 명시적으로 시각 스타일을 적용하는 코드 추가가 필수입니다."
+      "explanation": "커스텀 컴포넌트는 기본 포커스 스타일을 상속받지 않아 포커스 표시가 누락되기 쉽습니다. 포커스 수신 시 명시적으로 시각 스타일을 적용하는 코드 추가가 필수입니다.",
+      "answer": false
     },
     {
       "key": "XAG113_OX006",
@@ -10252,7 +10606,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "다이얼로그 닫힌 후 예상치 못한 위치로 포커스가 이동하면 스크린 리더 사용자가 탐색 맥락을 잃습니다. 트리거 요소로 복귀해야 이전 탐색 흐름이 유지됩니다."
+      "explanation": "다이얼로그 닫힌 후 예상치 못한 위치로 포커스가 이동하면 스크린 리더 사용자가 탐색 맥락을 잃습니다. 트리거 요소로 복귀해야 이전 탐색 흐름이 유지됩니다.",
+      "answer": true
     },
     {
       "key": "XAG113_SA001",
@@ -10267,7 +10622,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "포커스 표시기(Focus Indicator)",
-      "explanation": "마우스 사용자의 마우스 커서에 대응하는 키보드/컨트롤러 사용자의 위치 표시 역할을 합니다."
+      "explanation": "마우스 사용자의 마우스 커서에 대응하는 키보드/컨트롤러 사용자의 위치 표시 역할을 합니다.",
+      "accepted_answers": [
+        "포커스 표시기(Focus Indicator)"
+      ]
     },
     {
       "key": "XAG113_SA002",
@@ -10282,7 +10640,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "2px 이상",
-      "explanation": "미포커스 요소 둘레의 2px 이상 두께에 해당하는 면적이 최소 기준입니다."
+      "explanation": "미포커스 요소 둘레의 2px 이상 두께에 해당하는 면적이 최소 기준입니다.",
+      "accepted_answers": [
+        "2px 이상"
+      ]
     },
     {
       "key": "XAG113_SA003",
@@ -10297,7 +10658,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "3:1",
-      "explanation": "WCAG 1.4.11(비텍스트 대비)과 동일하게 3:1 이상의 대비율을 요구합니다."
+      "explanation": "WCAG 1.4.11(비텍스트 대비)과 동일하게 3:1 이상의 대비율을 요구합니다.",
+      "accepted_answers": [
+        "3:1"
+      ]
     },
     {
       "key": "XAG113_SA004",
@@ -10312,7 +10676,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "외곽 테두리, 배경색 채우기, 글꼴 굵기/색상 변화",
-      "explanation": "세 가지 방법을 동시에 적용하여 어떤 배경에서도 포커스가 명확하게 보입니다."
+      "explanation": "세 가지 방법을 동시에 적용하여 어떤 배경에서도 포커스가 명확하게 보입니다.",
+      "accepted_answers": [
+        "외곽 테두리, 배경색 채우기, 글꼴 굵기/색상 변화"
+      ]
     },
     {
       "key": "XAG113_SA005",
@@ -10327,7 +10694,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "포커스 트랩(Focus Trap)",
-      "explanation": "포커스 트랩은 올바른 접근성 설계입니다. 반면 키보드 트랩은 포커스가 특정 요소에서 빠져나올 수 없는 접근성 위반입니다."
+      "explanation": "포커스 트랩은 올바른 접근성 설계입니다. 반면 키보드 트랩은 포커스가 특정 요소에서 빠져나올 수 없는 접근성 위반입니다.",
+      "accepted_answers": [
+        "포커스 트랩(Focus Trap)"
+      ]
     },
     {
       "key": "XAG113_SA006",
@@ -10342,7 +10712,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "WCAG 1.4.11",
-      "explanation": "WCAG 1.4.11(Non-text Contrast, Level AA)은 버튼 테두리·포커스 표시기 등 비텍스트 UI 요소의 대비율 3:1 이상을 요구합니다."
+      "explanation": "WCAG 1.4.11(Non-text Contrast, Level AA)은 버튼 테두리·포커스 표시기 등 비텍스트 UI 요소의 대비율 3:1 이상을 요구합니다.",
+      "accepted_answers": [
+        "WCAG 1.4.11"
+      ]
     },
     {
       "key": "XAG113_SA007",
@@ -10357,7 +10730,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "색상(노란 배경), 형태(캐릭터 아이콘), 움직임(애니메이션)",
-      "explanation": "세 가지 독립적 시각 채널을 활용하여 색각이상·저시력 플레이어도 포커스를 인식할 수 있습니다."
+      "explanation": "세 가지 독립적 시각 채널을 활용하여 색각이상·저시력 플레이어도 포커스를 인식할 수 있습니다.",
+      "accepted_answers": [
+        "색상(노란 배경), 형태(캐릭터 아이콘), 움직임(애니메이션)"
+      ]
     },
     {
       "key": "XAG113_SA008",
@@ -10372,7 +10748,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "안전한 선택지(취소 버튼)",
-      "explanation": "파괴적 동작 다이얼로그에서 포커스가 '삭제/확인'에 있으면 실수로 활성화될 위험이 있어 '취소'와 같은 안전한 선택지에 먼저 포커스를 두도록 권장합니다."
+      "explanation": "파괴적 동작 다이얼로그에서 포커스가 '삭제/확인'에 있으면 실수로 활성화될 위험이 있어 '취소'와 같은 안전한 선택지에 먼저 포커스를 두도록 권장합니다.",
+      "accepted_answers": [
+        "안전한 선택지(취소 버튼)"
+      ]
     },
     {
       "key": "XAG114_Q001",
@@ -10697,7 +11076,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 114는 비주도 맥락 변경 시 시각적·음성 알림을 모두 제공하도록 요구합니다. Minecraft가 스크린 리더를 통해 로딩 완료를 알리는 것이 모범 사례입니다."
+      "explanation": "XAG 114는 비주도 맥락 변경 시 시각적·음성 알림을 모두 제공하도록 요구합니다. Minecraft가 스크린 리더를 통해 로딩 완료를 알리는 것이 모범 사례입니다.",
+      "answer": true
     },
     {
       "key": "XAG114_OX002",
@@ -10707,7 +11087,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "시각적 근접만으로는 스크린 리더가 레이블과 요소의 연결을 인식하지 못할 수 있습니다. 프로그래밍 방식 연결이 반드시 함께 구현되어야 합니다."
+      "explanation": "시각적 근접만으로는 스크린 리더가 레이블과 요소의 연결을 인식하지 못할 수 있습니다. 프로그래밍 방식 연결이 반드시 함께 구현되어야 합니다.",
+      "answer": false
     },
     {
       "key": "XAG114_OX003",
@@ -10717,7 +11098,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "WCAG 2.4.4(Link Purpose, Level A)와 XAG 114는 링크 텍스트만으로 목적지/동작을 이해할 수 있어야 한다고 명시합니다."
+      "explanation": "WCAG 2.4.4(Link Purpose, Level A)와 XAG 114는 링크 텍스트만으로 목적지/동작을 이해할 수 있어야 한다고 명시합니다.",
+      "answer": true
     },
     {
       "key": "XAG114_OX004",
@@ -10727,7 +11109,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 114는 게임 전용 용어 정의를 접근 가능한 형태로 인게임에서 직접 제공해야 한다고 명시합니다. 외부 위키 링크만으로는 스크린 리더 사용자나 게임 중 외부 접근이 어려운 플레이어를 지원하지 못합니다."
+      "explanation": "XAG 114는 게임 전용 용어 정의를 접근 가능한 형태로 인게임에서 직접 제공해야 한다고 명시합니다. 외부 위키 링크만으로는 스크린 리더 사용자나 게임 중 외부 접근이 어려운 플레이어를 지원하지 못합니다.",
+      "answer": false
     },
     {
       "key": "XAG114_OX005",
@@ -10737,7 +11120,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 114는 읽기 장애·인지 장애·비원어민 플레이어를 위해 중학교 1~3학년(Grade 7~9) 이하의 독해 수준을 권장합니다."
+      "explanation": "XAG 114는 읽기 장애·인지 장애·비원어민 플레이어를 위해 중학교 1~3학년(Grade 7~9) 이하의 독해 수준을 권장합니다.",
+      "answer": true
     },
     {
       "key": "XAG114_OX006",
@@ -10747,7 +11131,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 114는 입력 폼에 추가 탐색 없이도 어떤 데이터를 입력해야 하는지 알 수 있는 안내를 사전에 폼 바로 옆/아래에 표시하도록 요구합니다. 오류 후 표시는 불충분합니다."
+      "explanation": "XAG 114는 입력 폼에 추가 탐색 없이도 어떤 데이터를 입력해야 하는지 알 수 있는 안내를 사전에 폼 바로 옆/아래에 표시하도록 요구합니다. 오류 후 표시는 불충분합니다.",
+      "answer": false
     },
     {
       "key": "XAG114_SA001",
@@ -10762,7 +11147,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "비주도 맥락 변경(Non-player-initiated Context Change)",
-      "explanation": "비주도 맥락 변경 발생 시 시각적·음성 알림을 반드시 제공해야 합니다."
+      "explanation": "비주도 맥락 변경 발생 시 시각적·음성 알림을 반드시 제공해야 합니다.",
+      "accepted_answers": [
+        "비주도 맥락 변경(Non-player-initiated Context Change)"
+      ]
     },
     {
       "key": "XAG114_SA002",
@@ -10777,7 +11165,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Flesch-Kincaid 독해 난이도 지수",
-      "explanation": "XAG 114는 Flesch-Kincaid Grade Level 7~9 이하를 UI 텍스트 독해 수준의 권장 기준으로 제시합니다."
+      "explanation": "XAG 114는 Flesch-Kincaid Grade Level 7~9 이하를 UI 텍스트 독해 수준의 권장 기준으로 제시합니다.",
+      "accepted_answers": [
+        "Flesch-Kincaid 독해 난이도 지수"
+      ]
     },
     {
       "key": "XAG114_SA003",
@@ -10792,7 +11183,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "중학교 1~3학년(Grade 7~9)",
-      "explanation": "읽기 장애·인지 장애·비원어민 플레이어를 위해 약 7~9년 교육 수준의 독해 난이도를 권장합니다."
+      "explanation": "읽기 장애·인지 장애·비원어민 플레이어를 위해 약 7~9년 교육 수준의 독해 난이도를 권장합니다.",
+      "accepted_answers": [
+        "중학교 1~3학년(Grade 7~9)"
+      ]
     },
     {
       "key": "XAG114_SA004",
@@ -10807,7 +11201,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "프로그래밍 방식 연결(Programmatic Association)",
-      "explanation": "시각적 근접 배치만으로는 스크린 리더가 레이블-요소 연결을 인식하지 못할 수 있어 코드 수준의 명시적 연결이 필요합니다."
+      "explanation": "시각적 근접 배치만으로는 스크린 리더가 레이블-요소 연결을 인식하지 못할 수 있어 코드 수준의 명시적 연결이 필요합니다.",
+      "accepted_answers": [
+        "프로그래밍 방식 연결(Programmatic Association)"
+      ]
     },
     {
       "key": "XAG114_SA005",
@@ -10822,7 +11219,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "왼쪽 마우스 버튼으로 거미 미리보기 표시",
-      "explanation": "조작법(왼쪽 마우스 버튼)과 목적(거미 미리보기 표시)을 동시에 전달하는 완전한 맥락의 툴팁 구현 사례입니다."
+      "explanation": "조작법(왼쪽 마우스 버튼)과 목적(거미 미리보기 표시)을 동시에 전달하는 완전한 맥락의 툴팁 구현 사례입니다.",
+      "accepted_answers": [
+        "왼쪽 마우스 버튼으로 거미 미리보기 표시"
+      ]
     },
     {
       "key": "XAG114_SA006",
@@ -10837,7 +11237,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "보조 기술 동등성(AT Parity)",
-      "explanation": "Forza Horizon 4가 메시지 센터·빠른 채팅 등 전체 기능을 스크린 리더로 탐색 가능하게 구현한 것이 모범 사례입니다."
+      "explanation": "Forza Horizon 4가 메시지 센터·빠른 채팅 등 전체 기능을 스크린 리더로 탐색 가능하게 구현한 것이 모범 사례입니다.",
+      "accepted_answers": [
+        "보조 기술 동등성(AT Parity)"
+      ]
     },
     {
       "key": "XAG114_SA007",
@@ -10852,7 +11255,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "어떻게 플레이(How to Play)",
-      "explanation": "'어떻게 플레이' 메뉴에서 게임 전용 용어를 선택하면 정의·게임플레이 영향·시각적 예시가 제공됩니다."
+      "explanation": "'어떻게 플레이' 메뉴에서 게임 전용 용어를 선택하면 정의·게임플레이 영향·시각적 예시가 제공됩니다.",
+      "accepted_answers": [
+        "어떻게 플레이(How to Play)"
+      ]
     },
     {
       "key": "XAG114_SA008",
@@ -10867,7 +11273,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "'여기를 클릭' 또는 '더 보기'",
-      "explanation": "스크린 리더 사용자는 링크를 순서대로 건너뛸 수 있어 링크 텍스트 단독으로 목적지를 알 수 있어야 합니다."
+      "explanation": "스크린 리더 사용자는 링크를 순서대로 건너뛸 수 있어 링크 텍스트 단독으로 목적지를 알 수 있어야 합니다.",
+      "accepted_answers": [
+        "'여기를 클릭' 또는 '더 보기'"
+      ]
     },
     {
       "key": "XAG115_Q001",
@@ -11192,7 +11601,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 115와 WCAG 1.4.1(Use of Color)은 색상만으로 오류를 표시하는 것을 금지합니다. 텍스트·아이콘·밑줄 등 비색상 수단을 반드시 병행해야 합니다."
+      "explanation": "XAG 115와 WCAG 1.4.1(Use of Color)은 색상만으로 오류를 표시하는 것을 금지합니다. 텍스트·아이콘·밑줄 등 비색상 수단을 반드시 병행해야 합니다.",
+      "answer": false
     },
     {
       "key": "XAG115_OX002",
@@ -11202,7 +11612,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 115는 파괴적 동작 확인에 버튼 홀드 요구를 명시적으로 금지합니다. 운동 장애·근력 제한 플레이어에게 버튼 홀드는 물리적으로 수행하기 어렵거나 불가능합니다."
+      "explanation": "XAG 115는 파괴적 동작 확인에 버튼 홀드 요구를 명시적으로 금지합니다. 운동 장애·근력 제한 플레이어에게 버튼 홀드는 물리적으로 수행하기 어렵거나 불가능합니다.",
+      "answer": true
     },
     {
       "key": "XAG115_OX003",
@@ -11212,7 +11623,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 115는 오류 수정 방법을 제안하되, 보안에 위협이 되는 정보는 예외로 명시합니다. WCAG 3.3.3(Error Suggestion)도 동일한 보안 예외를 포함합니다."
+      "explanation": "XAG 115는 오류 수정 방법을 제안하되, 보안에 위협이 되는 정보는 예외로 명시합니다. WCAG 3.3.3(Error Suggestion)도 동일한 보안 예외를 포함합니다.",
+      "answer": false
     },
     {
       "key": "XAG115_OX004",
@@ -11222,7 +11634,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "운동 장애 플레이어가 의도치 않게 입력했을 때 가장 안전한 결과가 실행되도록 기본 포커스를 '취소'/'아니오'에 두는 것이 권장됩니다."
+      "explanation": "운동 장애 플레이어가 의도치 않게 입력했을 때 가장 안전한 결과가 실행되도록 기본 포커스를 '취소'/'아니오'에 두는 것이 권장됩니다.",
+      "answer": true
     },
     {
       "key": "XAG115_OX005",
@@ -11232,7 +11645,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 115는 파괴적 동작(되돌리기 어렵거나 불가능한 동작)에만 확인 메커니즘을 적용하도록 명시합니다. 모든 동작에 적용하면 플레이 흐름이 불필요하게 끊깁니다."
+      "explanation": "XAG 115는 파괴적 동작(되돌리기 어렵거나 불가능한 동작)에만 확인 메커니즘을 적용하도록 명시합니다. 모든 동작에 적용하면 플레이 흐름이 불필요하게 끊깁니다.",
+      "answer": false
     },
     {
       "key": "XAG115_OX006",
@@ -11242,7 +11656,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "시각적으로만 표시된 오류는 시각 장애 플레이어가 인식하지 못합니다. 오류/경고 메시지는 스크린 리더로도 낭독되어야 합니다."
+      "explanation": "시각적으로만 표시된 오류는 시각 장애 플레이어가 인식하지 못합니다. 오류/경고 메시지는 스크린 리더로도 낭독되어야 합니다.",
+      "answer": true
     },
     {
       "key": "XAG115_SA001",
@@ -11257,7 +11672,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "파괴적 동작(Destructive Action)",
-      "explanation": "'되돌릴 수 있는가?'라는 질문으로 파괴적 동작 여부를 판단합니다."
+      "explanation": "'되돌릴 수 있는가?'라는 질문으로 파괴적 동작 여부를 판단합니다.",
+      "accepted_answers": [
+        "파괴적 동작(Destructive Action)"
+      ]
     },
     {
       "key": "XAG115_SA002",
@@ -11272,7 +11690,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "2단계 확인(Two-step Confirmation)",
-      "explanation": "Fallout 76의 상인 구매처럼 1단계(구매 선택) + 2단계(최종 확인)로 실수를 방지하는 패턴입니다."
+      "explanation": "Fallout 76의 상인 구매처럼 1단계(구매 선택) + 2단계(최종 확인)로 실수를 방지하는 패턴입니다.",
+      "accepted_answers": [
+        "2단계 확인(Two-step Confirmation)"
+      ]
     },
     {
       "key": "XAG115_SA003",
@@ -11287,7 +11708,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "버튼 홀드(Button Hold)",
-      "explanation": "운동 장애·근력 제한·보조 기기 사용 플레이어에게 버튼을 일정 시간 누르고 있는 것은 물리적으로 어렵거나 불가능합니다."
+      "explanation": "운동 장애·근력 제한·보조 기기 사용 플레이어에게 버튼을 일정 시간 누르고 있는 것은 물리적으로 어렵거나 불가능합니다.",
+      "accepted_answers": [
+        "버튼 홀드(Button Hold)"
+      ]
     },
     {
       "key": "XAG115_SA004",
@@ -11300,9 +11724,12 @@ const QUIZ_DATA = {
         "text",
         "텍스트 설명"
       ],
-      "answer_index": 1,
+      "answer_index": 2,
       "answer_text": "텍스트",
-      "explanation": "색상·아이콘만으로는 불충분하며 반드시 텍스트로 오류 항목과 내용을 설명해야 합니다."
+      "explanation": "색상·아이콘만으로는 불충분하며 반드시 텍스트로 오류 항목과 내용을 설명해야 합니다.",
+      "accepted_answers": [
+        "텍스트"
+      ]
     },
     {
       "key": "XAG115_SA005",
@@ -11317,7 +11744,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "공장 초기화(Factory Default)",
-      "explanation": "Grounded가 공장 초기화 옵션을 제공하여 잘못된 설정에서 한 번에 복구할 수 있게 한 것이 모범 사례입니다."
+      "explanation": "Grounded가 공장 초기화 옵션을 제공하여 잘못된 설정에서 한 번에 복구할 수 있게 한 것이 모범 사례입니다.",
+      "accepted_answers": [
+        "공장 초기화(Factory Default)"
+      ]
     },
     {
       "key": "XAG115_SA006",
@@ -11332,7 +11762,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "WCAG 3.3.3",
-      "explanation": "WCAG 3.3.3(Error Suggestion, Level AA)은 오류 수정 방법을 알 수 있는 경우 제안을 함께 제공하도록 요구합니다."
+      "explanation": "WCAG 3.3.3(Error Suggestion, Level AA)은 오류 수정 방법을 알 수 있는 경우 제안을 함께 제공하도록 요구합니다.",
+      "accepted_answers": [
+        "WCAG 3.3.3"
+      ]
     },
     {
       "key": "XAG115_SA007",
@@ -11347,7 +11780,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "설정을 저장하지 않고 닫으려 할 때",
-      "explanation": "'미저장 변경사항 감지됨. 적용하시겠습니까?' 다이얼로그가 표시됩니다."
+      "explanation": "'미저장 변경사항 감지됨. 적용하시겠습니까?' 다이얼로그가 표시됩니다.",
+      "accepted_answers": [
+        "설정을 저장하지 않고 닫으려 할 때"
+      ]
     },
     {
       "key": "XAG115_SA008",
@@ -11362,7 +11798,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "'충족되지 않음(not met)'",
-      "explanation": "밑줄·별표와 함께 '충족되지 않음' 텍스트를 동시에 표시하여 색각이상·스크린 리더 사용자 모두가 오류 위치를 인식할 수 있게 합니다."
+      "explanation": "밑줄·별표와 함께 '충족되지 않음' 텍스트를 동시에 표시하여 색각이상·스크린 리더 사용자 모두가 오류 위치를 인식할 수 있게 합니다.",
+      "accepted_answers": [
+        "'충족되지 않음(not met)'"
+      ]
     },
     {
       "key": "XAG116_Q001",
@@ -11687,7 +12126,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "레이싱 게임의 랩 타임은 핵심 게임플레이 메커닉으로서 XAG 116의 예외 대상입니다. 단, XAG 108(난이도 옵션)을 통해 접근성을 지원하는 것은 가능합니다."
+      "explanation": "레이싱 게임의 랩 타임은 핵심 게임플레이 메커닉으로서 XAG 116의 예외 대상입니다. 단, XAG 108(난이도 옵션)을 통해 접근성을 지원하는 것은 가능합니다.",
+      "answer": false
     },
     {
       "key": "XAG116_OX002",
@@ -11697,7 +12137,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "WCAG 2.2.1(Timing Adjustable, Level A)과 XAG 116은 시간 제한 조절 시 기본값의 최소 10배 범위를 요구합니다."
+      "explanation": "WCAG 2.2.1(Timing Adjustable, Level A)과 XAG 116은 시간 제한 조절 시 기본값의 최소 10배 범위를 요구합니다.",
+      "answer": true
     },
     {
       "key": "XAG116_OX003",
@@ -11707,7 +12148,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "20초는 WCAG 2.2.1에서 임상 경험 기반으로 결정된 수치로, 스크린 리더 사용자·운동 장애 플레이어가 경고 인지 후 연장 동작을 완료하기 위한 최소 시간입니다."
+      "explanation": "20초는 WCAG 2.2.1에서 임상 경험 기반으로 결정된 수치로, 스크린 리더 사용자·운동 장애 플레이어가 경고 인지 후 연장 동작을 완료하기 위한 최소 시간입니다.",
+      "answer": true
     },
     {
       "key": "XAG116_OX004",
@@ -11717,7 +12159,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 116은 기본 시간 제한이 20시간을 초과하는 경우를 예외로 명시합니다. 이 경우에는 조절/해제 수단을 제공하지 않아도 됩니다."
+      "explanation": "XAG 116은 기본 시간 제한이 20시간을 초과하는 경우를 예외로 명시합니다. 이 경우에는 조절/해제 수단을 제공하지 않아도 됩니다.",
+      "answer": false
     },
     {
       "key": "XAG116_OX005",
@@ -11727,7 +12170,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "리스폰 카운트다운은 핵심 게임플레이 메커닉이 아닌 UI 레벨 시간 제한으로 XAG 116 적용 대상입니다. 시간 연장이나 시간 제한 없는 방식으로 설계해야 합니다."
+      "explanation": "리스폰 카운트다운은 핵심 게임플레이 메커닉이 아닌 UI 레벨 시간 제한으로 XAG 116 적용 대상입니다. 시간 연장이나 시간 제한 없는 방식으로 설계해야 합니다.",
+      "answer": true
     },
     {
       "key": "XAG116_OX006",
@@ -11737,7 +12181,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 116은 연장 시 단순 동작(A 버튼 한 번 누르기 등)으로 가능해야 한다고 명시합니다. 버튼 홀드는 운동 장애 플레이어에게 어렵거나 불가능하며 XAG 115에서도 금지됩니다."
+      "explanation": "XAG 116은 연장 시 단순 동작(A 버튼 한 번 누르기 등)으로 가능해야 한다고 명시합니다. 버튼 홀드는 운동 장애 플레이어에게 어렵거나 불가능하며 XAG 115에서도 금지됩니다.",
+      "answer": false
     },
     {
       "key": "XAG116_SA001",
@@ -11752,7 +12197,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "10배",
-      "explanation": "WCAG 2.2.1(Timing Adjustable, Level A)에서 임상 경험 기반으로 결정된 최소 조절 범위입니다."
+      "explanation": "WCAG 2.2.1(Timing Adjustable, Level A)에서 임상 경험 기반으로 결정된 최소 조절 범위입니다.",
+      "accepted_answers": [
+        "10배"
+      ]
     },
     {
       "key": "XAG116_SA002",
@@ -11767,7 +12215,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "20초",
-      "explanation": "스크린 리더 사용자와 운동 장애 플레이어가 경고 인지 후 연장 동작을 완료하기 위한 최소 시간입니다."
+      "explanation": "스크린 리더 사용자와 운동 장애 플레이어가 경고 인지 후 연장 동작을 완료하기 위한 최소 시간입니다.",
+      "accepted_answers": [
+        "20초"
+      ]
     },
     {
       "key": "XAG116_SA003",
@@ -11782,7 +12233,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "10회",
-      "explanation": "WCAG 2.2.1은 최소 10회 연장 가능해야 한다고 명시합니다. 한두 번만 연장 가능하면 반복 연장이 필요한 플레이어에게 여전히 장벽입니다."
+      "explanation": "WCAG 2.2.1은 최소 10회 연장 가능해야 한다고 명시합니다. 한두 번만 연장 가능하면 반복 연장이 필요한 플레이어에게 여전히 장벽입니다.",
+      "accepted_answers": [
+        "10회"
+      ]
     },
     {
       "key": "XAG116_SA004",
@@ -11797,7 +12251,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "입력 기반 진행(Input-based Advance)",
-      "explanation": "Ori and the Will of the Wisps가 NPC 대화에 적용한 방식으로, 시간 제한 비활성화의 간단하고 효과적인 구현 방법입니다."
+      "explanation": "Ori and the Will of the Wisps가 NPC 대화에 적용한 방식으로, 시간 제한 비활성화의 간단하고 효과적인 구현 방법입니다.",
+      "accepted_answers": [
+        "입력 기반 진행(Input-based Advance)"
+      ]
     },
     {
       "key": "XAG116_SA005",
@@ -11812,7 +12269,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "5~120초",
-      "explanation": "기본값의 24배에 해당하는 범위로 XAG 116의 10배 이상 조절 요건을 크게 초과하는 모범 사례입니다."
+      "explanation": "기본값의 24배에 해당하는 범위로 XAG 116의 10배 이상 조절 요건을 크게 초과하는 모범 사례입니다.",
+      "accepted_answers": [
+        "5~120초"
+      ]
     },
     {
       "key": "XAG116_SA006",
@@ -11827,7 +12287,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "오토플레이(Autoplay)",
-      "explanation": "접근성을 위해 끌 수 있는 옵션을 제공해야 하며, 비활성화 시 플레이어 입력 기반으로 전환되어야 합니다."
+      "explanation": "접근성을 위해 끌 수 있는 옵션을 제공해야 하며, 비활성화 시 플레이어 입력 기반으로 전환되어야 합니다.",
+      "accepted_answers": [
+        "오토플레이(Autoplay)"
+      ]
     },
     {
       "key": "XAG116_SA007",
@@ -11842,7 +12305,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "시간 제한을 만나기 전(사전에 설정에서 미리 조절)",
-      "explanation": "첫 번째 경고가 뜬 후에야 설정 가능한 방식은 불충분합니다. 시간 제한 상황에서 설정을 찾아 조절하는 것은 이미 너무 늦습니다."
+      "explanation": "첫 번째 경고가 뜬 후에야 설정 가능한 방식은 불충분합니다. 시간 제한 상황에서 설정을 찾아 조절하는 것은 이미 너무 늦습니다.",
+      "accepted_answers": [
+        "시간 제한을 만나기 전(사전에 설정에서 미리 조절)"
+      ]
     },
     {
       "key": "XAG116_SA008",
@@ -11857,7 +12323,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "연장(Extend)",
-      "explanation": "해제(Turn Off)·조절(Adjust)·연장(Extend) 세 가지 수단 중 하나 이상을 제공해야 합니다."
+      "explanation": "해제(Turn Off)·조절(Adjust)·연장(Extend) 세 가지 수단 중 하나 이상을 제공해야 합니다.",
+      "accepted_answers": [
+        "연장(Extend)"
+      ]
     },
     {
       "key": "XAG117_Q001",
@@ -12182,7 +12651,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "WCAG 2.3.1(Three Flashes, Level A)은 초당 3회 초과 점멸을 금지합니다. 초당 3~50회 점멸이 광과민성 발작 최고 위험 구간입니다."
+      "explanation": "WCAG 2.3.1(Three Flashes, Level A)은 초당 3회 초과 점멸을 금지합니다. 초당 3~50회 점멸이 광과민성 발작 최고 위험 구간입니다.",
+      "answer": true
     },
     {
       "key": "XAG117_OX002",
@@ -12192,7 +12662,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 117은 핵심 게임플레이 중 배경 움직임을 예외로 명시합니다. UI 메뉴 화면의 배경 애니메이션과 명확히 구분됩니다."
+      "explanation": "XAG 117은 핵심 게임플레이 중 배경 움직임을 예외로 명시합니다. UI 메뉴 화면의 배경 애니메이션과 명확히 구분됩니다.",
+      "answer": true
     },
     {
       "key": "XAG117_OX003",
@@ -12202,7 +12673,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 117은 수평과 수직 카메라 민감도를 각각 독립적으로 조절할 수 있는 설정을 제공해야 한다고 명시합니다."
+      "explanation": "XAG 117은 수평과 수직 카메라 민감도를 각각 독립적으로 조절할 수 있는 설정을 제공해야 한다고 명시합니다.",
+      "answer": false
     },
     {
       "key": "XAG117_OX004",
@@ -12212,7 +12684,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 117은 완전히 끄는 것이 불가능한 경우 강도를 0까지 낮출 수 있는 슬라이더를 제공하도록 명시합니다."
+      "explanation": "XAG 117은 완전히 끄는 것이 불가능한 경우 강도를 0까지 낮출 수 있는 슬라이더를 제공하도록 명시합니다.",
+      "answer": true
     },
     {
       "key": "XAG117_OX005",
@@ -12222,7 +12695,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 117은 점멸 콘텐츠를 끄는 옵션을 다른 그래픽 설정과 독립적으로 제공해야 한다고 명시합니다. 화질을 희생하지 않고 점멸만 제거할 수 있어야 합니다."
+      "explanation": "XAG 117은 점멸 콘텐츠를 끄는 옵션을 다른 그래픽 설정과 독립적으로 제공해야 한다고 명시합니다. 화질을 희생하지 않고 점멸만 제거할 수 있어야 합니다.",
+      "answer": false
     },
     {
       "key": "XAG117_OX006",
@@ -12232,7 +12706,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 117은 멀미 유발 요소의 기본값을 낮게 설정하거나 비활성화하도록 권장합니다. 기본값이 높으면 설정을 찾기 전에 멀미를 겪어 게임을 포기하는 플레이어가 발생합니다."
+      "explanation": "XAG 117은 멀미 유발 요소의 기본값을 낮게 설정하거나 비활성화하도록 권장합니다. 기본값이 높으면 설정을 찾기 전에 멀미를 겪어 게임을 포기하는 플레이어가 발생합니다.",
+      "answer": true
     },
     {
       "key": "XAG117_SA001",
@@ -12247,7 +12722,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "헤드밥(Head Bob)",
-      "explanation": "현실감을 높이는 효과이지만 전정 장애 플레이어에게는 심한 멀미를 유발합니다. 끄거나 강도를 0까지 낮추는 옵션이 필요합니다."
+      "explanation": "현실감을 높이는 효과이지만 전정 장애 플레이어에게는 심한 멀미를 유발합니다. 끄거나 강도를 0까지 낮추는 옵션이 필요합니다.",
+      "accepted_answers": [
+        "헤드밥(Head Bob)"
+      ]
     },
     {
       "key": "XAG117_SA002",
@@ -12262,7 +12740,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "3회",
-      "explanation": "초당 3~50회 점멸이 광과민성 발작 최고 위험 구간입니다. WCAG 2.3.1(Level A)이 기준입니다."
+      "explanation": "초당 3~50회 점멸이 광과민성 발작 최고 위험 구간입니다. WCAG 2.3.1(Level A)이 기준입니다.",
+      "accepted_answers": [
+        "3회"
+      ]
     },
     {
       "key": "XAG117_SA003",
@@ -12277,7 +12758,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "전정 장애(Vestibular Disorder)",
-      "explanation": "시각 움직임(헤드밥·카메라 흔들림)과 실제 신체 움직임의 불일치가 전정계를 혼란시켜 어지러움·구역질·두통을 유발합니다."
+      "explanation": "시각 움직임(헤드밥·카메라 흔들림)과 실제 신체 움직임의 불일치가 전정계를 혼란시켜 어지러움·구역질·두통을 유발합니다.",
+      "accepted_answers": [
+        "전정 장애(Vestibular Disorder)"
+      ]
     },
     {
       "key": "XAG117_SA004",
@@ -12292,7 +12776,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "FOV(시야각, Field of View)",
-      "explanation": "너무 넓으면 어안 렌즈 왜곡, 너무 좁으면 답답함과 멀미를 유발합니다. 개인별 최적값이 달라 플레이어가 직접 선택할 수 있어야 합니다."
+      "explanation": "너무 넓으면 어안 렌즈 왜곡, 너무 좁으면 답답함과 멀미를 유발합니다. 개인별 최적값이 달라 플레이어가 직접 선택할 수 있어야 합니다.",
+      "accepted_answers": [
+        "FOV(시야각, Field of View)"
+      ]
     },
     {
       "key": "XAG117_SA005",
@@ -12307,7 +12794,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "배경 애니메이션(Animate Background)",
-      "explanation": "단순한 토글 하나로 UI 배경 애니메이션 전체를 정적으로 전환하는 XAG 117 모범 사례입니다."
+      "explanation": "단순한 토글 하나로 UI 배경 애니메이션 전체를 정적으로 전환하는 XAG 117 모범 사례입니다.",
+      "accepted_answers": [
+        "배경 애니메이션(Animate Background)"
+      ]
     },
     {
       "key": "XAG117_SA006",
@@ -12322,7 +12812,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "25~60%",
-      "explanation": "모션 설정 옵션은 소수 장애 플레이어만을 위한 것이 아니라 일반 플레이어의 25~60%에게도 영향을 미치는 보편적 UX 이슈입니다."
+      "explanation": "모션 설정 옵션은 소수 장애 플레이어만을 위한 것이 아니라 일반 플레이어의 25~60%에게도 영향을 미치는 보편적 UX 이슈입니다.",
+      "accepted_answers": [
+        "25~60%"
+      ]
     },
     {
       "key": "XAG117_SA007",
@@ -12337,7 +12830,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "전정-시각 불일치 이론(Vestibulo-Ocular Conflict Theory)",
-      "explanation": "헤드밥·카메라 흔들림이 뇌에 '걷고 있다'는 신호를 보내지만 실제 신체는 움직이지 않아 불일치가 발생합니다."
+      "explanation": "헤드밥·카메라 흔들림이 뇌에 '걷고 있다'는 신호를 보내지만 실제 신체는 움직이지 않아 불일치가 발생합니다.",
+      "accepted_answers": [
+        "전정-시각 불일치 이론(Vestibulo-Ocular Conflict Theory)"
+      ]
     },
     {
       "key": "XAG117_SA008",
@@ -12352,7 +12848,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "딜레이(딜레이 시간), 속도(중심 맞추기 속도)",
-      "explanation": "Sea of Thieves는 on/off 외에 딜레이와 속도까지 세부 조절 가능하여 XAG 117 모범 사례로 인용됩니다."
+      "explanation": "Sea of Thieves는 on/off 외에 딜레이와 속도까지 세부 조절 가능하여 XAG 117 모범 사례로 인용됩니다.",
+      "accepted_answers": [
+        "딜레이(딜레이 시간), 속도(중심 맞추기 속도)"
+      ]
     },
     {
       "key": "XAG118_Q001",
@@ -12677,7 +13176,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 118은 의도적 점멸 여부와 관계없이 모든 게임에서 광과민성 테스트를 필수로 요구합니다. 폭발·번개·총격 이펙트 등이 의도치 않은 점멸 문제를 유발할 수 있습니다."
+      "explanation": "XAG 118은 의도적 점멸 여부와 관계없이 모든 게임에서 광과민성 테스트를 필수로 요구합니다. 폭발·번개·총격 이펙트 등이 의도치 않은 점멸 문제를 유발할 수 있습니다.",
+      "answer": false
     },
     {
       "key": "XAG118_OX002",
@@ -12687,7 +13187,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 118은 경고 화면이 보완 수단일 뿐 대체 수단이 아님을 명시합니다. 경고를 읽지 못하거나 자신의 광과민성을 모르는 플레이어는 경고가 있어도 여전히 위험에 노출됩니다."
+      "explanation": "XAG 118은 경고 화면이 보완 수단일 뿐 대체 수단이 아님을 명시합니다. 경고를 읽지 못하거나 자신의 광과민성을 모르는 플레이어는 경고가 있어도 여전히 위험에 노출됩니다.",
+      "answer": false
     },
     {
       "key": "XAG118_OX003",
@@ -12697,7 +13198,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "채도 높은 빨간색 점멸은 광과민성 발작 유발 위험이 더 높아 R/(R+G+B)>=0.8의 고채도 빨간색 점멸에는 일반 점멸보다 더 엄격한 임계값이 적용됩니다."
+      "explanation": "채도 높은 빨간색 점멸은 광과민성 발작 유발 위험이 더 높아 R/(R+G+B)>=0.8의 고채도 빨간색 점멸에는 일반 점멸보다 더 엄격한 임계값이 적용됩니다.",
+      "answer": true
     },
     {
       "key": "XAG118_OX004",
@@ -12707,7 +13209,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "공간 패턴 실패의 두 조건: ①대비 10% 초과 + ②화면 20% 이상 면적. 둘 중 하나를 기준 이하로 낮추면 실패를 피할 수 있습니다."
+      "explanation": "공간 패턴 실패의 두 조건: ①대비 10% 초과 + ②화면 20% 이상 면적. 둘 중 하나를 기준 이하로 낮추면 실패를 피할 수 있습니다.",
+      "answer": true
     },
     {
       "key": "XAG118_OX005",
@@ -12717,7 +13220,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "Harding FPA Test는 비디오 캡처 기반 분석 도구로 휘도 점멸·적색 점멸·공간 패턴 세 가지 실패 유형을 자동으로 감지합니다."
+      "explanation": "Harding FPA Test는 비디오 캡처 기반 분석 도구로 휘도 점멸·적색 점멸·공간 패턴 세 가지 실패 유형을 자동으로 감지합니다.",
+      "answer": true
     },
     {
       "key": "XAG118_OX006",
@@ -12727,7 +13231,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 118은 광과민성 간질 유병률을 약 4,000명 중 1명(약 0.025%)으로 명시합니다."
+      "explanation": "XAG 118은 광과민성 간질 유병률을 약 4,000명 중 1명(약 0.025%)으로 명시합니다.",
+      "answer": false
     },
     {
       "key": "XAG118_SA001",
@@ -12742,7 +13247,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Harding FPA Test",
-      "explanation": "비디오 캡처를 분석하여 휘도 점멸·적색 점멸·공간 패턴 세 가지 실패를 자동 감지합니다."
+      "explanation": "비디오 캡처를 분석하여 휘도 점멸·적색 점멸·공간 패턴 세 가지 실패를 자동 감지합니다.",
+      "accepted_answers": [
+        "Harding FPA Test"
+      ]
     },
     {
       "key": "XAG118_SA002",
@@ -12757,7 +13265,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "4,000명 중 1명",
-      "explanation": "전 세계 약 4,000명 중 1명이 광과민성 간질을 가지며, 자신의 상태를 모르는 경우도 있습니다."
+      "explanation": "전 세계 약 4,000명 중 1명이 광과민성 간질을 가지며, 자신의 상태를 모르는 경우도 있습니다.",
+      "accepted_answers": [
+        "4,000명 중 1명"
+      ]
     },
     {
       "key": "XAG118_SA003",
@@ -12772,7 +13283,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "WCAG 2.3.1",
-      "explanation": "Three Flashes or Below Threshold(Level A)로 초당 3회 초과 점멸을 금지합니다."
+      "explanation": "Three Flashes or Below Threshold(Level A)로 초당 3회 초과 점멸을 금지합니다.",
+      "accepted_answers": [
+        "WCAG 2.3.1"
+      ]
     },
     {
       "key": "XAG118_SA004",
@@ -12787,7 +13301,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "화면 20% 이상",
-      "explanation": "휘도 점멸과 공간 패턴 모두 화면 20% 이상 면적에서 발생할 때 실패 기준이 적용됩니다."
+      "explanation": "휘도 점멸과 공간 패턴 모두 화면 20% 이상 면적에서 발생할 때 실패 기준이 적용됩니다.",
+      "accepted_answers": [
+        "화면 20% 이상"
+      ]
     },
     {
       "key": "XAG118_SA005",
@@ -12802,7 +13319,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "초당 3~50회",
-      "explanation": "Harding & Jeavons(1994) 연구에서 초당 3~50회 구간이 광과민성 발작 유발 최고 위험 구간임을 확인했습니다."
+      "explanation": "Harding & Jeavons(1994) 연구에서 초당 3~50회 구간이 광과민성 발작 유발 최고 위험 구간임을 확인했습니다.",
+      "accepted_answers": [
+        "초당 3~50회"
+      ]
     },
     {
       "key": "XAG118_SA006",
@@ -12817,7 +13337,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "R/(R+G+B) >= 0.8",
-      "explanation": "이 수식으로 전체 색상 중 빨간색 비율이 80% 이상인 경우 고채도 빨간색으로 판정됩니다."
+      "explanation": "이 수식으로 전체 색상 중 빨간색 비율이 80% 이상인 경우 고채도 빨간색으로 판정됩니다.",
+      "accepted_answers": [
+        "R/(R+G+B) >= 0.8"
+      ]
     },
     {
       "key": "XAG118_SA007",
@@ -12830,9 +13353,12 @@ const QUIZ_DATA = {
         "Migraine",
         "migraine"
       ],
-      "answer_index": 1,
+      "answer_index": 2,
       "answer_text": "편두통",
-      "explanation": "전 세계 인구의 약 15%가 편두통을 경험하며 상당수가 시각 자극(점멸·고대비 패턴)으로 유발됩니다."
+      "explanation": "전 세계 인구의 약 15%가 편두통을 경험하며 상당수가 시각 자극(점멸·고대비 패턴)으로 유발됩니다.",
+      "accepted_answers": [
+        "편두통"
+      ]
     },
     {
       "key": "XAG118_SA008",
@@ -12847,7 +13373,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "빨간색 채도 낮추기",
-      "explanation": "고채도 빨간색 점멸을 저채도 빨간색이나 다른 색으로 대체하는 것이 적색 점멸 실패 해결의 우선 방법입니다."
+      "explanation": "고채도 빨간색 점멸을 저채도 빨간색이나 다른 색으로 대체하는 것이 적색 점멸 실패 해결의 우선 방법입니다.",
+      "accepted_answers": [
+        "빨간색 채도 낮추기"
+      ]
     },
     {
       "key": "XAG119_Q001",
@@ -13172,7 +13701,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 119는 '음성 채팅 제공 ≠ 텍스트 채팅 접근성'을 명확히 구분합니다. STT·TTS·텍스트 입력창은 각각 다른 플레이어를 위한 별도 기능입니다."
+      "explanation": "XAG 119는 '음성 채팅 제공 ≠ 텍스트 채팅 접근성'을 명확히 구분합니다. STT·TTS·텍스트 입력창은 각각 다른 플레이어를 위한 별도 기능입니다.",
+      "answer": false
     },
     {
       "key": "XAG119_OX002",
@@ -13182,7 +13712,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 119는 이모지를 Unicode CLDR Short Name으로 낭독하도록 명시합니다. 이모지는 감정과 의미를 전달하는 중요한 커뮤니케이션 수단으로 시각 장애 플레이어도 접근할 수 있어야 합니다."
+      "explanation": "XAG 119는 이모지를 Unicode CLDR Short Name으로 낭독하도록 명시합니다. 이모지는 감정과 의미를 전달하는 중요한 커뮤니케이션 수단으로 시각 장애 플레이어도 접근할 수 있어야 합니다.",
+      "answer": false
     },
     {
       "key": "XAG119_OX003",
@@ -13192,7 +13723,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 119는 텍스트 입력창을 게임플레이 중·로비·비게임플레이 UI 등 커뮤니케이션이 가능한 모든 화면에 항상 제공하도록 요구합니다."
+      "explanation": "XAG 119는 텍스트 입력창을 게임플레이 중·로비·비게임플레이 UI 등 커뮤니케이션이 가능한 모든 화면에 항상 제공하도록 요구합니다.",
+      "answer": true
     },
     {
       "key": "XAG119_OX004",
@@ -13202,7 +13734,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "STT(음성→텍스트)는 청각 장애 플레이어가 음성 채팅을 텍스트로 보기 위해, TTS(텍스트→음성)는 비언어 플레이어가 텍스트 입력을 음성으로 송출하기 위해 필요합니다."
+      "explanation": "STT(음성→텍스트)는 청각 장애 플레이어가 음성 채팅을 텍스트로 보기 위해, TTS(텍스트→음성)는 비언어 플레이어가 텍스트 입력을 음성으로 송출하기 위해 필요합니다.",
+      "answer": true
     },
     {
       "key": "XAG119_OX005",
@@ -13212,7 +13745,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 119는 채팅휠 메시지를 선택 전 포커스 시 미리 낭독해야 한다고 명시합니다. 선택 후 낭독은 이미 전송 직전 상태이므로 시각 장애 플레이어가 내용을 확인하고 취소할 기회를 잃습니다."
+      "explanation": "XAG 119는 채팅휠 메시지를 선택 전 포커스 시 미리 낭독해야 한다고 명시합니다. 선택 후 낭독은 이미 전송 직전 상태이므로 시각 장애 플레이어가 내용을 확인하고 취소할 기회를 잃습니다.",
+      "answer": false
     },
     {
       "key": "XAG119_OX006",
@@ -13222,7 +13756,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "플레이어가 Xbox 플랫폼에서 설정한 STT/TTS 기본값을 게임이 자동으로 반영해야 합니다. XAG 112의 '플랫폼 설정 감지' 원칙과 동일합니다."
+      "explanation": "플레이어가 Xbox 플랫폼에서 설정한 STT/TTS 기본값을 게임이 자동으로 반영해야 합니다. XAG 112의 '플랫폼 설정 감지' 원칙과 동일합니다.",
+      "answer": true
     },
     {
       "key": "XAG119_SA001",
@@ -13237,7 +13772,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "STT(Speech-to-Text)",
-      "explanation": "청각 장애/난청 플레이어가 음성 채팅 내용을 텍스트로 파악할 수 있게 합니다."
+      "explanation": "청각 장애/난청 플레이어가 음성 채팅 내용을 텍스트로 파악할 수 있게 합니다.",
+      "accepted_answers": [
+        "STT(Speech-to-Text)"
+      ]
     },
     {
       "key": "XAG119_SA002",
@@ -13252,7 +13790,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "TTS(Text-to-Speech)",
-      "explanation": "비언어/발성 장애 플레이어가 음성 채널에 텍스트로 참여할 수 있게 합니다."
+      "explanation": "비언어/발성 장애 플레이어가 음성 채널에 텍스트로 참여할 수 있게 합니다.",
+      "accepted_answers": [
+        "TTS(Text-to-Speech)"
+      ]
     },
     {
       "key": "XAG119_SA003",
@@ -13267,7 +13808,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Unicode CLDR Short Name",
-      "explanation": "예: U+2764(빨간 하트 이모지) → 'Red Heart'로 낭독합니다."
+      "explanation": "예: U+2764(빨간 하트 이모지) → 'Red Heart'로 낭독합니다.",
+      "accepted_answers": [
+        "Unicode CLDR Short Name"
+      ]
     },
     {
       "key": "XAG119_SA004",
@@ -13282,7 +13826,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "채팅휠(Chat Wheel)",
-      "explanation": "선택 전 포커스 시 스크린 리더로 미리 낭독되어야 시각 장애 플레이어가 내용을 확인하고 선택할 수 있습니다."
+      "explanation": "선택 전 포커스 시 스크린 리더로 미리 낭독되어야 시각 장애 플레이어가 내용을 확인하고 선택할 수 있습니다.",
+      "accepted_answers": [
+        "채팅휠(Chat Wheel)"
+      ]
     },
     {
       "key": "XAG119_SA005",
@@ -13297,7 +13844,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Game Transcription",
-      "explanation": "Xbox GDK의 Game Transcription API를 활용하면 플랫폼 수준 STT/TTS를 게임에 연동할 수 있습니다."
+      "explanation": "Xbox GDK의 Game Transcription API를 활용하면 플랫폼 수준 STT/TTS를 게임에 연동할 수 있습니다.",
+      "accepted_answers": [
+        "Game Transcription"
+      ]
     },
     {
       "key": "XAG119_SA006",
@@ -13312,7 +13862,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "약 15억 명",
-      "explanation": "전 세계 인구의 약 20%에 해당하며 게임 내 STT 필요성을 뒷받침하는 통계입니다."
+      "explanation": "전 세계 인구의 약 20%에 해당하며 게임 내 STT 필요성을 뒷받침하는 통계입니다.",
+      "accepted_answers": [
+        "약 15억 명"
+      ]
     },
     {
       "key": "XAG119_SA007",
@@ -13327,7 +13880,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "화면 우측",
-      "explanation": "다른 플레이어의 음성이 실시간으로 텍스트로 변환되어 화면 우측에 표시됩니다."
+      "explanation": "다른 플레이어의 음성이 실시간으로 텍스트로 변환되어 화면 우측에 표시됩니다.",
+      "accepted_answers": [
+        "화면 우측"
+      ]
     },
     {
       "key": "XAG119_SA008",
@@ -13340,9 +13896,12 @@ const QUIZ_DATA = {
         "21세기 통신 및 비디오 접근성법",
         "21st Century Communications and Video Accessibility Act"
       ],
-      "answer_index": 1,
+      "answer_index": 2,
       "answer_text": "CVAA",
-      "explanation": "CVAA(2010)는 영상 프로그래밍 기기와 서비스에서 청각·시각 장애 사용자를 위한 접근 가능한 커뮤니케이션 수단을 요구합니다."
+      "explanation": "CVAA(2010)는 영상 프로그래밍 기기와 서비스에서 청각·시각 장애 사용자를 위한 접근 가능한 커뮤니케이션 수단을 요구합니다.",
+      "accepted_answers": [
+        "CVAA"
+      ]
     },
     {
       "key": "XAG120_Q001",
@@ -13667,7 +14226,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 120의 핵심: STT/TTS 기능이 있어도 그 기능에 도달하는 메뉴·설정 경로가 접근 불가능하면 장애 플레이어는 사용할 수 없습니다. XAG 119와 XAG 120은 별개입니다."
+      "explanation": "XAG 120의 핵심: STT/TTS 기능이 있어도 그 기능에 도달하는 메뉴·설정 경로가 접근 불가능하면 장애 플레이어는 사용할 수 없습니다. XAG 119와 XAG 120은 별개입니다.",
+      "answer": false
     },
     {
       "key": "XAG120_OX002",
@@ -13677,7 +14237,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 120은 게임 시작→멀티플레이→서버/로비→채팅 설정→채팅 사용까지 전 과정을 여정 단위로 테스트해야 한다고 명시합니다."
+      "explanation": "XAG 120은 게임 시작→멀티플레이→서버/로비→채팅 설정→채팅 사용까지 전 과정을 여정 단위로 테스트해야 한다고 명시합니다.",
+      "answer": true
     },
     {
       "key": "XAG120_OX003",
@@ -13687,7 +14248,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 120은 커뮤니케이션 기능 자체(XAG 119의 영역)가 아니라 그 기능에 도달하는 전체 경로의 접근성을 다룹니다."
+      "explanation": "XAG 120은 커뮤니케이션 기능 자체(XAG 119의 영역)가 아니라 그 기능에 도달하는 전체 경로의 접근성을 다룹니다.",
+      "answer": false
     },
     {
       "key": "XAG120_OX004",
@@ -13697,7 +14259,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 120 공식 문서는 메인 메뉴부터 커뮤니케이션 기능 사용 시점까지 전체 경로가 XAG 101~117(텍스트·대비·내레이션·입력·UI 탐색 등)을 준수해야 한다고 명시합니다."
+      "explanation": "XAG 120 공식 문서는 메인 메뉴부터 커뮤니케이션 기능 사용 시점까지 전체 경로가 XAG 101~117(텍스트·대비·내레이션·입력·UI 탐색 등)을 준수해야 한다고 명시합니다.",
+      "answer": true
     },
     {
       "key": "XAG120_OX005",
@@ -13707,7 +14270,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 120은 커뮤니케이션 관련 모든 설정(채팅 볼륨·알림 표시 시간·알림 on/off 포함)이 접근 가능해야 한다고 명시합니다."
+      "explanation": "XAG 120은 커뮤니케이션 관련 모든 설정(채팅 볼륨·알림 표시 시간·알림 on/off 포함)이 접근 가능해야 한다고 명시합니다.",
+      "answer": true
     },
     {
       "key": "XAG120_OX006",
@@ -13717,7 +14281,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 120은 1:1 또는 1:다 플레이어 상호작용을 지원하는 게임을 대상으로 합니다. 커뮤니케이션 기능이 없는 싱글플레이어 전용 게임은 주요 적용 대상이 아닙니다."
+      "explanation": "XAG 120은 1:1 또는 1:다 플레이어 상호작용을 지원하는 게임을 대상으로 합니다. 커뮤니케이션 기능이 없는 싱글플레이어 전용 게임은 주요 적용 대상이 아닙니다.",
+      "answer": false
     },
     {
       "key": "XAG120_SA001",
@@ -13732,7 +14297,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "그 문까지 가는 복도(커뮤니케이션 경로 접근성)",
-      "explanation": "XAG 120 공식 문서의 비유: 문이 있어도 복도가 막혀 있으면 소용없습니다."
+      "explanation": "XAG 120 공식 문서의 비유: 문이 있어도 복도가 막혀 있으면 소용없습니다.",
+      "accepted_answers": [
+        "그 문까지 가는 복도(커뮤니케이션 경로 접근성)"
+      ]
     },
     {
       "key": "XAG120_SA002",
@@ -13747,7 +14315,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "XAG 101~117",
-      "explanation": "텍스트·대비·내레이션·입력·UI 탐색 등 XAG 101~117 전체가 커뮤니케이션 경로에 적용되어야 합니다."
+      "explanation": "텍스트·대비·내레이션·입력·UI 탐색 등 XAG 101~117 전체가 커뮤니케이션 경로에 적용되어야 합니다.",
+      "accepted_answers": [
+        "XAG 101~117"
+      ]
     },
     {
       "key": "XAG120_SA003",
@@ -13760,9 +14331,12 @@ const QUIZ_DATA = {
         "Screen Reader",
         "screen reader"
       ],
-      "answer_index": 1,
+      "answer_index": 2,
       "answer_text": "스크린 리더",
-      "explanation": "스크린 리더 활성화 + 마우스 연결 해제 상태에서 전체 경로를 D-pad/키보드만으로 완주할 수 있는지 테스트합니다."
+      "explanation": "스크린 리더 활성화 + 마우스 연결 해제 상태에서 전체 경로를 D-pad/키보드만으로 완주할 수 있는지 테스트합니다.",
+      "accepted_answers": [
+        "스크린 리더"
+      ]
     },
     {
       "key": "XAG120_SA004",
@@ -13777,7 +14351,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "여정(Journey) 단위",
-      "explanation": "게임 시작→멀티플레이→서버/로비→채팅 설정→채팅 사용까지 전 과정을 여정 단위로 테스트해야 합니다."
+      "explanation": "게임 시작→멀티플레이→서버/로비→채팅 설정→채팅 사용까지 전 과정을 여정 단위로 테스트해야 합니다.",
+      "accepted_answers": [
+        "여정(Journey) 단위"
+      ]
     },
     {
       "key": "XAG120_SA005",
@@ -13792,7 +14369,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "WCAG 2.4.5",
-      "explanation": "WCAG 2.4.5(Multiple Ways, Level AA)는 콘텐츠에 도달하는 방법이 두 가지 이상 존재해야 한다고 요구합니다."
+      "explanation": "WCAG 2.4.5(Multiple Ways, Level AA)는 콘텐츠에 도달하는 방법이 두 가지 이상 존재해야 한다고 요구합니다.",
+      "accepted_answers": [
+        "WCAG 2.4.5"
+      ]
     },
     {
       "key": "XAG120_SA006",
@@ -13807,7 +14387,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "게임 시작부터 채팅 사용까지 전체 커뮤니케이션 경로가 XAG 101~117을 준수",
-      "explanation": "XAG 120 공식 문서에서 전체 커뮤니케이션 경로 접근성의 모범 사례로 반복 인용됩니다."
+      "explanation": "XAG 120 공식 문서에서 전체 커뮤니케이션 경로 접근성의 모범 사례로 반복 인용됩니다.",
+      "accepted_answers": [
+        "게임 시작부터 채팅 사용까지 전체 커뮤니케이션 경로가 XAG 101~117을 준수"
+      ]
     },
     {
       "key": "XAG120_SA007",
@@ -13822,7 +14405,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "음소거(Mute)",
-      "explanation": "음소거·친구 요청·플레이어 검색·채팅창 열기·채팅휠 선택·신고 등 모든 통신 관련 동작이 XAG 120의 접근성 적용 대상입니다."
+      "explanation": "음소거·친구 요청·플레이어 검색·채팅창 열기·채팅휠 선택·신고 등 모든 통신 관련 동작이 XAG 120의 접근성 적용 대상입니다.",
+      "accepted_answers": [
+        "음소거(Mute)"
+      ]
     },
     {
       "key": "XAG120_SA008",
@@ -13837,7 +14423,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "텍스트 채팅 on/off 설정을 스크린 리더로 탐색 가능하게 구현",
-      "explanation": "설정 메뉴 자체가 스크린 리더로 탐색 가능해야 시각 장애 플레이어가 STT/TTS 기능을 활성화할 수 있습니다."
+      "explanation": "설정 메뉴 자체가 스크린 리더로 탐색 가능해야 시각 장애 플레이어가 STT/TTS 기능을 활성화할 수 있습니다.",
+      "accepted_answers": [
+        "텍스트 채팅 on/off 설정을 스크린 리더로 탐색 가능하게 구현"
+      ]
     },
     {
       "key": "XAG121_Q001",
@@ -14162,7 +14751,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 121은 각 게임 타이틀마다 독립적인 접근성 웹 페이지를 운영하도록 요구하며, 여러 타이틀을 한 페이지에 혼합하는 것을 금지합니다."
+      "explanation": "XAG 121은 각 게임 타이틀마다 독립적인 접근성 웹 페이지를 운영하도록 요구하며, 여러 타이틀을 한 페이지에 혼합하는 것을 금지합니다.",
+      "answer": false
     },
     {
       "key": "XAG121_OX002",
@@ -14172,7 +14762,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "접근성 정보를 담은 웹사이트가 접근 불가능하다면 장애 플레이어가 그 정보에 도달할 수 없습니다. XAG 121은 문서 제공 웹사이트 자체의 WCAG 2 AA 준수를 명시합니다."
+      "explanation": "접근성 정보를 담은 웹사이트가 접근 불가능하다면 장애 플레이어가 그 정보에 도달할 수 없습니다. XAG 121은 문서 제공 웹사이트 자체의 WCAG 2 AA 준수를 명시합니다.",
+      "answer": true
     },
     {
       "key": "XAG121_OX003",
@@ -14182,7 +14773,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "사람 우선 언어 원칙에 따른 권장 표현은 '장애를 가진 게이머(gamers with disabilities)'입니다. '장애인 게이머'는 장애를 사람의 주요 정체성으로 앞에 두는 방식입니다."
+      "explanation": "사람 우선 언어 원칙에 따른 권장 표현은 '장애를 가진 게이머(gamers with disabilities)'입니다. '장애인 게이머'는 장애를 사람의 주요 정체성으로 앞에 두는 방식입니다.",
+      "answer": false
     },
     {
       "key": "XAG121_OX004",
@@ -14192,7 +14784,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "출시 전 공개는 장애 게이머 커뮤니티의 기대감을 높이고 사전 구매를 유도합니다. XAG 121은 출시 전 공개를 이상적으로, 최소한 출시와 동시를 기준으로 명시합니다."
+      "explanation": "출시 전 공개는 장애 게이머 커뮤니티의 기대감을 높이고 사전 구매를 유도합니다. XAG 121은 출시 전 공개를 이상적으로, 최소한 출시와 동시를 기준으로 명시합니다.",
+      "answer": true
     },
     {
       "key": "XAG121_OX005",
@@ -14202,7 +14795,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 121은 게임이 현지화된 모든 언어로 접근성 문서도 현지화하여 제공하도록 요구합니다."
+      "explanation": "XAG 121은 게임이 현지화된 모든 언어로 접근성 문서도 현지화하여 제공하도록 요구합니다.",
+      "answer": true
     },
     {
       "key": "XAG121_OX006",
@@ -14212,7 +14806,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 121은 접근성 기능별로 기능 설명·UI 내 위치·설정 방법까지 상세히 안내하도록 요구합니다. 단순 목록 나열은 불충분합니다."
+      "explanation": "XAG 121은 접근성 기능별로 기능 설명·UI 내 위치·설정 방법까지 상세히 안내하도록 요구합니다. 단순 목록 나열은 불충분합니다.",
+      "answer": false
     },
     {
       "key": "XAG121_SA001",
@@ -14227,7 +14822,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "WCAG 2 Level AA",
-      "explanation": "접근성 정보를 담은 웹사이트 자체가 장애 플레이어에게 접근 가능해야 합니다."
+      "explanation": "접근성 정보를 담은 웹사이트 자체가 장애 플레이어에게 접근 가능해야 합니다.",
+      "accepted_answers": [
+        "WCAG 2 Level AA"
+      ]
     },
     {
       "key": "XAG121_SA002",
@@ -14242,7 +14840,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Accessibility Insights for Web",
-      "explanation": "Microsoft 오픈소스 도구로 WCAG 준수 여부를 자동/수동으로 검사합니다."
+      "explanation": "Microsoft 오픈소스 도구로 WCAG 준수 여부를 자동/수동으로 검사합니다.",
+      "accepted_answers": [
+        "Accessibility Insights for Web"
+      ]
     },
     {
       "key": "XAG121_SA003",
@@ -14257,7 +14858,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "사람 우선 언어(Person-First Language)",
-      "explanation": "장애가 사람의 전체 정체성이 아님을 반영하는 언어 원칙입니다."
+      "explanation": "장애가 사람의 전체 정체성이 아님을 반영하는 언어 원칙입니다.",
+      "accepted_answers": [
+        "사람 우선 언어(Person-First Language)"
+      ]
     },
     {
       "key": "XAG121_SA004",
@@ -14272,7 +14876,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "NCDJ Style Guide",
-      "explanation": "National Center on Disability and Journalism Style Guide로 적절한/부적절한 장애 관련 언어 목록을 제공합니다."
+      "explanation": "National Center on Disability and Journalism Style Guide로 적절한/부적절한 장애 관련 언어 목록을 제공합니다.",
+      "accepted_answers": [
+        "NCDJ Style Guide"
+      ]
     },
     {
       "key": "XAG121_SA005",
@@ -14287,7 +14894,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "gears5.com/accessibility",
-      "explanation": "게임 전용 독립 접근성 도메인 운영의 XAG 121 모범 사례입니다."
+      "explanation": "게임 전용 독립 접근성 도메인 운영의 XAG 121 모범 사례입니다.",
+      "accepted_answers": [
+        "gears5.com/accessibility"
+      ]
     },
     {
       "key": "XAG121_SA006",
@@ -14302,7 +14912,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "handicapped (또는 impaired, incapacitated)",
-      "explanation": "이 표현들은 장애를 결핍으로 묘사하는 구식 표현입니다. NCDJ Style Guide는 사람 우선 언어 사용을 권장합니다."
+      "explanation": "이 표현들은 장애를 결핍으로 묘사하는 구식 표현입니다. NCDJ Style Guide는 사람 우선 언어 사용을 권장합니다.",
+      "accepted_answers": [
+        "handicapped (또는 impaired, incapacitated)"
+      ]
     },
     {
       "key": "XAG121_SA007",
@@ -14317,7 +14930,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "기능 설명, UI 내 위치, 설정 방법",
-      "explanation": "Ubisoft의 AC Valhalla 색맹 모드 활성화 방법 별도 페이지가 이 세 가지를 모두 포함한 모범 사례입니다."
+      "explanation": "Ubisoft의 AC Valhalla 색맹 모드 활성화 방법 별도 페이지가 이 세 가지를 모두 포함한 모범 사례입니다.",
+      "accepted_answers": [
+        "기능 설명, UI 내 위치, 설정 방법"
+      ]
     },
     {
       "key": "XAG121_SA008",
@@ -14332,7 +14948,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "게임 출시 전",
-      "explanation": "출시 전 공개는 장애 게이머 커뮤니티의 기대감을 높이고 사전 구매를 유도하는 마케팅 효과도 있습니다."
+      "explanation": "출시 전 공개는 장애 게이머 커뮤니티의 기대감을 높이고 사전 구매를 유도하는 마케팅 효과도 있습니다.",
+      "accepted_answers": [
+        "게임 출시 전"
+      ]
     },
     {
       "key": "XAG122_Q001",
@@ -14657,7 +15276,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 122는 장애를 가진 플레이어가 추가 비용 없이 고객 지원을 받을 수 있어야 한다고 명시합니다."
+      "explanation": "XAG 122는 장애를 가진 플레이어가 추가 비용 없이 고객 지원을 받을 수 있어야 한다고 명시합니다.",
+      "answer": false
     },
     {
       "key": "XAG122_OX002",
@@ -14667,7 +15287,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "청각 장애 플레이어는 전화 지원을 사용할 수 없습니다. XAG 122는 전화(TTY 포함)·이메일·라이브 채팅·텍스트 채팅 등 다양한 채널을 제공하도록 요구합니다."
+      "explanation": "청각 장애 플레이어는 전화 지원을 사용할 수 없습니다. XAG 122는 전화(TTY 포함)·이메일·라이브 채팅·텍스트 채팅 등 다양한 채널을 제공하도록 요구합니다.",
+      "answer": false
     },
     {
       "key": "XAG122_OX003",
@@ -14677,7 +15298,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "지원이 필요한 장애 플레이어가 접근 불가능한 웹사이트에서 지원 정보를 찾지 못하는 모순을 방지하기 위해 고객 지원 웹사이트 자체도 WCAG 2 AA를 충족해야 합니다."
+      "explanation": "지원이 필요한 장애 플레이어가 접근 불가능한 웹사이트에서 지원 정보를 찾지 못하는 모순을 방지하기 위해 고객 지원 웹사이트 자체도 WCAG 2 AA를 충족해야 합니다.",
+      "answer": true
     },
     {
       "key": "XAG122_OX004",
@@ -14687,7 +15309,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "TTY(Teletype)/TDD(Telecommunication Device for the Deaf)는 청각 장애인이 전화선을 통해 텍스트로 소통하는 전통적인 장치입니다."
+      "explanation": "TTY(Teletype)/TDD(Telecommunication Device for the Deaf)는 청각 장애인이 전화선을 통해 텍스트로 소통하는 전통적인 장치입니다.",
+      "answer": true
     },
     {
       "key": "XAG122_OX005",
@@ -14697,7 +15320,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "Microsoft Disability Answer Desk는 텍스트 채팅·무료 전화·ASL 화상통화를 모두 무료로 제공합니다."
+      "explanation": "Microsoft Disability Answer Desk는 텍스트 채팅·무료 전화·ASL 화상통화를 모두 무료로 제공합니다.",
+      "answer": false
     },
     {
       "key": "XAG122_OX006",
@@ -14707,7 +15331,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "시각 장애 플레이어가 스크린 리더로 고객 지원 연락처를 찾을 수 있어야 지원에 접근할 수 있습니다."
+      "explanation": "시각 장애 플레이어가 스크린 리더로 고객 지원 연락처를 찾을 수 있어야 지원에 접근할 수 있습니다.",
+      "answer": true
     },
     {
       "key": "XAG122_SA001",
@@ -14722,7 +15347,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "TTY(Teletype/TDD)",
-      "explanation": "현대에는 웹 채팅·이메일·ASL 화상통화가 TTY를 대체하지만 XAG 122는 모든 채널을 포함하여 제공하도록 권장합니다."
+      "explanation": "현대에는 웹 채팅·이메일·ASL 화상통화가 TTY를 대체하지만 XAG 122는 모든 채널을 포함하여 제공하도록 권장합니다.",
+      "accepted_answers": [
+        "TTY(Teletype/TDD)"
+      ]
     },
     {
       "key": "XAG122_SA002",
@@ -14737,7 +15365,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Microsoft Disability Answer Desk",
-      "explanation": "텍스트 채팅·무료 전화·ASL 화상통화를 모두 무료로 제공하는 XAG 122 모범 사례입니다."
+      "explanation": "텍스트 채팅·무료 전화·ASL 화상통화를 모두 무료로 제공하는 XAG 122 모범 사례입니다.",
+      "accepted_answers": [
+        "Microsoft Disability Answer Desk"
+      ]
     },
     {
       "key": "XAG122_SA003",
@@ -14752,7 +15383,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "미국 수어(American Sign Language)",
-      "explanation": "일부 청각 장애인에게 수어가 주요 소통 언어이므로 ASL 전문가와 화상통화로 지원받을 수 있어야 합니다."
+      "explanation": "일부 청각 장애인에게 수어가 주요 소통 언어이므로 ASL 전문가와 화상통화로 지원받을 수 있어야 합니다.",
+      "accepted_answers": [
+        "미국 수어(American Sign Language)"
+      ]
     },
     {
       "key": "XAG122_SA004",
@@ -14767,7 +15401,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "WCAG 2 Level AA",
-      "explanation": "XAG 121(접근성 문서화)과 동일하게 고객 지원 웹사이트도 WCAG 2 Level AA를 충족해야 합니다."
+      "explanation": "XAG 121(접근성 문서화)과 동일하게 고객 지원 웹사이트도 WCAG 2 Level AA를 충족해야 합니다.",
+      "accepted_answers": [
+        "WCAG 2 Level AA"
+      ]
     },
     {
       "key": "XAG122_SA005",
@@ -14782,7 +15419,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "ADA Title IV",
-      "explanation": "ADA Title IV는 청각 장애인이 전화를 통해 의사소통할 수 있도록 통신 릴레이 서비스(TRS)를 요구합니다."
+      "explanation": "ADA Title IV는 청각 장애인이 전화를 통해 의사소통할 수 있도록 통신 릴레이 서비스(TRS)를 요구합니다.",
+      "accepted_answers": [
+        "ADA Title IV"
+      ]
     },
     {
       "key": "XAG122_SA006",
@@ -14797,7 +15437,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "이중 배제(Double Exclusion)",
-      "explanation": "접근성 기능 문제 + 고객 지원 접근 불가 = 이중 배제. XAG 122가 고객 지원 접근성을 다루는 핵심 이유입니다."
+      "explanation": "접근성 기능 문제 + 고객 지원 접근 불가 = 이중 배제. XAG 122가 고객 지원 접근성을 다루는 핵심 이유입니다.",
+      "accepted_answers": [
+        "이중 배제(Double Exclusion)"
+      ]
     },
     {
       "key": "XAG122_SA007",
@@ -14812,7 +15455,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "Accessibility Insights for Web, axe DevTools",
-      "explanation": "두 도구 모두 WCAG 위반 항목을 자동으로 감지할 수 있습니다."
+      "explanation": "두 도구 모두 WCAG 위반 항목을 자동으로 감지할 수 있습니다.",
+      "accepted_answers": [
+        "Accessibility Insights for Web, axe DevTools"
+      ]
     },
     {
       "key": "XAG122_SA008",
@@ -14827,7 +15473,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "이메일 지원, 라이브 채팅",
-      "explanation": "모든 채널을 한 번에 구축하기 어려울 때 이메일/채팅 지원과 WCAG AA 준수 웹사이트부터 시작하는 단계적 접근이 권장됩니다."
+      "explanation": "모든 채널을 한 번에 구축하기 어려울 때 이메일/채팅 지원과 WCAG AA 준수 웹사이트부터 시작하는 단계적 접근이 권장됩니다.",
+      "accepted_answers": [
+        "이메일 지원, 라이브 채팅"
+      ]
     },
     {
       "key": "XAG123_Q001",
@@ -15152,7 +15801,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "XAG 123은 창작 자율성을 완전히 유지하며, 콘텐츠 제거를 강요하지 않습니다. 민감한 콘텐츠가 있을 때 플레이어에게 사전 경고와 선택 옵션을 제공하는 것이 목표입니다."
+      "explanation": "XAG 123은 창작 자율성을 완전히 유지하며, 콘텐츠 제거를 강요하지 않습니다. 민감한 콘텐츠가 있을 때 플레이어에게 사전 경고와 선택 옵션을 제공하는 것이 목표입니다.",
+      "answer": false
     },
     {
       "key": "XAG123_OX002",
@@ -15162,7 +15812,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "베르테르 효과(Phillips, 1974)와 WHO 자살 보도 권고에 따르면 구체적 방법, 쉬운/고통 없는 묘사, 이상화/영웅화된 묘사가 모방 자살 위험을 높입니다."
+      "explanation": "베르테르 효과(Phillips, 1974)와 WHO 자살 보도 권고에 따르면 구체적 방법, 쉬운/고통 없는 묘사, 이상화/영웅화된 묘사가 모방 자살 위험을 높입니다.",
+      "answer": true
     },
     {
       "key": "XAG123_OX003",
@@ -15172,7 +15823,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "X",
-      "explanation": "Grounded의 공포증 안전 모드는 거미를 완전히 제거하지 않고 시각적 외형만 덜 사실적으로 변경합니다. 이는 게임플레이를 유지하면서 접근성을 보장하는 방식입니다."
+      "explanation": "Grounded의 공포증 안전 모드는 거미를 완전히 제거하지 않고 시각적 외형만 덜 사실적으로 변경합니다. 이는 게임플레이를 유지하면서 접근성을 보장하는 방식입니다.",
+      "answer": false
     },
     {
       "key": "XAG123_OX004",
@@ -15182,7 +15834,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 123은 정신 질환을 악당의 유일한 원인으로 연결하거나 지속적으로 예측 불가·폭력적으로 묘사하는 것을 금지합니다."
+      "explanation": "XAG 123은 정신 질환을 악당의 유일한 원인으로 연결하거나 지속적으로 예측 불가·폭력적으로 묘사하는 것을 금지합니다.",
+      "answer": true
     },
     {
       "key": "XAG123_OX005",
@@ -15192,7 +15845,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "NAMI(National Alliance on Mental Illness)는 미국 성인의 약 20%(5명 중 1명)가 매년 정신 질환을 경험한다고 보고합니다."
+      "explanation": "NAMI(National Alliance on Mental Illness)는 미국 성인의 약 20%(5명 중 1명)가 매년 정신 질환을 경험한다고 보고합니다.",
+      "answer": true
     },
     {
       "key": "XAG123_OX006",
@@ -15202,7 +15856,8 @@ const QUIZ_DATA = {
       "options": [],
       "answer_index": 1,
       "answer_text": "O",
-      "explanation": "XAG 123은 민감한 정신 건강 콘텐츠를 포함하는 게임에서 지역별 정신 건강 지원 리소스를 게임 내 메뉴 또는 접근성 페이지에서 상시 접근 가능하게 제공하도록 요구합니다."
+      "explanation": "XAG 123은 민감한 정신 건강 콘텐츠를 포함하는 게임에서 지역별 정신 건강 지원 리소스를 게임 내 메뉴 또는 접근성 페이지에서 상시 접근 가능하게 제공하도록 요구합니다.",
+      "answer": true
     },
     {
       "key": "XAG123_SA001",
@@ -15217,7 +15872,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "콘텐츠 경고(Content Warning)",
-      "explanation": "XAG 123의 첫 번째 목표로, 플레이어가 민감한 콘텐츠를 인지하고 회피 여부를 결정할 수 있도록 사전에 제공해야 합니다."
+      "explanation": "XAG 123의 첫 번째 목표로, 플레이어가 민감한 콘텐츠를 인지하고 회피 여부를 결정할 수 있도록 사전에 제공해야 합니다.",
+      "accepted_answers": [
+        "콘텐츠 경고(Content Warning)"
+      ]
     },
     {
       "key": "XAG123_SA002",
@@ -15230,9 +15888,12 @@ const QUIZ_DATA = {
         "Arachnophobia Safe Mode",
         "공포증모드"
       ],
-      "answer_index": 1,
+      "answer_index": 2,
       "answer_text": "공포증 안전 모드",
-      "explanation": "거미를 완전히 제거하지 않고 외형만 덜 사실적으로 변경하여 게임플레이를 유지하면서 접근성을 보장합니다."
+      "explanation": "거미를 완전히 제거하지 않고 외형만 덜 사실적으로 변경하여 게임플레이를 유지하면서 접근성을 보장합니다.",
+      "accepted_answers": [
+        "공포증 안전 모드"
+      ]
     },
     {
       "key": "XAG123_SA003",
@@ -15247,7 +15908,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "베르테르 효과(Werther Effect)",
-      "explanation": "Phillips(1974)의 연구로 WHO 자살 보도 권고 가이드라인의 핵심 근거입니다."
+      "explanation": "Phillips(1974)의 연구로 WHO 자살 보도 권고 가이드라인의 핵심 근거입니다.",
+      "accepted_answers": [
+        "베르테르 효과(Werther Effect)"
+      ]
     },
     {
       "key": "XAG123_SA004",
@@ -15262,7 +15926,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "WHO 자살 보도 권고(2017)",
-      "explanation": "구체적 방법 설명 금지·이상화/낭만화 금지·지원 리소스 제공 등이 핵심 내용입니다."
+      "explanation": "구체적 방법 설명 금지·이상화/낭만화 금지·지원 리소스 제공 등이 핵심 내용입니다.",
+      "accepted_answers": [
+        "WHO 자살 보도 권고(2017)"
+      ]
     },
     {
       "key": "XAG123_SA005",
@@ -15277,7 +15944,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "약 20%(5명 중 1명)",
-      "explanation": "XAG 123 공식 문서에서 정신 건강 접근성의 중요성을 뒷받침하는 근거로 인용됩니다."
+      "explanation": "XAG 123 공식 문서에서 정신 건강 접근성의 중요성을 뒷받침하는 근거로 인용됩니다.",
+      "accepted_answers": [
+        "약 20%(5명 중 1명)"
+      ]
     },
     {
       "key": "XAG123_SA006",
@@ -15290,9 +15960,12 @@ const QUIZ_DATA = {
         "장애 당사자",
         "disability community"
       ],
-      "answer_index": 1,
+      "answer_index": 2,
       "answer_text": "당사자 커뮤니티",
-      "explanation": "XAG 123은 당사자 커뮤니티와의 직접 협업이 정신 건강 상태 묘사 검증의 가장 효과적인 방법임을 공식 권고합니다."
+      "explanation": "XAG 123은 당사자 커뮤니티와의 직접 협업이 정신 건강 상태 묘사 검증의 가장 효과적인 방법임을 공식 권고합니다.",
+      "accepted_answers": [
+        "당사자 커뮤니티"
+      ]
     },
     {
       "key": "XAG123_SA007",
@@ -15307,7 +15980,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "중독성 물질/도박 요소",
-      "explanation": "루트박스처럼 무작위 결과를 제공하는 구매 요소는 도박적 요소로 분류되어 XAG 123의 사전 고지 대상입니다."
+      "explanation": "루트박스처럼 무작위 결과를 제공하는 구매 요소는 도박적 요소로 분류되어 XAG 123의 사전 고지 대상입니다.",
+      "accepted_answers": [
+        "중독성 물질/도박 요소"
+      ]
     },
     {
       "key": "XAG123_SA008",
@@ -15322,7 +15998,10 @@ const QUIZ_DATA = {
       ],
       "answer_index": 1,
       "answer_text": "침습적 기억(플래시백), 회피 행동, 과각성",
-      "explanation": "DSM-5 기준 PTSD 특징 증상으로, 트라우마 관련 콘텐츠 노출 시 이 증상들이 재활성화될 수 있어 사전 경고가 임상적으로 필요합니다."
+      "explanation": "DSM-5 기준 PTSD 특징 증상으로, 트라우마 관련 콘텐츠 노출 시 이 증상들이 재활성화될 수 있어 사전 경고가 임상적으로 필요합니다.",
+      "accepted_answers": [
+        "침습적 기억(플래시백), 회피 행동, 과각성"
+      ]
     }
   ]
 };
