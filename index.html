@@ -252,6 +252,135 @@
             font-size: 13px;
         }
 
+
+        .section-toolbar {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 2px 2px 12px;
+            margin: -14px 0 20px;
+            scrollbar-width: thin;
+        }
+
+        .section-chip {
+            flex: 0 0 auto;
+            padding: 9px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(26, 29, 39, 0.55);
+            color: var(--text-dim);
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .section-chip:hover {
+            border-color: var(--accent);
+            color: var(--text);
+            background: var(--accent-glow);
+        }
+
+        .section-chip.active {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .pool-featured {
+            border-color: rgba(108, 156, 255, 0.35);
+            background: linear-gradient(135deg, rgba(108, 156, 255, 0.16), rgba(167, 139, 250, 0.10));
+            margin-bottom: 18px;
+        }
+
+        .pool-category {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+
+        .pool-category-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 8px 0 2px;
+            text-align: left;
+        }
+
+        .pool-category-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .pool-category-count {
+            font-size: 12px;
+            color: var(--text-dim);
+            white-space: nowrap;
+        }
+
+        .pool-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .pool-card {
+            align-items: flex-start;
+            min-height: 108px;
+            padding: 16px 18px;
+            text-align: left;
+        }
+
+        .pool-card-main {
+            min-width: 0;
+        }
+
+        .pool-title {
+            display: block;
+            color: var(--text);
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.35;
+            margin-bottom: 6px;
+        }
+
+        .pool-title .pool-id {
+            color: var(--accent);
+            margin-right: 6px;
+        }
+
+        .pool-desc {
+            display: block;
+            color: var(--text-dim);
+            font-size: 12px;
+            line-height: 1.45;
+            word-break: keep-all;
+        }
+
+        .pool-card .count {
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+
+        [data-theme="light"] .section-chip {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        [data-theme="light"] .section-chip.active {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        @media (max-width: 600px) {
+            .pool-grid { grid-template-columns: 1fr; }
+            .section-toolbar { margin-top: -10px; }
+            .pool-card { min-height: auto; }
+        }
+
         /* --- Quiz Screen --- */
         .quiz-screen { display: none; }
 
@@ -2547,6 +2676,44 @@ let selectedModePoolId = '';
 const LABELS = ['A', 'B', 'C', 'D'];
 const WRONG_STORAGE_KEY = 'xag_wrong_notes';
 
+const SECTION_INFO = {
+    XAG101: { title: '텍스트 가독성', desc: '폰트, 크기, 정렬, 텍스트 배경' },
+    XAG102: { title: '색상·대비', desc: '명도 대비, 고대비, 색상 정보 전달' },
+    XAG103: { title: '비색상·다중감각', desc: '색상 의존 제거, 시각·청각·촉각 병행' },
+    XAG104: { title: '자막·캡션', desc: '대화 자막, 효과음 캡션, 자막 표시 옵션' },
+    XAG105: { title: '오디오 조절', desc: '볼륨 분리, 모노, 공간 오디오, 일시정지' },
+    XAG106: { title: '스크린 내레이션', desc: '메뉴 낭독, 대체 텍스트, 포커스 정보' },
+    XAG107: { title: '입력·조작 접근성', desc: '리매핑, 단일 입력, 스위치 접근' },
+    XAG108: { title: '난이도·어시스트', desc: '난이도 프리셋, 개별 어시스트, 진행 보존' },
+    XAG109: { title: '목표·진행 안내', desc: '퀘스트 로그, 목표 표시, 튜토리얼 재접근' },
+    XAG110: { title: '햅틱 피드백', desc: '진동 끄기, 강도 조절, 대체 채널' },
+    XAG111: { title: '오디오 설명', desc: 'FMV·컷신 시각 정보 음성 설명' },
+    XAG112: { title: '메뉴 탐색', desc: '키보드·D-pad 탐색, 포커스 순서, 리플로우' },
+    XAG113: { title: '포커스 표시', desc: '명확한 포커스 인디케이터와 포커스 트랩' },
+    XAG114: { title: 'UI 이해성', desc: '레이블, 안내문, 용어 설명, 보조기술 동등성' },
+    XAG115: { title: '입력 안내·오류 예방', desc: '입력 형식, 오류 메시지, 회복 가능한 조작' },
+    XAG116: { title: '인지 부담 완화', desc: '정보 구조화, 반복 학습, 기억 부담 감소' },
+    XAG117: { title: '광과민성 안전', desc: '플래시, 깜빡임, 위험 시각 효과 제어' },
+    XAG118: { title: '멀미·모션', desc: '카메라 흔들림, 모션 블러, 시야각 조절' },
+    XAG119: { title: '커뮤니케이션', desc: '채팅, 음성 대체, 플레이어 간 소통' },
+    XAG120: { title: '온라인 상호작용', desc: '멀티플레이, 신고, 매칭, 소셜 기능 접근성' },
+    XAG121: { title: '도움말·문서', desc: '가이드, 접근성 정보, 외부 문서 접근' },
+    XAG122: { title: '설정·저장', desc: '접근성 설정 유지, 프로필, 초기 설정' },
+    XAG123: { title: '감각 안전 옵션', desc: '공포·자극 요소 완화, 안전 모드' }
+};
+
+const SECTION_CATEGORIES = [
+    { id: 'visual', label: '시각/가독성', pools: ['XAG101', 'XAG102', 'XAG103'] },
+    { id: 'audio', label: '청각/오디오', pools: ['XAG104', 'XAG105', 'XAG111'] },
+    { id: 'input', label: '입력/조작', pools: ['XAG107', 'XAG110'] },
+    { id: 'cognitive', label: '인지/UX', pools: ['XAG106', 'XAG108', 'XAG109', 'XAG112', 'XAG113', 'XAG114', 'XAG115', 'XAG116'] },
+    { id: 'safety', label: '안전/감각', pools: ['XAG117', 'XAG118', 'XAG123'] },
+    { id: 'communication', label: '커뮤니케이션', pools: ['XAG119', 'XAG120'] },
+    { id: 'support', label: '문서/지원', pools: ['XAG121', 'XAG122'] }
+];
+
+let selectedSectionCategory = 'all';
+
 // --- Wrong Notes with Firestore Sync ---
 let wrongNotesCache = {};
 let wrongNotesSyncing = false;
@@ -2787,7 +2954,7 @@ function showModeSelect(poolId) {
 
     hideAllScreens();
     document.getElementById('modeScreen').style.display = 'block';
-    document.getElementById('modePoolTitle').textContent = poolId === 'all' ? '전체 문제' : poolId;
+    document.getElementById('modePoolTitle').textContent = poolId === 'all' ? '전체 문제' : getPoolDisplayName(poolId);
     document.getElementById('modeSubtitle').textContent = `총 ${total}문항`;
     document.getElementById('allModeBtnDesc').textContent = `${total}문항 전체 풀기`;
     document.getElementById('timeAttackAllDesc').textContent = `${total}문항 전체 · 문제당 10초`;
@@ -2838,6 +3005,36 @@ quizData = QUIZ_DATA;
 wrongNotesCache = loadWrongNotesFromLocal();
 buildTitleStats();
 
+function getPoolInfo(poolId) {
+    return SECTION_INFO[poolId] || { title: poolId, desc: '접근성 가이드라인 학습 섹션' };
+}
+
+function getPoolDisplayName(poolId) {
+    const info = getPoolInfo(poolId);
+    return `${poolId} · ${info.title}`;
+}
+
+function setSectionCategory(categoryId) {
+    selectedSectionCategory = categoryId;
+    buildStartScreen();
+}
+
+function createPoolButton(poolId, count, btnIndex) {
+    const info = getPoolInfo(poolId);
+    const btn = document.createElement('button');
+    btn.className = 'pool-btn pool-card';
+    btn.innerHTML = `
+        <span class="pool-card-main">
+            <span class="pool-title"><span class="pool-id">${poolId}</span>${info.title}</span>
+            <span class="pool-desc">${info.desc}</span>
+        </span>
+        <span class="count">${count}문항</span>
+    `;
+    btn.style.animationDelay = `${btnIndex * 0.04}s`;
+    btn.onclick = () => showModeSelect(poolId);
+    return btn;
+}
+
 function buildStartScreen() {
     const pools = {};
     quizData.questions.forEach(q => {
@@ -2849,22 +3046,91 @@ function buildStartScreen() {
     container.innerHTML = '';
     let btnIndex = 0;
 
-    // All questions button
+    // 전체 문제는 항상 최상단에 고정
     const allBtn = document.createElement('button');
-    allBtn.className = 'pool-btn';
-    allBtn.innerHTML = `<span>전체 문제</span><span class="count">${quizData.questions.length}문항</span>`;
-    allBtn.style.animationDelay = `${btnIndex++ * 0.06}s`;
+    allBtn.className = 'pool-btn pool-featured';
+    allBtn.innerHTML = `
+        <span class="pool-card-main">
+            <span class="pool-title">전체 문제</span>
+            <span class="pool-desc">모든 XAG 섹션에서 출제</span>
+        </span>
+        <span class="count">${quizData.questions.length}문항</span>
+    `;
+    allBtn.style.animationDelay = `${btnIndex++ * 0.04}s`;
     allBtn.onclick = () => showModeSelect('all');
     container.appendChild(allBtn);
 
-    // Per-pool buttons
-    for (const [poolId, count] of Object.entries(pools)) {
-        const btn = document.createElement('button');
-        btn.className = 'pool-btn';
-        btn.innerHTML = `<span>${poolId}</span><span class="count">${count}문항</span>`;
-        btn.style.animationDelay = `${btnIndex++ * 0.06}s`;
-        btn.onclick = () => showModeSelect(poolId);
-        container.appendChild(btn);
+    // 카테고리 칩
+    const toolbar = document.createElement('div');
+    toolbar.className = 'section-toolbar';
+
+    const allChip = document.createElement('button');
+    allChip.className = 'section-chip' + (selectedSectionCategory === 'all' ? ' active' : '');
+    allChip.textContent = '전체';
+    allChip.onclick = () => setSectionCategory('all');
+    toolbar.appendChild(allChip);
+
+    SECTION_CATEGORIES.forEach(category => {
+        const availableCount = category.pools.filter(pid => pools[pid]).length;
+        if (availableCount === 0) return;
+        const chip = document.createElement('button');
+        chip.className = 'section-chip' + (selectedSectionCategory === category.id ? ' active' : '');
+        chip.textContent = `${category.label} ${availableCount}`;
+        chip.onclick = () => setSectionCategory(category.id);
+        toolbar.appendChild(chip);
+    });
+    container.appendChild(toolbar);
+
+    const categoriesToRender = selectedSectionCategory === 'all'
+        ? SECTION_CATEGORIES
+        : SECTION_CATEGORIES.filter(category => category.id === selectedSectionCategory);
+
+    const renderedPools = new Set();
+
+    categoriesToRender.forEach(category => {
+        const availablePools = category.pools.filter(pid => pools[pid]);
+        if (availablePools.length === 0) return;
+
+        const categoryWrap = document.createElement('div');
+        categoryWrap.className = 'pool-category';
+
+        const categoryHeader = document.createElement('div');
+        categoryHeader.className = 'pool-category-header';
+        const questionCount = availablePools.reduce((sum, pid) => sum + pools[pid], 0);
+        categoryHeader.innerHTML = `
+            <span class="pool-category-title">${category.label}</span>
+            <span class="pool-category-count">${availablePools.length}개 섹션 · ${questionCount}문항</span>
+        `;
+        categoryWrap.appendChild(categoryHeader);
+
+        const grid = document.createElement('div');
+        grid.className = 'pool-grid';
+        availablePools.forEach(poolId => {
+            renderedPools.add(poolId);
+            grid.appendChild(createPoolButton(poolId, pools[poolId], btnIndex++));
+        });
+        categoryWrap.appendChild(grid);
+        container.appendChild(categoryWrap);
+    });
+
+    // 매핑되지 않은 섹션이 생겨도 화면에 노출
+    const uncategorizedPools = Object.keys(pools).filter(pid => !renderedPools.has(pid) && !SECTION_CATEGORIES.some(category => category.pools.includes(pid)));
+    if (uncategorizedPools.length > 0 && selectedSectionCategory === 'all') {
+        const categoryWrap = document.createElement('div');
+        categoryWrap.className = 'pool-category';
+        const categoryHeader = document.createElement('div');
+        categoryHeader.className = 'pool-category-header';
+        const questionCount = uncategorizedPools.reduce((sum, pid) => sum + pools[pid], 0);
+        categoryHeader.innerHTML = `
+            <span class="pool-category-title">기타</span>
+            <span class="pool-category-count">${uncategorizedPools.length}개 섹션 · ${questionCount}문항</span>
+        `;
+        categoryWrap.appendChild(categoryHeader);
+        const grid = document.createElement('div');
+        grid.className = 'pool-grid';
+        uncategorizedPools.forEach(poolId => grid.appendChild(createPoolButton(poolId, pools[poolId], btnIndex++)));
+        categoryWrap.appendChild(grid);
+        container.appendChild(categoryWrap);
     }
 
     // Wrong notes section
