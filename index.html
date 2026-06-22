@@ -2367,7 +2367,7 @@
                         <div class="guide-divider"></div>
                         <div class="guide-section">
                             <div class="guide-section-title"><span class="guide-icon">&#127942;</span> 랭킹</div>
-                            <div class="guide-item"><strong>전체 풀기</strong>와 <strong>타임어택 전체</strong> 모드만 반영</div>
+                            <div class="guide-item"><strong>섹션별 전체 풀기</strong>와 <strong>섹션별 타임어택 전체 풀기</strong> 모드만 반영</div>
                             <div class="guide-item">총점(Fever + 타임 보너스 포함) 기준 순위 산정</div>
                             <div class="guide-item">로그인 시 자동 기록, 유저별 최고 점수만 표시</div>
                         </div>
@@ -2462,7 +2462,7 @@
     <div class="ranking-screen" id="rankingScreen">
         <span class="back-link" onclick="showTitle()">&larr; 타이틀로 돌아가기</span>
         <h2>랭킹</h2>
-        <p class="subtitle">전체풀기 · 타임어택 최고 점수 (Fever 보너스 포함)</p>
+        <p class="subtitle">섹션별 전체풀기 · 섹션별 타임어택 전체풀기 최고 점수 (Fever 보너스 포함)</p>
         <div class="ranking-tabs" id="rankingTabs"></div>
         <div class="ranking-list" id="rankingList"></div>
     </div>
@@ -3760,7 +3760,7 @@ function showResult() {
 
     document.getElementById('resultMessage').textContent = msg;
 
-    // Save score to Firestore (전체풀기 + 타임어택 랭킹 반영, 랜덤10 제외)
+    // Save score to Firestore (섹션별 전체풀기 + 섹션별 타임어택 전체풀기 랭킹 반영, 랜덤10 제외)
     if (!isWrongNoteMode && currentQuizMode !== 'random' && currentQuizMode !== 'timeattack-random') {
         saveScoreToFirestore(currentPoolId, currentQuizMode, score, total, totalScore);
     }
