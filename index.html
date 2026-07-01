@@ -678,6 +678,84 @@
         .next-btn:hover { opacity: 0.85; }
         .next-btn.visible { display: block; }
 
+        /* --- Color Pair Visual --- */
+        .color-pair-preview {
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            min-height: 72px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+        }
+
+        /* 텍스트 타입: 좌우 배치 */
+        .color-pair-preview.cp-text-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        /* 버튼 테두리 타입: 세로 중앙 배치 */
+        .color-pair-preview.cp-btn-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 24px;
+        }
+
+        .cp-sample {
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        /* 항상 가독 가능한 배지 — 배경색에 무관하게 정보 표시 */
+        .cp-info-badge {
+            background: rgba(0, 0, 0, 0.65);
+            color: rgba(255, 255, 255, 0.92);
+            padding: 5px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 3px;
+            flex-shrink: 0;
+        }
+
+        .cp-info-badge.centered { align-items: center; }
+
+        .cp-ratio {
+            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .cp-element {
+            font-size: 10px;
+            opacity: 0.78;
+            white-space: nowrap;
+        }
+
+        /* 버튼 테두리 시뮬레이션 버튼 */
+        .cp-btn-demo {
+            padding: 10px 28px;
+            border-radius: 6px;
+            background: transparent;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Noto Sans KR', sans-serif;
+            cursor: default;
+            pointer-events: none;
+            border-width: 2px;
+            border-style: solid;
+        }
+
         /* --- OX Quiz --- */
         .ox-btn {
             justify-content: center;
@@ -2448,6 +2526,8 @@
             <div class="question-text" id="questionText"></div>
         </div>
 
+        <div id="visualContainer"></div>
+
         <div class="options" id="optionsContainer"></div>
 
         <div class="explanation" id="explanation">
@@ -3330,6 +3410,14 @@ function loadQuestion() {
     document.getElementById('progressText').textContent = `${currentIndex + 1} / ${total}`;
     document.getElementById('progressFill').style.width = `${((currentIndex) / total) * 100}%`;
 
+    // ── 시각 요소 처리 (color_pair) ──
+    const visualContainer = document.getElementById('visualContainer');
+    visualContainer.innerHTML = '';
+    if (q.visual_type === 'color_pair' && q.visual_code) {
+        const cpEl = renderColorPair(q.visual_code);
+        if (cpEl) visualContainer.appendChild(cpEl);
+    }
+
     const container = document.getElementById('optionsContainer');
     container.innerHTML = '';
 
@@ -3479,6 +3567,61 @@ function handleTimeOut() {
     const nextBtn = document.getElementById('nextBtn');
     nextBtn.textContent = currentIndex < currentQuestions.length - 1 ? '다음 문제' : '결과 보기';
     nextBtn.classList.add('visible');
+}
+
+function renderColorPair(visualCode) {
+    try {
+        const vc = JSON.parse(visualCode);
+        const wrapper = document.createElement('div');
+        wrapper.className = 'color-pair-preview';
+        wrapper.style.backgroundColor = vc.bg || '#ffffff';
+
+        // 공통 배지 생성 함수
+        const makeBadge = (centered) => {
+            const badge = document.createElement('div');
+            badge.className = 'cp-info-badge' + (centered ? ' centered' : '');
+            const ratio = document.createElement('span');
+            ratio.className = 'cp-ratio';
+            ratio.textContent = vc.contrast_ratio || '';
+            const element = document.createElement('span');
+            element.className = 'cp-element';
+            element.textContent = vc.element || '';
+            badge.appendChild(ratio);
+            badge.appendChild(element);
+            return badge;
+        };
+
+        if (vc.render_type === 'button_border') {
+            // ── 버튼 테두리 렌더링 ──
+            wrapper.classList.add('cp-btn-layout');
+
+            const btn = document.createElement('button');
+            btn.className = 'cp-btn-demo';
+            btn.style.borderColor = vc.text_color;
+            btn.style.color = vc.text_color;
+            btn.textContent = vc.sample_text || '버튼';
+
+            wrapper.appendChild(btn);
+            wrapper.appendChild(makeBadge(true));
+
+        } else {
+            // ── 텍스트 렌더링 (기본) ──
+            wrapper.classList.add('cp-text-layout');
+            wrapper.style.color = vc.text_color || '#000000';
+
+            const sample = document.createElement('span');
+            sample.className = 'cp-sample';
+            sample.style.fontSize = vc.font_size || '14px';
+            sample.textContent = vc.sample_text || '게임 UI 텍스트 예시';
+
+            wrapper.appendChild(sample);
+            wrapper.appendChild(makeBadge(false));
+        }
+
+        return wrapper;
+    } catch (e) {
+        return null;
+    }
 }
 
 function loadMultipleChoiceQuestion(container, q) {
