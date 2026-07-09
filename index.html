@@ -756,6 +756,42 @@
             border-style: solid;
         }
 
+        /* --- Visual Compare (font_compare / text_align / caps_compare) --- */
+        .visual-compare {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+            width: 100%;
+        }
+
+        .compare-panel {
+            flex: 1;
+            background: #1e2130;
+            border-radius: 8px;
+            padding: 14px 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-height: 120px;
+        }
+
+        .compare-label {
+            font-size: 10px;
+            color: rgba(255,255,255,0.45);
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 6px;
+        }
+
+        .compare-text {
+            font-size: 11.5px;
+            color: #dde3f5;
+            line-height: 1.6;
+        }
+
         /* --- OX Quiz --- */
         .ox-btn {
             justify-content: center;
@@ -3572,11 +3608,64 @@ function handleTimeOut() {
 function renderColorPair(visualCode) {
     try {
         const vc = JSON.parse(visualCode);
+
+        // ── 비교 패널 공통 생성 헬퍼 ──────────────────────────
+        const makeCompare = (buildPanel) => {
+            const container = document.createElement('div');
+            container.className = 'visual-compare';
+            ['a', 'b'].forEach(side => container.appendChild(buildPanel(side)));
+            return container;
+        };
+
+        const makePanel = (labelText, textContent, extraStyle = {}, panelStyle = {}) => {
+            const panel = document.createElement('div');
+            panel.className = 'compare-panel';
+            Object.assign(panel.style, panelStyle);
+            const label = document.createElement('div');
+            label.className = 'compare-label';
+            label.textContent = labelText;
+            const text = document.createElement('div');
+            text.className = 'compare-text';
+            Object.assign(text.style, extraStyle);
+            text.textContent = textContent;
+            panel.appendChild(label);
+            panel.appendChild(text);
+            return panel;
+        };
+
+        // ── font_compare: 동일 텍스트 두 서체 비교 ────────────
+        if (vc.render_type === 'font_compare') {
+            return makeCompare(side => makePanel(
+                vc['label_' + side] || side.toUpperCase(),
+                vc.text || '텍스트 예시',
+                { fontFamily: vc['font_' + side] || 'sans-serif', fontSize: '14px' }
+            ));
+        }
+
+        // ── text_align: 동일 텍스트 두 정렬 비교 ─────────────
+        if (vc.render_type === 'text_align') {
+            return makeCompare(side => makePanel(
+                vc['label_' + side] || side.toUpperCase(),
+                vc.text || '텍스트 예시',
+                { textAlign: vc['align_' + side] || 'left' }
+            ));
+        }
+
+        // ── caps_compare: 두 텍스트 형식 비교 (범용) ──────────
+        if (vc.render_type === 'caps_compare') {
+            return makeCompare(side => makePanel(
+                vc['label_' + side] || side.toUpperCase(),
+                vc['text_' + side] || '텍스트 예시',
+                vc['style_' + side] || {},
+                vc['panel_style_' + side] || {}
+            ));
+        }
+
+        // ── 기존 color_pair 렌더링 ────────────────────────────
         const wrapper = document.createElement('div');
         wrapper.className = 'color-pair-preview';
         wrapper.style.backgroundColor = vc.bg || '#ffffff';
 
-        // 공통 배지 생성 함수
         const makeBadge = (centered) => {
             const badge = document.createElement('div');
             badge.className = 'cp-info-badge' + (centered ? ' centered' : '');
@@ -3592,28 +3681,21 @@ function renderColorPair(visualCode) {
         };
 
         if (vc.render_type === 'button_border') {
-            // ── 버튼 테두리 렌더링 ──
             wrapper.classList.add('cp-btn-layout');
-
             const btn = document.createElement('button');
             btn.className = 'cp-btn-demo';
             btn.style.borderColor = vc.text_color;
             btn.style.color = vc.text_color;
             btn.textContent = vc.sample_text || '버튼';
-
             wrapper.appendChild(btn);
             wrapper.appendChild(makeBadge(true));
-
         } else {
-            // ── 텍스트 렌더링 (기본) ──
             wrapper.classList.add('cp-text-layout');
             wrapper.style.color = vc.text_color || '#000000';
-
             const sample = document.createElement('span');
             sample.className = 'cp-sample';
             sample.style.fontSize = vc.font_size || '14px';
             sample.textContent = vc.sample_text || '게임 UI 텍스트 예시';
-
             wrapper.appendChild(sample);
             wrapper.appendChild(makeBadge(false));
         }
