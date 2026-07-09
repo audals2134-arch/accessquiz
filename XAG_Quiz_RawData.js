@@ -1,6 +1,6 @@
 const QUIZ_DATA = {
   "meta": {
-    "version": "20260709045456.",
+    "version": "20260709051031.",
     "content_hash": "2f0fcdfa",
     "total_questions": 810,
     "question_types": {
@@ -33,7 +33,7 @@ const QUIZ_DATA = {
       "XAG102": 110,
       "XAG101": 100
     },
-    "generated_at": "2026-07-09T04:54:56.213Z",
+    "generated_at": "2026-07-09T05:10:31.906Z",
     "source_file": "XAG_Quiz_RawData_v28.xlsx"
   },
   "option_pools": {
