@@ -1,7 +1,7 @@
 const QUIZ_DATA = {
   "meta": {
-    "version": "20260709041630.",
-    "content_hash": "58a52c1e",
+    "version": "20260709045456.",
+    "content_hash": "2f0fcdfa",
     "total_questions": 810,
     "question_types": {
       "multiple_choice": 496,
@@ -33,7 +33,7 @@ const QUIZ_DATA = {
       "XAG102": 110,
       "XAG101": 100
     },
-    "generated_at": "2026-07-09T04:16:30.509Z",
+    "generated_at": "2026-07-09T04:54:56.213Z",
     "source_file": "XAG_Quiz_RawData_v28.xlsx"
   },
   "option_pools": {
@@ -17796,7 +17796,7 @@ const QUIZ_DATA = {
       "explanation": "왼쪽 정렬(A)은 모든 줄이 같은 지점에서 시작하는 시각적 닻(Visual Anchor)을 제공합니다. 가운데 정렬(B)은 매 줄마다 시작점이 달라져 다음 줄이 어디서 시작하는지 뇌가 매번 새로 탐색해야 합니다. XAG 101은 왼쪽 정렬을 기본값으로, 가운데 정렬은 본문 사용을 금지합니다.",
       "learning_type": "visual",
       "visual_type": "color_pair",
-      "visual_code": "{\"render_type\": \"text_align\", \"text\": \"이 아이템을 사용하면 체력이 즉시 50 회복됩니다. 재사용 대기 시간은 30초이며 전투 중에도 사용할 수 있습니다.\", \"label_a\": \"A\", \"align_a\": \"left\", \"label_b\": \"B\", \"align_b\": \"center\"}"
+      "visual_code": "{\"render_type\": \"dialog_compare\", \"title\": \"튜토리얼\", \"text\": \"회피 버튼을 누르면 적의 공격을 피할 수 있습니다. 공격 타이밍에 맞춰 회피하면 반격 기회를 만들 수 있습니다.\", \"button\": \"확인\", \"label_a\": \"A\", \"align_a\": \"left\", \"label_b\": \"B\", \"align_b\": \"center\"}"
     },
     {
       "key": "XAG101_V005",
