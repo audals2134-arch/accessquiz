@@ -854,6 +854,72 @@
             line-height: 1.6;
         }
 
+        /* --- Cue Compare (XAG103: 색상패치 + 아이콘 + 라벨 3요소 비교) --- */
+        .cue-compare {
+            margin-bottom: 16px;
+        }
+
+        .cue-scenario {
+            font-size: 11px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .cue-row {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .cue-panel {
+            flex: 1;
+            background: #1e2130;
+            border-radius: 8px;
+            padding: 14px 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            min-height: 120px;
+        }
+
+        .cue-label {
+            align-self: stretch;
+            font-size: 10px;
+            color: rgba(255,255,255,0.45);
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 6px;
+            text-align: center;
+        }
+
+        .cue-badge {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.06);
+        }
+
+        .cue-icon-svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .cue-caption {
+            font-size: 11.5px;
+            color: #dde3f5;
+            text-align: center;
+            min-height: 16px;
+        }
+
         /* --- OX Quiz --- */
         .ox-btn {
             justify-content: center;
@@ -3667,6 +3733,63 @@ function handleTimeOut() {
     nextBtn.classList.add('visible');
 }
 
+// ── cue_compare 전용 아이콘: 이모지 폰트 미지원 환경 대응을 위해 순수 SVG로 렌더링 ──
+const CUE_ICON_PATHS = {
+    triangle: '<path d="M12 4 L20 19 L4 19 Z"/>',
+    star: '<path d="M12 2 L14.59 8.36 L21.51 8.97 L16.26 13.97 L17.77 20.74 L12 17.27 L6.23 20.74 L7.74 13.97 L2.49 8.97 L9.41 8.36 Z"/>',
+    lock: '<rect x="7" y="11" width="10" height="8" rx="1.5"/><path d="M9 11V8a3 3 0 0 1 6 0v3" fill="none" stroke-width="2"/>',
+    speech: '<path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H10l-4 3.5V15H6a2 2 0 0 1-2-2V6z"/>',
+    arrow_left: '<path d="M4 12h13M4 12l5-5M4 12l5 5" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>',
+    impact: '<rect x="8" y="8" width="8" height="8" transform="rotate(45 12 12)"/>',
+    skull: '<path d="M12 3c-4.4 0-7 3-7 6.8 0 2.2 1 3.9 2.3 5.1V17a1 1 0 0 0 1 1h1.2v2.2a.8.8 0 0 0 .8.8h1.4a.8.8 0 0 0 .8-.8V18h1v1.2a.8.8 0 0 0 .8.8h1.4a.8.8 0 0 0 .8-.8V18h1.2a1 1 0 0 0 1-1v-2.1c1.3-1.2 2.3-2.9 2.3-5.1C19 6 16.4 3 12 3z"/><circle cx="9" cy="10" r="1.6" class="cue-icon-hole"/><circle cx="15" cy="10" r="1.6" class="cue-icon-hole"/>',
+    trophy: '<path d="M7 4h10v3a5 5 0 0 1-5 5 5 5 0 0 1-5-5V4z"/><path d="M7 5H4a3 3 0 0 0 3 4" fill="none" stroke-width="1.8"/><path d="M17 5h3a3 3 0 0 1-3 4" fill="none" stroke-width="1.8"/><rect x="10.5" y="12" width="3" height="3"/><rect x="8" y="16" width="8" height="2" rx="1"/>',
+};
+
+// 배지 배경색과의 WCAG 상대 휘도 기준 대비를 계산해, 흰색/어두운색 중 대비가 더 높은 쪽을 아이콘 색으로 선택
+function relativeLuminance(r, g, b) {
+    const chan = [r, g, b].map(v => {
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    return 0.2126 * chan[0] + 0.7152 * chan[1] + 0.0722 * chan[2];
+}
+
+function contrastRatio(l1, l2) {
+    const lighter = Math.max(l1, l2);
+    const darker = Math.min(l1, l2);
+    return (lighter + 0.05) / (darker + 0.05);
+}
+
+function contrastIconColor(hex) {
+    if (!hex || hex[0] !== '#' || hex.length < 7) return '#ffffff';
+    const r = parseInt(hex.substr(1, 2), 16);
+    const g = parseInt(hex.substr(3, 2), 16);
+    const b = parseInt(hex.substr(5, 2), 16);
+    const bgLum = relativeLuminance(r, g, b);
+    const whiteLum = 1;
+    const darkLum = relativeLuminance(0x16, 0x1a, 0x24); // #161a24
+    const ratioWithWhite = contrastRatio(bgLum, whiteLum);
+    const ratioWithDark = contrastRatio(bgLum, darkLum);
+    return ratioWithWhite >= ratioWithDark ? '#ffffff' : '#161a24';
+}
+
+function buildCueIconSVG(name, bgColor) {
+    const path = CUE_ICON_PATHS[name];
+    if (!path) return null;
+    const color = contrastIconColor(bgColor);
+    const holeColor = bgColor || '#1e2130';
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('class', 'cue-icon-svg');
+    svg.style.color = color;
+    svg.style.fill = color;
+    svg.style.stroke = color;
+    svg.style.filter = 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))';
+    svg.innerHTML = path;
+    svg.querySelectorAll('.cue-icon-hole').forEach(el => { el.setAttribute('fill', holeColor); });
+    return svg;
+}
+
 function renderColorPair(visualCode) {
     try {
         const vc = JSON.parse(visualCode);
@@ -3762,6 +3885,55 @@ function renderColorPair(visualCode) {
                 vc['style_' + side] || {},
                 vc['panel_style_' + side] || {}
             ));
+        }
+
+        // ── cue_compare: 색상패치+아이콘+라벨 3요소 비교 (XAG103 다중 감각 채널) ──
+        if (vc.render_type === 'cue_compare') {
+            const container = document.createElement('div');
+            container.className = 'cue-compare';
+
+            if (vc.scenario) {
+                const scenario = document.createElement('div');
+                scenario.className = 'cue-scenario';
+                scenario.textContent = vc.scenario;
+                container.appendChild(scenario);
+            }
+
+            const row = document.createElement('div');
+            row.className = 'cue-row';
+
+            ['a', 'b'].forEach(side => {
+                const panel = vc['panel_' + side] || {};
+
+                const box = document.createElement('div');
+                box.className = 'cue-panel';
+
+                const lbl = document.createElement('div');
+                lbl.className = 'cue-label';
+                lbl.textContent = vc['label_' + side] || side.toUpperCase();
+
+                const badge = document.createElement('div');
+                badge.className = 'cue-badge';
+                badge.style.background = panel.color_patch || 'rgba(255,255,255,0.06)';
+                if (panel.icon) {
+                    const iconSvg = buildCueIconSVG(panel.icon, panel.color_patch);
+                    if (iconSvg) {
+                        badge.appendChild(iconSvg);
+                    }
+                }
+
+                const caption = document.createElement('div');
+                caption.className = 'cue-caption';
+                caption.textContent = panel.label || '';
+
+                box.appendChild(lbl);
+                box.appendChild(badge);
+                box.appendChild(caption);
+                row.appendChild(box);
+            });
+
+            container.appendChild(row);
+            return container;
         }
 
         // ── 기존 color_pair 렌더링 ────────────────────────────
