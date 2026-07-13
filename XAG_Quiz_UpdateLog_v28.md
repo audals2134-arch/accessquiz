@@ -94,3 +94,27 @@
 | `XAG_Quiz_RawData_v28.xlsx` | **현재 운영** (810개, 14컬럼) |
 | `index.html` | **현재 운영** (v1.3) |
 | `XAG_Quiz_Converter_latest.html` | v27 이후 동일 (14컬럼 지원) |
+
+
+
+## v28 추가 수정 (게임 v1.3 반영)
+
+### dialog_compare 렌더러 추가 (index.html)
+
+게임 다이얼로그 UI 스타일로 두 정렬 방식을 나란히 비교하는 신규 render_type.
+
+**visual_code 필드:**
+
+| 필드 | 설명 |
+|---|---|
+| `render_type` | `"dialog_compare"` |
+| `title` | 다이얼로그 타이틀 텍스트 |
+| `text` | 본문 텍스트 |
+| `button` | 하단 버튼 텍스트 |
+| `label_a/b` | 각 패널 라벨 |
+| `align_a/b` | 각 패널 텍스트 정렬 (`left` / `center` / `justify`) |
+
+### XAG101_V004 visual_code 변경
+
+`text_align` → `dialog_compare`로 교체.
+왼쪽 정렬(A) vs 가운데 정렬(B)을 실제 게임 튜토리얼 다이얼로그 UI로 표시.
